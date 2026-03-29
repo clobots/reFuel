@@ -24,9 +24,9 @@
       --text: #eef6fb;
       --muted: #9eb7c8;
       --accent: #f0c76e;
-      --google: rgba(179, 189, 197, 0.5);
-      --fuelcheck: #47c27d;
-      --matched: #4d9fff;
+      --google: #ff5f5f;
+      --fuelcheck: #f0c76e;
+      --matched: #47c27d;
       --gap: #ff5f5f;
       --shadow: 0 18px 44px rgba(0, 0, 0, 0.28);
     }
@@ -154,7 +154,7 @@
       backdrop-filter: blur(10px);
     }
 
-    .legend {
+    .map-controls {
       line-height: 1.5;
       color: var(--text);
       padding: 12px 14px;
@@ -162,15 +162,58 @@
       border-radius: 16px;
       background: rgba(7, 19, 26, 0.9);
       box-shadow: var(--shadow);
+      max-height: 70vh;
+      overflow-y: auto;
     }
 
-    .legend strong {
+    .map-controls strong {
       display: block;
       margin-bottom: 8px;
       color: var(--accent);
       font-size: 0.83rem;
       text-transform: uppercase;
       letter-spacing: 0.08em;
+    }
+
+    .fuel-filter {
+      margin-bottom: 10px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--panel-border);
+    }
+
+    .fuel-filter label {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin: 4px 0;
+      font-size: 0.88rem;
+      cursor: pointer;
+    }
+
+    .fuel-filter input[type="checkbox"] {
+      accent-color: var(--accent);
+      cursor: pointer;
+    }
+
+    .fuel-filter-actions {
+      display: flex;
+      gap: 8px;
+      margin-top: 6px;
+    }
+
+    .fuel-filter-actions button {
+      background: none;
+      border: 1px solid var(--panel-border);
+      color: var(--muted);
+      font-size: 0.78rem;
+      padding: 2px 8px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .fuel-filter-actions button:hover {
+      color: var(--text);
+      border-color: var(--accent);
     }
 
     .legend-item {
@@ -204,27 +247,215 @@
 
     .popup {
       color: #11202b;
-      min-width: 220px;
+      min-width: 260px;
+      max-width: 340px;
     }
 
-    .popup h2 {
-      margin: 0 0 8px;
-      font-size: 1rem;
+    .popup h3 {
+      margin: 0 0 4px;
+      font-size: 0.92rem;
+      color: #333;
     }
 
-    .popup p,
+    .popup .src-label {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #888;
+      margin: 8px 0 2px;
+    }
+
+    .popup .src-label:first-child {
+      margin-top: 0;
+    }
+
+    .popup p {
+      margin: 0 0 4px;
+      font-size: 0.88rem;
+    }
+
+    .popup .tab-bar {
+      display: flex;
+      gap: 0;
+      border-bottom: 2px solid #ddd;
+      margin: 8px 0 6px;
+    }
+
+    .popup .tab-btn {
+      padding: 4px 10px;
+      font-size: 0.8rem;
+      border: none;
+      background: none;
+      cursor: pointer;
+      border-bottom: 2px solid transparent;
+      margin-bottom: -2px;
+      color: #666;
+    }
+
+    .popup .tab-btn.active {
+      border-bottom-color: #4d9fff;
+      color: #11202b;
+      font-weight: 600;
+    }
+
+    .popup .tab-panel {
+      display: none;
+    }
+
+    .popup .tab-panel.active {
+      display: block;
+    }
+
     .popup ul {
-      margin: 0 0 8px;
+      margin: 0;
       padding: 0;
-      font-size: 0.9rem;
-    }
-
-    .popup ul {
       list-style: none;
+      font-size: 0.88rem;
     }
 
     .popup li + li {
-      margin-top: 4px;
+      margin-top: 3px;
+    }
+
+    .popup li strong {
+      display: inline-block;
+      min-width: 36px;
+    }
+
+    .station-tooltip {
+      background: white;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      padding: 8px 10px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+      font-size: 0.82rem;
+      color: #222;
+      max-width: 280px;
+      line-height: 1.4;
+    }
+
+    .station-tooltip b {
+      color: #555;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .station-tooltip small {
+      color: #777;
+    }
+
+    .station-popup-wrapper .leaflet-popup-content {
+      margin: 10px 12px;
+    }
+
+    .data-section {
+      padding: 0 18px 32px;
+    }
+
+    .data-tabs {
+      display: flex;
+      gap: 0;
+      border-bottom: 2px solid var(--panel-border);
+      margin-bottom: 0;
+    }
+
+    .data-tab-btn {
+      padding: 10px 18px;
+      font-size: 0.9rem;
+      border: none;
+      background: none;
+      cursor: pointer;
+      color: var(--muted);
+      border-bottom: 2px solid transparent;
+      margin-bottom: -2px;
+      font-family: inherit;
+      letter-spacing: 0.02em;
+      transition: color 0.15s, border-color 0.15s;
+    }
+
+    .data-tab-btn:hover {
+      color: var(--text);
+    }
+
+    .data-tab-btn.active {
+      color: var(--accent);
+      border-bottom-color: var(--accent);
+      font-weight: 600;
+    }
+
+    .data-tab-btn .badge {
+      display: inline-block;
+      margin-left: 6px;
+      padding: 1px 7px;
+      border-radius: 10px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      background: var(--panel-border);
+      color: var(--muted);
+    }
+
+    .data-tab-btn.active .badge {
+      background: var(--accent);
+      color: var(--bg);
+    }
+
+    .data-table-wrap {
+      max-height: 420px;
+      overflow-y: auto;
+      border: 1px solid var(--panel-border);
+      border-top: none;
+      border-radius: 0 0 16px 16px;
+      background: var(--panel);
+    }
+
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.85rem;
+    }
+
+    .data-table thead {
+      position: sticky;
+      top: 0;
+      z-index: 1;
+    }
+
+    .data-table th {
+      padding: 10px 14px;
+      text-align: left;
+      background: rgba(11, 24, 32, 0.98);
+      color: var(--accent);
+      font-size: 0.76rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      border-bottom: 1px solid var(--panel-border);
+    }
+
+    .data-table td {
+      padding: 8px 14px;
+      border-bottom: 1px solid var(--panel-border);
+      color: var(--text);
+    }
+
+    .data-table tr:hover td {
+      background: rgba(77, 159, 255, 0.06);
+    }
+
+    .data-table .swatch {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      margin-right: 6px;
+      vertical-align: middle;
+    }
+
+    .data-empty {
+      padding: 32px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.9rem;
     }
 
     @media (max-width: 900px) {
@@ -271,7 +502,8 @@
       <div class="topbar-inner">
         <div class="heading">
           <h1>reFuel</h1>
-          <p>Gap analysis between scraped Google Maps petrol stations and NSW FuelCheck coverage across Ryde, Auburn, and Hornsby.</p>
+          <p id="avail-line" style="color:var(--accent);font-size:1.05rem;margin:10px 0 4px;font-weight:600;">Loading...</p>
+          <p style="color:var(--muted);font-size:0.72rem;font-style:italic;margin:0 0 6px;">* assuming that fuel stations listed online sell all fuel types usually</p>
           <div class="updated-at">Last updated: <span id="last-updated">-</span></div>
         </div>
         <dl class="summary" id="summary-panel">
@@ -300,6 +532,21 @@
         <div id="map" aria-label="Fuel station gap analysis map"></div>
       </div>
     </main>
+    <section class="data-section">
+      <div class="data-tabs" id="data-tabs">
+        <button class="data-tab-btn active" data-tab="gaps">Gaps <span class="badge" id="tab-badge-gaps">0</span></button>
+        <button class="data-tab-btn" data-tab="matched">Matched <span class="badge" id="tab-badge-matched">0</span></button>
+        <button class="data-tab-btn" data-tab="google">Google Only <span class="badge" id="tab-badge-google">0</span></button>
+        <button class="data-tab-btn" data-tab="fuelcheck">FuelCheck Only <span class="badge" id="tab-badge-fuelcheck">0</span></button>
+      </div>
+      <div class="data-table-wrap">
+        <table class="data-table">
+          <thead id="data-thead"></thead>
+          <tbody id="data-tbody"></tbody>
+        </table>
+        <div class="data-empty" id="data-empty" style="display:none;">No stations in this category.</div>
+      </div>
+    </section>
   </div>
 
   <script>
@@ -323,19 +570,74 @@
       gap: L.layerGroup().addTo(map)
     };
 
-    const legend = L.control({ position: "bottomright" });
-    legend.onAdd = function onAdd() {
-      const div = L.DomUtil.create("div", "legend");
-      div.innerHTML = DOMPurify.sanitize(`
-        <strong>Legend</strong>
-        <div class="legend-item"><span class="legend-swatch" style="background:${cssVar("--google")}"></span>Google only</div>
-        <div class="legend-item"><span class="legend-swatch" style="background:${cssVar("--fuelcheck")}"></span>FuelCheck only</div>
-        <div class="legend-item"><span class="legend-swatch" style="background:${cssVar("--matched")}"></span>Matched</div>
-        <div class="legend-item"><span class="legend-swatch" style="background:${cssVar("--gap")}"></span>Gap</div>
-      `);
+    // Fuel types to show in the filter (EV excluded)
+    const ALL_FUEL_TYPES = ["U91", "E10", "E85", "P95", "P98", "DL", "PDL", "LPG"];
+    let selectedFuelTypes = new Set(ALL_FUEL_TYPES);
+
+    const controlPanel = L.control({ position: "bottomright" });
+    controlPanel.onAdd = function onAdd() {
+      const div = L.DomUtil.create("div", "map-controls");
+      L.DomEvent.disableClickPropagation(div);
+      L.DomEvent.disableScrollPropagation(div);
+
+      // Build filter checkboxes
+      const filterContainer = L.DomUtil.create("div", "fuel-filter", div);
+      const filterTitle = L.DomUtil.create("strong", "", filterContainer);
+      filterTitle.textContent = "Fuel Types";
+
+      ALL_FUEL_TYPES.forEach((ft) => {
+        const label = L.DomUtil.create("label", "", filterContainer);
+        const cb = L.DomUtil.create("input", "", label);
+        cb.type = "checkbox";
+        cb.value = ft;
+        cb.checked = true;
+        label.appendChild(document.createTextNode(" " + ft));
+        cb.addEventListener("change", function () {
+          if (this.checked) {
+            selectedFuelTypes.add(this.value);
+          } else {
+            selectedFuelTypes.delete(this.value);
+          }
+          rerender();
+        });
+      });
+
+      const actions = L.DomUtil.create("div", "fuel-filter-actions", filterContainer);
+      const btnAll = L.DomUtil.create("button", "", actions);
+      btnAll.textContent = "All";
+      btnAll.addEventListener("click", () => {
+        selectedFuelTypes = new Set(ALL_FUEL_TYPES);
+        div.querySelectorAll('.fuel-filter input[type="checkbox"]').forEach((cb) => { cb.checked = true; });
+        rerender();
+      });
+      const btnNone = L.DomUtil.create("button", "", actions);
+      btnNone.textContent = "None";
+      btnNone.addEventListener("click", () => {
+        selectedFuelTypes.clear();
+        div.querySelectorAll('.fuel-filter input[type="checkbox"]').forEach((cb) => { cb.checked = false; });
+        rerender();
+      });
+
+      // Legend
+      const legendTitle = L.DomUtil.create("strong", "", div);
+      legendTitle.textContent = "Legend";
+
+      const legendItems = [
+        { color: cssVar("--google"), label: "Google only" },
+        { color: cssVar("--fuelcheck"), label: "FuelCheck only" },
+        { color: cssVar("--matched"), label: "Matched" },
+        { color: cssVar("--gap"), label: "Gap" }
+      ];
+      legendItems.forEach(({ color, label }) => {
+        const item = L.DomUtil.create("div", "legend-item", div);
+        const swatch = L.DomUtil.create("span", "legend-swatch", item);
+        swatch.style.background = color;
+        item.appendChild(document.createTextNode(label));
+      });
+
       return div;
     };
-    legend.addTo(map);
+    controlPanel.addTo(map);
 
     function cssVar(name) {
       return getComputedStyle(document.documentElement).getPropertyValue(name).trim();
@@ -408,32 +710,74 @@
       if (!prices || !prices.length) {
         return "<p>No FuelCheck pricing data.</p>";
       }
-
       const items = prices
-        .map((price) => `<li>${escapeHtml(price.fuel_type)}: ${escapeHtml(price.price)}</li>`)
+        .map((p) => `<li><strong>${escapeHtml(p.fuel_type)}</strong> ${escapeHtml(p.price)}¢/L</li>`)
         .join("");
       return `<ul>${items}</ul>`;
     }
 
-    function popupContent(station) {
-      const matchDistance = station.matchDistanceMeters != null
-        ? `<p><strong>Match distance:</strong> ${Math.round(station.matchDistanceMeters)}m</p>`
-        : "";
+    let popupIdCounter = 0;
+
+    function popupContent(data) {
+      const id = "pop" + (popupIdCounter++);
+      const fc = data.fuelcheck;
+      const goog = data.google;
+      const distance = data.matchDistanceMeters;
+
+      let infoHtml = "";
+
+      if (fc) {
+        infoHtml += `<div class="src-label">FuelCheck API</div>`;
+        infoHtml += `<h3>${escapeHtml(fc.name)}</h3>`;
+        infoHtml += `<p>${escapeHtml(fc.address || "")}</p>`;
+      }
+      if (goog) {
+        infoHtml += `<div class="src-label">Google Maps</div>`;
+        infoHtml += `<h3>${escapeHtml(goog.name)}</h3>`;
+        infoHtml += `<p>${escapeHtml(goog.address || "")}</p>`;
+      }
+      if (!fc && !goog) {
+        infoHtml += `<h3>Unknown station</h3>`;
+      }
+      if (distance != null) {
+        infoHtml += `<p style="font-size:0.8rem;color:#888;">Match distance: ${Math.round(distance)}m</p>`;
+      }
+
+      const fuelHtml = fc ? formatPrices(data.prices || fc.prices) : "<p>No FuelCheck data for this station.</p>";
+
       const content = `
         <div class="popup">
-          <h2>${escapeHtml(station.name || "Unnamed station")}</h2>
-          <p>${escapeHtml(station.address || "No address provided")}</p>
-          <p><strong>Source:</strong> ${escapeHtml(station.popupSource || station.source || "unknown")}</p>
-          ${matchDistance}
-          ${formatPrices(station.prices)}
+          <div class="tab-bar">
+            <button class="tab-btn active" onclick="document.getElementById('${id}-info').classList.add('active');document.getElementById('${id}-fuel').classList.remove('active');this.classList.add('active');this.nextElementSibling.classList.remove('active');">Info</button>
+            <button class="tab-btn" onclick="document.getElementById('${id}-fuel').classList.add('active');document.getElementById('${id}-info').classList.remove('active');this.classList.add('active');this.previousElementSibling.classList.remove('active');">Fuel</button>
+          </div>
+          <div id="${id}-info" class="tab-panel active">${infoHtml}</div>
+          <div id="${id}-fuel" class="tab-panel">${fuelHtml}</div>
         </div>
       `;
       return DOMPurify.sanitize(content);
     }
 
-    function addMarker(station, type) {
-      const marker = L.marker([station.lat, station.lng], { icon: markerIcon(type) });
-      marker.bindPopup(popupContent(station));
+    function addMarker(data, type) {
+      const lat = data.lat || (data.fuelcheck && data.fuelcheck.lat) || (data.google && data.google.lat);
+      const lng = data.lng || (data.fuelcheck && data.fuelcheck.lng) || (data.google && data.google.lng);
+      const marker = L.marker([lat, lng], { icon: markerIcon(type) });
+      marker.bindPopup(popupContent(data), {
+        maxWidth: 360,
+        minWidth: 260,
+        className: "station-popup-wrapper"
+      });
+      // Lightweight hover tooltip with both source names
+      const tooltipLines = [];
+      if (data.fuelcheck) tooltipLines.push(`<b>FC:</b> ${escapeHtml(data.fuelcheck.name)}<br><small>${escapeHtml(data.fuelcheck.address || "")}</small>`);
+      if (data.google) tooltipLines.push(`<b>G:</b> ${escapeHtml(data.google.name)}<br><small>${escapeHtml(data.google.address || "")}</small>`);
+      if (!data.fuelcheck && !data.google) tooltipLines.push("Unknown station");
+      marker.bindTooltip(DOMPurify.sanitize(tooltipLines.join("<hr style='margin:4px 0;border-color:#ddd'>")), {
+        direction: "top",
+        sticky: false,
+        opacity: 1,
+        className: "station-tooltip"
+      });
       layers[type].addLayer(marker);
     }
 
@@ -469,6 +813,205 @@
       return response.json();
     }
 
+    // Raw data stored for re-rendering on filter change
+    let rawGoogleStations = [];
+    let rawFuelcheckStations = [];
+
+    function isEvOnly(station) {
+      const types = (station.prices || []).map((p) => p.fuel_type);
+      return types.length > 0 && types.every((t) => t === "EV");
+    }
+
+    function hasSelectedFuelType(station) {
+      if (!station.prices || !station.prices.length) return true; // Google stations have no prices — always show
+      const types = (station.prices || []).map((p) => p.fuel_type);
+      return types.some((t) => selectedFuelTypes.has(t));
+    }
+
+    function filterPricesToSelected(station) {
+      if (!station.prices) return station;
+      return {
+        ...station,
+        prices: station.prices.filter((p) => selectedFuelTypes.has(p.fuel_type))
+      };
+    }
+
+    function rerender() {
+      Object.values(layers).forEach((layer) => layer.clearLayers());
+
+      const fuelcheckFiltered = rawFuelcheckStations.filter((s) => hasSelectedFuelType(s));
+
+      const usedFuelIds = new Set();
+      let matchedCount = 0;
+      let gapCount = 0;
+
+      // Reset table data
+      tableData = { gaps: [], matched: [], google: [], fuelcheck: [] };
+
+      rawGoogleStations.forEach((googleStation) => {
+        const match = nearestFuelcheckStation(googleStation, fuelcheckFiltered, usedFuelIds);
+        if (match) {
+          const identifier = match.station.id || `${match.station.name}|${match.station.address}`;
+          usedFuelIds.add(identifier);
+          matchedCount += 1;
+          const filtered = filterPricesToSelected(match.station);
+          addMarker({
+            fuelcheck: match.station,
+            google: googleStation,
+            prices: filtered.prices,
+            matchDistanceMeters: match.distance,
+            lat: match.station.lat,
+            lng: match.station.lng
+          }, "matched");
+          tableData.matched.push([
+            match.station.name || "",
+            googleStation.name || "",
+            match.station.address || googleStation.address || "",
+            Math.round(match.distance) + "m"
+          ]);
+        } else {
+          gapCount += 1;
+          addMarker({
+            google: googleStation,
+            fuelcheck: null,
+            lat: googleStation.lat,
+            lng: googleStation.lng
+          }, fuelcheckFiltered.length ? "gap" : "google");
+          if (fuelcheckFiltered.length) {
+            tableData.gaps.push([
+              googleStation.name || "",
+              googleStation.address || "",
+              "Google Maps"
+            ]);
+          } else {
+            tableData.google.push([
+              googleStation.name || "",
+              googleStation.address || ""
+            ]);
+          }
+        }
+      });
+
+      // Only show fuelcheck-only markers near scraped areas (within 2km of any Google station)
+      const COVERAGE_RADIUS_M = 2000;
+      let fuelcheckOnlyCount = 0;
+      fuelcheckFiltered.forEach((fuelStation) => {
+        const identifier = fuelStation.id || `${fuelStation.name}|${fuelStation.address}`;
+        if (!usedFuelIds.has(identifier)) {
+          const nearScraped = rawGoogleStations.some(
+            (g) => haversineDistanceMeters(g, fuelStation) <= COVERAGE_RADIUS_M
+          );
+          if (!nearScraped) return;
+          fuelcheckOnlyCount += 1;
+          const filtered = filterPricesToSelected(fuelStation);
+          addMarker({
+            fuelcheck: fuelStation,
+            google: null,
+            prices: filtered.prices,
+            lat: fuelStation.lat,
+            lng: fuelStation.lng
+          }, "fuelcheck");
+          tableData.fuelcheck.push([
+            fuelStation.name || "",
+            fuelStation.brand || "",
+            fuelStation.address || "",
+            (fuelStation.prices || []).map((p) => p.fuel_type).join(", ")
+          ]);
+          tableData.gaps.push([
+            fuelStation.name || "",
+            fuelStation.address || "",
+            "FuelCheck only"
+          ]);
+        }
+      });
+
+      setSummary({
+        google: rawGoogleStations.length,
+        fuelcheck: fuelcheckFiltered.length,
+        matched: matchedCount,
+        gap: gapCount + fuelcheckOnlyCount
+      });
+
+      setStatus(`Showing ${fuelcheckFiltered.length} FuelCheck + ${rawGoogleStations.length} Google stations. Matched: ${matchedCount}. Gaps: ${gapCount}. FuelCheck-only: ${fuelcheckOnlyCount}.`);
+
+      // Update availability percentage line
+      const pct = rawGoogleStations.length ? Math.round((matchedCount / rawGoogleStations.length) * 100) : 0;
+      const filtering = selectedFuelTypes.size < ALL_FUEL_TYPES.length;
+      const fuelLabel = filtering ? [...selectedFuelTypes].join(", ") : "any";
+      document.getElementById("avail-line").innerHTML = DOMPurify.sanitize(
+        `<strong>${pct}%</strong> of local petrol stations are matched on FuelCheck as having <span style="color:var(--fuelcheck);font-weight:600;">${escapeHtml(fuelLabel)}</span> fuel.*`
+      );
+
+      updateTableBadges();
+      renderTable();
+    }
+
+    // --- Data table ---
+    let tableData = { gaps: [], matched: [], google: [], fuelcheck: [] };
+    let activeTab = "gaps";
+
+    document.getElementById("data-tabs").addEventListener("click", (e) => {
+      const btn = e.target.closest(".data-tab-btn");
+      if (!btn) return;
+      activeTab = btn.dataset.tab;
+      document.querySelectorAll(".data-tab-btn").forEach((b) => b.classList.remove("active"));
+      btn.classList.add("active");
+      renderTable();
+    });
+
+    function renderTable() {
+      const thead = document.getElementById("data-thead");
+      const tbody = document.getElementById("data-tbody");
+      const empty = document.getElementById("data-empty");
+      const rows = tableData[activeTab] || [];
+
+      if (!rows.length) {
+        thead.textContent = "";
+        tbody.textContent = "";
+        empty.style.display = "block";
+        return;
+      }
+      empty.style.display = "none";
+
+      const colDefs = {
+        gaps:      ["Station", "Address", "Source"],
+        matched:   ["FuelCheck", "Google", "Address", "Distance"],
+        google:    ["Station", "Address"],
+        fuelcheck: ["Station", "Brand", "Address", "Fuels"]
+      };
+
+      const cols = colDefs[activeTab] || [];
+
+      // Build thead
+      thead.textContent = "";
+      const headRow = document.createElement("tr");
+      cols.forEach((c) => {
+        const th = document.createElement("th");
+        th.textContent = c;
+        headRow.appendChild(th);
+      });
+      thead.appendChild(headRow);
+
+      // Build tbody
+      tbody.textContent = "";
+      rows.forEach((r) => {
+        const tr = document.createElement("tr");
+        r.forEach((cellVal) => {
+          const td = document.createElement("td");
+          td.textContent = cellVal;
+          tr.appendChild(td);
+        });
+        tbody.appendChild(tr);
+      });
+    }
+
+    function updateTableBadges() {
+      ["gaps", "matched", "google", "fuelcheck"].forEach((key) => {
+        const el = document.getElementById("tab-badge-" + key);
+        if (el) el.textContent = (tableData[key] || []).length;
+      });
+    }
+
     async function loadApp() {
       try {
         const [googleStations, fuelcheckStations, googleMeta, fuelcheckMeta] = await Promise.all([
@@ -483,57 +1026,18 @@
           fuelcheckMeta.last_updated
         );
 
-        const usedFuelIds = new Set();
-        let matchedCount = 0;
-        let gapCount = 0;
+        // Exclude EV-only stations permanently
+        rawGoogleStations = googleStations;
+        rawFuelcheckStations = fuelcheckStations.filter((s) => !isEvOnly(s));
 
-        googleStations.forEach((googleStation) => {
-          const match = nearestFuelcheckStation(googleStation, fuelcheckStations, usedFuelIds);
-          if (match) {
-            const identifier = match.station.id || `${match.station.name}|${match.station.address}`;
-            usedFuelIds.add(identifier);
-            matchedCount += 1;
-            addMarker({
-              ...match.station,
-              popupSource: "matched (Google Maps + FuelCheck)",
-              matchDistanceMeters: match.distance
-            }, "matched");
-          } else {
-            gapCount += 1;
-            addMarker({
-              ...googleStation,
-              popupSource: "gap (Google Maps only)"
-            }, fuelcheckStations.length ? "gap" : "google");
-          }
-        });
+        rerender();
 
-        let fuelcheckOnlyCount = 0;
-        fuelcheckStations.forEach((fuelStation) => {
-          const identifier = fuelStation.id || `${fuelStation.name}|${fuelStation.address}`;
-          if (!usedFuelIds.has(identifier)) {
-            fuelcheckOnlyCount += 1;
-            addMarker({
-              ...fuelStation,
-              popupSource: "FuelCheck only"
-            }, "fuelcheck");
-          }
-        });
+        const allCoords = rawGoogleStations
+          .map((s) => [s.lat, s.lng])
+          .filter(([lat, lng]) => Number.isFinite(lat) && Number.isFinite(lng));
 
-        setSummary({
-          google: googleStations.length,
-          fuelcheck: fuelcheckStations.length,
-          matched: matchedCount,
-          gap: gapCount
-        });
-
-        const allStations = [
-          ...googleStations.map((station) => [station.lat, station.lng]),
-          ...fuelcheckStations.map((station) => [station.lat, station.lng])
-        ].filter(([lat, lng]) => Number.isFinite(lat) && Number.isFinite(lng));
-
-        if (allStations.length) {
-          map.fitBounds(allStations, { padding: [36, 36] });
-          setStatus(`Loaded ${googleStations.length} Google stations and ${fuelcheckStations.length} FuelCheck stations. FuelCheck-only: ${fuelcheckOnlyCount}.`);
+        if (allCoords.length) {
+          map.fitBounds(allCoords, { padding: [36, 36] });
         } else {
           setStatus("No station data found yet. Run the scraper and FuelCheck script, then refresh.");
         }

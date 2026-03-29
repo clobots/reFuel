@@ -1,0 +1,1360 @@
+[
+  {
+    "name": "EG Ampol West Ryde",
+    "address": "924 Victoria Rd, West Ryde NSW",
+    "lat": -33.8109474,
+    "lng": 151.0934931,
+    "source": "google"
+  },
+  {
+    "name": "bp",
+    "address": "",
+    "lat": -33.7958268,
+    "lng": 151.1029349,
+    "source": "google"
+  },
+  {
+    "name": "Metro Petroleum",
+    "address": "36 Lane Cove Rd, Ryde NSW",
+    "lat": -33.8076268,
+    "lng": 151.1087361,
+    "source": "google"
+  },
+  {
+    "name": "Apex Petroleum",
+    "address": "898-902 Victoria Rd, West Ryde NSW",
+    "lat": -33.8118926,
+    "lng": 151.0947271,
+    "source": "google"
+  },
+  {
+    "name": "SPEEDWAY WEST RYDE",
+    "address": "899 Victoria Rd, West Ryde NSW",
+    "lat": -33.8105259,
+    "lng": 151.094167,
+    "source": "google"
+  },
+  {
+    "name": "Shell Reddy Express Ryde",
+    "address": "45 Lane Cove Rd, Ryde NSW",
+    "lat": -33.8072,
+    "lng": 151.1099174,
+    "source": "google"
+  },
+  {
+    "name": "Calvi Petrol Station",
+    "address": "320 Lane Cove Rd, North Ryde NSW",
+    "lat": -33.7924231,
+    "lng": 151.1202452,
+    "source": "google"
+  },
+  {
+    "name": "SPEEDWAY KENT ROAD",
+    "address": "34-38 Kent Rd, North Ryde NSW",
+    "lat": -33.7917,
+    "lng": 151.116,
+    "source": "google"
+  },
+  {
+    "name": "Shell Reddy Express West Ryde",
+    "address": "1032-1036 Victoria Rd, West Ryde NSW",
+    "lat": -33.8073945,
+    "lng": 151.0851171,
+    "source": "google"
+  },
+  {
+    "name": "Ampol Foodary North Ryde",
+    "address": "41-43 Epping Rd, North Ryde NSW",
+    "lat": -33.7914072,
+    "lng": 151.1311262,
+    "source": "google"
+  },
+  {
+    "name": "bp",
+    "address": "",
+    "lat": -33.8067599,
+    "lng": 151.0711349,
+    "source": "google"
+  },
+  {
+    "name": "BP PUTNEY",
+    "address": "238 Morrison Rd, Putney NSW",
+    "lat": -33.8237782,
+    "lng": 151.1084371,
+    "source": "google"
+  },
+  {
+    "name": "Shell Reddy Express North Ryde Wicks",
+    "address": "96 Wicks Rd, North Ryde NSW",
+    "lat": -33.7940243,
+    "lng": 151.1269027,
+    "source": "google"
+  },
+  {
+    "name": "Ryde Automative",
+    "address": "332 Blaxland Rd, Ryde NSW",
+    "lat": -33.8025054,
+    "lng": 151.1003341,
+    "source": "google"
+  },
+  {
+    "name": "7-Eleven",
+    "address": "400 Lane Cove Rd, North Ryde NSW",
+    "lat": -33.7842736,
+    "lng": 151.1287284,
+    "source": "google"
+  },
+  {
+    "name": "Shell",
+    "address": "",
+    "lat": -33.784879,
+    "lng": 151.129067,
+    "source": "google"
+  },
+  {
+    "name": "Enhance Eastwood / Mini Stop Express",
+    "address": "2 Lovell Rd, Eastwood NSW",
+    "lat": -33.7918084,
+    "lng": 151.0894628,
+    "source": "google"
+  },
+  {
+    "name": "Shell Reddy Express MARSFIELD",
+    "address": "189 Epping Rd, Marsfield NSW",
+    "lat": -33.7752308,
+    "lng": 151.1053129,
+    "source": "google"
+  },
+  {
+    "name": "Petro 711",
+    "address": "917-921 Victoria Rd, West Ryde NSW",
+    "lat": -33.8091625,
+    "lng": 151.0934107,
+    "source": "google"
+  },
+  {
+    "name": "Ampol Foodary Ermington",
+    "address": "560-562 Victoria Rd, Ermington NSW",
+    "lat": -33.8139846,
+    "lng": 151.0548684,
+    "source": "google"
+  },
+  {
+    "name": "Metro",
+    "address": "700 Victoria Rd, West Ryde NSW",
+    "lat": -33.8085971,
+    "lng": 151.0661237,
+    "source": "google"
+  },
+  {
+    "name": "EG Ampol Marsfield",
+    "address": "",
+    "lat": -33.778378,
+    "lng": 151.107365,
+    "source": "google"
+  },
+  {
+    "name": "Metro Petroleum Epping",
+    "address": "",
+    "lat": -33.7747801,
+    "lng": 151.0796801,
+    "source": "google"
+  },
+  {
+    "name": "BP Dundas (JASBE)",
+    "address": "",
+    "lat": -33.7989253,
+    "lng": 151.0543765,
+    "source": "google"
+  },
+  {
+    "name": "Medco Carlingford",
+    "address": "",
+    "lat": -33.7849589,
+    "lng": 151.0435111,
+    "source": "google"
+  },
+  {
+    "name": "Astron Rydalmere",
+    "address": "",
+    "lat": -33.810267,
+    "lng": 151.0325029,
+    "source": "google"
+  },
+  {
+    "name": "Budget Petrol Telopea",
+    "address": "",
+    "lat": -33.7935565,
+    "lng": 151.0413155,
+    "source": "google"
+  },
+  {
+    "name": "bp Truckstop",
+    "address": "",
+    "lat": -33.8108865,
+    "lng": 151.0327665,
+    "source": "google"
+  },
+  {
+    "name": "7-Eleven",
+    "address": "",
+    "lat": -33.7707916,
+    "lng": 151.0808502,
+    "source": "google"
+  },
+  {
+    "name": "Ampol Foodary Lane Cove West",
+    "address": "",
+    "lat": -33.8164917,
+    "lng": 151.1514683,
+    "source": "google"
+  },
+  {
+    "name": "U-GO Carlingford Court",
+    "address": "",
+    "lat": -33.7757683,
+    "lng": 151.0516363,
+    "source": "google"
+  },
+  {
+    "name": "Ampol Foodary Rydalmere",
+    "address": "",
+    "lat": -33.8119239,
+    "lng": 151.0370993,
+    "source": "google"
+  },
+  {
+    "name": "Ampol Foodary Carlingford",
+    "address": "131 Pennant Hills Rd, Carlingford NSW 2118",
+    "lat": -33.787648,
+    "lng": 151.027913,
+    "source": "manual"
+  },
+  {
+    "name": "7-Eleven Carlingford",
+    "address": "243 Pennant Hills Road, Carlingford NSW 2118",
+    "lat": -33.782875,
+    "lng": 151.045752,
+    "source": "manual"
+  },
+  {
+    "name": "BP Carlingford",
+    "address": "712 Pennant Hills Road, Carlingford NSW 2118",
+    "lat": -33.763701,
+    "lng": 151.047355,
+    "source": "manual"
+  },
+  {
+    "name": "Mobil 1 Carlingford Car Care",
+    "address": "482 North Rocks Rd, Carlingford NSW 2118",
+    "lat": -33.765073,
+    "lng": 151.057902,
+    "source": "manual"
+  },
+  {
+    "name": "North Ryde Petroleum",
+    "address": "118 Coxs Rd, North Ryde NSW 2113",
+    "lat": -33.80141,
+    "lng": 151.13036,
+    "source": "manual"
+  },
+  {
+    "name": "EG Ampol",
+    "address": "154 Silverwater Rd",
+    "lat": -33.831862,
+    "lng": 151.0484514,
+    "source": "google"
+  },
+  {
+    "name": "bp Truckstop",
+    "address": "",
+    "lat": -33.8375122,
+    "lng": 151.0466064,
+    "source": "google"
+  },
+  {
+    "name": "EG Ampol Newington",
+    "address": "1 Ave of the Americas",
+    "lat": -33.8337761,
+    "lng": 151.0555548,
+    "source": "google"
+  },
+  {
+    "name": "Enhance Homebush",
+    "address": "242 Parramatta Rd",
+    "lat": -33.8616187,
+    "lng": 151.0763942,
+    "source": "google"
+  },
+  {
+    "name": "Ampol Foodary Lane Cove",
+    "address": "266 Longueville Rd",
+    "lat": -33.8146735,
+    "lng": 151.1617834,
+    "source": "google"
+  },
+  {
+    "name": "bp",
+    "address": "",
+    "lat": -33.8194933,
+    "lng": 151.021292,
+    "source": "google"
+  },
+  {
+    "name": "Shell Reddy Express Dundas",
+    "address": "199-203 Kissing Point Rd (Corner, Kirby St",
+    "lat": -33.7996193,
+    "lng": 151.0450936,
+    "source": "google"
+  },
+  {
+    "name": "bp Truckstop",
+    "address": "369 N Rocks Rd",
+    "lat": -33.7691911,
+    "lng": 151.0318678,
+    "source": "google"
+  },
+  {
+    "name": "7-Eleven",
+    "address": "81 Macarthur St",
+    "lat": -33.8091429,
+    "lng": 151.0143749,
+    "source": "google"
+  },
+  {
+    "name": "SPEEDWAY PARRAMATTA",
+    "address": "127A Alfred St",
+    "lat": -33.8178101,
+    "lng": 151.0175266,
+    "source": "google"
+  },
+  {
+    "name": "Ampol Foodary Parramatta",
+    "address": "159 Wigram St",
+    "lat": -33.8110561,
+    "lng": 151.0219959,
+    "source": "google"
+  },
+  {
+    "name": "Shell Reddy Express Parramatta North",
+    "address": "246 Pennant Hills Rd",
+    "lat": -33.7817063,
+    "lng": 151.0097543,
+    "source": "google"
+  },
+  {
+    "name": "7-Eleven",
+    "address": "340 N Rocks Rd",
+    "lat": -33.7689762,
+    "lng": 151.0306897,
+    "source": "google"
+  },
+  {
+    "name": "bp",
+    "address": "",
+    "lat": -33.7542,
+    "lng": 151.0406,
+    "source": "google"
+  },
+  {
+    "name": "Shell Reddy Express Parramatta",
+    "address": "88 Victoria Rd (Corner, Buller St",
+    "lat": -33.8086757,
+    "lng": 151.0128315,
+    "source": "google"
+  },
+  {
+    "name": "Enhance Eastwood",
+    "address": "",
+    "lat": -33.7920625,
+    "lng": 151.0815803,
+    "source": "google"
+  },
+  {
+    "name": "7-Eleven",
+    "address": "30 Beecroft Rd",
+    "lat": -33.7726949,
+    "lng": 151.0816204,
+    "source": "google"
+  },
+  {
+    "name": "Shell Reddy Express Epping",
+    "address": "41 Beecroft Rd",
+    "lat": -33.7717753,
+    "lng": 151.0826577,
+    "source": "google"
+  },
+  {
+    "name": "United",
+    "address": "",
+    "lat": -33.7639,
+    "lng": 151.0017,
+    "source": "google"
+  },
+  {
+    "name": "Shell Reddy Express Hunters Hill",
+    "address": "4 Ryde Rd, Hunters Hill NSW",
+    "lat": -33.831726,
+    "lng": 151.1416645,
+    "source": "google"
+  },
+  {
+    "name": "7-Eleven Northmead",
+    "address": "56 Windsor Rd, Northmead NSW",
+    "lat": -33.7908201,
+    "lng": 150.9968356,
+    "source": "google"
+  },
+  {
+    "name": "Ampol Foodary Northmead",
+    "address": "Windsor Rd Cnr, 98-100 Lombard St, Northmead NSW",
+    "lat": -33.7878663,
+    "lng": 150.9946557,
+    "source": "google"
+  },
+  {
+    "name": "Shell Reddy Express Northmead",
+    "address": "197 Windsor Rd, Northmead NSW",
+    "lat": -33.7774448,
+    "lng": 151.000022,
+    "source": "google"
+  },
+  {
+    "name": "7-Eleven Northmead",
+    "address": "137 Windsor Rd, Northmead NSW",
+    "lat": -33.7822905,
+    "lng": 150.9970137,
+    "source": "google"
+  },
+  {
+    "name": "Shell Reddy Express Northmead Briens",
+    "address": "100 Briens Rd, Northmead NSW",
+    "lat": -33.7963455,
+    "lng": 150.988914,
+    "source": "google"
+  },
+  {
+    "name": "Speedway Auburn Road",
+    "address": "",
+    "lat": -33.8546338,
+    "lng": 151.0324337,
+    "source": "google"
+  },
+  {
+    "name": "Ampol",
+    "address": "",
+    "lat": -33.8411822,
+    "lng": 151.0360054,
+    "source": "google"
+  },
+  {
+    "name": "Speedway Auburn",
+    "address": "",
+    "lat": -33.864177,
+    "lng": 151.0231903,
+    "source": "google"
+  },
+  {
+    "name": "7-Eleven",
+    "address": "",
+    "lat": -33.8349868,
+    "lng": 151.0222883,
+    "source": "google"
+  },
+  {
+    "name": "Budget Petrol Auburn",
+    "address": "",
+    "lat": -33.8571385,
+    "lng": 151.0289025,
+    "source": "google"
+  },
+  {
+    "name": "Ampol Foodary Granville",
+    "address": "",
+    "lat": -33.8303309,
+    "lng": 151.0109205,
+    "source": "google"
+  },
+  {
+    "name": "Metro Petroleum Lidcombe",
+    "address": "",
+    "lat": -33.8546979,
+    "lng": 151.0469509,
+    "source": "google"
+  },
+  {
+    "name": "Metro Petroleum Guildford",
+    "address": "",
+    "lat": -33.8636891,
+    "lng": 151.0088794,
+    "source": "google"
+  },
+  {
+    "name": "EG Ampol",
+    "address": "",
+    "lat": -33.8462252,
+    "lng": 151.0126585,
+    "source": "google"
+  },
+  {
+    "name": "Shell",
+    "address": "",
+    "lat": -33.8539738,
+    "lng": 151.0592961,
+    "source": "google"
+  },
+  {
+    "name": "7-Eleven",
+    "address": "",
+    "lat": -33.8301402,
+    "lng": 151.0101602,
+    "source": "google"
+  },
+  {
+    "name": "Speedway Granville (Blaxcell St)",
+    "address": "",
+    "lat": -33.8572197,
+    "lng": 151.0070598,
+    "source": "google"
+  },
+  {
+    "name": "Speedway South Granville (Clyde St)",
+    "address": "",
+    "lat": -33.847445,
+    "lng": 151.012921,
+    "source": "google"
+  },
+  {
+    "name": "Akshar Enterprise PTY LTD T/A Power Fuel",
+    "address": "",
+    "lat": -33.8425437,
+    "lng": 151.0106205,
+    "source": "google"
+  },
+  {
+    "name": "SPEEDWAY PARK RD",
+    "address": "",
+    "lat": -33.8789873,
+    "lng": 151.0247944,
+    "source": "google"
+  },
+  {
+    "name": "Westside Petroleum",
+    "address": "",
+    "lat": -33.8550922,
+    "lng": 150.990726,
+    "source": "google"
+  },
+  {
+    "name": "Shell",
+    "address": "",
+    "lat": -33.8210585,
+    "lng": 151.0397823,
+    "source": "google"
+  },
+  {
+    "name": "Shell",
+    "address": "",
+    "lat": -33.824544,
+    "lng": 151.0376808,
+    "source": "google"
+  },
+  {
+    "name": "Enhance Camellia",
+    "address": "",
+    "lat": -33.8205,
+    "lng": 151.0356,
+    "source": "google"
+  },
+  {
+    "name": "Costco Fuel Lidcombe",
+    "address": "",
+    "lat": -33.8489946,
+    "lng": 151.0510153,
+    "source": "google"
+  },
+  {
+    "name": "Budget Petrol",
+    "address": "",
+    "lat": -33.8306565,
+    "lng": 151.0040102,
+    "source": "google"
+  },
+  {
+    "name": "Speedway William Street",
+    "address": "",
+    "lat": -33.8362603,
+    "lng": 151.0110528,
+    "source": "google"
+  },
+  {
+    "name": "Ampol Foodary Merrylands",
+    "address": "",
+    "lat": -33.8382125,
+    "lng": 150.9997458,
+    "source": "google"
+  },
+  {
+    "name": "bp Truckstop",
+    "address": "",
+    "lat": -33.819403,
+    "lng": 150.989297,
+    "source": "google"
+  },
+  {
+    "name": "7-Eleven",
+    "address": "",
+    "lat": -33.8354155,
+    "lng": 150.9852976,
+    "source": "google"
+  },
+  {
+    "name": "EG Ampol",
+    "address": "",
+    "lat": -33.8340841,
+    "lng": 150.9917429,
+    "source": "google"
+  },
+  {
+    "name": "EG Ampol Strathfield",
+    "address": "",
+    "lat": -33.8854993,
+    "lng": 151.0936326,
+    "source": "google"
+  },
+  {
+    "name": "Ampol Foodary Concord",
+    "address": "",
+    "lat": -33.867857,
+    "lng": 151.099422,
+    "source": "google"
+  },
+  {
+    "name": "7-Eleven",
+    "address": "",
+    "lat": -33.8873702,
+    "lng": 151.0742618,
+    "source": "google"
+  },
+  {
+    "name": "Ampol Foodary Strathfield South",
+    "address": "",
+    "lat": -33.8880956,
+    "lng": 151.074658,
+    "source": "google"
+  },
+  {
+    "name": "Shell",
+    "address": "",
+    "lat": -33.8709142,
+    "lng": 151.0923278,
+    "source": "google"
+  },
+  {
+    "name": "Budget Petrol North Strathfield",
+    "address": "",
+    "lat": -33.8594614,
+    "lng": 151.0927511,
+    "source": "google"
+  },
+  {
+    "name": "7-Eleven",
+    "address": "",
+    "lat": -33.873042,
+    "lng": 151.0943409,
+    "source": "google"
+  },
+  {
+    "name": "EG Ampol",
+    "address": "",
+    "lat": -33.8687132,
+    "lng": 151.1014558,
+    "source": "google"
+  },
+  {
+    "name": "7-Eleven",
+    "address": "",
+    "lat": -33.8695335,
+    "lng": 151.108183,
+    "source": "google"
+  },
+  {
+    "name": "Budget Petrol",
+    "address": "",
+    "lat": -33.8882868,
+    "lng": 151.0904793,
+    "source": "google"
+  },
+  {
+    "name": "Ampol Foodary Homebush",
+    "address": "",
+    "lat": -33.8581457,
+    "lng": 151.06818,
+    "source": "google"
+  },
+  {
+    "name": "Shell Reddy Express Enfield",
+    "address": "",
+    "lat": -33.8867786,
+    "lng": 151.0709043,
+    "source": "google"
+  },
+  {
+    "name": "bp",
+    "address": "",
+    "lat": -33.8872,
+    "lng": 151.0978,
+    "source": "google"
+  },
+  {
+    "name": "Bp Concord (Wild Bean Cafe)",
+    "address": "",
+    "lat": -33.8675728,
+    "lng": 151.1053874,
+    "source": "google"
+  },
+  {
+    "name": "EG Ampol",
+    "address": "",
+    "lat": -33.8916694,
+    "lng": 151.0578706,
+    "source": "google"
+  },
+  {
+    "name": "Shell",
+    "address": "",
+    "lat": -33.8699971,
+    "lng": 151.1147304,
+    "source": "google"
+  },
+  {
+    "name": "Ampol Foodary Croydon",
+    "address": "",
+    "lat": -33.8884855,
+    "lng": 151.1160102,
+    "source": "google"
+  },
+  {
+    "name": "EG Ampol Greenacre",
+    "address": "",
+    "lat": -33.9002188,
+    "lng": 151.0656951,
+    "source": "google"
+  },
+  {
+    "name": "Shell OTR Greenacre West",
+    "address": "",
+    "lat": -33.8921356,
+    "lng": 151.0664154,
+    "source": "google"
+  },
+  {
+    "name": "Shell Reddy Express Roberts Road East",
+    "address": "",
+    "lat": -33.8841891,
+    "lng": 151.0816862,
+    "source": "google"
+  },
+  {
+    "name": "bp Truckstop",
+    "address": "",
+    "lat": -33.8989367,
+    "lng": 151.0558069,
+    "source": "google"
+  },
+  {
+    "name": "Shell",
+    "address": "",
+    "lat": -33.7072598,
+    "lng": 151.0990456,
+    "source": "google"
+  },
+  {
+    "name": "bp",
+    "address": "",
+    "lat": -33.7021419,
+    "lng": 151.0996368,
+    "source": "google"
+  },
+  {
+    "name": "bp Truckstop",
+    "address": "",
+    "lat": -33.6897851,
+    "lng": 151.1061716,
+    "source": "google"
+  },
+  {
+    "name": "Metro Petroleum",
+    "address": "",
+    "lat": -33.6910592,
+    "lng": 151.0995453,
+    "source": "google"
+  },
+  {
+    "name": "Ampol Foodary Waitara",
+    "address": "",
+    "lat": -33.7105301,
+    "lng": 151.1024488,
+    "source": "google"
+  },
+  {
+    "name": "Ampol Foodary Thornleigh",
+    "address": "",
+    "lat": -33.7265643,
+    "lng": 151.0836514,
+    "source": "google"
+  },
+  {
+    "name": "7-Eleven",
+    "address": "",
+    "lat": -33.7197916,
+    "lng": 151.1168423,
+    "source": "google"
+  },
+  {
+    "name": "bp",
+    "address": "",
+    "lat": -33.7309357,
+    "lng": 151.0806188,
+    "source": "google"
+  },
+  {
+    "name": "Shell",
+    "address": "",
+    "lat": -33.7249633,
+    "lng": 151.0850774,
+    "source": "google"
+  },
+  {
+    "name": "Ampol Hornsby Heights petrol Station",
+    "address": "",
+    "lat": -33.6766728,
+    "lng": 151.0982828,
+    "source": "google"
+  },
+  {
+    "name": "Ampol Foodary Chatswood",
+    "address": "",
+    "lat": -33.8037586,
+    "lng": 151.179011,
+    "source": "google"
+  },
+  {
+    "name": "Shell",
+    "address": "",
+    "lat": -33.7918283,
+    "lng": 151.1805159,
+    "source": "google"
+  },
+  {
+    "name": "EG Ampol Chatswood East",
+    "address": "",
+    "lat": -33.786599,
+    "lng": 151.2010143,
+    "source": "google"
+  },
+  {
+    "name": "Metro Petroleum Haberfield",
+    "address": "",
+    "lat": -33.8836129,
+    "lng": 151.1344847,
+    "source": "google"
+  },
+  {
+    "name": "SPEEDWAY HABERFIELD",
+    "address": "",
+    "lat": -33.8750446,
+    "lng": 151.1287596,
+    "source": "google"
+  },
+  {
+    "name": "7-Eleven",
+    "address": "",
+    "lat": -33.8880001,
+    "lng": 151.1428241,
+    "source": "google"
+  },
+  {
+    "name": "bp",
+    "address": "",
+    "lat": -33.8817,
+    "lng": 151.1401,
+    "source": "google"
+  },
+  {
+    "name": "bp",
+    "address": "",
+    "lat": -33.8738956,
+    "lng": 151.1268451,
+    "source": "google"
+  },
+  {
+    "name": "bp Truckstop",
+    "address": "",
+    "lat": -33.8923388,
+    "lng": 151.1431054,
+    "source": "google"
+  },
+  {
+    "name": "Ampol Foodary Five Dock",
+    "address": "",
+    "lat": -33.8700881,
+    "lng": 151.1304344,
+    "source": "google"
+  },
+  {
+    "name": "EG Ampol",
+    "address": "",
+    "lat": -33.8902568,
+    "lng": 151.1479364,
+    "source": "google"
+  },
+  {
+    "name": "7-Eleven",
+    "address": "",
+    "lat": -33.8648707,
+    "lng": 151.1299463,
+    "source": "google"
+  },
+  {
+    "name": "Budget Petrol - Lewisham",
+    "address": "",
+    "lat": -33.8970494,
+    "lng": 151.1490622,
+    "source": "google"
+  },
+  {
+    "name": "Metro Petroleum Leichhardt",
+    "address": "",
+    "lat": -33.883907,
+    "lng": 151.1507412,
+    "source": "google"
+  },
+  {
+    "name": "7-Eleven",
+    "address": "",
+    "lat": -33.8905431,
+    "lng": 151.1296062,
+    "source": "google"
+  },
+  {
+    "name": "Shell",
+    "address": "",
+    "lat": -33.8884331,
+    "lng": 151.1643278,
+    "source": "google"
+  },
+  {
+    "name": "bp",
+    "address": "",
+    "lat": -33.8653,
+    "lng": 151.1716,
+    "source": "google"
+  },
+  {
+    "name": "Budget Petrol",
+    "address": "",
+    "lat": -33.8864732,
+    "lng": 151.1256629,
+    "source": "google"
+  },
+  {
+    "name": "U-GO Rozelle",
+    "address": "",
+    "lat": -33.8625435,
+    "lng": 151.1684779,
+    "source": "google"
+  },
+  {
+    "name": "Prime Petrol Petersham",
+    "address": "",
+    "lat": -33.8886414,
+    "lng": 151.158637,
+    "source": "google"
+  },
+  {
+    "name": "Budget Petrol",
+    "address": "",
+    "lat": -33.8905108,
+    "lng": 151.1586346,
+    "source": "google"
+  },
+  {
+    "name": "7-Eleven",
+    "address": "",
+    "lat": -33.8976397,
+    "lng": 151.099796,
+    "source": "google"
+  },
+  {
+    "name": "7-Eleven",
+    "address": "",
+    "lat": -33.8630092,
+    "lng": 151.1686,
+    "source": "google"
+  },
+  {
+    "name": "7-Eleven",
+    "address": "",
+    "lat": -33.8956025,
+    "lng": 151.1255814,
+    "source": "google"
+  },
+  {
+    "name": "7-Eleven",
+    "address": "",
+    "lat": -33.8976397,
+    "lng": 151.1556,
+    "source": "google"
+  },
+  {
+    "name": "Shell OTR Willoughby",
+    "address": "",
+    "lat": -33.8060074,
+    "lng": 151.1986755,
+    "source": "google"
+  },
+  {
+    "name": "bp",
+    "address": "",
+    "lat": -33.8103,
+    "lng": 151.1993,
+    "source": "google"
+  },
+  {
+    "name": "Metro Petroleum Willoughby",
+    "address": "",
+    "lat": -33.803882,
+    "lng": 151.1997448,
+    "source": "google"
+  },
+  {
+    "name": "bp",
+    "address": "",
+    "lat": -33.79384,
+    "lng": 151.195948,
+    "source": "google"
+  },
+  {
+    "name": "bp",
+    "address": "",
+    "lat": -33.7978876,
+    "lng": 151.1981799,
+    "source": "google"
+  },
+  {
+    "name": "bp",
+    "address": "",
+    "lat": -33.819985,
+    "lng": 151.201087,
+    "source": "google"
+  },
+  {
+    "name": "bp",
+    "address": "",
+    "lat": -33.811011,
+    "lng": 151.1642,
+    "source": "google"
+  },
+  {
+    "name": "Shell",
+    "address": "",
+    "lat": -33.8172087,
+    "lng": 151.1517485,
+    "source": "google"
+  },
+  {
+    "name": "Metro Petroleum Lane Cove",
+    "address": "",
+    "lat": -33.8060036,
+    "lng": 151.1663055,
+    "source": "google"
+  },
+  {
+    "name": "bp",
+    "address": "",
+    "lat": -33.8114089,
+    "lng": 151.1755625,
+    "source": "google"
+  },
+  {
+    "name": "Caltex Lane Cove",
+    "address": "",
+    "lat": -33.8146172,
+    "lng": 151.1543106,
+    "source": "google"
+  },
+  {
+    "name": "Shell",
+    "address": "",
+    "lat": -33.814041,
+    "lng": 151.176869,
+    "source": "google"
+  },
+  {
+    "name": "7-Eleven",
+    "address": "",
+    "lat": -33.8105526,
+    "lng": 151.1773947,
+    "source": "google"
+  },
+  {
+    "name": "bp",
+    "address": "",
+    "lat": -33.824461,
+    "lng": 151.1726718,
+    "source": "google"
+  },
+  {
+    "name": "Ampol Foodary Crows Nest",
+    "address": "",
+    "lat": -33.8286801,
+    "lng": 151.2060304,
+    "source": "google"
+  },
+  {
+    "name": "7-Eleven",
+    "address": "",
+    "lat": -33.7876972,
+    "lng": 151.1797322,
+    "source": "google"
+  },
+  {
+    "name": "Ampol Foodary Neutral Bay",
+    "address": "",
+    "lat": -33.8291308,
+    "lng": 151.216528,
+    "source": "google"
+  },
+  {
+    "name": "7-Eleven",
+    "address": "",
+    "lat": -33.778887,
+    "lng": 151.1690677,
+    "source": "google"
+  },
+  {
+    "name": "7-Eleven",
+    "address": "",
+    "lat": -33.7970045,
+    "lng": 151.1802398,
+    "source": "google"
+  },
+  {
+    "name": "SPEEDWAY ROSEVILLE",
+    "address": "",
+    "lat": -33.7780213,
+    "lng": 151.1945551,
+    "source": "google"
+  },
+  {
+    "name": "7-Eleven",
+    "address": "",
+    "lat": -33.7713459,
+    "lng": 151.1608,
+    "source": "google"
+  },
+  {
+    "name": "7-Eleven",
+    "address": "",
+    "lat": -33.8470381,
+    "lng": 151.1515194,
+    "source": "google"
+  },
+  {
+    "name": "Shell",
+    "address": "",
+    "lat": -33.8558056,
+    "lng": 151.1593689,
+    "source": "google"
+  },
+  {
+    "name": "Shell Reddy Express Drummoyne South",
+    "address": "",
+    "lat": -33.8559907,
+    "lng": 151.1588711,
+    "source": "google"
+  },
+  {
+    "name": "Metro Petroleum Croydon Park",
+    "address": "",
+    "lat": -33.8968028,
+    "lng": 151.1032167,
+    "source": "google"
+  },
+  {
+    "name": "Barista Bar Metro Croydon Park",
+    "address": "",
+    "lat": -33.8964276,
+    "lng": 151.1052982,
+    "source": "google"
+  },
+  {
+    "name": "7-Eleven",
+    "address": "",
+    "lat": -33.8943262,
+    "lng": 151.1115438,
+    "source": "google"
+  },
+  {
+    "name": "Shell Urbanista",
+    "address": "",
+    "lat": -33.8879843,
+    "lng": 151.1152288,
+    "source": "google"
+  },
+  {
+    "name": "Metro Petroleum Hurlstone Park",
+    "address": "",
+    "lat": -33.9077062,
+    "lng": 151.1254005,
+    "source": "google"
+  },
+  {
+    "name": "Shell",
+    "address": "",
+    "lat": -33.7392958,
+    "lng": 151.0678958,
+    "source": "google"
+  },
+  {
+    "name": "Shell",
+    "address": "",
+    "lat": -33.738672,
+    "lng": 151.073777,
+    "source": "google"
+  },
+  {
+    "name": "7-Eleven",
+    "address": "",
+    "lat": -33.7468476,
+    "lng": 151.0507795,
+    "source": "google"
+  },
+  {
+    "name": "Metro Petroleum Thornleigh",
+    "address": "",
+    "lat": -33.7249247,
+    "lng": 151.0882611,
+    "source": "google"
+  },
+  {
+    "name": "bp",
+    "address": "",
+    "lat": -33.7245,
+    "lng": 151.0901,
+    "source": "google"
+  },
+  {
+    "name": "Ampol Foodary Old Guildford",
+    "address": "",
+    "lat": -33.8669129,
+    "lng": 150.987916,
+    "source": "google"
+  },
+  {
+    "name": "bp",
+    "address": "",
+    "lat": -33.8543833,
+    "lng": 150.9888646,
+    "source": "google"
+  },
+  {
+    "name": "7-Eleven",
+    "address": "",
+    "lat": -33.848063,
+    "lng": 150.9969298,
+    "source": "google"
+  },
+  {
+    "name": "EG Ampol",
+    "address": "",
+    "lat": -33.8666361,
+    "lng": 150.9886964,
+    "source": "google"
+  },
+  {
+    "name": "EG Ampol Turramurra",
+    "address": "",
+    "lat": -33.7331801,
+    "lng": 151.1312187,
+    "source": "google"
+  },
+  {
+    "name": "7-Eleven",
+    "address": "",
+    "lat": -33.7330849,
+    "lng": 151.1263698,
+    "source": "google"
+  },
+  {
+    "name": "bp",
+    "address": "",
+    "lat": -33.7484621,
+    "lng": 151.1121008,
+    "source": "google"
+  },
+  {
+    "name": "Bobbin Head PETROL STATION",
+    "address": "",
+    "lat": -33.7090216,
+    "lng": 151.1481085,
+    "source": "google"
+  },
+  {
+    "name": "Ampol Foodary St Ives",
+    "address": "",
+    "lat": -33.7307758,
+    "lng": 151.1570112,
+    "source": "google"
+  },
+  {
+    "name": "7-Eleven",
+    "address": "",
+    "lat": -33.7325916,
+    "lng": 151.1562703,
+    "source": "google"
+  },
+  {
+    "name": "BP",
+    "address": "",
+    "lat": -33.7405606,
+    "lng": 151.1379182,
+    "source": "google"
+  },
+  {
+    "name": "Metro Petroleum Greenacre",
+    "address": "",
+    "lat": -33.8964473,
+    "lng": 151.0593036,
+    "source": "google"
+  },
+  {
+    "name": "Temco Petroleum",
+    "address": "",
+    "lat": -33.906242,
+    "lng": 151.0570765,
+    "source": "google"
+  },
+  {
+    "name": "Ampol Foodary Greenacre",
+    "address": "",
+    "lat": -33.9047231,
+    "lng": 151.0645884,
+    "source": "google"
+  },
+  {
+    "name": "7-Eleven",
+    "address": "",
+    "lat": -33.905108,
+    "lng": 151.0418969,
+    "source": "google"
+  },
+  {
+    "name": "Shell",
+    "address": "",
+    "lat": -33.8945099,
+    "lng": 151.0666969,
+    "source": "google"
+  }
+]

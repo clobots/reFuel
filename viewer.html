@@ -1,0 +1,1001 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>reFuel Data Viewer</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.1.6/purify.min.js"></script>
+  <style>
+    :root {
+      --bg: #0a1117;
+      --panel: #111d27;
+      --border: rgba(196,221,239,0.12);
+      --text: #eef6fb;
+      --muted: #8aa3b5;
+      --accent: #f0c76e;
+      --green: #47c27d;
+      --blue: #4d9fff;
+      --red: #ff5f5f;
+      --grey: #7a8890;
+      --shadow: 0 16px 34px rgba(0,0,0,0.24);
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body {
+      height: 100%;
+    }
+
+    body {
+      margin: 0;
+      padding: 20px 24px;
+      font-family: "Avenir Next", "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      font-size: 14px;
+      overflow: hidden;
+    }
+
+    .app-shell {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      height: 100%;
+      min-height: 0;
+    }
+
+    h1 {
+      font-size: 1.6rem;
+      margin: 0 0 6px;
+    }
+
+    .subtitle {
+      color: var(--muted);
+      margin: 0;
+      font-size: 0.92rem;
+    }
+
+    .avail-line {
+      font-size: 1.05rem;
+      margin: 10px 0 6px;
+      line-height: 1.5;
+    }
+
+    .avail-line .avail-pct {
+      font-weight: 700;
+      color: var(--accent);
+      font-variant-numeric: tabular-nums;
+    }
+
+    .avail-line .avail-fuel {
+      color: var(--green);
+      font-weight: 600;
+    }
+
+    .fuel-filters {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+      align-items: center;
+      margin-bottom: 2px;
+    }
+
+    .fuel-filters .filter-label {
+      color: var(--muted);
+      font-size: 0.78rem;
+      margin-right: 4px;
+    }
+
+    .fuel-toggle {
+      padding: 3px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: transparent;
+      color: var(--muted);
+      font-size: 0.78rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+
+    .fuel-toggle.active {
+      background: rgba(71,194,125,0.15);
+      color: var(--green);
+      border-color: var(--green);
+    }
+
+    .avail-note {
+      color: var(--muted);
+      font-size: 0.72rem;
+      font-style: italic;
+      margin: 2px 0 0;
+    }
+
+    .tabs {
+      display: flex;
+      gap: 0;
+      border-bottom: 2px solid var(--border);
+      flex-wrap: wrap;
+      flex: 0 0 auto;
+    }
+
+    .tab-btn {
+      padding: 8px 18px;
+      border: none;
+      background: none;
+      color: var(--muted);
+      font-size: 0.9rem;
+      cursor: pointer;
+      border-bottom: 2px solid transparent;
+      margin-bottom: -2px;
+    }
+
+    .tab-btn.active {
+      color: var(--accent);
+      border-bottom-color: var(--accent);
+      font-weight: 600;
+    }
+
+    .controls {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      flex-wrap: wrap;
+      flex: 0 0 auto;
+    }
+
+    .search {
+      flex: 1;
+      min-width: 220px;
+      max-width: 420px;
+      padding: 8px 12px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: var(--panel);
+      color: var(--text);
+      font-size: 0.9rem;
+      outline: none;
+    }
+
+    .search:focus {
+      border-color: var(--accent);
+    }
+
+    .panel-stack {
+      flex: 1;
+      min-height: 0;
+    }
+
+    .tab-panel {
+      display: none;
+      height: 100%;
+      min-height: 0;
+    }
+
+    .tab-panel.active {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .count {
+      color: var(--muted);
+      font-size: 0.82rem;
+      flex: 0 0 auto;
+    }
+
+    .table-wrap {
+      flex: 1;
+      min-height: 0;
+      overflow: auto;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: var(--panel);
+      box-shadow: var(--shadow);
+    }
+
+    table {
+      width: max-content;
+      min-width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+      white-space: nowrap;
+    }
+
+    thead th {
+      position: sticky;
+      top: 0;
+      z-index: 2;
+      text-align: left;
+      padding: 10px 12px;
+      background: #16232d;
+      color: var(--accent);
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      border-bottom: 1px solid var(--border);
+      user-select: none;
+      vertical-align: bottom;
+    }
+
+    td {
+      padding: 8px 12px;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.86rem;
+      vertical-align: top;
+    }
+
+    tbody tr:hover td {
+      background: rgba(255,255,255,0.03);
+    }
+
+    tbody tr:last-child td {
+      border-bottom: none;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 1px 7px;
+      border-radius: 4px;
+      font-size: 0.76rem;
+      font-weight: 600;
+      margin: 1px 2px;
+    }
+
+    .tag-matched { background: rgba(71,194,125,0.15); color: var(--green); }
+    .tag-gap { background: rgba(255,95,95,0.15); color: var(--red); }
+    .tag-fc-only { background: rgba(240,199,110,0.15); color: var(--accent); }
+    .tag-high { background: rgba(77,159,255,0.12); color: var(--blue); }
+    .tag-medium { background: rgba(240,199,110,0.15); color: var(--accent); }
+    .tag-low { background: rgba(255,95,95,0.12); color: var(--red); }
+
+    .price-empty {
+      color: var(--muted);
+    }
+
+    .flag-true {
+      color: var(--red);
+      font-weight: 600;
+    }
+
+    .flag-false {
+      color: var(--muted);
+    }
+
+    .src-tag {
+      display: inline-flex;
+      width: max-content;
+      padding: 2px 6px;
+      border-radius: 999px;
+      font-size: 0.64rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      margin-bottom: 5px;
+    }
+
+    .src-fc { background: rgba(71,194,125,0.15); color: var(--green); }
+    .src-google { background: rgba(179,189,197,0.2); color: var(--grey); }
+
+    .head-label {
+      display: block;
+      line-height: 1.2;
+    }
+
+    .price-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      min-width: 220px;
+      white-space: normal;
+    }
+
+    .price-chip {
+      display: inline-flex;
+      align-items: baseline;
+      gap: 4px;
+      padding: 3px 7px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.04);
+      font-variant-numeric: tabular-nums;
+    }
+
+    .price-chip-label {
+      color: var(--accent);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+    }
+
+    .empty-state {
+      display: none;
+      padding: 28px 18px;
+      border: 1px dashed var(--border);
+      border-radius: 10px;
+      background: rgba(255,255,255,0.02);
+      color: var(--muted);
+      text-align: center;
+      box-shadow: var(--shadow);
+    }
+
+    .empty-state.active {
+      display: block;
+    }
+
+    @media (max-width: 900px) {
+      body {
+        padding: 16px;
+      }
+
+      .table-wrap {
+        min-height: 320px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="app-shell">
+    <header>
+      <h1>Fuel Availability</h1>
+      <div class="fuel-filters" id="fuel-filters">
+        <span class="filter-label">Filter fuel:</span>
+      </div>
+      <p class="avail-line" id="avail-line"></p>
+      <p class="avail-note">* assuming that fuel stations listed online sell all fuel types usually</p>
+    </header>
+
+    <div class="tabs">
+      <button class="tab-btn active" data-tab="matched">Matched</button>
+      <button class="tab-btn" data-tab="gaps">Gaps (Google only)</button>
+      <button class="tab-btn" data-tab="fuelcheck">FuelCheck only</button>
+      <button class="tab-btn" data-tab="all-google">All Google</button>
+      <button class="tab-btn" data-tab="all-fuelcheck">All FuelCheck</button>
+      <button class="tab-btn" data-tab="by-suburb">By Suburb</button>
+    </div>
+
+    <div class="controls">
+      <input class="search" type="text" placeholder="Search by name, address, brand..." id="search">
+    </div>
+
+    <div class="panel-stack">
+      <div id="matched" class="tab-panel active">
+        <div class="count" id="matched-count"></div>
+        <div class="empty-state" id="matched-empty"></div>
+        <div class="table-wrap" id="matched-wrap"><table><thead id="matched-head"></thead><tbody id="matched-body"></tbody></table></div>
+      </div>
+      <div id="gaps" class="tab-panel" hidden>
+        <div class="count" id="gaps-count"></div>
+        <div class="empty-state" id="gaps-empty"></div>
+        <div class="table-wrap" id="gaps-wrap"><table><thead id="gaps-head"></thead><tbody id="gaps-body"></tbody></table></div>
+      </div>
+      <div id="fuelcheck" class="tab-panel" hidden>
+        <div class="count" id="fuelcheck-count"></div>
+        <div class="empty-state" id="fuelcheck-empty"></div>
+        <div class="table-wrap" id="fuelcheck-wrap"><table><thead id="fuelcheck-head"></thead><tbody id="fuelcheck-body"></tbody></table></div>
+      </div>
+      <div id="all-google" class="tab-panel" hidden>
+        <div class="count" id="all-google-count"></div>
+        <div class="empty-state" id="all-google-empty"></div>
+        <div class="table-wrap" id="all-google-wrap"><table><thead id="all-google-head"></thead><tbody id="all-google-body"></tbody></table></div>
+      </div>
+      <div id="all-fuelcheck" class="tab-panel" hidden>
+        <div class="count" id="all-fuelcheck-count"></div>
+        <div class="empty-state" id="all-fuelcheck-empty"></div>
+        <div class="table-wrap" id="all-fuelcheck-wrap"><table><thead id="all-fuelcheck-head"></thead><tbody id="all-fuelcheck-body"></tbody></table></div>
+      </div>
+      <div id="by-suburb" class="tab-panel" hidden>
+        <div class="count" id="by-suburb-count"></div>
+        <div class="empty-state" id="by-suburb-empty"></div>
+        <div class="table-wrap" id="by-suburb-wrap"><table><thead id="by-suburb-head"></thead><tbody id="by-suburb-body"></tbody></table></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    /* All user-facing content is sanitized via DOMPurify before DOM insertion. */
+    function esc(value) {
+      return DOMPurify.sanitize(String(value ?? ""), { ALLOWED_TAGS: [] });
+    }
+
+    function setSanitizedHtml(element, html) {
+      element.innerHTML = DOMPurify.sanitize(String(html ?? ""), { FORCE_BODY: true });
+    }
+
+    function compactPriceList(row) {
+      var order = [
+        ["U91", getPrice(row, 0)],
+        ["E10", getPrice(row, 1)],
+        ["P95", getPrice(row, 4)],
+        ["P98", getPrice(row, 5)],
+        ["DL", getPrice(row, 2)],
+        ["PDL", getPrice(row, 6)],
+        ["LPG", getPrice(row, 7)]
+      ];
+      var chips = order
+        .filter(function(entry) { return entry[1] !== ""; })
+        .map(function(entry) {
+          return '<span class="price-chip"><span class="price-chip-label">' +
+            esc(entry[0]) + "</span><span>" + esc(entry[1]) + "</span></span>";
+        });
+      if (!chips.length) {
+        return '<span class="price-empty">-</span>';
+      }
+      return '<div class="price-list">' + chips.join("") + "</div>";
+    }
+
+    function flagCell(value) {
+      if (value === "true") {
+        return '<span class="flag-true">Yes</span>';
+      }
+      return '<span class="flag-false">No</span>';
+    }
+
+    function statusTag(value) {
+      var map = {
+        matched: '<span class="tag tag-matched">Matched</span>',
+        gap_google_only: '<span class="tag tag-gap">Gap</span>',
+        fuelcheck_only: '<span class="tag tag-fc-only">FC Only</span>'
+      };
+      return map[value] || esc(value);
+    }
+
+    function confTag(value) {
+      if (!value) return '<span class="price-empty">-</span>';
+      var cls = { high: "tag-high", medium: "tag-medium", low: "tag-low" };
+      return '<span class="tag ' + (cls[value] || "") + '">' + esc(value) + "</span>";
+    }
+
+    function parseCSV(text) {
+      var trimmed = text.trim();
+      if (!trimmed) return [];
+      var lines = trimmed.split("\n");
+      var headers = parseCSVLine(lines[0]);
+      return lines.slice(1).map(function(line) {
+        var values = parseCSVLine(line);
+        var row = {};
+        headers.forEach(function(header, index) { row[header] = values[index] || ""; });
+        return row;
+      });
+    }
+
+    function parseCSVLine(line) {
+      var result = [];
+      var current = "";
+      var inQuotes = false;
+      for (var i = 0; i < line.length; i++) {
+        var ch = line[i];
+        if (inQuotes) {
+          if (ch === '"' && line[i + 1] === '"') {
+            current += '"';
+            i++;
+          } else if (ch === '"') {
+            inQuotes = false;
+          } else {
+            current += ch;
+          }
+        } else if (ch === '"') {
+          inQuotes = true;
+        } else if (ch === ",") {
+          result.push(current);
+          current = "";
+        } else {
+          current += ch;
+        }
+      }
+      result.push(current);
+      return result;
+    }
+
+    async function loadCSV(path) {
+      try {
+        var response = await fetch(path, { cache: "no-store" });
+        if (!response.ok) return [];
+        return parseCSV(await response.text());
+      } catch (error) {
+        return [];
+      }
+    }
+
+    function setHead(id, columns) {
+      var thead = document.getElementById(id);
+      thead.textContent = "";
+      var tr = document.createElement("tr");
+      columns.forEach(function(column) {
+        var th = document.createElement("th");
+        if (column.src) {
+          var tag = document.createElement("span");
+          tag.className = "src-tag src-" + column.src;
+          tag.textContent = column.src === "fc" ? "API" : "SCRAPE";
+          th.appendChild(tag);
+        }
+        var label = document.createElement("span");
+        label.className = "head-label";
+        label.textContent = column.label;
+        th.appendChild(label);
+        tr.appendChild(th);
+      });
+      thead.appendChild(tr);
+    }
+
+    function renderRows(config, searchTerm) {
+      var filtered = searchTerm
+        ? config.rows.filter(function(row) { return row._search.includes(searchTerm); })
+        : config.rows;
+
+      document.getElementById(config.countId).textContent = filtered.length + " of " + config.rows.length + " rows";
+
+      var tbody = document.getElementById(config.bodyId);
+      var empty = document.getElementById(config.emptyId);
+      var wrap = document.getElementById(config.wrapId);
+
+      tbody.textContent = "";
+
+      if (!filtered.length) {
+        empty.textContent = searchTerm
+          ? "No rows match the current search."
+          : "No data available in this tab.";
+        empty.classList.add("active");
+        wrap.hidden = true;
+        return;
+      }
+
+      empty.classList.remove("active");
+      wrap.hidden = false;
+
+      filtered.forEach(function(row) {
+        var tr = document.createElement("tr");
+        row._cells.forEach(function(cellHtml) {
+          var td = document.createElement("td");
+          setSanitizedHtml(td, cellHtml);
+          tr.appendChild(td);
+        });
+        tbody.appendChild(tr);
+      });
+    }
+
+    var activeTab = "matched";
+    var allData = {};
+
+    function activateTab(tabId, updateHash) {
+      if (!allData[tabId]) return;
+      document.querySelectorAll(".tab-btn").forEach(function(btn) {
+        btn.classList.toggle("active", btn.dataset.tab === tabId);
+      });
+      document.querySelectorAll(".tab-panel").forEach(function(panel) {
+        var isActive = panel.id === tabId;
+        panel.classList.toggle("active", isActive);
+        panel.hidden = !isActive;
+      });
+      activeTab = tabId;
+      if (updateHash) {
+        window.location.hash = tabId;
+      }
+      renderActive();
+    }
+
+    document.querySelectorAll(".tab-btn").forEach(function(button) {
+      button.addEventListener("click", function() {
+        activateTab(button.dataset.tab, true);
+      });
+    });
+
+    document.getElementById("search").addEventListener("input", function() {
+      renderActive();
+    });
+
+    function renderActive() {
+      var term = document.getElementById("search").value.trim().toLowerCase();
+      var config = allData[activeTab];
+      if (config) {
+        renderRows(config, term);
+      }
+    }
+
+    var priceKeys = [
+      "fc_price_U91_cents", "fc_price_E10_cents", "fc_price_E85_cents",
+      "fc_price_P95_cents", "fc_price_P98_cents", "fc_price_DL_cents",
+      "fc_price_PDL_cents", "fc_price_LPG_cents"
+    ];
+    var priceFallback = [
+      "price_U91_cents", "price_E10_cents", "price_E85_cents",
+      "price_P95_cents", "price_P98_cents", "price_DL_cents",
+      "price_PDL_cents", "price_LPG_cents"
+    ];
+
+    function getPrice(row, index) {
+      return row[priceKeys[index]] || row[priceFallback[index]] || "";
+    }
+
+    function getOutlier(row) {
+      return row.fc_has_price_outlier || row.has_price_outlier || "false";
+    }
+
+    function normalizeSuburb(value) {
+      var cleaned = String(value || "").trim();
+      return cleaned || "Unknown";
+    }
+
+    function groupStationsBySuburb(googleRows, fuelcheckRows, matchedRows) {
+      var grouped = {};
+
+      googleRows.forEach(function(row) {
+        var suburb = normalizeSuburb(row.google_suburb);
+        if (!grouped[suburb]) {
+          grouped[suburb] = {
+            suburb: suburb,
+            scraped_count: 0,
+            api_count: 0,
+            scraped_only_gap_count: 0,
+            api_only_gap_count: 0
+          };
+        }
+        grouped[suburb].scraped_count += 1;
+      });
+
+      fuelcheckRows.forEach(function(row) {
+        var suburb = normalizeSuburb(row.fc_suburb);
+        if (!grouped[suburb]) {
+          grouped[suburb] = {
+            suburb: suburb,
+            scraped_count: 0,
+            api_count: 0,
+            scraped_only_gap_count: 0,
+            api_only_gap_count: 0
+          };
+        }
+        grouped[suburb].api_count += 1;
+      });
+
+      matchedRows.forEach(function(row) {
+        if (row.match_status === "gap_google_only") {
+          var googleSuburb = normalizeSuburb(row.google_suburb);
+          if (!grouped[googleSuburb]) {
+            grouped[googleSuburb] = {
+              suburb: googleSuburb,
+              scraped_count: 0,
+              api_count: 0,
+              scraped_only_gap_count: 0,
+              api_only_gap_count: 0
+            };
+          }
+          grouped[googleSuburb].scraped_only_gap_count += 1;
+        }
+
+        if (row.match_status === "fuelcheck_only") {
+          var apiSuburb = normalizeSuburb(row.fc_suburb);
+          if (!grouped[apiSuburb]) {
+            grouped[apiSuburb] = {
+              suburb: apiSuburb,
+              scraped_count: 0,
+              api_count: 0,
+              scraped_only_gap_count: 0,
+              api_only_gap_count: 0
+            };
+          }
+          grouped[apiSuburb].api_only_gap_count += 1;
+        }
+      });
+
+      return Object.keys(grouped)
+        .map(function(key) {
+          var entry = grouped[key];
+          entry.delta = entry.scraped_count - entry.api_count;
+          entry.total = entry.scraped_count + entry.api_count;
+          return entry;
+        })
+        .sort(function(a, b) {
+          var absDelta = Math.abs(b.delta) - Math.abs(a.delta);
+          if (absDelta !== 0) return absDelta;
+          if (b.total !== a.total) return b.total - a.total;
+          return a.suburb.localeCompare(b.suburb);
+        });
+    }
+
+    function initialTabFromHash() {
+      var hash = window.location.hash.replace(/^#/, "");
+      return allData[hash] ? hash : "matched";
+    }
+
+    function initialSearchFromQuery() {
+      return new URLSearchParams(window.location.search).get("search") || "";
+    }
+
+    async function init() {
+      var results = await Promise.all([
+        loadCSV("data/clean/matched_stations.csv"),
+        loadCSV("data/clean/google_stations.csv"),
+        loadCSV("data/clean/fuelcheck_stations.csv")
+      ]);
+
+      var matched = results[0];
+      var google = results[1];
+      var fuelcheck = results[2];
+
+      var matchedRows = matched.filter(function(row) { return row.match_status === "matched"; });
+      var gapRows = matched.filter(function(row) { return row.match_status === "gap_google_only"; });
+      var fcOnlyRows = matched.filter(function(row) { return row.match_status === "fuelcheck_only"; });
+
+      setHead("matched-head", [
+        { label: "#" },
+        { label: "Status" },
+        { label: "Confidence" },
+        { label: "Dist (m)" },
+        { label: "Name", src: "fc" },
+        { label: "Address", src: "fc" },
+        { label: "Suburb", src: "fc" },
+        { label: "Postcode", src: "fc" },
+        { label: "Brand", src: "fc" },
+        { label: "Brand Group", src: "fc" },
+        { label: "Name", src: "google" },
+        { label: "Address", src: "google" },
+        { label: "Suburb", src: "google" },
+        { label: "Prices", src: "fc" },
+        { label: "Outlier", src: "fc" }
+      ]);
+      allData.matched = {
+        bodyId: "matched-body",
+        countId: "matched-count",
+        emptyId: "matched-empty",
+        wrapId: "matched-wrap",
+        rows: matchedRows.map(function(row, index) {
+          return {
+            _search: [row.fc_name, row.fc_address_full, row.fc_brand, row.google_name, row.google_address_full].join(" ").toLowerCase(),
+            _cells: [
+              String(index + 1),
+              statusTag(row.match_status),
+              confTag(row.match_confidence),
+              esc(row.match_distance_m || "-"),
+              esc(row.fc_name),
+              esc(row.fc_address_full),
+              esc(row.fc_suburb),
+              esc(row.fc_postcode),
+              esc(row.fc_brand),
+              esc(row.fc_brand_group),
+              esc(row.google_name),
+              esc(row.google_address_full),
+              esc(row.google_suburb),
+              compactPriceList(row),
+              flagCell(getOutlier(row))
+            ]
+          };
+        })
+      };
+
+      setHead("gaps-head", [
+        { label: "#" },
+        { label: "Name", src: "google" },
+        { label: "Address", src: "google" },
+        { label: "Street", src: "google" },
+        { label: "Suburb", src: "google" },
+        { label: "Lat", src: "google" },
+        { label: "Lng", src: "google" },
+        { label: "Addr Missing", src: "google" }
+      ]);
+      allData.gaps = {
+        bodyId: "gaps-body",
+        countId: "gaps-count",
+        emptyId: "gaps-empty",
+        wrapId: "gaps-wrap",
+        rows: gapRows.map(function(row, index) {
+          return {
+            _search: [row.google_name, row.google_address_full].join(" ").toLowerCase(),
+            _cells: [
+              String(index + 1),
+              esc(row.google_name),
+              esc(row.google_address_full),
+              esc(row.google_street),
+              esc(row.google_suburb),
+              esc(row.google_lat),
+              esc(row.google_lng),
+              flagCell(row.google_address_missing)
+            ]
+          };
+        })
+      };
+
+      setHead("fuelcheck-head", [
+        { label: "#" },
+        { label: "ID", src: "fc" },
+        { label: "Name", src: "fc" },
+        { label: "Address", src: "fc" },
+        { label: "Suburb", src: "fc" },
+        { label: "Postcode", src: "fc" },
+        { label: "Brand", src: "fc" },
+        { label: "Brand Group", src: "fc" },
+        { label: "Fuel Types", src: "fc" },
+        { label: "Prices", src: "fc" },
+        { label: "Outlier", src: "fc" }
+      ]);
+      allData.fuelcheck = {
+        bodyId: "fuelcheck-body",
+        countId: "fuelcheck-count",
+        emptyId: "fuelcheck-empty",
+        wrapId: "fuelcheck-wrap",
+        rows: fcOnlyRows.map(function(row, index) {
+          return {
+            _search: [row.fc_name, row.fc_address_full, row.fc_brand, row.fc_brand_group].join(" ").toLowerCase(),
+            _cells: [
+              String(index + 1),
+              esc(row.fc_id),
+              esc(row.fc_name),
+              esc(row.fc_address_full),
+              esc(row.fc_suburb),
+              esc(row.fc_postcode),
+              esc(row.fc_brand),
+              esc(row.fc_brand_group),
+              esc(row.fc_fuel_types),
+              compactPriceList(row),
+              flagCell(getOutlier(row))
+            ]
+          };
+        })
+      };
+
+      setHead("all-google-head", [
+        { label: "#" },
+        { label: "Name", src: "google" },
+        { label: "Address", src: "google" },
+        { label: "Street", src: "google" },
+        { label: "Suburb", src: "google" },
+        { label: "State", src: "google" },
+        { label: "Lat", src: "google" },
+        { label: "Lng", src: "google" },
+        { label: "Addr Missing", src: "google" }
+      ]);
+      allData["all-google"] = {
+        bodyId: "all-google-body",
+        countId: "all-google-count",
+        emptyId: "all-google-empty",
+        wrapId: "all-google-wrap",
+        rows: google.map(function(row, index) {
+          return {
+            _search: [row.google_name, row.google_address_full, row.google_suburb].join(" ").toLowerCase(),
+            _cells: [
+              String(index + 1),
+              esc(row.google_name),
+              esc(row.google_address_full),
+              esc(row.google_street),
+              esc(row.google_suburb),
+              esc(row.google_state),
+              esc(row.google_lat),
+              esc(row.google_lng),
+              flagCell(row.google_address_missing)
+            ]
+          };
+        })
+      };
+
+      setHead("all-fuelcheck-head", [
+        { label: "#" },
+        { label: "ID", src: "fc" },
+        { label: "Name", src: "fc" },
+        { label: "Address", src: "fc" },
+        { label: "Street", src: "fc" },
+        { label: "Suburb", src: "fc" },
+        { label: "Postcode", src: "fc" },
+        { label: "Brand", src: "fc" },
+        { label: "Brand Group", src: "fc" },
+        { label: "Fuel Types", src: "fc" },
+        { label: "# Types", src: "fc" },
+        { label: "Prices", src: "fc" },
+        { label: "Outlier", src: "fc" }
+      ]);
+      allData["all-fuelcheck"] = {
+        bodyId: "all-fuelcheck-body",
+        countId: "all-fuelcheck-count",
+        emptyId: "all-fuelcheck-empty",
+        wrapId: "all-fuelcheck-wrap",
+        rows: fuelcheck.map(function(row, index) {
+          return {
+            _search: [row.fc_name, row.fc_address_full, row.fc_brand, row.fc_brand_group, row.fc_suburb].join(" ").toLowerCase(),
+            _cells: [
+              String(index + 1),
+              esc(row.fc_id),
+              esc(row.fc_name),
+              esc(row.fc_address_full),
+              esc(row.fc_street),
+              esc(row.fc_suburb),
+              esc(row.fc_postcode),
+              esc(row.fc_brand),
+              esc(row.fc_brand_group),
+              esc(row.fc_fuel_types),
+              esc(row.fc_num_fuel_types),
+              compactPriceList(row),
+              flagCell(getOutlier(row))
+            ]
+          };
+        })
+      };
+
+      var suburbRows = groupStationsBySuburb(google, fuelcheck, matched);
+      setHead("by-suburb-head", [
+        { label: "#" },
+        { label: "Suburb" },
+        { label: "API Count", src: "fc" },
+        { label: "Scraped Count", src: "google" },
+        { label: "API-Only Gaps", src: "fc" },
+        { label: "Scraped-Only Gaps", src: "google" },
+        { label: "Delta (Scraped - API)" },
+        { label: "Total Stations" }
+      ]);
+      allData["by-suburb"] = {
+        bodyId: "by-suburb-body",
+        countId: "by-suburb-count",
+        emptyId: "by-suburb-empty",
+        wrapId: "by-suburb-wrap",
+        rows: suburbRows.map(function(row, index) {
+          return {
+            _search: [row.suburb, String(row.api_count), String(row.scraped_count)].join(" ").toLowerCase(),
+            _cells: [
+              String(index + 1),
+              esc(row.suburb),
+              esc(row.api_count),
+              esc(row.scraped_count),
+              esc(row.api_only_gap_count),
+              esc(row.scraped_only_gap_count),
+              esc(row.delta),
+              esc(row.total)
+            ]
+          };
+        })
+      };
+
+      // Fuel availability headline
+      var allFuelTypes = ["U91", "E10", "P95", "P98", "DL", "PDL", "LPG", "E85"];
+      var activeFuels = [];
+
+      // Build filter toggles
+      var filtersEl = document.getElementById("fuel-filters");
+      allFuelTypes.forEach(function(ft) {
+        var btn = document.createElement("button");
+        btn.className = "fuel-toggle";
+        btn.textContent = ft;
+        btn.dataset.fuel = ft;
+        btn.addEventListener("click", function() {
+          btn.classList.toggle("active");
+          activeFuels = [];
+          filtersEl.querySelectorAll(".fuel-toggle.active").forEach(function(b) {
+            activeFuels.push(b.dataset.fuel);
+          });
+          updateAvailLine();
+        });
+        filtersEl.appendChild(btn);
+      });
+
+      function stationHasFuel(row, fuelList) {
+        for (var i = 0; i < fuelList.length; i++) {
+          var key = "fc_price_" + fuelList[i] + "_cents";
+          var fallback = "price_" + fuelList[i] + "_cents";
+          if ((row[key] || row[fallback] || "") !== "") return true;
+        }
+        return false;
+      }
+
+      function updateAvailLine() {
+        var filtering = activeFuels.length > 0 && activeFuels.length < allFuelTypes.length;
+        var fcFiltered = filtering
+          ? fuelcheck.filter(function(r) { return stationHasFuel(r, activeFuels); })
+          : fuelcheck;
+
+        var totalStations = google.length + fuelcheck.length;
+        var pct = totalStations ? Math.round((fcFiltered.length / totalStations) * 100) : 0;
+
+        var fuelLabel = filtering ? activeFuels.join(", ") : "any";
+
+        document.getElementById("avail-line").innerHTML =
+          '<span class="avail-pct">' + esc(String(pct)) + '%</span> of local petrol stations are listed on FuelCheck as having <span class="avail-fuel">' + esc(fuelLabel) + '</span> fuel.*';
+      }
+
+      updateAvailLine();
+
+      document.getElementById("search").value = initialSearchFromQuery();
+      activateTab(initialTabFromHash(), false);
+    }
+
+    window.addEventListener("hashchange", function() {
+      activateTab(initialTabFromHash(), false);
+    });
+
+    init();
+  </script>
+</body>
+</html>
