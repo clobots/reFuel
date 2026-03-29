@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>reFuel Gap Analysis</title>
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin=""
+  >
+  <script
+    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+    crossorigin=""
+  ></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.1.6/purify.min.js"></script>
+  <style>
+    :root {
+      --bg: #07131a;
+      --panel: rgba(11, 24, 32, 0.9);
+      --panel-border: rgba(196, 221, 239, 0.14);
+      --text: #eef6fb;
+      --muted: #9eb7c8;
+      --accent: #f0c76e;
+      --google: rgba(179, 189, 197, 0.5);
+      --fuelcheck: #47c27d;
+      --matched: #4d9fff;
+      --gap: #ff5f5f;
+      --shadow: 0 18px 44px rgba(0, 0, 0, 0.28);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: "Avenir Next", "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(48, 93, 120, 0.28), transparent 32%),
+        radial-gradient(circle at top right, rgba(240, 199, 110, 0.14), transparent 28%),
+        linear-gradient(180deg, #08161d 0%, #0f232f 100%);
+    }
+
+    .app-shell {
+      display: grid;
+      grid-template-rows: auto 1fr;
+      min-height: 100vh;
+    }
+
+    .topbar {
+      padding: 24px 24px 16px;
+      backdrop-filter: blur(14px);
+      background: linear-gradient(180deg, rgba(4, 10, 14, 0.84), rgba(4, 10, 14, 0.55));
+      border-bottom: 1px solid var(--panel-border);
+      box-shadow: var(--shadow);
+      z-index: 1000;
+    }
+
+    .topbar-inner {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      align-items: flex-start;
+      justify-content: space-between;
+    }
+
+    .heading h1 {
+      margin: 0;
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      line-height: 1;
+      letter-spacing: 0.02em;
+    }
+
+    .heading p {
+      margin: 10px 0 0;
+      max-width: 680px;
+      color: var(--muted);
+      font-size: 0.98rem;
+    }
+
+    .updated-at {
+      margin-top: 14px;
+      color: var(--accent);
+      font-size: 0.92rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .summary {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(110px, 1fr));
+      gap: 10px;
+      min-width: min(100%, 460px);
+    }
+
+    .summary-card {
+      padding: 14px 16px;
+      border: 1px solid var(--panel-border);
+      border-radius: 16px;
+      background: var(--panel);
+      box-shadow: var(--shadow);
+    }
+
+    .summary-card dt {
+      margin: 0;
+      font-size: 0.8rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .summary-card dd {
+      margin: 8px 0 0;
+      font-size: 1.7rem;
+      font-weight: 700;
+    }
+
+    #map {
+      width: 100%;
+      height: 100%;
+      min-height: 60vh;
+    }
+
+    .map-wrap {
+      position: relative;
+      padding: 18px 18px 20px;
+    }
+
+    .map-frame {
+      height: calc(100vh - 176px);
+      min-height: 520px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 22px;
+      box-shadow: var(--shadow);
+    }
+
+    .map-status {
+      position: absolute;
+      top: 30px;
+      left: 32px;
+      z-index: 900;
+      padding: 10px 14px;
+      border: 1px solid var(--panel-border);
+      border-radius: 999px;
+      background: rgba(7, 19, 26, 0.88);
+      color: var(--muted);
+      font-size: 0.9rem;
+      backdrop-filter: blur(10px);
+    }
+
+    .legend {
+      line-height: 1.5;
+      color: var(--text);
+      padding: 12px 14px;
+      border: 1px solid var(--panel-border);
+      border-radius: 16px;
+      background: rgba(7, 19, 26, 0.9);
+      box-shadow: var(--shadow);
+    }
+
+    .legend strong {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--accent);
+      font-size: 0.83rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin: 6px 0;
+      font-size: 0.92rem;
+    }
+
+    .legend-swatch {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      flex: 0 0 12px;
+    }
+
+    .station-marker {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      border: 2px solid rgba(255, 255, 255, 0.85);
+      box-shadow: 0 0 0 3px rgba(4, 10, 14, 0.18);
+    }
+
+    .station-marker.google { background: var(--google); }
+    .station-marker.fuelcheck { background: var(--fuelcheck); }
+    .station-marker.matched { background: var(--matched); }
+    .station-marker.gap { background: var(--gap); }
+
+    .popup {
+      color: #11202b;
+      min-width: 220px;
+    }
+
+    .popup h2 {
+      margin: 0 0 8px;
+      font-size: 1rem;
+    }
+
+    .popup p,
+    .popup ul {
+      margin: 0 0 8px;
+      padding: 0;
+      font-size: 0.9rem;
+    }
+
+    .popup ul {
+      list-style: none;
+    }
+
+    .popup li + li {
+      margin-top: 4px;
+    }
+
+    @media (max-width: 900px) {
+      .topbar {
+        padding: 18px 16px 14px;
+      }
+
+      .summary {
+        grid-template-columns: repeat(2, minmax(120px, 1fr));
+        width: 100%;
+      }
+
+      .map-wrap {
+        padding: 12px;
+      }
+
+      .map-frame {
+        height: calc(100vh - 255px);
+        min-height: 500px;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .summary {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .map-status {
+        top: 20px;
+        left: 20px;
+        right: 20px;
+        border-radius: 14px;
+      }
+
+      .map-frame {
+        height: calc(100vh - 304px);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="topbar-inner">
+        <div class="heading">
+          <h1>reFuel</h1>
+          <p>Gap analysis between scraped Google Maps petrol stations and NSW FuelCheck coverage across Ryde, Auburn, and Hornsby.</p>
+          <div class="updated-at">Last updated: <span id="last-updated">-</span></div>
+        </div>
+        <dl class="summary" id="summary-panel">
+          <div class="summary-card">
+            <dt>Google</dt>
+            <dd id="google-count">-</dd>
+          </div>
+          <div class="summary-card">
+            <dt>FuelCheck</dt>
+            <dd id="fuelcheck-count">-</dd>
+          </div>
+          <div class="summary-card">
+            <dt>Matched</dt>
+            <dd id="matched-count">-</dd>
+          </div>
+          <div class="summary-card">
+            <dt>Gaps</dt>
+            <dd id="gap-count">-</dd>
+          </div>
+        </dl>
+      </div>
+    </header>
+    <main class="map-wrap">
+      <div class="map-status" id="map-status">Loading station datasets...</div>
+      <div class="map-frame">
+        <div id="map" aria-label="Fuel station gap analysis map"></div>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    const MATCH_THRESHOLD_METERS = 100;
+
+    const map = L.map("map", {
+      zoomControl: true,
+      preferCanvas: true
+    }).setView([-33.79, 151.08], 12);
+
+    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+
+    L.control.scale({ imperial: false }).addTo(map);
+
+    const layers = {
+      google: L.layerGroup().addTo(map),
+      fuelcheck: L.layerGroup().addTo(map),
+      matched: L.layerGroup().addTo(map),
+      gap: L.layerGroup().addTo(map)
+    };
+
+    const legend = L.control({ position: "bottomright" });
+    legend.onAdd = function onAdd() {
+      const div = L.DomUtil.create("div", "legend");
+      div.innerHTML = DOMPurify.sanitize(`
+        <strong>Legend</strong>
+        <div class="legend-item"><span class="legend-swatch" style="background:${cssVar("--google")}"></span>Google only</div>
+        <div class="legend-item"><span class="legend-swatch" style="background:${cssVar("--fuelcheck")}"></span>FuelCheck only</div>
+        <div class="legend-item"><span class="legend-swatch" style="background:${cssVar("--matched")}"></span>Matched</div>
+        <div class="legend-item"><span class="legend-swatch" style="background:${cssVar("--gap")}"></span>Gap</div>
+      `);
+      return div;
+    };
+    legend.addTo(map);
+
+    function cssVar(name) {
+      return getComputedStyle(document.documentElement).getPropertyValue(name).trim();
+    }
+
+    function setStatus(message) {
+      document.getElementById("map-status").textContent = message;
+    }
+
+    function setSummary(stats) {
+      document.getElementById("google-count").textContent = stats.google;
+      document.getElementById("fuelcheck-count").textContent = stats.fuelcheck;
+      document.getElementById("matched-count").textContent = stats.matched;
+      document.getElementById("gap-count").textContent = stats.gap;
+    }
+
+    function formatUpdatedDate(...timestamps) {
+      const valid = timestamps
+        .filter(Boolean)
+        .map((value) => new Date(value))
+        .filter((value) => !Number.isNaN(value.getTime()))
+        .sort((a, b) => a.getTime() - b.getTime());
+
+      if (!valid.length) {
+        return "-";
+      }
+
+      return valid[0].toLocaleString("en-AU", {
+        year: "numeric",
+        month: "short",
+        day: "numeric",
+        hour: "numeric",
+        minute: "2-digit"
+      });
+    }
+
+    function toRadians(value) {
+      return (value * Math.PI) / 180;
+    }
+
+    function haversineDistanceMeters(a, b) {
+      const earthRadius = 6371000;
+      const dLat = toRadians(b.lat - a.lat);
+      const dLng = toRadians(b.lng - a.lng);
+      const lat1 = toRadians(a.lat);
+      const lat2 = toRadians(b.lat);
+      const sinLat = Math.sin(dLat / 2);
+      const sinLng = Math.sin(dLng / 2);
+      const h =
+        sinLat * sinLat +
+        Math.cos(lat1) * Math.cos(lat2) * sinLng * sinLng;
+      return 2 * earthRadius * Math.asin(Math.sqrt(h));
+    }
+
+    function markerIcon(type) {
+      return L.divIcon({
+        className: "",
+        html: DOMPurify.sanitize(`<div class="station-marker ${type}"></div>`),
+        iconSize: [18, 18],
+        iconAnchor: [9, 9],
+        popupAnchor: [0, -10]
+      });
+    }
+
+    function escapeHtml(value) {
+      return DOMPurify.sanitize(String(value ?? ""));
+    }
+
+    function formatPrices(prices) {
+      if (!prices || !prices.length) {
+        return "<p>No FuelCheck pricing data.</p>";
+      }
+
+      const items = prices
+        .map((price) => `<li>${escapeHtml(price.fuel_type)}: ${escapeHtml(price.price)}</li>`)
+        .join("");
+      return `<ul>${items}</ul>`;
+    }
+
+    function popupContent(station) {
+      const matchDistance = station.matchDistanceMeters != null
+        ? `<p><strong>Match distance:</strong> ${Math.round(station.matchDistanceMeters)}m</p>`
+        : "";
+      const content = `
+        <div class="popup">
+          <h2>${escapeHtml(station.name || "Unnamed station")}</h2>
+          <p>${escapeHtml(station.address || "No address provided")}</p>
+          <p><strong>Source:</strong> ${escapeHtml(station.popupSource || station.source || "unknown")}</p>
+          ${matchDistance}
+          ${formatPrices(station.prices)}
+        </div>
+      `;
+      return DOMPurify.sanitize(content);
+    }
+
+    function addMarker(station, type) {
+      const marker = L.marker([station.lat, station.lng], { icon: markerIcon(type) });
+      marker.bindPopup(popupContent(station));
+      layers[type].addLayer(marker);
+    }
+
+    function nearestFuelcheckStation(googleStation, fuelStations, usedFuelIds) {
+      let bestMatch = null;
+      let bestDistance = Infinity;
+
+      fuelStations.forEach((fuelStation) => {
+        const identifier = fuelStation.id || `${fuelStation.name}|${fuelStation.address}`;
+        if (usedFuelIds.has(identifier)) {
+          return;
+        }
+
+        const distance = haversineDistanceMeters(googleStation, fuelStation);
+        if (distance < bestDistance) {
+          bestDistance = distance;
+          bestMatch = fuelStation;
+        }
+      });
+
+      if (!bestMatch || bestDistance > MATCH_THRESHOLD_METERS) {
+        return null;
+      }
+
+      return { station: bestMatch, distance: bestDistance };
+    }
+
+    async function fetchJson(path) {
+      const response = await fetch(path, { cache: "no-store" });
+      if (!response.ok) {
+        throw new Error(`Failed to load ${path}: ${response.status}`);
+      }
+      return response.json();
+    }
+
+    async function loadApp() {
+      try {
+        const [googleStations, fuelcheckStations, googleMeta, fuelcheckMeta] = await Promise.all([
+          fetchJson("data/google_stations.json").catch(() => []),
+          fetchJson("data/fuelcheck_stations.json").catch(() => []),
+          fetchJson("data/google_meta.json").catch(() => ({})),
+          fetchJson("data/fuelcheck_meta.json").catch(() => ({}))
+        ]);
+
+        document.getElementById("last-updated").textContent = formatUpdatedDate(
+          googleMeta.last_updated,
+          fuelcheckMeta.last_updated
+        );
+
+        const usedFuelIds = new Set();
+        let matchedCount = 0;
+        let gapCount = 0;
+
+        googleStations.forEach((googleStation) => {
+          const match = nearestFuelcheckStation(googleStation, fuelcheckStations, usedFuelIds);
+          if (match) {
+            const identifier = match.station.id || `${match.station.name}|${match.station.address}`;
+            usedFuelIds.add(identifier);
+            matchedCount += 1;
+            addMarker({
+              ...match.station,
+              popupSource: "matched (Google Maps + FuelCheck)",
+              matchDistanceMeters: match.distance
+            }, "matched");
+          } else {
+            gapCount += 1;
+            addMarker({
+              ...googleStation,
+              popupSource: "gap (Google Maps only)"
+            }, fuelcheckStations.length ? "gap" : "google");
+          }
+        });
+
+        let fuelcheckOnlyCount = 0;
+        fuelcheckStations.forEach((fuelStation) => {
+          const identifier = fuelStation.id || `${fuelStation.name}|${fuelStation.address}`;
+          if (!usedFuelIds.has(identifier)) {
+            fuelcheckOnlyCount += 1;
+            addMarker({
+              ...fuelStation,
+              popupSource: "FuelCheck only"
+            }, "fuelcheck");
+          }
+        });
+
+        setSummary({
+          google: googleStations.length,
+          fuelcheck: fuelcheckStations.length,
+          matched: matchedCount,
+          gap: gapCount
+        });
+
+        const allStations = [
+          ...googleStations.map((station) => [station.lat, station.lng]),
+          ...fuelcheckStations.map((station) => [station.lat, station.lng])
+        ].filter(([lat, lng]) => Number.isFinite(lat) && Number.isFinite(lng));
+
+        if (allStations.length) {
+          map.fitBounds(allStations, { padding: [36, 36] });
+          setStatus(`Loaded ${googleStations.length} Google stations and ${fuelcheckStations.length} FuelCheck stations. FuelCheck-only: ${fuelcheckOnlyCount}.`);
+        } else {
+          setStatus("No station data found yet. Run the scraper and FuelCheck script, then refresh.");
+        }
+      } catch (error) {
+        console.error(error);
+        setStatus("Failed to load station data. Serve this directory over http://localhost instead of file://.");
+      }
+    }
+
+    loadApp();
+  </script>
+</body>
+</html>

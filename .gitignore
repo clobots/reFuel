@@ -1,0 +1,11 @@
+# API credentials — NEVER commit
+.env
+*.key
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
