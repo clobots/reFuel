@@ -4,7 +4,7 @@ Compares petrol stations from Google Maps against the NSW FuelCheck API to find 
 
 ## Live App
 
-**[Open reFuel](https://gist.github.com/clobots/56f0248fcb95852896c62ee9b88ae457)** (private gist — download the HTML and open locally, or use a raw gist viewer)
+**[https://clobots.github.io/reFuel/](https://clobots.github.io/reFuel/)**
 
 ## What It Does
 
