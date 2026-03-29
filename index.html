@@ -504,7 +504,7 @@
           <h1>reFuel</h1>
           <p id="avail-line" style="color:var(--accent);font-size:1.05rem;margin:10px 0 4px;font-weight:600;">Loading...</p>
           <p style="color:var(--muted);font-size:0.72rem;font-style:italic;margin:0 0 6px;">* assuming that fuel stations listed online sell all fuel types usually</p>
-          <div class="updated-at">Last updated: <span id="last-updated">-</span> <button id="refresh-btn" onclick="refreshPrices()" style="margin-left:8px;padding:2px 10px;font-size:0.75rem;cursor:pointer;border:1px solid var(--accent);border-radius:4px;background:transparent;color:var(--accent);">&#x21bb; Refresh Prices</button></div>
+          <div class="updated-at">Last updated: <span id="last-updated">-</span></div>
         </div>
         <dl class="summary" id="summary-panel">
           <div class="summary-card">
@@ -1011,91 +1011,6 @@
         if (el) el.textContent = (tableData[key] || []).length;
       });
     }
-
-    // --- FuelCheck API (live refresh) ---
-    const FC_API_KEY = "qsU3gaKGfMmRQMRxqnqN677guyhrfwyO";
-    const FC_API_SECRET = "goxMbvjYtkSeb7lq";
-    const FC_API_BASE = "https://api.onegov.nsw.gov.au";
-    const FC_BOUNDS = { latMin: -33.92, latMax: -33.65, lngMin: 150.95, lngMax: 151.22 };
-    const CORS_PROXY = "https://corsproxy.io/?";
-
-    async function fcFetch(url, opts = {}) {
-      // Try direct first, fall back to CORS proxy
-      try {
-        const resp = await fetch(url, opts);
-        if (resp.ok) return resp;
-      } catch (_) { /* CORS blocked, try proxy */ }
-      const proxied = CORS_PROXY + encodeURIComponent(url);
-      return fetch(proxied, opts);
-    }
-
-    async function refreshPrices() {
-      const btn = document.getElementById("refresh-btn");
-      btn.disabled = true;
-      btn.textContent = "Fetching token...";
-      try {
-        // 1. OAuth token
-        const credentials = btoa(FC_API_KEY + ":" + FC_API_SECRET);
-        const authResp = await fcFetch(
-          FC_API_BASE + "/oauth/client_credential/accesstoken?grant_type=client_credentials",
-          { method: "POST", headers: { "Authorization": "Basic " + credentials } }
-        );
-        const tokenData = await authResp.json();
-        const token = tokenData.access_token;
-        if (!token) throw new Error("No access token returned");
-
-        // 2. Fetch prices
-        btn.textContent = "Fetching prices...";
-        const now = new Date();
-        const pricesResp = await fcFetch(FC_API_BASE + "/FuelPriceCheck/v1/fuel/prices", {
-          headers: {
-            "Authorization": "Bearer " + token,
-            "Content-Type": "application/json",
-            "apikey": FC_API_KEY,
-            "transactionid": now.getTime().toString(),
-            "requesttimestamp": now.toLocaleString("en-AU", { hour12: true })
-          }
-        });
-        const result = await pricesResp.json();
-
-        // 3. Build price map
-        const priceMap = {};
-        for (const p of (result.prices || [])) {
-          const sid = p.stationcode;
-          if (!priceMap[sid]) priceMap[sid] = [];
-          priceMap[sid].push({ fuel_type: p.fueltype, price: p.price });
-        }
-
-        // 4. Filter to bounding box
-        const stations = (result.stations || []).filter(s => {
-          const loc = s.location || {};
-          return loc.latitude >= FC_BOUNDS.latMin && loc.latitude <= FC_BOUNDS.latMax
-              && loc.longitude >= FC_BOUNDS.lngMin && loc.longitude <= FC_BOUNDS.lngMax;
-        }).map(s => ({
-          id: s.code,
-          name: s.name || "",
-          brand: s.brand || "",
-          address: s.address || "",
-          lat: s.location.latitude,
-          lng: s.location.longitude,
-          prices: priceMap[s.code] || [],
-          source: "fuelcheck"
-        }));
-
-        // 5. Update in-memory data and re-render
-        rawFuelcheckStations = stations.filter(s => !isEvOnly(s));
-        rerender();
-
-        btn.textContent = "\u21bb " + stations.length + " stations updated!";
-        document.getElementById("last-updated").firstChild.textContent =
-          "FuelCheck: " + now.toLocaleString("en-AU") + " ";
-      } catch (e) {
-        btn.textContent = "\u2717 " + (e.message || "Error");
-        console.error("Refresh error:", e);
-      }
-      setTimeout(() => { btn.textContent = "\u21bb Refresh Prices"; btn.disabled = false; }, 4000);
-    }
-    window.refreshPrices = refreshPrices;
 
     async function loadApp() {
       try {
