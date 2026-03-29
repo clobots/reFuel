@@ -563,6 +563,39 @@
 
     L.control.scale({ imperial: false }).addTo(map);
 
+    // Locate-me button
+    const locateCtrl = L.control({ position: "topleft" });
+    locateCtrl.onAdd = function() {
+      const btn = L.DomUtil.create("div", "leaflet-bar");
+      const a = L.DomUtil.create("a", "", btn);
+      a.href = "#";
+      a.title = "Zoom to my location";
+      a.setAttribute("role", "button");
+      a.style.cssText = "display:flex;align-items:center;justify-content:center;width:34px;height:34px;font-size:18px;cursor:pointer;background:#fff;color:#333;";
+      a.textContent = "\u2316";
+      let locMarker = null;
+      L.DomEvent.on(a, "click", function(e) {
+        L.DomEvent.preventDefault(e);
+        a.textContent = "\u2026";
+        navigator.geolocation.getCurrentPosition(
+          function(pos) {
+            const ll = [pos.coords.latitude, pos.coords.longitude];
+            map.setView(ll, 15);
+            if (locMarker) map.removeLayer(locMarker);
+            locMarker = L.circleMarker(ll, {
+              radius: 8, fillColor: "#4285f4", fillOpacity: 1,
+              color: "#fff", weight: 2
+            }).addTo(map).bindPopup("You are here");
+            a.textContent = "\u2316";
+          },
+          function() { a.textContent = "\u2316"; },
+          { enableHighAccuracy: true, timeout: 10000 }
+        );
+      });
+      return btn;
+    };
+    locateCtrl.addTo(map);
+
     const layers = {
       google: L.layerGroup().addTo(map),
       fuelcheck: L.layerGroup().addTo(map),
@@ -932,7 +965,7 @@
         gap: gapCount + fuelcheckOnlyCount
       });
 
-      setStatus(`Showing ${fuelcheckFiltered.length} FuelCheck + ${rawGoogleStations.length} Google stations. Matched: ${matchedCount}. Gaps: ${gapCount}. FuelCheck-only: ${fuelcheckOnlyCount}.`);
+      document.getElementById("map-status").style.display = "none";
 
       // Update availability percentage line
       const pct = rawGoogleStations.length ? Math.round((matchedCount / rawGoogleStations.length) * 100) : 0;
