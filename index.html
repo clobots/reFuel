@@ -1101,7 +1101,7 @@
       const filtering = selectedFuelTypes.size < ALL_FUEL_TYPES.length;
       const fuelLabel = filtering ? [...selectedFuelTypes].join(", ") : "any";
       document.getElementById("avail-line").innerHTML = DOMPurify.sanitize(
-        `<strong>${pct}%</strong> of local petrol stations are matched on FuelCheck as having <span style="color:var(--fuelcheck);font-weight:600;">${escapeHtml(fuelLabel)}</span> fuel.*`
+        `<strong>${pct}%</strong> of local petrol stations have <span style="color:var(--fuelcheck);font-weight:600;">${escapeHtml(fuelLabel)}</span> fuel, based on NSW Govt Fuel Check data.*`
       );
 
       updateTableBadges();
