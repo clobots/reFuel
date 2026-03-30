@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-03-30T09:42:06.662369+00:00",
+  "last_updated": "2026-03-30T09:46:38.757674+00:00",
   "zones_scraped": [
     "ryde",
     "denistone",
@@ -35,5 +35,5 @@
     "northbridge",
     "naremburn"
   ],
-  "total_stations": 199
+  "total_stations": 235
 }

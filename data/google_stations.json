@@ -1391,5 +1391,257 @@
     "lat": -33.8321189,
     "lng": 151.2374161,
     "source": "google"
+  },
+  {
+    "name": "BP Silverwater South",
+    "address": "51 Egerton St, Silverwater NSW 2128",
+    "lat": -33.836306,
+    "lng": 151.04789,
+    "source": "google"
+  },
+  {
+    "name": "7-Eleven Camperdown",
+    "address": "198 Parramatta Rd, Camperdown NSW 2050",
+    "lat": -33.886973,
+    "lng": 151.174134,
+    "source": "google"
+  },
+  {
+    "name": "U-Go Mount Colah",
+    "address": "603 Pacific Hwy, Mount Colah NSW 2079",
+    "lat": -33.670381,
+    "lng": 151.115192,
+    "source": "google"
+  },
+  {
+    "name": "7-Eleven Enmore",
+    "address": "22 Stanmore Street, Enmore NSW 2042",
+    "lat": -33.898417,
+    "lng": 151.169933,
+    "source": "google"
+  },
+  {
+    "name": "Metro Rozelle",
+    "address": "127 Victoria Rd, Rozelle NSW 2039",
+    "lat": -33.862044,
+    "lng": 151.16767,
+    "source": "google"
+  },
+  {
+    "name": "Shell Reddy Express Guildford",
+    "address": "295 Woodville Rd, Guildford NSW 2161",
+    "lat": -33.850752,
+    "lng": 150.996951,
+    "source": "google"
+  },
+  {
+    "name": "7-Eleven Guildford West",
+    "address": "534 Guildford Road West (Corner Fowler Road), Guildford West NSW 2161",
+    "lat": -33.851431,
+    "lng": 150.972137,
+    "source": "google"
+  },
+  {
+    "name": "BP Camperdown",
+    "address": "Cnr Parramatta & Missenden Roads, Camperdown NSW 2050",
+    "lat": -33.886251,
+    "lng": 151.179144,
+    "source": "google"
+  },
+  {
+    "name": "Shell Reddy Express Merrylands",
+    "address": "398 Merrylands Rd (Cnr Fowler Rd), Merrylands NSW 2160",
+    "lat": -33.834269,
+    "lng": 150.977397,
+    "source": "google"
+  },
+  {
+    "name": "BP Potts Hill T/S",
+    "address": "155-157 Rockwood Road, Yagoona NSW 2199",
+    "lat": -33.893297,
+    "lng": 151.039079,
+    "source": "google"
+  },
+  {
+    "name": "Shell Reddy Express Pymble",
+    "address": "21 Ryde Rd, Pymble NSW 2073",
+    "lat": -33.751974,
+    "lng": 151.143905,
+    "source": "google"
+  },
+  {
+    "name": "Shell Reddy Express Wahroonga",
+    "address": "1601 Pacific Hwy & Coonanbarra Rd, Wahroonga NSW 2076",
+    "lat": -33.719557,
+    "lng": 151.11588,
+    "source": "google"
+  },
+  {
+    "name": "Shell Reddy Express St Ives",
+    "address": "179-181 Mona Vale Rd, St Ives NSW 2075",
+    "lat": -33.731206,
+    "lng": 151.157571,
+    "source": "google"
+  },
+  {
+    "name": "Shell Reddy Express Annandale",
+    "address": "124-126 Johnston Street, Annandale NSW 2038",
+    "lat": -33.880918,
+    "lng": 151.170629,
+    "source": "google"
+  },
+  {
+    "name": "Speedway Westmead",
+    "address": "67-69 Hawkesbury Rd, Westmead NSW 2145",
+    "lat": -33.813346,
+    "lng": 150.98571,
+    "source": "google"
+  },
+  {
+    "name": "Speedway Regents Park",
+    "address": "27-29 Amy Steet, Regents Park NSW 2143",
+    "lat": -33.883705,
+    "lng": 151.026875,
+    "source": "google"
+  },
+  {
+    "name": "Budget Erskineville",
+    "address": "25-33 Erskineville Road, Erskineville NSW 2043",
+    "lat": -33.898772,
+    "lng": 151.182321,
+    "source": "google"
+  },
+  {
+    "name": "BP Merrylands West",
+    "address": "65 Kenyons Road, Merrylands West NSW 2160",
+    "lat": -33.836829,
+    "lng": 150.968399,
+    "source": "google"
+  },
+  {
+    "name": "Metro Fuel Alexandria",
+    "address": "36 Henderson Road, Alexandria NSW 2015",
+    "lat": -33.897447,
+    "lng": 151.197261,
+    "source": "google"
+  },
+  {
+    "name": "Tanwar Petroleum",
+    "address": "281 New Canterbury Rd, Lewisham NSW 2049",
+    "lat": -33.898544,
+    "lng": 151.145666,
+    "source": "google"
+  },
+  {
+    "name": "Speedway Villawood",
+    "address": "45 Fairfield St, Villawood NSW 2163",
+    "lat": -33.869642,
+    "lng": 150.980674,
+    "source": "google"
+  },
+  {
+    "name": "Caltex Chester Hill",
+    "address": "41 Boundary Road, Chester Hill NSW 2162",
+    "lat": -33.873839,
+    "lng": 151.007145,
+    "source": "google"
+  },
+  {
+    "name": "Metro St Ives Chase",
+    "address": "164 Warrimoo Avenue, St Ives Chase NSW 2075",
+    "lat": -33.710941,
+    "lng": 151.159927,
+    "source": "google"
+  },
+  {
+    "name": "Independent Turramurra",
+    "address": "105 Eastern Rd, Turramurra NSW 2074",
+    "lat": -33.720245,
+    "lng": 151.131246,
+    "source": "google"
+  },
+  {
+    "name": "Speedway Woodpark",
+    "address": "32-36 Woodpark Rd, Woodpark NSW 2164",
+    "lat": -33.841048,
+    "lng": 150.963335,
+    "source": "google"
+  },
+  {
+    "name": "Speedway Wenty",
+    "address": "55-57 Station St, Wentworthville NSW 2145",
+    "lat": -33.809174,
+    "lng": 150.97135,
+    "source": "google"
+  },
+  {
+    "name": "Enhance Merrylands",
+    "address": "506 Merrylands Rd, Merrylands West NSW 2160",
+    "lat": -33.832687,
+    "lng": 150.96969,
+    "source": "google"
+  },
+  {
+    "name": "BP West Pymble",
+    "address": "45 Yanko Rd, West Pymble NSW 2073",
+    "lat": -33.762079,
+    "lng": 151.128525,
+    "source": "google"
+  },
+  {
+    "name": "BP Woodpark Road",
+    "address": "186 Woodpark Rd, Smithfield NSW 2164",
+    "lat": -33.838954,
+    "lng": 150.950501,
+    "source": "google"
+  },
+  {
+    "name": "Otr Greystanes",
+    "address": "661 Merrylands Rd, Greystanes NSW 2145",
+    "lat": -33.829367,
+    "lng": 150.952665,
+    "source": "google"
+  },
+  {
+    "name": "Metro Petroleum Westleigh",
+    "address": "128 Duffy Av, Westleigh NSW 2120",
+    "lat": -33.720391,
+    "lng": 151.068932,
+    "source": "google"
+  },
+  {
+    "name": "Otr Baulkham Hills",
+    "address": "Shell Petrol Station 363 Windsor Rd, Baulkham Hills NSW 2153",
+    "lat": -33.760199,
+    "lng": 150.991598,
+    "source": "google"
+  },
+  {
+    "name": "Costco Auburn (Members Only)",
+    "address": "Costco 17-21 Parramatta Rd, Lidcombe NSW 2141",
+    "lat": -33.848086,
+    "lng": 151.049695,
+    "source": "google"
+  },
+  {
+    "name": "Metro Sefton",
+    "address": "101 Hector St, Sefton NSW 2162",
+    "lat": -33.884126,
+    "lng": 151.007052,
+    "source": "google"
+  },
+  {
+    "name": "Shell North Rocks",
+    "address": "264 North Rocks Rd, North Rocks NSW 2151",
+    "lat": -33.77511,
+    "lng": 151.022676,
+    "source": "google"
+  },
+  {
+    "name": "Astron Yagoona West",
+    "address": "100 Rookwood Rd, Yagoona NSW 2199",
+    "lat": -33.899293,
+    "lng": 151.036862,
+    "source": "google"
   }
 ]
