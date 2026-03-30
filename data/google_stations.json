@@ -1643,5 +1643,306 @@
     "lat": -33.899293,
     "lng": 151.036862,
     "source": "google"
+  },
+  {
+    "name": "EG Ampol Bass Hill",
+    "address": "",
+    "lat": -33.9010513,
+    "lng": 150.9990874,
+    "source": "google"
+  },
+  {
+    "name": "SPEEDWAY BASS HILL",
+    "address": "",
+    "lat": -33.896156,
+    "lng": 150.9913566,
+    "source": "google"
+  },
+  {
+    "name": "Shell",
+    "address": "",
+    "lat": -33.8996397,
+    "lng": 150.9975495,
+    "source": "google"
+  },
+  {
+    "name": "Enhance Bass Hill",
+    "address": "",
+    "lat": -33.897821,
+    "lng": 150.994838,
+    "source": "google"
+  },
+  {
+    "name": "Metro Petroleum",
+    "address": "",
+    "lat": -33.8889359,
+    "lng": 151.0054319,
+    "source": "google"
+  },
+  {
+    "name": "Shell Urbanista",
+    "address": "",
+    "lat": -33.9048474,
+    "lng": 151.0115336,
+    "source": "google"
+  },
+  {
+    "name": "Metro Petroleum Yagoona",
+    "address": "",
+    "lat": -33.9059014,
+    "lng": 151.0139346,
+    "source": "google"
+  },
+  {
+    "name": "Metro Villawood Truckstop",
+    "address": "",
+    "lat": -33.8875801,
+    "lng": 150.9921851,
+    "source": "google"
+  },
+  {
+    "name": "Ampol Foodary Pendle Hill",
+    "address": "",
+    "lat": -33.8082628,
+    "lng": 150.9420504,
+    "source": "google"
+  },
+  {
+    "name": "7-Eleven Pendle Hill",
+    "address": "",
+    "lat": -33.8018153,
+    "lng": 150.9578287,
+    "source": "google"
+  },
+  {
+    "name": "Metro Petroleum Pendle Hill",
+    "address": "",
+    "lat": -33.8003426,
+    "lng": 150.9558387,
+    "source": "google"
+  },
+  {
+    "name": "Fast & Ezy",
+    "address": "",
+    "lat": -33.8019073,
+    "lng": 150.9513459,
+    "source": "google"
+  },
+  {
+    "name": "Metro Fuel Greystanes",
+    "address": "",
+    "lat": -33.8182199,
+    "lng": 150.9513999,
+    "source": "google"
+  },
+  {
+    "name": "APW Store Wentworthville",
+    "address": "",
+    "lat": -33.8133487,
+    "lng": 150.9582424,
+    "source": "google"
+  },
+  {
+    "name": "BRAVO fuel station",
+    "address": "",
+    "lat": -33.7993181,
+    "lng": 150.9520717,
+    "source": "google"
+  },
+  {
+    "name": "Apex Petroleum",
+    "address": "",
+    "lat": -33.883899,
+    "lng": 150.9760719,
+    "source": "google"
+  },
+  {
+    "name": "Metro Petroleum Lansdowne",
+    "address": "",
+    "lat": -33.8892356,
+    "lng": 150.9709851,
+    "source": "google"
+  },
+  {
+    "name": "bp Truckstop Fairfield",
+    "address": "",
+    "lat": -33.877867,
+    "lng": 150.9661521,
+    "source": "google"
+  },
+  {
+    "name": "7-Eleven Lansvale",
+    "address": "",
+    "lat": -33.8916278,
+    "lng": 150.9656102,
+    "source": "google"
+  },
+  {
+    "name": "Ampol Foodary St Ives North",
+    "address": "",
+    "lat": -33.7168811,
+    "lng": 151.1734876,
+    "source": "google"
+  },
+  {
+    "name": "Metro Petroleum Fairfield",
+    "address": "",
+    "lat": -33.8725786,
+    "lng": 150.945931,
+    "source": "google"
+  },
+  {
+    "name": "SPEEDWAY FAIRFIELD",
+    "address": "",
+    "lat": -33.8712596,
+    "lng": 150.9629668,
+    "source": "google"
+  },
+  {
+    "name": "Metro Petroleum Fairfield 82",
+    "address": "",
+    "lat": -33.8730743,
+    "lng": 150.9498846,
+    "source": "google"
+  },
+  {
+    "name": "SPEEDWAY COURT RD FAIRFIELD",
+    "address": "",
+    "lat": -33.870128,
+    "lng": 150.958128,
+    "source": "google"
+  },
+  {
+    "name": "EG Ampol Fairfield Heights",
+    "address": "",
+    "lat": -33.866577,
+    "lng": 150.9378458,
+    "source": "google"
+  },
+  {
+    "name": "7-Eleven Fairfield",
+    "address": "",
+    "lat": -33.8721013,
+    "lng": 150.9372422,
+    "source": "google"
+  },
+  {
+    "name": "Budget Fairfield",
+    "address": "",
+    "lat": -33.8806631,
+    "lng": 150.9486165,
+    "source": "google"
+  },
+  {
+    "name": "Metro Petroleum Wakeley",
+    "address": "",
+    "lat": -33.873669,
+    "lng": 150.9241931,
+    "source": "google"
+  },
+  {
+    "name": "Speedway Smithfield",
+    "address": "",
+    "lat": -33.8514811,
+    "lng": 150.9429322,
+    "source": "google"
+  },
+  {
+    "name": "Metro Petroleum Canley Heights",
+    "address": "",
+    "lat": -33.8844325,
+    "lng": 150.9285399,
+    "source": "google"
+  },
+  {
+    "name": "Shell Ultimo",
+    "address": "",
+    "lat": -33.8813918,
+    "lng": 151.1967783,
+    "source": "google"
+  },
+  {
+    "name": "Budget Petrol Chippendale",
+    "address": "",
+    "lat": -33.8878193,
+    "lng": 151.2016919,
+    "source": "google"
+  },
+  {
+    "name": "Ampol Foodary Lansvale",
+    "address": "141-151 Hume Highway, Lansvale NSW 2166",
+    "lat": -33.8943,
+    "lng": 150.9572,
+    "source": "google"
+  },
+  {
+    "name": "U-Go Baulkham Hills",
+    "address": "117 Seven Hills Rd, Baulkham Hills NSW 2153",
+    "lat": -33.7614,
+    "lng": 150.9751,
+    "source": "google"
+  },
+  {
+    "name": "Coles Express Lansvale West",
+    "address": "240 Hume Highway, Lansvale NSW 2166",
+    "lat": -33.898,
+    "lng": 150.9526,
+    "source": "google"
+  },
+  {
+    "name": "Gas To Connect Guildford West",
+    "address": "54C Fairfield Road, Guildford West NSW 2161",
+    "lat": -33.8472,
+    "lng": 150.9623,
+    "source": "google"
+  },
+  {
+    "name": "Metro Petroleum Birrong",
+    "address": "158 Auburn Rd, Birrong NSW 2143",
+    "lat": -33.8975,
+    "lng": 151.0212,
+    "source": "google"
+  },
+  {
+    "name": "Shell Reddy Express Lansvale",
+    "address": "65-99 Hume Highway, Canley Vale NSW 2166",
+    "lat": -33.893,
+    "lng": 150.9606,
+    "source": "google"
+  },
+  {
+    "name": "EG Ampol Lansvale",
+    "address": "136 Hume Highway, Lansvale NSW 2166",
+    "lat": -33.8947,
+    "lng": 150.9582,
+    "source": "google"
+  },
+  {
+    "name": "BP Baulkham Hills",
+    "address": "134 Seven Hills Rd, Baulkham Hills NSW 2153",
+    "lat": -33.7617,
+    "lng": 150.974,
+    "source": "google"
+  },
+  {
+    "name": "Metro Toongabbie",
+    "address": "5 Picasso Cr, Old Toongabbie NSW 2146",
+    "lat": -33.7864,
+    "lng": 150.9673,
+    "source": "google"
+  },
+  {
+    "name": "7-Eleven Baulkham Hills",
+    "address": "224 Windsor Rd, Baulkham Hills NSW 2153",
+    "lat": -33.7555,
+    "lng": 150.9635,
+    "source": "google"
+  },
+  {
+    "name": "BP Seven Hills",
+    "address": "Prospect Hwy & Redgum Ave, Seven Hills NSW 2147",
+    "lat": -33.7672,
+    "lng": 150.9502,
+    "source": "google"
   }
 ]
