@@ -902,7 +902,8 @@
         infoHtml += `<p style="font-size:0.8rem;color:#888;">Match distance: ${Math.round(distance)}m</p>`;
       }
 
-      const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${data.lat},${data.lng}`;
+      const mapsQuery = encodeURIComponent((fc ? fc.name : goog ? goog.name : "") + " " + (fc ? fc.address : goog ? goog.address : ""));
+      const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${mapsQuery}`;
       infoHtml += `<a href="${mapsUrl}" target="_blank" rel="noopener" style="display:inline-block;margin-top:6px;font-size:0.82rem;color:#4285f4;">Open in Google Maps</a>`;
 
       const fuelHtml = fc ? formatPrices(data.prices || fc.prices) : "<p>No FuelCheck data for this station.</p>";
