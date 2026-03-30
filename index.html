@@ -821,7 +821,7 @@
         return "-";
       }
 
-      return valid[0].toLocaleString("en-AU", {
+      return valid[valid.length - 1].toLocaleString("en-AU", {
         year: "numeric",
         month: "short",
         day: "numeric",
