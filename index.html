@@ -93,7 +93,7 @@
 
     .summary {
       display: grid;
-      grid-template-columns: repeat(4, minmax(110px, 1fr));
+      grid-template-columns: repeat(3, minmax(110px, 1fr));
       gap: 10px;
       min-width: min(100%, 460px);
     }
@@ -565,22 +565,24 @@
           <p style="color:var(--muted);font-size:0.72rem;font-style:italic;margin:0 0 6px;">* assuming that fuel stations listed online sell all fuel types usually</p>
           <div class="updated-at">Last updated: <span id="last-updated">-</span></div>
         </div>
-        <dl class="summary" id="summary-panel">
-          <div class="summary-card">
-            <dt style="color:var(--matched)">Available</dt>
-            <dd id="available-count">-</dd>
-          </div>
-          <div class="summary-card">
-            <dt style="color:var(--gap)">N/A**</dt>
-            <dd id="notlisted-count">-</dd>
-          </div>
-          <div class="summary-card">
-            <dt style="color:var(--fuelcheck)">Unsure</dt>
-            <dd id="unsure-count">-</dd>
-          </div>
-        </dl>
+        <div class="summary-wrap">
+          <dl class="summary" id="summary-panel">
+            <div class="summary-card">
+              <dt style="color:var(--matched)">Available</dt>
+              <dd id="available-count">-</dd>
+            </div>
+            <div class="summary-card">
+              <dt style="color:var(--gap)">N/A**</dt>
+              <dd id="notlisted-count">-</dd>
+            </div>
+            <div class="summary-card">
+              <dt style="color:var(--fuelcheck)">Unsure</dt>
+              <dd id="unsure-count">-</dd>
+            </div>
+          </dl>
+          <p style="color:var(--gap);font-size:0.7rem;margin:6px 0 0;">** Stations not listed as having fuel in official NSW Fuel Check Govt data</p>
+        </div>
       </div>
-      <p style="color:var(--gap);font-size:0.7rem;margin:6px 0 0;text-align:center;width:100%;">** Stations not listed as having fuel in official NSW Fuel Check Govt data</p>
     </header>
     <main class="map-wrap">
       <div class="map-status" id="map-status">Loading station datasets...</div>
