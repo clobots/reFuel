@@ -239,6 +239,17 @@
       flex: 0 0 12px;
     }
 
+    .search-bar input {
+      width: 180px;
+    }
+
+    @media (max-width: 560px) {
+      .search-bar input {
+        width: 130px;
+        font-size: 12px !important;
+      }
+    }
+
     /* Mobile: fuel filter as collapsible pill, legend horizontal at bottom */
     @media (max-width: 900px) {
       .map-controls {
@@ -648,8 +659,8 @@
     const searchCtrl = L.control({ position: "topleft" });
     let searchMarker = null;
     searchCtrl.onAdd = function() {
-      const container = L.DomUtil.create("div", "leaflet-bar");
-      container.style.cssText = "display:flex;background:#fff;border-radius:4px;overflow:hidden;";
+      const container = L.DomUtil.create("div", "leaflet-bar search-bar");
+      container.style.cssText = "display:flex;background:#fff;border-radius:4px;overflow:hidden;position:absolute;top:10px;left:50px;z-index:1000;";
       const input = L.DomUtil.create("input", "", container);
       input.type = "text";
       input.placeholder = "Search address...";
