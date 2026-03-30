@@ -619,6 +619,19 @@
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
 
+    // Event delegation for popup tab switching (DOMPurify strips onclick)
+    document.addEventListener("click", function(e) {
+      var btn = e.target.closest("[data-tab-target]");
+      if (!btn) return;
+      var popup = btn.closest(".popup");
+      if (!popup) return;
+      popup.querySelectorAll(".tab-btn").forEach(function(b) { b.classList.remove("active"); });
+      popup.querySelectorAll(".tab-panel").forEach(function(p) { p.classList.remove("active"); });
+      btn.classList.add("active");
+      var target = document.getElementById(btn.getAttribute("data-tab-target"));
+      if (target) target.classList.add("active");
+    });
+
     L.control.scale({ imperial: false }).addTo(map);
 
     // Locate-me button
@@ -891,14 +904,14 @@
       const content = `
         <div class="popup">
           <div class="tab-bar">
-            <button class="tab-btn active" onclick="document.getElementById('${id}-info').classList.add('active');document.getElementById('${id}-fuel').classList.remove('active');this.classList.add('active');this.nextElementSibling.classList.remove('active');">Info</button>
-            <button class="tab-btn" onclick="document.getElementById('${id}-fuel').classList.add('active');document.getElementById('${id}-info').classList.remove('active');this.classList.add('active');this.previousElementSibling.classList.remove('active');">Fuel</button>
+            <button class="tab-btn active" data-tab-target="${id}-info">Info</button>
+            <button class="tab-btn" data-tab-target="${id}-fuel">Fuel</button>
           </div>
           <div id="${id}-info" class="tab-panel active">${infoHtml}</div>
           <div id="${id}-fuel" class="tab-panel">${fuelHtml}</div>
         </div>
       `;
-      return DOMPurify.sanitize(content);
+      return DOMPurify.sanitize(content, { ADD_ATTR: ["data-tab-target"] });
     }
 
     function addMarker(data, type) {
