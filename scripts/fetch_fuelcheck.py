@@ -165,6 +165,13 @@ def main():
     with open(OUTPUT_FILE, "w") as f:
         json.dump(filtered, f, indent=2)
 
+    # Save timestamped snapshot to history (gitignored)
+    history_dir = os.path.join(DATA_DIR, "history")
+    os.makedirs(history_dir, exist_ok=True)
+    ts = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H%M%S")
+    with open(os.path.join(history_dir, f"fuelcheck_{ts}.json"), "w") as f:
+        json.dump(filtered, f, indent=2)
+
     # Write metadata for freshness indicator
     meta = {
         "last_updated": datetime.now(timezone.utc).isoformat(),
