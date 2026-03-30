@@ -66,10 +66,6 @@
     "lng": 151.099444,
     "prices": [
       {
-        "fuel_type": "E10",
-        "price": 257.9
-      },
-      {
         "fuel_type": "P95",
         "price": 275.9
       },
@@ -232,6 +228,48 @@
     "source": "fuelcheck"
   },
   {
+    "id": "2336",
+    "name": "Ampol Foodary Dural",
+    "brand": "Ampol Foodary",
+    "address": "917-923 Old Northern Rd, DURAL NSW 2158",
+    "lat": -33.68313,
+    "lng": 151.028749,
+    "prices": [
+      {
+        "fuel_type": "P98",
+        "price": 284.9
+      },
+      {
+        "fuel_type": "PDL",
+        "price": 325.4
+      },
+      {
+        "fuel_type": "U91",
+        "price": 259.9
+      }
+    ],
+    "source": "fuelcheck"
+  },
+  {
+    "id": "2337",
+    "name": "Ampol Foodary Cherrybrook",
+    "brand": "Ampol Foodary",
+    "address": "67 Shepherds Dr, CHERRYBROOK NSW 2126",
+    "lat": -33.720696,
+    "lng": 151.045165,
+    "prices": [
+      {
+        "fuel_type": "E10",
+        "price": 257.9
+      },
+      {
+        "fuel_type": "U91",
+        "price": 259.9
+      }
+    ],
+    "source": "fuelcheck"
+  },
+  {
     "id": "2362",
     "name": "Ampol Foodary Carlingford",
     "brand": "Ampol Foodary",
@@ -308,6 +346,41 @@
       {
         "fuel_type": "P98",
         "price": 284.9
+      },
+      {
+        "fuel_type": "U91",
+        "price": 259.9
+      }
+    ],
+    "source": "fuelcheck"
+  },
+  {
+    "id": "2439",
+    "name": "United Terrey HILLS",
+    "brand": "United",
+    "address": "43 Booralie Rd, TERREY HILLS NSW 2084",
+    "lat": -33.680181,
+    "lng": 151.225022,
+    "prices": [
+      {
+        "fuel_type": "DL",
+        "price": 323.9
+      },
+      {
+        "fuel_type": "E10",
+        "price": 257.9
+      },
+      {
+        "fuel_type": "E85",
+        "price": 249.9
+      },
+      {
+        "fuel_type": "P95",
+        "price": 273.9
+      },
+      {
+        "fuel_type": "P98",
+        "price": 283.9
       },
       {
         "fuel_type": "U91",
@@ -425,6 +498,29 @@
     "source": "fuelcheck"
   },
   {
+    "id": "2714",
+    "name": "Speedway Cammeray",
+    "brand": "Speedway",
+    "address": "330 Miller St, CAMMERAY NSW 2062",
+    "lat": -33.8287134,
+    "lng": 151.2088097,
+    "prices": [
+      {
+        "fuel_type": "DL",
+        "price": 324.9
+      },
+      {
+        "fuel_type": "P98",
+        "price": 286.9
+      },
+      {
+        "fuel_type": "U91",
+        "price": 261.9
+      }
+    ],
+    "source": "fuelcheck"
+  },
+  {
     "id": "8282",
     "name": "Speedway South Granville",
     "brand": "Speedway",
@@ -486,6 +582,33 @@
     "source": "fuelcheck"
   },
   {
+    "id": "16924",
+    "name": "Budget Petrol Chippendale",
+    "brand": "Budget",
+    "address": "66-70 Regent Street, CHIPPENDALE NSW 2008",
+    "lat": -33.8878,
+    "lng": 151.2017441,
+    "prices": [
+      {
+        "fuel_type": "P95",
+        "price": 275.7
+      },
+      {
+        "fuel_type": "P98",
+        "price": 284.7
+      },
+      {
+        "fuel_type": "PDL",
+        "price": 319.7
+      },
+      {
+        "fuel_type": "U91",
+        "price": 265.7
+      }
+    ],
+    "source": "fuelcheck"
+  },
+  {
     "id": "17119",
     "name": "7-Eleven Camperdown",
     "brand": "7-Eleven",
@@ -513,13 +636,17 @@
     "source": "fuelcheck"
   },
   {
-    "id": "17139",
-    "name": "7-Eleven Baulkham Hills",
+    "id": "17121",
+    "name": "7-Eleven Paddington",
     "brand": "7-Eleven",
-    "address": "217-219 Seven Hills Rd, BAULKHAM HILLS NSW 2153",
-    "lat": -33.7555124,
-    "lng": 150.963514,
+    "address": "Cnr Oxford St & Greens Rd, PADDINGTON NSW 2021",
+    "lat": -33.883242,
+    "lng": 151.220641,
     "prices": [
+      {
+        "fuel_type": "E10",
+        "price": 257.9
+      },
       {
         "fuel_type": "LPG",
         "price": 109.9
@@ -531,6 +658,49 @@
       {
         "fuel_type": "P98",
         "price": 283.9
+      },
+      {
+        "fuel_type": "PDL",
+        "price": 323.9
+      },
+      {
+        "fuel_type": "U91",
+        "price": 259.9
+      }
+    ],
+    "source": "fuelcheck"
+  },
+  {
+    "id": "17139",
+    "name": "7-Eleven Baulkham Hills",
+    "brand": "7-Eleven",
+    "address": "217-219 Seven Hills Rd, BAULKHAM HILLS NSW 2153",
+    "lat": -33.7555124,
+    "lng": 150.963514,
+    "prices": [
+      {
+        "fuel_type": "E10",
+        "price": 257.9
+      },
+      {
+        "fuel_type": "LPG",
+        "price": 109.9
+      },
+      {
+        "fuel_type": "P95",
+        "price": 274.9
+      },
+      {
+        "fuel_type": "P98",
+        "price": 283.9
+      },
+      {
+        "fuel_type": "PDL",
+        "price": 323.9
+      },
+      {
+        "fuel_type": "U91",
+        "price": 259.9
       }
     ],
     "source": "fuelcheck"
@@ -668,6 +838,29 @@
       {
         "fuel_type": "EV",
         "price": 0.0
+      }
+    ],
+    "source": "fuelcheck"
+  },
+  {
+    "id": "17269",
+    "name": "Ampol Foodary Homebush",
+    "brand": "Ampol Foodary",
+    "address": "334-336 Parramatta Rd, HOMEBUSH WEST NSW 2140",
+    "lat": -33.8581667,
+    "lng": 151.0681389,
+    "prices": [
+      {
+        "fuel_type": "E10",
+        "price": 257.9
+      },
+      {
+        "fuel_type": "PDL",
+        "price": 325.4
+      },
+      {
+        "fuel_type": "U91",
+        "price": 259.9
       }
     ],
     "source": "fuelcheck"
@@ -845,10 +1038,6 @@
       {
         "fuel_type": "P98",
         "price": 284.9
-      },
-      {
-        "fuel_type": "PDL",
-        "price": 315.4
       },
       {
         "fuel_type": "U91",
@@ -1216,6 +1405,37 @@
     "source": "fuelcheck"
   },
   {
+    "id": "18424",
+    "name": "Ampol Foodary Belrose",
+    "brand": "Ampol Foodary",
+    "address": "153 Forest Way, Belrose NSW 2085",
+    "lat": -33.734678,
+    "lng": 151.221102,
+    "prices": [
+      {
+        "fuel_type": "E10",
+        "price": 257.9
+      },
+      {
+        "fuel_type": "P95",
+        "price": 275.9
+      },
+      {
+        "fuel_type": "P98",
+        "price": 284.9
+      },
+      {
+        "fuel_type": "PDL",
+        "price": 323.4
+      },
+      {
+        "fuel_type": "U91",
+        "price": 259.9
+      }
+    ],
+    "source": "fuelcheck"
+  },
+  {
     "id": "18468",
     "name": "Speedway Court Road",
     "brand": "Speedway",
@@ -1526,15 +1746,42 @@
     "prices": [
       {
         "fuel_type": "DL",
-        "price": 320.7
+        "price": 331.7
       },
       {
         "fuel_type": "P98",
-        "price": 282.5
+        "price": 289.7
       },
       {
         "fuel_type": "U91",
-        "price": 257.5
+        "price": 269.7
+      }
+    ],
+    "source": "fuelcheck"
+  },
+  {
+    "id": "18703",
+    "name": "METRO FUEL KILLARNEY HEIGHTS",
+    "brand": "Metro Fuel",
+    "address": "702-704 WARRINGAH RD, FORESTVILLE NSW 2087",
+    "lat": -33.7617609,
+    "lng": 151.207051,
+    "prices": [
+      {
+        "fuel_type": "E10",
+        "price": 252.5
+      },
+      {
+        "fuel_type": "P98",
+        "price": 280.5
+      },
+      {
+        "fuel_type": "PDL",
+        "price": 322.5
+      },
+      {
+        "fuel_type": "U91",
+        "price": 254.5
       }
     ],
     "source": "fuelcheck"
@@ -1659,6 +1906,21 @@
       {
         "fuel_type": "U91",
         "price": 251.9
+      }
+    ],
+    "source": "fuelcheck"
+  },
+  {
+    "id": "19082",
+    "name": "Allianz Centre - Secure Parking",
+    "brand": "Everty",
+    "address": "186 Sussex St, Sydney NSW 2000",
+    "lat": -33.8705978,
+    "lng": 151.203956,
+    "prices": [
+      {
+        "fuel_type": "EV",
+        "price": 0.0
       }
     ],
     "source": "fuelcheck"
@@ -1904,6 +2166,36 @@
     "source": "fuelcheck"
   },
   {
+    "id": "19188",
+    "name": "Crowne Plaza Darling Harbour",
+    "brand": "Tesla",
+    "address": "58 Bathurst St, Sydney NSW 2000",
+    "lat": -33.8739184,
+    "lng": 151.2040542,
+    "prices": [
+      {
+        "fuel_type": "EV",
+        "price": 0.0
+      }
+    ],
+    "source": "fuelcheck"
+  },
+  {
+    "id": "19195",
+    "name": "Darling Park - Wilson Parking",
+    "brand": "Chargefox",
+    "address": "201 Sussex St, Sydney NSW 2000",
+    "lat": -33.8712161,
+    "lng": 151.203816,
+    "prices": [
+      {
+        "fuel_type": "EV",
+        "price": 0.0
+      }
+    ],
+    "source": "fuelcheck"
+  },
+  {
     "id": "19207",
     "name": "Eden Gardens",
     "brand": "Tesla",
@@ -1919,12 +2211,117 @@
     "source": "fuelcheck"
   },
   {
+    "id": "19226",
+    "name": "Glenferrie Lodge Kirribilli",
+    "brand": "Tesla",
+    "address": "12A Carabella St, Kirribilli NSW 2061",
+    "lat": -33.8501441,
+    "lng": 151.2182433,
+    "prices": [
+      {
+        "fuel_type": "EV",
+        "price": 0.0
+      }
+    ],
+    "source": "fuelcheck"
+  },
+  {
+    "id": "19236",
+    "name": "Greenwood Plaza",
+    "brand": "Tesla",
+    "address": "36 Blue St, North Sydney NSW 2060",
+    "lat": -33.8406884,
+    "lng": 151.2075778,
+    "prices": [
+      {
+        "fuel_type": "EV",
+        "price": 0.0
+      }
+    ],
+    "source": "fuelcheck"
+  },
+  {
+    "id": "19237",
+    "name": "Greenwood Plaza",
+    "brand": "Chargefox",
+    "address": "36 Blue St, North Sydney NSW 2060",
+    "lat": -33.8406884,
+    "lng": 151.2076778,
+    "prices": [
+      {
+        "fuel_type": "EV",
+        "price": 0.0
+      }
+    ],
+    "source": "fuelcheck"
+  },
+  {
+    "id": "19239",
+    "name": "Grosvenor Place (7 Essex St)",
+    "brand": "Independent EV",
+    "address": "225 George St, Sydney NSW 2000",
+    "lat": -33.8629649,
+    "lng": 151.207252,
+    "prices": [
+      {
+        "fuel_type": "EV",
+        "price": 0.0
+      }
+    ],
+    "source": "fuelcheck"
+  },
+  {
     "id": "19247",
     "name": "Harbourside Wilson Parking",
     "brand": "Independent EV",
     "address": "59 Murray St, Sydney NSW 2000",
     "lat": -33.870915,
     "lng": 151.1974125,
+    "prices": [
+      {
+        "fuel_type": "EV",
+        "price": 0.0
+      }
+    ],
+    "source": "fuelcheck"
+  },
+  {
+    "id": "19253",
+    "name": "Hills Flower Market",
+    "brand": "Tesla",
+    "address": "287 Mona Vale Rd, Terrey Hills NSW 2084",
+    "lat": -33.6886646,
+    "lng": 151.2236545,
+    "prices": [
+      {
+        "fuel_type": "EV",
+        "price": 0.0
+      }
+    ],
+    "source": "fuelcheck"
+  },
+  {
+    "id": "19255",
+    "name": "Hilton Sydney",
+    "brand": "Tesla",
+    "address": "259 Pitt St, Sydney NSW 2000",
+    "lat": -33.8720109,
+    "lng": 151.207892,
+    "prices": [
+      {
+        "fuel_type": "EV",
+        "price": 0.0
+      }
+    ],
+    "source": "fuelcheck"
+  },
+  {
+    "id": "19258",
+    "name": "Holtermann St Carpark",
+    "brand": "Independent EV",
+    "address": "29 Holtermann St, Crows Nest NSW 2065",
+    "lat": -33.8251258,
+    "lng": 151.2021849,
     "prices": [
       {
         "fuel_type": "EV",
@@ -1955,6 +2352,81 @@
     "address": "14 Darling Dr, Sydney NSW 2000",
     "lat": -33.8751814,
     "lng": 151.1998628,
+    "prices": [
+      {
+        "fuel_type": "EV",
+        "price": 0.0
+      }
+    ],
+    "source": "fuelcheck"
+  },
+  {
+    "id": "19269",
+    "name": "Intercontinental Hotel",
+    "brand": "Tesla",
+    "address": "117 Macquarie St, Sydney NSW 2000",
+    "lat": -33.8628857,
+    "lng": 151.2123616,
+    "prices": [
+      {
+        "fuel_type": "EV",
+        "price": 0.0
+      }
+    ],
+    "source": "fuelcheck"
+  },
+  {
+    "id": "19270",
+    "name": "Intercontinental Hotel",
+    "brand": "Chargefox",
+    "address": "117 Macquarie St, Sydney NSW 2000",
+    "lat": -33.8628857,
+    "lng": 151.2124616,
+    "prices": [
+      {
+        "fuel_type": "EV",
+        "price": 0.0
+      }
+    ],
+    "source": "fuelcheck"
+  },
+  {
+    "id": "19271",
+    "name": "Intercontinental Sydney Double Bay",
+    "brand": "Independent EV",
+    "address": "20/26 Cross St, Double Bay NSW 2028",
+    "lat": -33.8764552,
+    "lng": 151.2430418,
+    "prices": [
+      {
+        "fuel_type": "EV",
+        "price": 0.0
+      }
+    ],
+    "source": "fuelcheck"
+  },
+  {
+    "id": "19281",
+    "name": "KFC Frenchs Forest",
+    "brand": "Independent EV",
+    "address": "20 Frenchs Forest Rd E, Frenchs Forest NSW 2086",
+    "lat": -33.7515351,
+    "lng": 151.2441705,
+    "prices": [
+      {
+        "fuel_type": "EV",
+        "price": 0.0
+      }
+    ],
+    "source": "fuelcheck"
+  },
+  {
+    "id": "19282",
+    "name": "Kiaora Place Shopping Centre",
+    "brand": "Chargefox",
+    "address": "1 Kiaora Rd, Double Bay NSW 2028",
+    "lat": -33.8783925,
+    "lng": 151.2439428,
     "prices": [
       {
         "fuel_type": "EV",
@@ -2099,6 +2571,36 @@
     "source": "fuelcheck"
   },
   {
+    "id": "19320",
+    "name": "Mercure Hotel",
+    "brand": "ChargePoint",
+    "address": "Shop 1/820 George St, Sydney NSW 2000",
+    "lat": -33.8842625,
+    "lng": 151.203022,
+    "prices": [
+      {
+        "fuel_type": "EV",
+        "price": 0.0
+      }
+    ],
+    "source": "fuelcheck"
+  },
+  {
+    "id": "19322",
+    "name": "Mill Hill Centre",
+    "brand": "Chargefox",
+    "address": "31 Spring St, Bondi Junction NSW 2022",
+    "lat": -33.8924759,
+    "lng": 151.2461293,
+    "prices": [
+      {
+        "fuel_type": "EV",
+        "price": 0.0
+      }
+    ],
+    "source": "fuelcheck"
+  },
+  {
     "id": "19326",
     "name": "Mirvac South Eveleigh",
     "brand": "Tesla",
@@ -2120,6 +2622,21 @@
     "address": "2 Central Ave, Eveleigh NSW 2015",
     "lat": -33.8961195,
     "lng": 151.1952555,
+    "prices": [
+      {
+        "fuel_type": "EV",
+        "price": 0.0
+      }
+    ],
+    "source": "fuelcheck"
+  },
+  {
+    "id": "19333",
+    "name": "Mosman Council",
+    "brand": "Evie Networks",
+    "address": "6 Myahgah Rd, Mosman NSW 2088",
+    "lat": -33.8255979,
+    "lng": 151.2413993,
     "prices": [
       {
         "fuel_type": "EV",
@@ -2174,6 +2691,51 @@
     "source": "fuelcheck"
   },
   {
+    "id": "19352",
+    "name": "North Sydney Council- Woolworths Car Park Crows Nest",
+    "brand": "Independent EV",
+    "address": "10 Falcon St, Crows Nest NSW 2065",
+    "lat": -33.8272798,
+    "lng": 151.2017211,
+    "prices": [
+      {
+        "fuel_type": "EV",
+        "price": 0.0
+      }
+    ],
+    "source": "fuelcheck"
+  },
+  {
+    "id": "19355",
+    "name": "Novotel Sydney Central",
+    "brand": "Tesla",
+    "address": "179 Thomas St, Haymarket NSW 2000",
+    "lat": -33.8817471,
+    "lng": 151.2027944,
+    "prices": [
+      {
+        "fuel_type": "EV",
+        "price": 0.0
+      }
+    ],
+    "source": "fuelcheck"
+  },
+  {
+    "id": "19367",
+    "name": "Park Hyatt Sydney",
+    "brand": "Tesla",
+    "address": "7 Hickson Rd, The Rocks NSW 2000",
+    "lat": -33.8557235,
+    "lng": 151.2097888,
+    "prices": [
+      {
+        "fuel_type": "EV",
+        "price": 0.0
+      }
+    ],
+    "source": "fuelcheck"
+  },
+  {
     "id": "19370",
     "name": "Parramatta Motor Group, Service Centre",
     "brand": "Independent EV",
@@ -2210,6 +2772,51 @@
     "address": "shop 17/10 Hillcrest Rd, Pennant Hills NSW 2120",
     "lat": -33.7376217,
     "lng": 151.0709729,
+    "prices": [
+      {
+        "fuel_type": "EV",
+        "price": 0.0
+      }
+    ],
+    "source": "fuelcheck"
+  },
+  {
+    "id": "19383",
+    "name": "Pier One Sydney Harbour",
+    "brand": "Tesla",
+    "address": "11 Hickson Rd, Dawes Point NSW 2000",
+    "lat": -33.85419,
+    "lng": 151.2081547,
+    "prices": [
+      {
+        "fuel_type": "EV",
+        "price": 0.0
+      }
+    ],
+    "source": "fuelcheck"
+  },
+  {
+    "id": "19390",
+    "name": "Pullman Sydney Hyde Park",
+    "brand": "Tesla",
+    "address": "36 College St, Darlinghurst NSW 2010",
+    "lat": -33.8762429,
+    "lng": 151.2125209,
+    "prices": [
+      {
+        "fuel_type": "EV",
+        "price": 0.0
+      }
+    ],
+    "source": "fuelcheck"
+  },
+  {
+    "id": "19394",
+    "name": "Queen Victoria Building - Valet Parking",
+    "brand": "Tesla",
+    "address": "111 York St, Sydney NSW 2000",
+    "lat": -33.8711794,
+    "lng": 151.2061077,
     "prices": [
       {
         "fuel_type": "EV",
@@ -2264,6 +2871,36 @@
     "source": "fuelcheck"
   },
   {
+    "id": "19401",
+    "name": "Ridge St Carpark",
+    "brand": "Independent EV",
+    "address": "1 James Pl, North Sydney NSW 2060",
+    "lat": -33.833291,
+    "lng": 151.2073294,
+    "prices": [
+      {
+        "fuel_type": "EV",
+        "price": 0.0
+      }
+    ],
+    "source": "fuelcheck"
+  },
+  {
+    "id": "19422",
+    "name": "Sheraton Grand Hyde Park",
+    "brand": "Tesla",
+    "address": "161 Elizabeth St, Sydney NSW 2000",
+    "lat": -33.8715295,
+    "lng": 151.2097193,
+    "prices": [
+      {
+        "fuel_type": "EV",
+        "price": 0.0
+      }
+    ],
+    "source": "fuelcheck"
+  },
+  {
     "id": "19433",
     "name": "St Ives Shopping Village",
     "brand": "Chargefox",
@@ -2300,6 +2937,36 @@
     "address": "375 Windsor Rd, Baulkham Hills NSW 2153",
     "lat": -33.7590552,
     "lng": 150.9916552,
+    "prices": [
+      {
+        "fuel_type": "EV",
+        "price": 0.0
+      }
+    ],
+    "source": "fuelcheck"
+  },
+  {
+    "id": "19442",
+    "name": "Stockland Cammeray",
+    "brand": "Tesla",
+    "address": "450 Miller St, Cammeray NSW 2062",
+    "lat": -33.8236017,
+    "lng": 151.2097047,
+    "prices": [
+      {
+        "fuel_type": "EV",
+        "price": 0.0
+      }
+    ],
+    "source": "fuelcheck"
+  },
+  {
+    "id": "19443",
+    "name": "Stockland Cammeray",
+    "brand": "ChargePoint",
+    "address": "450 Miller St, Cammeray NSW 2062",
+    "lat": -33.8236017,
+    "lng": 151.2098047,
     "prices": [
       {
         "fuel_type": "EV",
@@ -2444,6 +3111,21 @@
     "source": "fuelcheck"
   },
   {
+    "id": "19478",
+    "name": "The Amora Hotel Jamison Sydney",
+    "brand": "Tesla",
+    "address": "11 Jamison St, Sydney NSW 2000",
+    "lat": -33.8645502,
+    "lng": 151.2061462,
+    "prices": [
+      {
+        "fuel_type": "EV",
+        "price": 0.0
+      }
+    ],
+    "source": "fuelcheck"
+  },
+  {
     "id": "19480",
     "name": "The Canopy Lane Cove - P3",
     "brand": "Tesla",
@@ -2480,6 +3162,21 @@
     "address": "1 Salisbury Rd, Castle Hill NSW 2154",
     "lat": -33.7306381,
     "lng": 150.9731012,
+    "prices": [
+      {
+        "fuel_type": "EV",
+        "price": 0.0
+      }
+    ],
+    "source": "fuelcheck"
+  },
+  {
+    "id": "19493",
+    "name": "The Langham Hotel Sydney",
+    "brand": "Tesla",
+    "address": "89-113 Kent St, Millers Point NSW 2000",
+    "lat": -33.8605169,
+    "lng": 151.2034473,
     "prices": [
       {
         "fuel_type": "EV",
@@ -2624,6 +3321,81 @@
     "source": "fuelcheck"
   },
   {
+    "id": "19542",
+    "name": "Westfield Sydney Central Plaza",
+    "brand": "Tesla",
+    "address": "135 King St, Sydney NSW 2000",
+    "lat": -33.869167,
+    "lng": 151.2087416,
+    "prices": [
+      {
+        "fuel_type": "EV",
+        "price": 0.0
+      }
+    ],
+    "source": "fuelcheck"
+  },
+  {
+    "id": "19543",
+    "name": "Westfield Sydney Central Plaza",
+    "brand": "Independent EV",
+    "address": "135 King St, Sydney NSW 2000",
+    "lat": -33.869167,
+    "lng": 151.2088416,
+    "prices": [
+      {
+        "fuel_type": "EV",
+        "price": 0.0
+      }
+    ],
+    "source": "fuelcheck"
+  },
+  {
+    "id": "19550",
+    "name": "Wilson Parking Domain Car Park",
+    "brand": "Independent EV",
+    "address": "St Marys Rd, Sydney NSW 2000",
+    "lat": -33.8710864,
+    "lng": 151.2144742,
+    "prices": [
+      {
+        "fuel_type": "EV",
+        "price": 0.0
+      }
+    ],
+    "source": "fuelcheck"
+  },
+  {
+    "id": "19551",
+    "name": "Wilson Parking Market City",
+    "brand": "Tesla",
+    "address": "9-13 Hay St, Haymarket NSW 2000",
+    "lat": -33.8799521,
+    "lng": 151.2034355,
+    "prices": [
+      {
+        "fuel_type": "EV",
+        "price": 0.0
+      }
+    ],
+    "source": "fuelcheck"
+  },
+  {
+    "id": "19552",
+    "name": "Wilson Secure Parking Opera House",
+    "brand": "Independent EV",
+    "address": "2A Macquarie St, Sydney NSW 2000",
+    "lat": -33.8593398,
+    "lng": 151.2135232,
+    "prices": [
+      {
+        "fuel_type": "EV",
+        "price": 0.0
+      }
+    ],
+    "source": "fuelcheck"
+  },
+  {
     "id": "19758",
     "name": "BUR001",
     "brand": "JOLT",
@@ -2699,6 +3471,21 @@
     "source": "fuelcheck"
   },
   {
+    "id": "19769",
+    "name": "NBE002",
+    "brand": "JOLT",
+    "address": "59 The Centre, Forestville NSW 2087",
+    "lat": -33.762056,
+    "lng": 151.214167,
+    "prices": [
+      {
+        "fuel_type": "EV",
+        "price": 0.0
+      }
+    ],
+    "source": "fuelcheck"
+  },
+  {
     "id": "19778",
     "name": "STR001",
     "brand": "JOLT",
@@ -2720,6 +3507,21 @@
     "address": "14 Darling Dr, Sydney NSW 2000",
     "lat": -33.8750891,
     "lng": 151.1987383,
+    "prices": [
+      {
+        "fuel_type": "EV",
+        "price": 0.0
+      }
+    ],
+    "source": "fuelcheck"
+  },
+  {
+    "id": "19780",
+    "name": "NRMA AC Charger P2 car park",
+    "brand": "NRMA",
+    "address": "14 Darling Dr, Sydney NSW 2000",
+    "lat": -33.8767437,
+    "lng": 151.2000042,
     "prices": [
       {
         "fuel_type": "EV",
@@ -2780,6 +3582,21 @@
     "address": "23 Morwick St, Strathfield NSW 2135",
     "lat": -33.8747073,
     "lng": 151.0949486,
+    "prices": [
+      {
+        "fuel_type": "EV",
+        "price": 0.0
+      }
+    ],
+    "source": "fuelcheck"
+  },
+  {
+    "id": "20284",
+    "name": "Asteri Maison - Paddington",
+    "brand": "Exploren",
+    "address": "6 Cecil St, Paddington NSW 2021",
+    "lat": -33.8823359,
+    "lng": 151.2335806,
     "prices": [
       {
         "fuel_type": "EV",
@@ -2864,6 +3681,21 @@
     "source": "fuelcheck"
   },
   {
+    "id": "20326",
+    "name": "Disney Studios Australia Pty Ltd",
+    "brand": "Exploren",
+    "address": "40B Driver Ave, Moore Park NSW 2021",
+    "lat": -33.8925692,
+    "lng": 151.226303,
+    "prices": [
+      {
+        "fuel_type": "EV",
+        "price": 0.0
+      }
+    ],
+    "source": "fuelcheck"
+  },
+  {
     "id": "20332",
     "name": "Eclipse Tower",
     "brand": "Exploren",
@@ -2909,6 +3741,36 @@
     "source": "fuelcheck"
   },
   {
+    "id": "20363",
+    "name": "Intellihub - \u00a0388 Edgecliff Rd",
+    "brand": "Exploren",
+    "address": "388 Edgecliff Rd, Woollahra NSW 2025",
+    "lat": -33.8832086,
+    "lng": 151.2420528,
+    "prices": [
+      {
+        "fuel_type": "EV",
+        "price": 0.0
+      }
+    ],
+    "source": "fuelcheck"
+  },
+  {
+    "id": "20368",
+    "name": "Intellihub -  Queens Park Road, Queens Park",
+    "brand": "Exploren",
+    "address": "66 Queens Park Rd, Queens Park NSW 2022",
+    "lat": -33.8990954,
+    "lng": 151.2481101,
+    "prices": [
+      {
+        "fuel_type": "EV",
+        "price": 0.0
+      }
+    ],
+    "source": "fuelcheck"
+  },
+  {
     "id": "20372",
     "name": "Intellihub - 11 Little Street, Lane Cove",
     "brand": "Exploren",
@@ -2939,6 +3801,21 @@
     "source": "fuelcheck"
   },
   {
+    "id": "20375",
+    "name": "Intellihub - 176 Sutherland Street, Paddington",
+    "brand": "Exploren",
+    "address": "176 Sutherland St, Paddington NSW 2021",
+    "lat": -33.8843595,
+    "lng": 151.235984,
+    "prices": [
+      {
+        "fuel_type": "EV",
+        "price": 0.0
+      }
+    ],
+    "source": "fuelcheck"
+  },
+  {
     "id": "20381",
     "name": "Intellihub -\u00a072 Christie Street, St Leonards",
     "brand": "Exploren",
@@ -2954,12 +3831,87 @@
     "source": "fuelcheck"
   },
   {
+    "id": "20387",
+    "name": "Intellihub - Blackbutts Rd",
+    "brand": "Exploren",
+    "address": "52 Blackbutts Rd, Frenchs Forest NSW 2086",
+    "lat": -33.74183,
+    "lng": 151.2137825,
+    "prices": [
+      {
+        "fuel_type": "EV",
+        "price": 0.0
+      }
+    ],
+    "source": "fuelcheck"
+  },
+  {
+    "id": "20389",
+    "name": "Intellihub - Campbell Avenue, Paddington",
+    "brand": "Exploren",
+    "address": "27 Campbell Ave, Paddington NSW 2021",
+    "lat": -33.8810353,
+    "lng": 151.2227966,
+    "prices": [
+      {
+        "fuel_type": "EV",
+        "price": 0.0
+      }
+    ],
+    "source": "fuelcheck"
+  },
+  {
     "id": "20396",
     "name": "Intellihub - Nicholson St, Wollstonecraft",
     "brand": "Exploren",
     "address": "4 Oxley St, St Leonards NSW 2065",
     "lat": -33.8257557,
     "lng": 151.1969689,
+    "prices": [
+      {
+        "fuel_type": "EV",
+        "price": 0.0
+      }
+    ],
+    "source": "fuelcheck"
+  },
+  {
+    "id": "20399",
+    "name": "Intellihub - Quarry St, Paddington",
+    "brand": "Exploren",
+    "address": "1 Quarry St, Paddington NSW 2021",
+    "lat": -33.8846447,
+    "lng": 151.2372822,
+    "prices": [
+      {
+        "fuel_type": "EV",
+        "price": 0.0
+      }
+    ],
+    "source": "fuelcheck"
+  },
+  {
+    "id": "20400",
+    "name": "Intellihub - Roylston St. Paddington",
+    "brand": "Exploren",
+    "address": "23 Roylston St, Paddington NSW 2021",
+    "lat": -33.88178,
+    "lng": 151.233328,
+    "prices": [
+      {
+        "fuel_type": "EV",
+        "price": 0.0
+      }
+    ],
+    "source": "fuelcheck"
+  },
+  {
+    "id": "20408",
+    "name": "Intellihub - Yulong Ave",
+    "brand": "Exploren",
+    "address": "12 Yulong Ave, Terrey Hills NSW 2084",
+    "lat": -33.6822214,
+    "lng": 151.2279515,
     "prices": [
       {
         "fuel_type": "EV",
@@ -3044,6 +3996,21 @@
     "source": "fuelcheck"
   },
   {
+    "id": "20438",
+    "name": "Mercure Sydney - Schwartz Family",
+    "brand": "Exploren",
+    "address": "818 George St, Chippendale NSW 2008",
+    "lat": -33.8842625,
+    "lng": 151.203022,
+    "prices": [
+      {
+        "fuel_type": "EV",
+        "price": 0.0
+      }
+    ],
+    "source": "fuelcheck"
+  },
+  {
     "id": "20445",
     "name": "North Turramurra Recreation Area",
     "brand": "Exploren",
@@ -3089,12 +4056,72 @@
     "source": "fuelcheck"
   },
   {
+    "id": "20461",
+    "name": "Rosemont",
+    "brand": "Exploren",
+    "address": "80 Hume Ln, Crows Nest NSW 2065",
+    "lat": -33.82314,
+    "lng": 151.2002953,
+    "prices": [
+      {
+        "fuel_type": "EV",
+        "price": 0.0
+      }
+    ],
+    "source": "fuelcheck"
+  },
+  {
+    "id": "20464",
+    "name": "Rydges Sydney Central - Schwartz Family",
+    "brand": "Exploren",
+    "address": "28 Albion St, Surry Hills NSW 2010",
+    "lat": -33.8819201,
+    "lng": 151.2097607,
+    "prices": [
+      {
+        "fuel_type": "EV",
+        "price": 0.0
+      }
+    ],
+    "source": "fuelcheck"
+  },
+  {
+    "id": "20465",
+    "name": "Rydges World Square - Schwartz Family",
+    "brand": "Exploren",
+    "address": "389 Pitt St, Sydney NSW 2000",
+    "lat": -33.8769645,
+    "lng": 151.2074949,
+    "prices": [
+      {
+        "fuel_type": "EV",
+        "price": 0.0
+      }
+    ],
+    "source": "fuelcheck"
+  },
+  {
     "id": "20468",
     "name": "Seymour Residence Roseville",
     "brand": "Exploren",
     "address": "989 Pacific Hwy, Roseville NSW 2069",
     "lat": -33.7887782,
     "lng": 151.1803313,
+    "prices": [
+      {
+        "fuel_type": "EV",
+        "price": 0.0
+      }
+    ],
+    "source": "fuelcheck"
+  },
+  {
+    "id": "20470",
+    "name": "Sheraton Grand Sydney Hyde Park",
+    "brand": "Exploren",
+    "address": "161 Elizabeth St, Sydney NSW 2000",
+    "lat": -33.8715281,
+    "lng": 151.2098195,
     "prices": [
       {
         "fuel_type": "EV",
@@ -3239,6 +4266,21 @@
     "source": "fuelcheck"
   },
   {
+    "id": "20510",
+    "name": "Wunderlich Lane Coles",
+    "brand": "Exploren",
+    "address": "2 Baptist St, Redfern NSW 2016",
+    "lat": -33.8934611,
+    "lng": 151.2123376,
+    "prices": [
+      {
+        "fuel_type": "EV",
+        "price": 0.0
+      }
+    ],
+    "source": "fuelcheck"
+  },
+  {
     "id": "20659",
     "name": "AGL  Allman Ave, Summer Hill",
     "brand": "AGL",
@@ -3284,12 +4326,42 @@
     "source": "fuelcheck"
   },
   {
+    "id": "20663",
+    "name": "AGL  Bellevue Rd, Bellevue Hill",
+    "brand": "AGL",
+    "address": "Opposite 150 Bellevue Rd, Bellevue Hill NSW 2023",
+    "lat": -33.87836697,
+    "lng": 151.2467379,
+    "prices": [
+      {
+        "fuel_type": "EV",
+        "price": 0.0
+      }
+    ],
+    "source": "fuelcheck"
+  },
+  {
     "id": "20665",
     "name": "AGL  Boomerang St, Haberfield",
     "brand": "AGL",
     "address": "Opposite 67 Boomerang St, Haberfield NSW 2045",
     "lat": -33.870609,
     "lng": 151.14523,
+    "prices": [
+      {
+        "fuel_type": "EV",
+        "price": 0.0
+      }
+    ],
+    "source": "fuelcheck"
+  },
+  {
+    "id": "20669",
+    "name": "AGL  Boundary St (on Dillon St), Paddington",
+    "brand": "AGL",
+    "address": "Adjacent 90 Boundary St, Paddington NSW 2021",
+    "lat": -33.879191,
+    "lng": 151.22485,
     "prices": [
       {
         "fuel_type": "EV",
@@ -3314,6 +4386,21 @@
     "source": "fuelcheck"
   },
   {
+    "id": "20676",
+    "name": "AGL  Cascade St, Paddington",
+    "brand": "AGL",
+    "address": "Opposite 97 Cascade St, Paddington NSW 2021",
+    "lat": -33.880702,
+    "lng": 151.23259,
+    "prices": [
+      {
+        "fuel_type": "EV",
+        "price": 0.0
+      }
+    ],
+    "source": "fuelcheck"
+  },
+  {
     "id": "20683",
     "name": "AGL  Day St, Leichhardt",
     "brand": "AGL",
@@ -3329,12 +4416,87 @@
     "source": "fuelcheck"
   },
   {
+    "id": "20684",
+    "name": "AGL  Denison St, Bondi Junction",
+    "brand": "AGL",
+    "address": "85 Denison St, Bondi Junction NSW 2022",
+    "lat": -33.893444,
+    "lng": 151.24459,
+    "prices": [
+      {
+        "fuel_type": "EV",
+        "price": 0.0
+      }
+    ],
+    "source": "fuelcheck"
+  },
+  {
+    "id": "20685",
+    "name": "AGL  Denison St, Queens Park",
+    "brand": "AGL",
+    "address": "229 Denison St, Queens Park NSW 2022",
+    "lat": -33.89824416,
+    "lng": 151.2435829,
+    "prices": [
+      {
+        "fuel_type": "EV",
+        "price": 0.0
+      }
+    ],
+    "source": "fuelcheck"
+  },
+  {
     "id": "20686",
     "name": "AGL  Denison St, Rozelle",
     "brand": "AGL",
     "address": "Opposite 103 Denison St, Rozelle NSW 2039",
     "lat": -33.869885,
     "lng": 151.17001,
+    "prices": [
+      {
+        "fuel_type": "EV",
+        "price": 0.0
+      }
+    ],
+    "source": "fuelcheck"
+  },
+  {
+    "id": "20688",
+    "name": "AGL  Duxford St, Paddington",
+    "brand": "AGL",
+    "address": "11 DuxfoRd, St, Paddington NSW 2021",
+    "lat": -33.882503,
+    "lng": 151.2296,
+    "prices": [
+      {
+        "fuel_type": "EV",
+        "price": 0.0
+      }
+    ],
+    "source": "fuelcheck"
+  },
+  {
+    "id": "20690",
+    "name": "AGL  Edgecliff Rd, Edgecliff",
+    "brand": "AGL",
+    "address": "442-446 Edgecliff Rd, Edgecliff NSW 2027",
+    "lat": -33.879684,
+    "lng": 151.23905,
+    "prices": [
+      {
+        "fuel_type": "EV",
+        "price": 0.0
+      }
+    ],
+    "source": "fuelcheck"
+  },
+  {
+    "id": "20691",
+    "name": "AGL  Elizabeth St, Paddington",
+    "brand": "AGL",
+    "address": "Opposite 65 Elizabeth St, Paddington NSW 2021",
+    "lat": -33.88464497,
+    "lng": 151.2332441,
     "prices": [
       {
         "fuel_type": "EV",
@@ -3479,6 +4641,21 @@
     "source": "fuelcheck"
   },
   {
+    "id": "20710",
+    "name": "AGL  Jersey Rd, Woollahra",
+    "brand": "AGL",
+    "address": "7 Jersey Rd, Woollahra NSW 2025",
+    "lat": -33.888405,
+    "lng": 151.23263,
+    "prices": [
+      {
+        "fuel_type": "EV",
+        "price": 0.0
+      }
+    ],
+    "source": "fuelcheck"
+  },
+  {
     "id": "20711",
     "name": "AGL  Johnston St, Balmain East",
     "brand": "AGL",
@@ -3584,12 +4761,57 @@
     "source": "fuelcheck"
   },
   {
+    "id": "20723",
+    "name": "AGL  Quarry St Tennis Courts, Paddington",
+    "brand": "AGL",
+    "address": "Quarry St Tennis Courts, Paddington NSW 2021",
+    "lat": -33.882832,
+    "lng": 151.23686,
+    "prices": [
+      {
+        "fuel_type": "EV",
+        "price": 0.0
+      }
+    ],
+    "source": "fuelcheck"
+  },
+  {
     "id": "20725",
     "name": "AGL  Ramsay St (pole in Martin St), Habberfield",
     "brand": "AGL",
     "address": "Adjacent 287 Ramsay St, Habberfield NSW 2045",
     "lat": -33.873368,
     "lng": 151.13367,
+    "prices": [
+      {
+        "fuel_type": "EV",
+        "price": 0.0
+      }
+    ],
+    "source": "fuelcheck"
+  },
+  {
+    "id": "20732",
+    "name": "AGL  StaffoRd, St, Paddington",
+    "brand": "AGL",
+    "address": "22 StaffoRd, St, Paddington NSW 2021",
+    "lat": -33.883741,
+    "lng": 151.22888,
+    "prices": [
+      {
+        "fuel_type": "EV",
+        "price": 0.0
+      }
+    ],
+    "source": "fuelcheck"
+  },
+  {
+    "id": "20733",
+    "name": "AGL  Stanley St, Queens Park",
+    "brand": "AGL",
+    "address": "Opposite 4 Stanley St, Queens Park NSW 2022",
+    "lat": -33.8959361,
+    "lng": 151.2474969,
     "prices": [
       {
         "fuel_type": "EV",
@@ -3614,12 +4836,42 @@
     "source": "fuelcheck"
   },
   {
+    "id": "20741",
+    "name": "AGL  York Rd, Bondi Junction",
+    "brand": "AGL",
+    "address": "Opposite 1 York Rd, Bondi Junction NSW 2022",
+    "lat": -33.892965,
+    "lng": 151.2418,
+    "prices": [
+      {
+        "fuel_type": "EV",
+        "price": 0.0
+      }
+    ],
+    "source": "fuelcheck"
+  },
+  {
     "id": "20742",
     "name": "AGL  Young St, Annandale",
     "brand": "AGL",
     "address": "136 Young St, Annandale NSW 2038",
     "lat": -33.883784,
     "lng": 151.16688,
+    "prices": [
+      {
+        "fuel_type": "EV",
+        "price": 0.0
+      }
+    ],
+    "source": "fuelcheck"
+  },
+  {
+    "id": "20743",
+    "name": "AGL 104 Mill Hill Rd, Bondi Junction",
+    "brand": "AGL",
+    "address": "104 Mill Hill Rd, Bondi Junction NSW 2022",
+    "lat": -33.893655,
+    "lng": 151.2438,
     "prices": [
       {
         "fuel_type": "EV",
@@ -3665,6 +4917,51 @@
     "address": "131 Annandale St, Annandale NSW 2038",
     "lat": -33.881759,
     "lng": 151.16904,
+    "prices": [
+      {
+        "fuel_type": "EV",
+        "price": 0.0
+      }
+    ],
+    "source": "fuelcheck"
+  },
+  {
+    "id": "20750",
+    "name": "AGL 153 Windsor St, Paddington",
+    "brand": "AGL",
+    "address": "153 Windsor St, Paddington NSW 2021",
+    "lat": -33.886321,
+    "lng": 151.23523,
+    "prices": [
+      {
+        "fuel_type": "EV",
+        "price": 0.0
+      }
+    ],
+    "source": "fuelcheck"
+  },
+  {
+    "id": "20751",
+    "name": "AGL 16 Duxford St, Paddington",
+    "brand": "AGL",
+    "address": "Opposite 16 Duxford St, Paddington NSW 2021",
+    "lat": -33.882758,
+    "lng": 151.22928,
+    "prices": [
+      {
+        "fuel_type": "EV",
+        "price": 0.0
+      }
+    ],
+    "source": "fuelcheck"
+  },
+  {
+    "id": "20752",
+    "name": "AGL 163 Windsor St, Paddington",
+    "brand": "AGL",
+    "address": "163 Windsor St, Paddington NSW 2021",
+    "lat": -33.886508,
+    "lng": 151.2355,
     "prices": [
       {
         "fuel_type": "EV",
@@ -3809,6 +5106,21 @@
     "source": "fuelcheck"
   },
   {
+    "id": "20775",
+    "name": "AGL 31 DuxfoRd, St, Paddington",
+    "brand": "AGL",
+    "address": "31 DuxfoRd, St, Paddington NSW 2021",
+    "lat": -33.883118,
+    "lng": 151.22891,
+    "prices": [
+      {
+        "fuel_type": "EV",
+        "price": 0.0
+      }
+    ],
+    "source": "fuelcheck"
+  },
+  {
     "id": "20776",
     "name": "AGL 31 Mallett St, Camperdown",
     "brand": "AGL",
@@ -3929,6 +5241,21 @@
     "source": "fuelcheck"
   },
   {
+    "id": "20797",
+    "name": "AGL 59 Windsor St, Paddington",
+    "brand": "AGL",
+    "address": "59 Windsor St, Paddington NSW 2021",
+    "lat": -33.885101,
+    "lng": 151.23344,
+    "prices": [
+      {
+        "fuel_type": "EV",
+        "price": 0.0
+      }
+    ],
+    "source": "fuelcheck"
+  },
+  {
     "id": "20798",
     "name": "AGL 626 Mowbray Rd W, Lane Cove North",
     "brand": "AGL",
@@ -3950,6 +5277,21 @@
     "address": "642 Mowbray Rd W, Lane Cove North NSW 2066",
     "lat": -33.804553,
     "lng": 151.1552,
+    "prices": [
+      {
+        "fuel_type": "EV",
+        "price": 0.0
+      }
+    ],
+    "source": "fuelcheck"
+  },
+  {
+    "id": "20800",
+    "name": "AGL 66 Mill Hill Rd, Bondi Junction",
+    "brand": "AGL",
+    "address": "66 Mill Hill Rd, Bondi Junction NSW 2022",
+    "lat": -33.892692,
+    "lng": 151.244,
     "prices": [
       {
         "fuel_type": "EV",
@@ -4432,10 +5774,6 @@
         "price": 323.9
       },
       {
-        "fuel_type": "E10",
-        "price": 257.9
-      },
-      {
         "fuel_type": "P95",
         "price": 277.4
       },
@@ -4594,6 +5932,25 @@
     "source": "fuelcheck"
   },
   {
+    "id": "141",
+    "name": "7-Eleven Mosman",
+    "brand": "7-Eleven",
+    "address": "162A Spit Road (Corner Mitchell Road), Mosman NSW 2088",
+    "lat": -33.817498,
+    "lng": 151.243383,
+    "prices": [
+      {
+        "fuel_type": "E10",
+        "price": 257.9
+      },
+      {
+        "fuel_type": "U91",
+        "price": 259.9
+      }
+    ],
+    "source": "fuelcheck"
+  },
+  {
     "id": "145",
     "name": "7-Eleven Drummoyne",
     "brand": "7-Eleven",
@@ -4639,6 +5996,37 @@
       {
         "fuel_type": "P98",
         "price": 283.9
+      },
+      {
+        "fuel_type": "U91",
+        "price": 259.9
+      }
+    ],
+    "source": "fuelcheck"
+  },
+  {
+    "id": "154",
+    "name": "7-Eleven Mosman",
+    "brand": "7-Eleven",
+    "address": "45 Spit Road, Mosman NSW 2088",
+    "lat": -33.823058,
+    "lng": 151.243459,
+    "prices": [
+      {
+        "fuel_type": "E10",
+        "price": 257.9
+      },
+      {
+        "fuel_type": "P95",
+        "price": 274.9
+      },
+      {
+        "fuel_type": "P98",
+        "price": 283.9
+      },
+      {
+        "fuel_type": "PDL",
+        "price": 323.9
       },
       {
         "fuel_type": "U91",
@@ -5116,8 +6504,16 @@
         "price": 257.9
       },
       {
+        "fuel_type": "P98",
+        "price": 283.9
+      },
+      {
         "fuel_type": "PDL",
         "price": 323.9
+      },
+      {
+        "fuel_type": "U91",
+        "price": 259.9
       }
     ],
     "source": "fuelcheck"
@@ -5274,6 +6670,33 @@
     "source": "fuelcheck"
   },
   {
+    "id": "291",
+    "name": "Shell Reddy Express Cremorne",
+    "brand": "Reddy Express",
+    "address": "227 Military Rd, Cremorne NSW 2090",
+    "lat": -33.830574,
+    "lng": 151.226235,
+    "prices": [
+      {
+        "fuel_type": "DL",
+        "price": 323.9
+      },
+      {
+        "fuel_type": "E10",
+        "price": 257.9
+      },
+      {
+        "fuel_type": "P95",
+        "price": 275.4
+      },
+      {
+        "fuel_type": "P98",
+        "price": 284.9
+      }
+    ],
+    "source": "fuelcheck"
+  },
+  {
     "id": "292",
     "name": "7-Eleven Strathfield South",
     "brand": "7-Eleven",
@@ -5356,16 +6779,39 @@
         "price": 274.9
       },
       {
-        "fuel_type": "P98",
-        "price": 283.9
-      },
-      {
         "fuel_type": "PDL",
         "price": 323.9
       },
       {
         "fuel_type": "U91",
         "price": 259.9
+      }
+    ],
+    "source": "fuelcheck"
+  },
+  {
+    "id": "300",
+    "name": "BP Mosman (0926)",
+    "brand": "BP",
+    "address": "Cnr Avenue & Cowles Roads, Mosman NSW 2088",
+    "lat": -33.832039,
+    "lng": 151.237292,
+    "prices": [
+      {
+        "fuel_type": "E10",
+        "price": 257.9
+      },
+      {
+        "fuel_type": "P95",
+        "price": 273.9
+      },
+      {
+        "fuel_type": "P98",
+        "price": 282.9
+      },
+      {
+        "fuel_type": "PDL",
+        "price": 323.9
       }
     ],
     "source": "fuelcheck"
@@ -5745,6 +7191,33 @@
     "source": "fuelcheck"
   },
   {
+    "id": "365",
+    "name": "BP Woollahra",
+    "brand": "BP",
+    "address": "39 Vernon Street, Woollahra NSW 2025",
+    "lat": -33.889907,
+    "lng": 151.247435,
+    "prices": [
+      {
+        "fuel_type": "E10",
+        "price": 257.9
+      },
+      {
+        "fuel_type": "P95",
+        "price": 276.9
+      },
+      {
+        "fuel_type": "P98",
+        "price": 285.9
+      },
+      {
+        "fuel_type": "PDL",
+        "price": 323.9
+      }
+    ],
+    "source": "fuelcheck"
+  },
+  {
     "id": "369",
     "name": "Coles Express Greenacre",
     "brand": "Coles Express",
@@ -5767,6 +7240,33 @@
       {
         "fuel_type": "P98",
         "price": 286.9
+      },
+      {
+        "fuel_type": "U91",
+        "price": 259.9
+      }
+    ],
+    "source": "fuelcheck"
+  },
+  {
+    "id": "373",
+    "name": "BP Mosman (9542)",
+    "brand": "BP",
+    "address": "175 Ourimbah Road, Mosman NSW 2088",
+    "lat": -33.821068,
+    "lng": 151.233292,
+    "prices": [
+      {
+        "fuel_type": "E10",
+        "price": 257.9
+      },
+      {
+        "fuel_type": "P98",
+        "price": 282.9
+      },
+      {
+        "fuel_type": "PDL",
+        "price": 323.9
       },
       {
         "fuel_type": "U91",
@@ -5965,6 +7465,33 @@
     "source": "fuelcheck"
   },
   {
+    "id": "410",
+    "name": "BP Forestville",
+    "brand": "BP",
+    "address": "632 Warringah Road, Forestville NSW 2087",
+    "lat": -33.760003,
+    "lng": 151.214383,
+    "prices": [
+      {
+        "fuel_type": "E10",
+        "price": 257.9
+      },
+      {
+        "fuel_type": "P95",
+        "price": 276.9
+      },
+      {
+        "fuel_type": "P98",
+        "price": 285.9
+      },
+      {
+        "fuel_type": "PDL",
+        "price": 325.9
+      }
+    ],
+    "source": "fuelcheck"
+  },
+  {
     "id": "413",
     "name": "Shell Reddy Express Dundas",
     "brand": "Reddy Express",
@@ -5983,6 +7510,37 @@
       {
         "fuel_type": "P98",
         "price": 286.9
+      }
+    ],
+    "source": "fuelcheck"
+  },
+  {
+    "id": "435",
+    "name": "Shell Reddy Express Bondi Junction",
+    "brand": "Reddy Express",
+    "address": "120-138 Birrell Street, Bondi Junction NSW 2022",
+    "lat": -33.895583,
+    "lng": 151.248617,
+    "prices": [
+      {
+        "fuel_type": "DL",
+        "price": 323.9
+      },
+      {
+        "fuel_type": "E10",
+        "price": 257.9
+      },
+      {
+        "fuel_type": "P95",
+        "price": 277.4
+      },
+      {
+        "fuel_type": "P98",
+        "price": 286.9
+      },
+      {
+        "fuel_type": "U91",
+        "price": 259.9
       }
     ],
     "source": "fuelcheck"
@@ -6479,6 +8037,37 @@
     "source": "fuelcheck"
   },
   {
+    "id": "643",
+    "name": "EG Ampol Glenrose",
+    "brand": "EG Ampol",
+    "address": "60 Glenn Street, Belrose NSW 2085",
+    "lat": -33.740061,
+    "lng": 151.209098,
+    "prices": [
+      {
+        "fuel_type": "E10",
+        "price": 257.9
+      },
+      {
+        "fuel_type": "P95",
+        "price": 275.9
+      },
+      {
+        "fuel_type": "P98",
+        "price": 284.9
+      },
+      {
+        "fuel_type": "PDL",
+        "price": 325.9
+      },
+      {
+        "fuel_type": "U91",
+        "price": 259.9
+      }
+    ],
+    "source": "fuelcheck"
+  },
+  {
     "id": "653",
     "name": "EG Ampol Newington",
     "brand": "EG Ampol",
@@ -6497,6 +8086,95 @@
       {
         "fuel_type": "PDL",
         "price": 329.9
+      },
+      {
+        "fuel_type": "U91",
+        "price": 259.9
+      }
+    ],
+    "source": "fuelcheck"
+  },
+  {
+    "id": "657",
+    "name": "Shell Reddy Express Cammeray",
+    "brand": "Reddy Express",
+    "address": "477-483 Miller St & Palmer St, Cammeray NSW 2062",
+    "lat": -33.821107,
+    "lng": 151.210613,
+    "prices": [
+      {
+        "fuel_type": "DL",
+        "price": 323.9
+      },
+      {
+        "fuel_type": "E10",
+        "price": 257.9
+      },
+      {
+        "fuel_type": "P95",
+        "price": 275.4
+      },
+      {
+        "fuel_type": "P98",
+        "price": 284.9
+      }
+    ],
+    "source": "fuelcheck"
+  },
+  {
+    "id": "660",
+    "name": "EG Ampol Chatswood East",
+    "brand": "EG Ampol",
+    "address": "364-366 Eastern Valley Way, Chatswood East NSW 2067",
+    "lat": -33.786662,
+    "lng": 151.201055,
+    "prices": [
+      {
+        "fuel_type": "E10",
+        "price": 257.9
+      },
+      {
+        "fuel_type": "P95",
+        "price": 275.9
+      },
+      {
+        "fuel_type": "P98",
+        "price": 284.9
+      },
+      {
+        "fuel_type": "PDL",
+        "price": 325.9
+      },
+      {
+        "fuel_type": "U91",
+        "price": 259.9
+      }
+    ],
+    "source": "fuelcheck"
+  },
+  {
+    "id": "661",
+    "name": "EG Ampol Redfern",
+    "brand": "EG Ampol",
+    "address": "475 Cleveland St, Redfern NSW 2016",
+    "lat": -33.892242,
+    "lng": 151.216086,
+    "prices": [
+      {
+        "fuel_type": "E10",
+        "price": 257.9
+      },
+      {
+        "fuel_type": "P95",
+        "price": 275.9
+      },
+      {
+        "fuel_type": "P98",
+        "price": 284.9
+      },
+      {
+        "fuel_type": "PDL",
+        "price": 325.9
       },
       {
         "fuel_type": "U91",
@@ -6559,6 +8237,99 @@
       {
         "fuel_type": "PDL",
         "price": 325.9
+      },
+      {
+        "fuel_type": "U91",
+        "price": 259.9
+      }
+    ],
+    "source": "fuelcheck"
+  },
+  {
+    "id": "669",
+    "name": "Shell Reddy  Express Forestville",
+    "brand": "Reddy Express",
+    "address": "665-671 Warringah Rd (Cnr Cook St), Forestville NSW 2087",
+    "lat": -33.76068,
+    "lng": 151.218168,
+    "prices": [
+      {
+        "fuel_type": "DL",
+        "price": 323.9
+      },
+      {
+        "fuel_type": "E10",
+        "price": 257.9
+      },
+      {
+        "fuel_type": "P95",
+        "price": 277.4
+      },
+      {
+        "fuel_type": "P98",
+        "price": 286.9
+      },
+      {
+        "fuel_type": "U91",
+        "price": 259.9
+      }
+    ],
+    "source": "fuelcheck"
+  },
+  {
+    "id": "680",
+    "name": "Coles Express Neutral Bay",
+    "brand": "Coles Express",
+    "address": "200-204 Ben Boyd Rd (Cnr Ernest St), Neutral Bay NSW 2089",
+    "lat": -33.829109,
+    "lng": 151.219571,
+    "prices": [
+      {
+        "fuel_type": "DL",
+        "price": 323.9
+      },
+      {
+        "fuel_type": "E10",
+        "price": 257.9
+      },
+      {
+        "fuel_type": "P95",
+        "price": 277.4
+      },
+      {
+        "fuel_type": "P98",
+        "price": 286.9
+      },
+      {
+        "fuel_type": "U91",
+        "price": 259.9
+      }
+    ],
+    "source": "fuelcheck"
+  },
+  {
+    "id": "787",
+    "name": "Ampol Foodary Neutral Bay",
+    "brand": "Ampol Foodary",
+    "address": "16-38 Military Rd, Neutral Bay NSW 2089",
+    "lat": -33.8290796,
+    "lng": 151.2162998,
+    "prices": [
+      {
+        "fuel_type": "E10",
+        "price": 257.9
+      },
+      {
+        "fuel_type": "P95",
+        "price": 275.9
+      },
+      {
+        "fuel_type": "P98",
+        "price": 284.9
+      },
+      {
+        "fuel_type": "PDL",
+        "price": 324.4
       },
       {
         "fuel_type": "U91",
@@ -6861,6 +8632,33 @@
     "source": "fuelcheck"
   },
   {
+    "id": "1150",
+    "name": "BP Allambie Heights",
+    "brand": "BP",
+    "address": "132 Allambie road, Allambie Heights NSW 2100",
+    "lat": -33.765091,
+    "lng": 151.249673,
+    "prices": [
+      {
+        "fuel_type": "E10",
+        "price": 257.8
+      },
+      {
+        "fuel_type": "P95",
+        "price": 272.8
+      },
+      {
+        "fuel_type": "P98",
+        "price": 282.8
+      },
+      {
+        "fuel_type": "PDL",
+        "price": 325.8
+      }
+    ],
+    "source": "fuelcheck"
+  },
+  {
     "id": "1152",
     "name": "BP North Willoughby",
     "brand": "BP",
@@ -7027,6 +8825,33 @@
     "source": "fuelcheck"
   },
   {
+    "id": "1243",
+    "name": "Metro Castle Cove",
+    "brand": "Metro Fuel",
+    "address": "327 Eastern Valley Way, Castle Cove NSW 2069",
+    "lat": -33.784861,
+    "lng": 151.201044,
+    "prices": [
+      {
+        "fuel_type": "P95",
+        "price": 265.9
+      },
+      {
+        "fuel_type": "P98",
+        "price": 276.9
+      },
+      {
+        "fuel_type": "PDL",
+        "price": 319.9
+      },
+      {
+        "fuel_type": "U91",
+        "price": 255.9
+      }
+    ],
+    "source": "fuelcheck"
+  },
+  {
     "id": "1306",
     "name": "Ampol Hornsby Heights",
     "brand": "Ampol",
@@ -7036,19 +8861,19 @@
     "prices": [
       {
         "fuel_type": "P95",
-        "price": 270.9
+        "price": 276.9
       },
       {
         "fuel_type": "P98",
-        "price": 279.9
+        "price": 285.9
       },
       {
         "fuel_type": "PDL",
-        "price": 319.9
+        "price": 324.9
       },
       {
         "fuel_type": "U91",
-        "price": 252.9
+        "price": 257.9
       }
     ],
     "source": "fuelcheck"
@@ -7197,6 +9022,33 @@
     "source": "fuelcheck"
   },
   {
+    "id": "1407",
+    "name": "Metro Fuel Frenchs Forest",
+    "brand": "Metro Fuel",
+    "address": "663 Warringah Road, Forestville NSW 2087",
+    "lat": -33.75966,
+    "lng": 151.21908,
+    "prices": [
+      {
+        "fuel_type": "E10",
+        "price": 255.9
+      },
+      {
+        "fuel_type": "P98",
+        "price": 281.9
+      },
+      {
+        "fuel_type": "PDL",
+        "price": 323.9
+      },
+      {
+        "fuel_type": "U91",
+        "price": 257.9
+      }
+    ],
+    "source": "fuelcheck"
+  },
+  {
     "id": "1412",
     "name": "BP Turramurra",
     "brand": "BP",
@@ -7238,6 +9090,10 @@
       {
         "fuel_type": "P98",
         "price": 284.9
+      },
+      {
+        "fuel_type": "PDL",
+        "price": 324.9
       },
       {
         "fuel_type": "U91",
@@ -7319,6 +9175,33 @@
       {
         "fuel_type": "P98",
         "price": 285.9
+      },
+      {
+        "fuel_type": "PDL",
+        "price": 323.9
+      },
+      {
+        "fuel_type": "U91",
+        "price": 259.9
+      }
+    ],
+    "source": "fuelcheck"
+  },
+  {
+    "id": "1516",
+    "name": "Metro Fuel Cremorne",
+    "brand": "Metro Fuel",
+    "address": "51 Spofforth St, CREMORNE NSW 2090",
+    "lat": -33.832753,
+    "lng": 151.229455,
+    "prices": [
+      {
+        "fuel_type": "E10",
+        "price": 256.9
+      },
+      {
+        "fuel_type": "P98",
+        "price": 282.9
       },
       {
         "fuel_type": "PDL",
@@ -7506,6 +9389,33 @@
     "source": "fuelcheck"
   },
   {
+    "id": "1706",
+    "name": "BP Edgecliff",
+    "brand": "BP",
+    "address": "67 New South Head Rd, EDGECLIFF NSW 2027",
+    "lat": -33.876974,
+    "lng": 151.231099,
+    "prices": [
+      {
+        "fuel_type": "E10",
+        "price": 267.9
+      },
+      {
+        "fuel_type": "P98",
+        "price": 307.9
+      },
+      {
+        "fuel_type": "PDL",
+        "price": 344.9
+      },
+      {
+        "fuel_type": "U91",
+        "price": 270.9
+      }
+    ],
+    "source": "fuelcheck"
+  },
+  {
     "id": "1733",
     "name": "Speedway West Ryde",
     "brand": "Speedway",
@@ -7594,6 +9504,29 @@
       {
         "fuel_type": "PDL",
         "price": 325.7
+      }
+    ],
+    "source": "fuelcheck"
+  },
+  {
+    "id": "1768",
+    "name": "BP Putney",
+    "brand": "BP",
+    "address": "236 Morrison Road, Putney NSW 2112",
+    "lat": -33.823874,
+    "lng": 151.108405,
+    "prices": [
+      {
+        "fuel_type": "DL",
+        "price": 325.9
+      },
+      {
+        "fuel_type": "P98",
+        "price": 284.9
+      },
+      {
+        "fuel_type": "U91",
+        "price": 259.9
       }
     ],
     "source": "fuelcheck"
@@ -7720,15 +9653,15 @@
     "prices": [
       {
         "fuel_type": "E10",
-        "price": 252.9
+        "price": 257.9
       },
       {
         "fuel_type": "P95",
-        "price": 270.9
+        "price": 275.9
       },
       {
         "fuel_type": "P98",
-        "price": 279.9
+        "price": 284.9
       },
       {
         "fuel_type": "PDL",
@@ -7760,6 +9693,37 @@
       {
         "fuel_type": "PDL",
         "price": 324.9
+      },
+      {
+        "fuel_type": "U91",
+        "price": 259.9
+      }
+    ],
+    "source": "fuelcheck"
+  },
+  {
+    "id": "1796",
+    "name": "BP Redfern",
+    "brand": "BP",
+    "address": "411-417 Cleveland St, REDFERN NSW 2016",
+    "lat": -33.891804,
+    "lng": 151.213294,
+    "prices": [
+      {
+        "fuel_type": "E10",
+        "price": 257.9
+      },
+      {
+        "fuel_type": "LPG",
+        "price": 109.9
+      },
+      {
+        "fuel_type": "P98",
+        "price": 285.9
+      },
+      {
+        "fuel_type": "PDL",
+        "price": 323.9
       },
       {
         "fuel_type": "U91",
@@ -7848,15 +9812,15 @@
       },
       {
         "fuel_type": "P95",
-        "price": 256.7
+        "price": 265.9
       },
       {
         "fuel_type": "P98",
-        "price": 265.7
+        "price": 275.9
       },
       {
         "fuel_type": "PDL",
-        "price": 311.9
+        "price": 315.7
       },
       {
         "fuel_type": "U91",
@@ -8002,11 +9966,11 @@
     "prices": [
       {
         "fuel_type": "DL",
-        "price": 317.5
+        "price": 309.7
       },
       {
         "fuel_type": "E10",
-        "price": 252.5
+        "price": 239.7
       },
       {
         "fuel_type": "LPG",
@@ -8018,11 +9982,11 @@
       },
       {
         "fuel_type": "PDL",
-        "price": 319.5
+        "price": 317.5
       },
       {
         "fuel_type": "U91",
-        "price": 254.5
+        "price": 249.7
       }
     ],
     "source": "fuelcheck"
@@ -8091,19 +10055,19 @@
     "prices": [
       {
         "fuel_type": "E10",
-        "price": 247.5
+        "price": 257.5
       },
       {
         "fuel_type": "P98",
-        "price": 273.5
+        "price": 283.5
       },
       {
         "fuel_type": "PDL",
-        "price": 313.5
+        "price": 323.5
       },
       {
         "fuel_type": "U91",
-        "price": 249.5
+        "price": 259.5
       }
     ],
     "source": "fuelcheck"
@@ -8159,6 +10123,37 @@
     "source": "fuelcheck"
   },
   {
+    "id": "20099",
+    "name": "ARKO ENERGY FORESTVILLE",
+    "brand": "Arko Energy",
+    "address": "656 WARRINGAH RD, FORESTVILLE NSW 2087",
+    "lat": -33.75958806,
+    "lng": 151.21208114,
+    "prices": [
+      {
+        "fuel_type": "DL",
+        "price": 322.5
+      },
+      {
+        "fuel_type": "E10",
+        "price": 252.5
+      },
+      {
+        "fuel_type": "P98",
+        "price": 280.5
+      },
+      {
+        "fuel_type": "PDL",
+        "price": 322.5
+      },
+      {
+        "fuel_type": "U91",
+        "price": 254.5
+      }
+    ],
+    "source": "fuelcheck"
+  },
+  {
     "id": "20100",
     "name": "Enhance Merrylands",
     "brand": "Enhance",
@@ -8168,7 +10163,7 @@
     "prices": [
       {
         "fuel_type": "E10",
-        "price": 244.7
+        "price": 239.9
       },
       {
         "fuel_type": "P98",
@@ -8438,15 +10433,15 @@
     "prices": [
       {
         "fuel_type": "P98",
-        "price": 269.5
+        "price": 265.9
       },
       {
         "fuel_type": "PDL",
-        "price": 309.5
+        "price": 299.9
       },
       {
         "fuel_type": "U91",
-        "price": 249.5
+        "price": 239.9
       }
     ],
     "source": "fuelcheck"
@@ -8569,7 +10564,7 @@
     "prices": [
       {
         "fuel_type": "E10",
-        "price": 244.7
+        "price": 239.9
       },
       {
         "fuel_type": "E85",
@@ -8946,6 +10941,37 @@
       {
         "fuel_type": "U91",
         "price": 249.7
+      }
+    ],
+    "source": "fuelcheck"
+  },
+  {
+    "id": "20832",
+    "name": "OTR Woolloomooloo",
+    "brand": "Shell",
+    "address": "61 COWPER WHARF ROADWAY, WOOLLOOMOOLOO NSW 2011",
+    "lat": -33.8696009,
+    "lng": 151.22131385,
+    "prices": [
+      {
+        "fuel_type": "E10",
+        "price": 257.9
+      },
+      {
+        "fuel_type": "P95",
+        "price": 277.4
+      },
+      {
+        "fuel_type": "P98",
+        "price": 286.9
+      },
+      {
+        "fuel_type": "PDL",
+        "price": 323.9
+      },
+      {
+        "fuel_type": "U91",
+        "price": 259.9
       }
     ],
     "source": "fuelcheck"
