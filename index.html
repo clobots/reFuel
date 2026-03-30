@@ -567,20 +567,16 @@
         </div>
         <dl class="summary" id="summary-panel">
           <div class="summary-card">
-            <dt>Google</dt>
-            <dd id="google-count">-</dd>
+            <dt style="color:var(--matched)">Available</dt>
+            <dd id="available-count">-</dd>
           </div>
           <div class="summary-card">
-            <dt>FuelCheck</dt>
-            <dd id="fuelcheck-count">-</dd>
+            <dt style="color:var(--gap)">Not Listed</dt>
+            <dd id="notlisted-count">-</dd>
           </div>
           <div class="summary-card">
-            <dt>Matched</dt>
-            <dd id="matched-count">-</dd>
-          </div>
-          <div class="summary-card">
-            <dt>Gaps</dt>
-            <dd id="gap-count">-</dd>
+            <dt style="color:var(--fuelcheck)">Unsure</dt>
+            <dd id="unsure-count">-</dd>
           </div>
         </dl>
       </div>
@@ -793,10 +789,9 @@
     }
 
     function setSummary(stats) {
-      document.getElementById("google-count").textContent = stats.google;
-      document.getElementById("fuelcheck-count").textContent = stats.fuelcheck;
-      document.getElementById("matched-count").textContent = stats.matched;
-      document.getElementById("gap-count").textContent = stats.gap;
+      document.getElementById("available-count").textContent = stats.available;
+      document.getElementById("notlisted-count").textContent = stats.notlisted;
+      document.getElementById("unsure-count").textContent = stats.unsure;
     }
 
     function formatUpdatedDate(...timestamps) {
@@ -1071,10 +1066,9 @@
       });
 
       setSummary({
-        google: rawGoogleStations.length,
-        fuelcheck: fuelcheckFiltered.length,
-        matched: matchedCount,
-        gap: gapCount + fuelcheckOnlyCount
+        available: matchedCount,
+        notlisted: gapCount,
+        unsure: fuelcheckOnlyCount
       });
 
       document.getElementById("map-status").style.display = "none";
