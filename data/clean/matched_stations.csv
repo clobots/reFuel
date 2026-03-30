@@ -196,6 +196,8 @@ matched,18.3,high,Shell,,,,,-33.894510,151.066697,true,369,Coles Express Greenac
 gap_google_only,,,Metro Petroleum Castle Cove,,,,,-33.784854,151.200886,true,,,,,,,,,,,,,,,,,,,,,,
 gap_google_only,,,Speedway Cammeray,,,,,-33.828713,151.208810,true,,,,,,,,,,,,,,,,,,,,,,
 gap_google_only,,,Shell,,,,,-33.821427,151.210756,true,,,,,,,,,,,,,,,,,,,,,,
+gap_google_only,,,BP,,,,,-33.821169,151.233322,true,,,,,,,,,,,,,,,,,,,,,,
+gap_google_only,,,BP,,,,,-33.832119,151.237416,true,,,,,,,,,,,,,,,,,,,,,,
 fuelcheck_only,,,,,,,,,,,2242,Metro Petroleum Chester Hill,Metro Fuel,Metro,"172 Hector St, Chester Hill NSW 2162",172 Hector St,Chester Hill,NSW,2162,-33.888900,151.005411,"E10,P98,PDL,U91",4,,248.5,,,,279.5,318.5,251.5,false
 fuelcheck_only,,,,,,,,,,,2364,Ampol Foodary Kellyville,Ampol Foodary,Ampol,"3-5 Windsor Rd, Kellyville NSW 2155",3-5 Windsor Rd,Kellyville,NSW,2155,-33.714327,150.960633,"E10,P95,P98,PDL,U91",5,,257.9,,,275.9,284.9,325.4,259.9,false
 fuelcheck_only,,,,,,,,,,,2711,BP Silverwater South,BP,BP,"51 Egerton St, Silverwater NSW 2128",51 Egerton St,Silverwater,NSW,2128,-33.836306,151.047890,"E10,LPG,P98,PDL,U91",5,,257.9,,104.9,,284.9,326.9,259.9,false

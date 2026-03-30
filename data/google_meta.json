@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-03-30T09:39:20.218065+00:00",
+  "last_updated": "2026-03-30T09:42:06.662369+00:00",
   "zones_scraped": [
     "ryde",
     "denistone",
@@ -31,7 +31,9 @@
     "guildford",
     "turramurra",
     "greenacre",
-    "castlecrag"
+    "castlecrag",
+    "northbridge",
+    "naremburn"
   ],
-  "total_stations": 197
+  "total_stations": 199
 }
