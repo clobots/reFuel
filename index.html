@@ -769,10 +769,9 @@
       // Legend — horizontal row
       const legendRow = L.DomUtil.create("div", "legend-row", div);
       const legendItems = [
-        { color: cssVar("--matched"), label: "Match" },
-        { color: cssVar("--gap"), label: "Gap" },
-        { color: cssVar("--google"), label: "Google" },
-        { color: cssVar("--fuelcheck"), label: "FuelCheck" }
+        { color: cssVar("--matched"), label: "Available" },
+        { color: cssVar("--gap"), label: "N/A" },
+        { color: cssVar("--fuelcheck"), label: "Unsure - check" }
       ];
       legendItems.forEach(({ color, label }) => {
         const item = L.DomUtil.create("div", "legend-item", legendRow);
