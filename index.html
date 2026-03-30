@@ -216,6 +216,13 @@
       border-color: var(--accent);
     }
 
+    .legend-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
     .legend-item {
       display: flex;
       align-items: center;
@@ -230,6 +237,47 @@
       border-radius: 50%;
       border: 1px solid rgba(255, 255, 255, 0.35);
       flex: 0 0 12px;
+    }
+
+    /* Mobile: fuel filter as collapsible pill, legend horizontal at bottom */
+    @media (max-width: 900px) {
+      .map-controls {
+        padding: 8px 10px;
+        border-radius: 12px;
+        max-height: none;
+        overflow: visible;
+      }
+      .map-controls strong {
+        font-size: 0.75rem;
+        margin-bottom: 4px;
+      }
+      .fuel-filter {
+        margin-bottom: 6px;
+        padding-bottom: 6px;
+      }
+      .fuel-filter-toggle {
+        display: inline-flex !important;
+      }
+      .fuel-filter-body {
+        display: none;
+      }
+      .fuel-filter-body.open {
+        display: block;
+      }
+      .fuel-filter label {
+        font-size: 0.8rem;
+        margin: 2px 0;
+        gap: 4px;
+      }
+      .legend-item {
+        font-size: 0.78rem;
+        margin: 2px 0;
+        gap: 5px;
+      }
+      .legend-swatch {
+        width: 10px;
+        height: 10px;
+      }
     }
 
     .station-marker {
@@ -655,18 +703,26 @@
       L.DomEvent.disableClickPropagation(div);
       L.DomEvent.disableScrollPropagation(div);
 
-      // Build filter checkboxes
+      // Build filter with collapsible toggle for mobile
       const filterContainer = L.DomUtil.create("div", "fuel-filter", div);
-      const filterTitle = L.DomUtil.create("strong", "", filterContainer);
+
+      const toggle = L.DomUtil.create("button", "fuel-filter-toggle", filterContainer);
+      toggle.textContent = "Fuel Types \u25BC";
+      toggle.style.cssText = "display:none;background:none;border:1px solid var(--panel-border);color:var(--accent);font-size:0.78rem;padding:3px 10px;border-radius:99px;cursor:pointer;margin-bottom:4px;";
+
+      const filterBody = L.DomUtil.create("div", "fuel-filter-body", filterContainer);
+      const filterTitle = L.DomUtil.create("strong", "", filterBody);
       filterTitle.textContent = "Fuel Types";
 
+      var FUEL_LABELS = { U91: "U91", E10: "E10", E85: "E85", P95: "P95", P98: "P98", DL: "Diesel", PDL: "Premium Diesel", LPG: "LPG" };
+
       ALL_FUEL_TYPES.forEach((ft) => {
-        const label = L.DomUtil.create("label", "", filterContainer);
+        const label = L.DomUtil.create("label", "", filterBody);
         const cb = L.DomUtil.create("input", "", label);
         cb.type = "checkbox";
         cb.value = ft;
         cb.checked = true;
-        label.appendChild(document.createTextNode(" " + ft));
+        label.appendChild(document.createTextNode(" " + (FUEL_LABELS[ft] || ft)));
         cb.addEventListener("change", function () {
           if (this.checked) {
             selectedFuelTypes.add(this.value);
@@ -677,34 +733,38 @@
         });
       });
 
-      const actions = L.DomUtil.create("div", "fuel-filter-actions", filterContainer);
+      const actions = L.DomUtil.create("div", "fuel-filter-actions", filterBody);
       const btnAll = L.DomUtil.create("button", "", actions);
       btnAll.textContent = "All";
       btnAll.addEventListener("click", () => {
         selectedFuelTypes = new Set(ALL_FUEL_TYPES);
-        div.querySelectorAll('.fuel-filter input[type="checkbox"]').forEach((cb) => { cb.checked = true; });
+        div.querySelectorAll('.fuel-filter-body input[type="checkbox"]').forEach((cb) => { cb.checked = true; });
         rerender();
       });
       const btnNone = L.DomUtil.create("button", "", actions);
       btnNone.textContent = "None";
       btnNone.addEventListener("click", () => {
         selectedFuelTypes.clear();
-        div.querySelectorAll('.fuel-filter input[type="checkbox"]').forEach((cb) => { cb.checked = false; });
+        div.querySelectorAll('.fuel-filter-body input[type="checkbox"]').forEach((cb) => { cb.checked = false; });
         rerender();
       });
 
-      // Legend
-      const legendTitle = L.DomUtil.create("strong", "", div);
-      legendTitle.textContent = "Legend";
+      toggle.addEventListener("click", function() {
+        var body = filterContainer.querySelector(".fuel-filter-body");
+        var isOpen = body.classList.toggle("open");
+        toggle.textContent = "Fuel Types " + (isOpen ? "\u25B2" : "\u25BC");
+      });
 
+      // Legend — horizontal row
+      const legendRow = L.DomUtil.create("div", "legend-row", div);
       const legendItems = [
-        { color: cssVar("--google"), label: "Google only" },
-        { color: cssVar("--fuelcheck"), label: "FuelCheck only" },
-        { color: cssVar("--matched"), label: "Matched" },
-        { color: cssVar("--gap"), label: "Gap" }
+        { color: cssVar("--matched"), label: "Match" },
+        { color: cssVar("--gap"), label: "Gap" },
+        { color: cssVar("--google"), label: "Google" },
+        { color: cssVar("--fuelcheck"), label: "FuelCheck" }
       ];
       legendItems.forEach(({ color, label }) => {
-        const item = L.DomUtil.create("div", "legend-item", div);
+        const item = L.DomUtil.create("div", "legend-item", legendRow);
         const swatch = L.DomUtil.create("span", "legend-swatch", item);
         swatch.style.background = color;
         item.appendChild(document.createTextNode(label));
