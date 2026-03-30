@@ -596,6 +596,48 @@
     };
     locateCtrl.addTo(map);
 
+    // Address search control
+    const searchCtrl = L.control({ position: "topleft" });
+    let searchMarker = null;
+    searchCtrl.onAdd = function() {
+      const container = L.DomUtil.create("div", "leaflet-bar");
+      container.style.cssText = "display:flex;background:#fff;border-radius:4px;overflow:hidden;";
+      const input = L.DomUtil.create("input", "", container);
+      input.type = "text";
+      input.placeholder = "Search address...";
+      input.style.cssText = "border:none;outline:none;padding:6px 10px;font-size:13px;width:180px;color:#333;";
+      const go = L.DomUtil.create("a", "", container);
+      go.href = "#";
+      go.textContent = "\u2315";
+      go.title = "Search";
+      go.style.cssText = "display:flex;align-items:center;justify-content:center;width:34px;font-size:16px;cursor:pointer;color:#333;text-decoration:none;";
+      L.DomEvent.disableClickPropagation(container);
+      L.DomEvent.disableScrollPropagation(container);
+
+      function doSearch() {
+        const q = input.value.trim();
+        if (!q) return;
+        go.textContent = "\u2026";
+        fetch("https://nominatim.openstreetmap.org/search?format=json&limit=1&q=" + encodeURIComponent(q + " NSW Australia"))
+          .then(function(r) { return r.json(); })
+          .then(function(data) {
+            if (data.length) {
+              var ll = [parseFloat(data[0].lat), parseFloat(data[0].lon)];
+              map.setView(ll, 15);
+              if (searchMarker) map.removeLayer(searchMarker);
+              searchMarker = L.marker(ll).addTo(map).bindPopup(data[0].display_name).openPopup();
+            }
+            go.textContent = "\u2315";
+          })
+          .catch(function() { go.textContent = "\u2315"; });
+      }
+
+      L.DomEvent.on(go, "click", function(e) { L.DomEvent.preventDefault(e); doSearch(); });
+      L.DomEvent.on(input, "keydown", function(e) { if (e.key === "Enter") doSearch(); });
+      return container;
+    };
+    searchCtrl.addTo(map);
+
     const layers = {
       google: L.layerGroup().addTo(map),
       fuelcheck: L.layerGroup().addTo(map),
