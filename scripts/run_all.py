@@ -5,7 +5,9 @@ from __future__ import annotations
 
 import csv
 import os
+import subprocess
 import sys
+from datetime import datetime
 
 PROJECT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(PROJECT_DIR, "scripts"))
@@ -83,6 +85,24 @@ def main() -> None:
         sys.exit(1)
 
     print("\nAll validations passed.")
+
+    # Auto-commit and push data changes
+    now_local = datetime.now().strftime("%Y-%m-%d %H:%M")
+    try:
+        subprocess.run(["git", "add", "data/"], cwd=PROJECT_DIR, check=True)
+        result = subprocess.run(
+            ["git", "diff", "--cached", "--quiet"],
+            cwd=PROJECT_DIR,
+        )
+        if result.returncode != 0:
+            subprocess.run(["git", "commit", "-m", f"Update FuelCheck prices ({now_local})"], cwd=PROJECT_DIR, check=True)
+            subprocess.run(["git", "push", "origin", "dev"], cwd=PROJECT_DIR, check=True)
+            subprocess.run(["git", "push", "origin", "dev:main"], cwd=PROJECT_DIR, check=True)
+            print("\nCommitted and pushed to dev + main.")
+        else:
+            print("\nNo data changes to commit.")
+    except subprocess.CalledProcessError as e:
+        print(f"\nGit push failed: {e}")
 
 
 if __name__ == "__main__":
