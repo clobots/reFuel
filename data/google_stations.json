@@ -2032,15 +2032,15 @@
   {
     "name": "Ampol Foodary Seven Hills",
     "address": "Prospect Hwy, Seven Hills NSW 2147",
-    "lat": -33.7726,
-    "lng": 150.9485,
+    "lat": -33.766928,
+    "lng": 150.954825,
     "source": "google"
   },
   {
     "name": "Coles Express Yagoona",
     "address": "Hume Hwy, Yagoona NSW 2199",
-    "lat": -33.9059,
-    "lng": 151.0139,
+    "lat": -33.898673,
+    "lng": 151.037094,
     "source": "google"
   }
 ]
