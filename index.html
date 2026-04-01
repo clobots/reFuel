@@ -1325,10 +1325,10 @@
         var fc = d.fuelcheck;
         var gName = goog ? (goog.name || "") : "";
         var fName = fc ? (fc.name || "") : "";
-        var name = gName.length >= fName.length ? gName : fName;
+        var name = gName.length ? (gName.length >= fName.length ? gName : fName) : fName;
         var gAddr = goog ? (goog.address || "") : "";
         var fAddr = fc ? (fc.address || "") : "";
-        var address = gAddr.length >= fAddr.length ? gAddr : fAddr;
+        var address = gAddr.length ? (gAddr.length >= fAddr.length ? gAddr : fAddr) : fAddr;
         var key = name + "|" + m._lat + "|" + m._lng;
         if (seen.has(key)) return;
         seen.add(key);
