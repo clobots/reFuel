@@ -55,9 +55,16 @@
 
     .app-shell {
       display: grid;
-      grid-template-rows: auto 1fr;
+      grid-template-rows: auto 1fr auto;
       min-height: 100vh;
       overflow-x: hidden;
+    }
+
+    .content-area {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      min-height: 0;
+      overflow: hidden;
     }
 
     .topbar {
@@ -131,24 +138,26 @@
       font-weight: 700;
     }
 
-    #map {
-      width: 100%;
-      height: 100%;
-      min-height: 60vh;
-    }
-
     .map-wrap {
       position: relative;
-      padding: 18px 18px 20px;
+      padding: 12px;
+      min-height: 0;
+      display: flex;
+      flex-direction: column;
     }
 
     .map-frame {
-      height: calc(100vh - 176px);
-      min-height: 520px;
+      flex: 1;
+      min-height: 0;
       overflow: hidden;
       border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: 22px;
+      border-radius: 16px;
       box-shadow: var(--shadow);
+    }
+
+    #map {
+      width: 100%;
+      height: 100%;
     }
 
     .map-status {
@@ -439,7 +448,11 @@
     }
 
     .station-list-section {
-      padding: 0 18px 32px;
+      padding: 12px 12px 12px 0;
+      display: flex;
+      flex-direction: column;
+      min-height: 0;
+      overflow: hidden;
     }
 
     .station-list-bar {
@@ -452,7 +465,7 @@
 
     .station-list-bar input {
       flex: 1;
-      min-width: 180px;
+      min-width: 0;
       padding: 8px 12px;
       border: 1px solid var(--panel-border);
       border-radius: 8px;
@@ -478,7 +491,8 @@
     }
 
     .station-list-wrap {
-      max-height: 480px;
+      flex: 1;
+      min-height: 0;
       overflow: auto;
       -webkit-overflow-scrolling: touch;
       border: 1px solid var(--panel-border);
@@ -487,10 +501,9 @@
     }
 
     .station-table {
-      width: max-content;
-      min-width: 100%;
+      width: 100%;
       border-collapse: collapse;
-      font-size: 0.82rem;
+      font-size: 0.78rem;
     }
 
     .station-table thead {
@@ -554,8 +567,14 @@
     .station-table .name-col { white-space: nowrap; }
     .station-table .addr-col { max-width: 200px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 
-    /* Tablet / medium screens */
+    /* Tablet — stack vertically */
     @media (max-width: 900px) {
+      .content-area {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr auto;
+        overflow: visible;
+      }
+
       .topbar {
         padding: 16px 14px 12px;
       }
@@ -585,25 +604,26 @@
 
       .map-wrap {
         padding: 10px;
+        min-height: 55vh;
       }
 
       .map-frame {
-        height: 55vh;
-        min-height: 300px;
         border-radius: 14px;
       }
 
-      .station-list-section { padding: 0 10px 24px; }
+      .station-list-section {
+        padding: 0 10px 24px;
+        max-height: 400px;
+      }
       .station-list-bar { gap: 6px; }
       .station-list-bar input { min-width: 0; flex: 1; font-size: 0.8rem; padding: 6px 10px; }
       .station-list-bar select { font-size: 0.8rem; padding: 6px 8px; }
       .station-table { font-size: 0.75rem; }
       .station-table th, .station-table td { padding: 6px 8px; }
       .station-table .addr-col { max-width: 140px; }
-      .station-list-wrap { max-height: 360px; }
     }
 
-    /* Phone / small screens */
+    /* Phone */
     @media (max-width: 560px) {
       .topbar {
         padding: 12px 10px 10px;
@@ -646,11 +666,10 @@
 
       .map-wrap {
         padding: 6px;
+        min-height: 50vh;
       }
 
       .map-frame {
-        height: 50vh;
-        min-height: 260px;
         border-radius: 10px;
       }
 
@@ -663,11 +682,14 @@
         padding: 7px 10px;
       }
 
-      .station-list-section { padding: 0 6px 20px; }
+      .station-list-section {
+        padding: 0 6px 20px;
+        max-height: 340px;
+      }
       .station-table { font-size: 0.68rem; }
       .station-table th, .station-table td { padding: 5px 6px; }
       .station-table .addr-col { max-width: 100px; }
-      .station-list-wrap { max-height: 300px; border-radius: 10px; }
+      .station-list-wrap { border-radius: 10px; }
     }
   </style>
 </head>
@@ -700,13 +722,14 @@
         </div>
       </div>
     </header>
-    <main class="map-wrap">
-      <div class="map-status" id="map-status">Loading station datasets...</div>
-      <div class="map-frame">
-        <div id="map" aria-label="Fuel station gap analysis map"></div>
-      </div>
-    </main>
-    <section class="station-list-section" id="station-list-section">
+    <div class="content-area">
+      <main class="map-wrap">
+        <div class="map-status" id="map-status">Loading station datasets...</div>
+        <div class="map-frame">
+          <div id="map" aria-label="Fuel station gap analysis map"></div>
+        </div>
+      </main>
+      <section class="station-list-section" id="station-list-section">
       <div class="station-list-bar">
         <input type="text" id="station-search" placeholder="Filter by name or address..." />
         <select id="station-sort">
@@ -723,6 +746,7 @@
         </table>
       </div>
     </section>
+    </div>
   </div>
   <footer style="text-align:center;padding:12px 16px;color:var(--muted);font-size:0.7rem;opacity:0.7;">
     This website is built for personal use as an interest project only. Data may be incomplete or inaccurate. Not affiliated with NSW Government or any fuel provider.
@@ -1466,6 +1490,9 @@
     }
 
     map.on("moveend", renderStationList);
+
+    // Leaflet needs a nudge when the CSS grid layout settles
+    setTimeout(function() { map.invalidateSize(); }, 200);
 
     loadApp();
   </script>
