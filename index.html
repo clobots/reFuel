@@ -1192,6 +1192,12 @@
 
       var rows = buildStationRows();
 
+      // Filter to only stations visible in current map frame
+      var bounds = map.getBounds();
+      rows = rows.filter(function(r) {
+        return bounds.contains([r.lat, r.lng]);
+      });
+
       if (searchVal) {
         rows = rows.filter(function(r) {
           return r.name.toLowerCase().indexOf(searchVal) >= 0 || r.address.toLowerCase().indexOf(searchVal) >= 0;
@@ -1340,6 +1346,8 @@
         setStatus("Failed to load station data. Serve this directory over http://localhost instead of file://.");
       }
     }
+
+    map.on("moveend", renderStationList);
 
     loadApp();
   </script>
