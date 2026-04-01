@@ -671,20 +671,25 @@
       let locMarker = null;
       L.DomEvent.on(a, "click", function(e) {
         L.DomEvent.preventDefault(e);
+        if (!navigator.geolocation) { a.textContent = "\u2717"; setTimeout(function() { a.textContent = "\u2316"; }, 2000); return; }
         a.textContent = "\u2026";
         navigator.geolocation.getCurrentPosition(
           function(pos) {
-            const ll = [pos.coords.latitude, pos.coords.longitude];
+            var ll = [pos.coords.latitude, pos.coords.longitude];
             map.setView(ll, 15);
             if (locMarker) map.removeLayer(locMarker);
             locMarker = L.circleMarker(ll, {
               radius: 8, fillColor: "#4285f4", fillOpacity: 1,
               color: "#fff", weight: 2
-            }).addTo(map).bindPopup("You are here");
+            }).addTo(map).bindPopup("You are here").openPopup();
             a.textContent = "\u2316";
           },
-          function() { a.textContent = "\u2316"; },
-          { enableHighAccuracy: true, timeout: 10000 }
+          function(err) {
+            a.textContent = "\u2717";
+            a.title = err.code === 1 ? "Location permission denied" : err.code === 2 ? "Location unavailable" : "Location timed out";
+            setTimeout(function() { a.textContent = "\u2316"; a.title = "Zoom to my location"; }, 3000);
+          },
+          { enableHighAccuracy: false, timeout: 15000, maximumAge: 60000 }
         );
       });
       return btn;
