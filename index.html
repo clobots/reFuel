@@ -575,8 +575,10 @@
     }
 
     .station-table .price-cheap { color: #4ade80; }
+    .station-table .price-cheap::after { content: " \25BC"; font-size: 0.6em; }
     .station-table .price-mid { color: #fbbf24; }
     .station-table .price-dear { color: #f87171; }
+    .station-table .price-dear::after { content: " \25B2"; font-size: 0.6em; }
 
     .station-table .name-col { white-space: nowrap; }
     .station-table .addr-col { max-width: 200px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
