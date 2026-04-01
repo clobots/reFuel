@@ -61,10 +61,24 @@
     }
 
     .content-area {
-      display: grid;
-      grid-template-columns: 2fr 1fr;
+      display: flex;
+      flex-direction: column;
       min-height: 0;
       overflow: hidden;
+    }
+
+    @media (min-width: 769px) {
+      .content-area {
+        flex-direction: row;
+      }
+      .content-area > .map-wrap {
+        flex: 2;
+        min-width: 0;
+      }
+      .content-area > .station-list-section {
+        flex: 1;
+        min-width: 0;
+      }
     }
 
     .topbar {
@@ -569,12 +583,6 @@
 
     /* Tablet / narrow window — stack vertically */
     @media (max-width: 768px) {
-      .content-area {
-        grid-template-columns: 1fr;
-        grid-template-rows: 1fr auto;
-        overflow: visible;
-      }
-
       .topbar {
         padding: 16px 14px 12px;
       }
