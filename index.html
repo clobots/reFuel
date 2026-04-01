@@ -1308,8 +1308,12 @@
         var d = m._stationData;
         var goog = d.google;
         var fc = d.fuelcheck;
-        var name = goog ? goog.name : fc ? fc.name : "";
-        var address = goog ? (goog.address || "") : fc ? (fc.address || "") : "";
+        var gName = goog ? (goog.name || "") : "";
+        var fName = fc ? (fc.name || "") : "";
+        var name = gName.length >= fName.length ? gName : fName;
+        var gAddr = goog ? (goog.address || "") : "";
+        var fAddr = fc ? (fc.address || "") : "";
+        var address = gAddr.length >= fAddr.length ? gAddr : fAddr;
         var key = name + "|" + m._lat + "|" + m._lng;
         if (seen.has(key)) return;
         seen.add(key);
