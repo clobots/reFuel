@@ -408,113 +408,120 @@
       margin: 10px 12px;
     }
 
-    .data-section {
+    .station-list-section {
       padding: 0 18px 32px;
     }
 
-    .data-tabs {
+    .station-list-bar {
       display: flex;
-      gap: 0;
-      border-bottom: 2px solid var(--panel-border);
-      margin-bottom: 0;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      padding: 12px 0;
     }
 
-    .data-tab-btn {
-      padding: 10px 18px;
-      font-size: 0.9rem;
-      border: none;
-      background: none;
-      cursor: pointer;
-      color: var(--muted);
-      border-bottom: 2px solid transparent;
-      margin-bottom: -2px;
-      font-family: inherit;
-      letter-spacing: 0.02em;
-      transition: color 0.15s, border-color 0.15s;
-    }
-
-    .data-tab-btn:hover {
+    .station-list-bar input {
+      flex: 1;
+      min-width: 180px;
+      padding: 8px 12px;
+      border: 1px solid var(--panel-border);
+      border-radius: 8px;
+      background: var(--panel);
       color: var(--text);
+      font-size: 0.85rem;
+      font-family: inherit;
     }
 
-    .data-tab-btn.active {
-      color: var(--accent);
-      border-bottom-color: var(--accent);
-      font-weight: 600;
+    .station-list-bar input:focus {
+      outline: 1px solid var(--accent);
     }
 
-    .data-tab-btn .badge {
-      display: inline-block;
-      margin-left: 6px;
-      padding: 1px 7px;
-      border-radius: 10px;
-      font-size: 0.75rem;
-      font-weight: 600;
-      background: var(--panel-border);
-      color: var(--muted);
+    .station-list-bar select {
+      padding: 8px 12px;
+      border: 1px solid var(--panel-border);
+      border-radius: 8px;
+      background: var(--panel);
+      color: var(--text);
+      font-size: 0.85rem;
+      font-family: inherit;
+      cursor: pointer;
     }
 
-    .data-tab-btn.active .badge {
-      background: var(--accent);
-      color: var(--bg);
-    }
-
-    .data-table-wrap {
-      max-height: 420px;
+    .station-list-wrap {
+      max-height: 480px;
       overflow-y: auto;
       border: 1px solid var(--panel-border);
-      border-top: none;
-      border-radius: 0 0 16px 16px;
+      border-radius: 16px;
       background: var(--panel);
     }
 
-    .data-table {
+    .station-table {
       width: 100%;
       border-collapse: collapse;
-      font-size: 0.85rem;
+      font-size: 0.82rem;
     }
 
-    .data-table thead {
+    .station-table thead {
       position: sticky;
       top: 0;
       z-index: 1;
     }
 
-    .data-table th {
-      padding: 10px 14px;
+    .station-table th {
+      padding: 10px 12px;
       text-align: left;
       background: rgba(11, 24, 32, 0.98);
       color: var(--accent);
-      font-size: 0.76rem;
+      font-size: 0.73rem;
       text-transform: uppercase;
       letter-spacing: 0.06em;
       border-bottom: 1px solid var(--panel-border);
+      cursor: pointer;
+      user-select: none;
+      white-space: nowrap;
     }
 
-    .data-table td {
-      padding: 8px 14px;
+    .station-table th:hover {
+      color: var(--text);
+    }
+
+    .station-table th .sort-arrow {
+      font-size: 0.65rem;
+      margin-left: 3px;
+    }
+
+    .station-table td {
+      padding: 7px 12px;
       border-bottom: 1px solid var(--panel-border);
       color: var(--text);
     }
 
-    .data-table tr:hover td {
+    .station-table tr:hover td {
       background: rgba(77, 159, 255, 0.06);
     }
 
-    .data-table .swatch {
-      display: inline-block;
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      margin-right: 6px;
-      vertical-align: middle;
+    .station-table .name-link {
+      color: var(--accent);
+      cursor: pointer;
+      text-decoration: none;
     }
 
-    .data-empty {
-      padding: 32px;
-      text-align: center;
-      color: var(--muted);
-      font-size: 0.9rem;
+    .station-table .name-link:hover {
+      text-decoration: underline;
+    }
+
+    .station-table .price-cell {
+      text-align: right;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .station-table .price-cheap { color: #4ade80; }
+    .station-table .price-mid { color: #fbbf24; }
+    .station-table .price-dear { color: #f87171; }
+
+    @media (max-width: 600px) {
+      .station-table { font-size: 0.75rem; }
+      .station-table th, .station-table td { padding: 6px 8px; }
     }
 
     @media (max-width: 900px) {
@@ -590,19 +597,21 @@
         <div id="map" aria-label="Fuel station gap analysis map"></div>
       </div>
     </main>
-    <section class="data-section" style="display:none;">
-      <div class="data-tabs" id="data-tabs">
-        <button class="data-tab-btn active" data-tab="gaps">Gaps <span class="badge" id="tab-badge-gaps">0</span></button>
-        <button class="data-tab-btn" data-tab="matched">Matched <span class="badge" id="tab-badge-matched">0</span></button>
-        <button class="data-tab-btn" data-tab="google">Google Only <span class="badge" id="tab-badge-google">0</span></button>
-        <button class="data-tab-btn" data-tab="fuelcheck">FuelCheck Only <span class="badge" id="tab-badge-fuelcheck">0</span></button>
+    <section class="station-list-section" id="station-list-section">
+      <div class="station-list-bar">
+        <input type="text" id="station-search" placeholder="Filter by name or address..." />
+        <select id="station-sort">
+          <option value="name-asc">Name A-Z</option>
+          <option value="name-desc">Name Z-A</option>
+          <option value="suburb-asc">Suburb A-Z</option>
+        </select>
+        <span id="station-list-count" style="color:var(--muted);font-size:0.8rem;"></span>
       </div>
-      <div class="data-table-wrap">
-        <table class="data-table">
-          <thead id="data-thead"></thead>
-          <tbody id="data-tbody"></tbody>
+      <div class="station-list-wrap">
+        <table class="station-table" id="station-table">
+          <thead id="station-thead"></thead>
+          <tbody id="station-tbody"></tbody>
         </table>
-        <div class="data-empty" id="data-empty" style="display:none;">No stations in this category.</div>
       </div>
     </section>
   </div>
@@ -939,6 +948,9 @@
       return DOMPurify.sanitize(content, { ADD_ATTR: ["data-tab-target"] });
     }
 
+    // Store all markers for table click-to-focus
+    let allMarkers = [];
+
     function addMarker(data, type) {
       const lat = data.lat || (data.fuelcheck && data.fuelcheck.lat) || (data.google && data.google.lat);
       const lng = data.lng || (data.fuelcheck && data.fuelcheck.lng) || (data.google && data.google.lng);
@@ -948,7 +960,6 @@
         minWidth: 260,
         className: "station-popup-wrapper"
       });
-      // Lightweight hover tooltip with both source names
       const tooltipLines = [];
       if (data.fuelcheck) tooltipLines.push(`<b>FC:</b> ${escapeHtml(data.fuelcheck.name)}<br><small>${escapeHtml(data.fuelcheck.address || "")}</small>`);
       if (data.google) tooltipLines.push(`<b>G:</b> ${escapeHtml(data.google.name)}<br><small>${escapeHtml(data.google.address || "")}</small>`);
@@ -960,6 +971,11 @@
         className: "station-tooltip"
       });
       layers[type].addLayer(marker);
+      marker._stationData = data;
+      marker._stationType = type;
+      marker._lat = lat;
+      marker._lng = lng;
+      allMarkers.push(marker);
     }
 
     function nearestFuelcheckStation(googleStation, fuelStations, usedFuelIds) {
@@ -1019,6 +1035,7 @@
 
     function rerender() {
       Object.values(layers).forEach((layer) => layer.clearLayers());
+      allMarkers = [];
 
       const fuelcheckFiltered = rawFuelcheckStations.filter((s) => hasSelectedFuelType(s));
 
@@ -1126,71 +1143,168 @@
       renderTable();
     }
 
-    // --- Data table ---
-    let tableData = { gaps: [], matched: [], google: [], fuelcheck: [] };
-    let activeTab = "gaps";
+    // --- Station list table ---
+    const FUEL_COL_ORDER = ["U91", "E10", "P95", "P98", "DL", "PDL", "LPG", "E85"];
+    const FUEL_COL_LABELS = { U91:"U91", E10:"E10", P95:"P95", P98:"P98", DL:"Diesel", PDL:"P.Diesel", LPG:"LPG", E85:"E85" };
+    let stationListSort = { col: "name", dir: "asc" };
 
-    document.getElementById("data-tabs").addEventListener("click", (e) => {
-      const btn = e.target.closest(".data-tab-btn");
-      if (!btn) return;
-      activeTab = btn.dataset.tab;
-      document.querySelectorAll(".data-tab-btn").forEach((b) => b.classList.remove("active"));
-      btn.classList.add("active");
-      renderTable();
-    });
+    function getVisibleFuelCols() {
+      return FUEL_COL_ORDER.filter(function(ft) { return selectedFuelTypes.has(ft); });
+    }
 
-    function renderTable() {
-      const thead = document.getElementById("data-thead");
-      const tbody = document.getElementById("data-tbody");
-      const empty = document.getElementById("data-empty");
-      const rows = tableData[activeTab] || [];
+    function buildStationRows() {
+      var rows = [];
+      var seen = new Set();
+      allMarkers.forEach(function(m) {
+        var d = m._stationData;
+        var goog = d.google;
+        var fc = d.fuelcheck;
+        var name = goog ? goog.name : fc ? fc.name : "";
+        var address = goog ? (goog.address || "") : fc ? (fc.address || "") : "";
+        var key = name + "|" + m._lat + "|" + m._lng;
+        if (seen.has(key)) return;
+        seen.add(key);
+        var priceMap = {};
+        var prices = d.prices || (fc && fc.prices) || [];
+        prices.forEach(function(p) { priceMap[p.fuel_type] = p.price; });
+        rows.push({
+          name: name, address: address, priceMap: priceMap, marker: m, type: m._stationType,
+          lat: m._lat, lng: m._lng,
+          suburb: extractSuburb(address)
+        });
+      });
+      return rows;
+    }
 
-      if (!rows.length) {
-        thead.textContent = "";
-        tbody.textContent = "";
-        empty.style.display = "block";
-        return;
+    function extractSuburb(address) {
+      if (!address) return "";
+      var m = address.match(/,\s*(.+?)\s+NSW\s+\d{4}/i);
+      if (m) return m[1].trim();
+      var parts = address.split(",");
+      return parts.length > 1 ? parts[parts.length - 1].trim() : "";
+    }
+
+    function renderStationList() {
+      var fuelCols = getVisibleFuelCols();
+      var thead = document.getElementById("station-thead");
+      var tbody = document.getElementById("station-tbody");
+      var searchVal = (document.getElementById("station-search").value || "").toLowerCase();
+
+      var rows = buildStationRows();
+
+      if (searchVal) {
+        rows = rows.filter(function(r) {
+          return r.name.toLowerCase().indexOf(searchVal) >= 0 || r.address.toLowerCase().indexOf(searchVal) >= 0;
+        });
       }
-      empty.style.display = "none";
 
-      const colDefs = {
-        gaps:      ["Station", "Address", "Source"],
-        matched:   ["FuelCheck", "Google", "Address", "Distance"],
-        google:    ["Station", "Address"],
-        fuelcheck: ["Station", "Brand", "Address", "Fuels"]
-      };
+      var col = stationListSort.col;
+      var dir = stationListSort.dir;
+      var mult = dir === "asc" ? 1 : -1;
+      rows.sort(function(a, b) {
+        if (col === "name") return mult * a.name.localeCompare(b.name);
+        if (col === "suburb") return mult * a.suburb.localeCompare(b.suburb);
+        if (col === "address") return mult * a.address.localeCompare(b.address);
+        var av = a.priceMap[col] != null ? a.priceMap[col] : 9999;
+        var bv = b.priceMap[col] != null ? b.priceMap[col] : 9999;
+        return mult * (av - bv);
+      });
 
-      const cols = colDefs[activeTab] || [];
+      // Price terciles for coloring
+      var terciles = {};
+      fuelCols.forEach(function(ft) {
+        var vals = rows.map(function(r) { return r.priceMap[ft]; }).filter(function(v) { return v != null; }).sort(function(a,b) { return a - b; });
+        if (vals.length) {
+          terciles[ft] = { q1: vals[Math.floor(vals.length * 0.33)], q2: vals[Math.floor(vals.length * 0.66)] };
+        }
+      });
 
-      // Build thead
-      thead.textContent = "";
-      const headRow = document.createElement("tr");
-      cols.forEach((c) => {
-        const th = document.createElement("th");
-        th.textContent = c;
+      // Build thead using DOM methods
+      while (thead.firstChild) thead.removeChild(thead.firstChild);
+      var headRow = document.createElement("tr");
+
+      function makeTh(label, colKey) {
+        var th = document.createElement("th");
+        var arrow = stationListSort.col === colKey ? (stationListSort.dir === "asc" ? " \u25B2" : " \u25BC") : "";
+        th.textContent = label + arrow;
+        th.addEventListener("click", function() {
+          if (stationListSort.col === colKey) {
+            stationListSort.dir = stationListSort.dir === "asc" ? "desc" : "asc";
+          } else {
+            stationListSort.col = colKey;
+            stationListSort.dir = "asc";
+          }
+          renderStationList();
+        });
+        return th;
+      }
+
+      headRow.appendChild(makeTh("Station", "name"));
+      headRow.appendChild(makeTh("Address", "address"));
+      fuelCols.forEach(function(ft) {
+        var th = makeTh(FUEL_COL_LABELS[ft] || ft, ft);
+        th.classList.add("price-cell");
         headRow.appendChild(th);
       });
       thead.appendChild(headRow);
 
-      // Build tbody
-      tbody.textContent = "";
-      rows.forEach((r) => {
-        const tr = document.createElement("tr");
-        r.forEach((cellVal) => {
-          const td = document.createElement("td");
-          td.textContent = cellVal;
+      // Build tbody using DOM methods
+      while (tbody.firstChild) tbody.removeChild(tbody.firstChild);
+      rows.forEach(function(r) {
+        var tr = document.createElement("tr");
+        // Name cell - clickable
+        var tdName = document.createElement("td");
+        var nameLink = document.createElement("a");
+        nameLink.className = "name-link";
+        nameLink.textContent = r.name;
+        nameLink.href = "#";
+        nameLink.addEventListener("click", function(e) {
+          e.preventDefault();
+          map.setView([r.lat, r.lng], 16);
+          r.marker.openPopup();
+          document.getElementById("map").scrollIntoView({ behavior: "smooth" });
+        });
+        tdName.appendChild(nameLink);
+        tr.appendChild(tdName);
+        // Address
+        var tdAddr = document.createElement("td");
+        tdAddr.textContent = r.address;
+        tr.appendChild(tdAddr);
+        // Fuel price columns
+        fuelCols.forEach(function(ft) {
+          var td = document.createElement("td");
+          td.className = "price-cell";
+          var price = r.priceMap[ft];
+          if (price != null) {
+            td.textContent = price.toFixed(1);
+            if (terciles[ft]) {
+              if (price <= terciles[ft].q1) td.classList.add("price-cheap");
+              else if (price <= terciles[ft].q2) td.classList.add("price-mid");
+              else td.classList.add("price-dear");
+            }
+          } else {
+            td.textContent = "-";
+            td.style.color = "var(--muted)";
+          }
           tr.appendChild(td);
         });
         tbody.appendChild(tr);
       });
+
+      document.getElementById("station-list-count").textContent = rows.length + " stations";
     }
 
-    function updateTableBadges() {
-      ["gaps", "matched", "google", "fuelcheck"].forEach((key) => {
-        const el = document.getElementById("tab-badge-" + key);
-        if (el) el.textContent = (tableData[key] || []).length;
-      });
-    }
+    document.getElementById("station-search").addEventListener("input", renderStationList);
+    document.getElementById("station-sort").addEventListener("change", function() {
+      var v = this.value;
+      if (v === "name-asc") stationListSort = { col: "name", dir: "asc" };
+      else if (v === "name-desc") stationListSort = { col: "name", dir: "desc" };
+      else if (v === "suburb-asc") stationListSort = { col: "suburb", dir: "asc" };
+      renderStationList();
+    });
+
+    function updateTableBadges() {}
+    function renderTable() { renderStationList(); }
 
     async function loadApp() {
       try {
