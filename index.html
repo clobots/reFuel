@@ -15,6 +15,8 @@
     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
     crossorigin=""
   ></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol@0.81.1/dist/L.Control.Locate.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol@0.81.1/dist/L.Control.Locate.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.1.6/purify.min.js"></script>
   <style>
     :root {
@@ -658,43 +660,17 @@
 
     L.control.scale({ imperial: false }).addTo(map);
 
-    // Locate-me button
-    const locateCtrl = L.control({ position: "topleft" });
-    locateCtrl.onAdd = function() {
-      const btn = L.DomUtil.create("div", "leaflet-bar");
-      const a = L.DomUtil.create("a", "", btn);
-      a.href = "#";
-      a.title = "Zoom to my location";
-      a.setAttribute("role", "button");
-      a.style.cssText = "display:flex;align-items:center;justify-content:center;width:34px;height:34px;font-size:18px;cursor:pointer;background:#fff;color:#333;";
-      a.textContent = "\u2316";
-      let locMarker = null;
-      L.DomEvent.on(a, "click", function(e) {
-        L.DomEvent.preventDefault(e);
-        if (!navigator.geolocation) { a.textContent = "\u2717"; setTimeout(function() { a.textContent = "\u2316"; }, 2000); return; }
-        a.textContent = "\u2026";
-        navigator.geolocation.getCurrentPosition(
-          function(pos) {
-            var ll = [pos.coords.latitude, pos.coords.longitude];
-            map.setView(ll, 15);
-            if (locMarker) map.removeLayer(locMarker);
-            locMarker = L.circleMarker(ll, {
-              radius: 8, fillColor: "#4285f4", fillOpacity: 1,
-              color: "#fff", weight: 2
-            }).addTo(map).bindPopup("You are here").openPopup();
-            a.textContent = "\u2316";
-          },
-          function(err) {
-            a.textContent = "\u2717";
-            a.title = err.code === 1 ? "Location permission denied" : err.code === 2 ? "Location unavailable" : "Location timed out";
-            setTimeout(function() { a.textContent = "\u2316"; a.title = "Zoom to my location"; }, 3000);
-          },
-          { enableHighAccuracy: false, timeout: 15000, maximumAge: 60000 }
-        );
-      });
-      return btn;
-    };
-    locateCtrl.addTo(map);
+    // Locate-me button (Leaflet.Locate plugin — handles permissions, tracking, accuracy circle)
+    L.control.locate({
+      position: "topleft",
+      flyTo: true,
+      keepCurrentZoomLevel: false,
+      setView: "untilPanOrZoom",
+      locateOptions: { enableHighAccuracy: true, timeout: 20000, maximumAge: 30000 },
+      strings: { title: "Show my location" },
+      circleStyle: { fillColor: "#4285f4", fillOpacity: 0.15, color: "#4285f4", weight: 1 },
+      markerStyle: { fillColor: "#4285f4", fillOpacity: 1, color: "#fff", weight: 3, radius: 7 }
+    }).addTo(map);
 
     // Address search control
     const searchCtrl = L.control({ position: "topleft" });
