@@ -246,6 +246,25 @@
       width: 180px;
     }
 
+    .locate-toast {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(11, 24, 32, 0.95);
+      color: #eef6fb;
+      padding: 12px 20px;
+      border-radius: 10px;
+      font-size: 13px;
+      line-height: 1.5;
+      z-index: 10000;
+      max-width: 320px;
+      text-align: center;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+      animation: toastIn 0.3s ease;
+    }
+    @keyframes toastIn { from { opacity: 0; transform: translateX(-50%) translateY(10px); } to { opacity: 1; transform: translateX(-50%) translateY(0); } }
+
     @media (max-width: 560px) {
       .search-bar input {
         width: 130px;
@@ -673,13 +692,28 @@
       markerStyle: { fillColor: "#4285f4", fillOpacity: 1, color: "#fff", weight: 3, radius: 7 }
     }).addTo(map);
 
-    // Suppress default alert on geolocation error; retry once for iOS Safari race condition
-    // (iOS fires "User denied" while the permission dialog is still showing)
+    // Handle geolocation errors: retry once (iOS race condition), then show helpful toast
     var locateRetried = false;
+    function showLocateToast(msg) {
+      var old = document.querySelector(".locate-toast");
+      if (old) old.remove();
+      var t = document.createElement("div");
+      t.className = "locate-toast";
+      t.innerHTML = msg;
+      document.body.appendChild(t);
+      setTimeout(function() { t.remove(); }, 8000);
+    }
     map.on("locationerror", function(e) {
-      if (!locateRetried && /denied/i.test(e.message)) {
+      if (!locateRetried) {
         locateRetried = true;
-        setTimeout(function() { locateCtrl.start(); }, 1000);
+        setTimeout(function() { locateCtrl.start(); }, 1500);
+        return;
+      }
+      locateRetried = false;
+      if (/denied/i.test(e.message)) {
+        showLocateToast("Location blocked by your device.<br><b>iOS:</b> Settings \u2192 Privacy \u2192 Location Services \u2192 Chrome \u2192 While Using<br><b>Android:</b> Settings \u2192 Apps \u2192 Chrome \u2192 Permissions \u2192 Location");
+      } else {
+        showLocateToast("Could not determine your location. Try again in a moment.");
       }
     });
     map.on("locationfound", function() { locateRetried = false; });
