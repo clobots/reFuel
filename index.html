@@ -661,16 +661,28 @@
     L.control.scale({ imperial: false }).addTo(map);
 
     // Locate-me button (Leaflet.Locate plugin — handles permissions, tracking, accuracy circle)
-    L.control.locate({
+    var locateCtrl = L.control.locate({
       position: "topleft",
       flyTo: true,
       keepCurrentZoomLevel: false,
       setView: "untilPanOrZoom",
+      showPopup: false,
       locateOptions: { enableHighAccuracy: true, timeout: 20000, maximumAge: 30000 },
       strings: { title: "Show my location" },
       circleStyle: { fillColor: "#4285f4", fillOpacity: 0.15, color: "#4285f4", weight: 1 },
       markerStyle: { fillColor: "#4285f4", fillOpacity: 1, color: "#fff", weight: 3, radius: 7 }
     }).addTo(map);
+
+    // Suppress default alert on geolocation error; retry once for iOS Safari race condition
+    // (iOS fires "User denied" while the permission dialog is still showing)
+    var locateRetried = false;
+    map.on("locationerror", function(e) {
+      if (!locateRetried && /denied/i.test(e.message)) {
+        locateRetried = true;
+        setTimeout(function() { locateCtrl.start(); }, 1000);
+      }
+    });
+    map.on("locationfound", function() { locateRetried = false; });
 
     // Address search control
     const searchCtrl = L.control({ position: "topleft" });
