@@ -1076,24 +1076,32 @@
 
       let infoHtml = "";
 
-      if (fc) {
-        infoHtml += `<div class="src-label">FuelCheck API</div>`;
-        infoHtml += `<h3>${escapeHtml(fc.name)}</h3>`;
-        infoHtml += `<p>${escapeHtml(fc.address || "")}</p>`;
-      }
-      if (goog) {
-        infoHtml += `<div class="src-label">Google Maps</div>`;
-        infoHtml += `<h3>${escapeHtml(goog.name)}</h3>`;
-        infoHtml += `<p>${escapeHtml(goog.address || "")}</p>`;
-      }
-      if (!fc && !goog) {
+      // Pick best name/address across sources
+      var gName = goog ? (goog.name || "") : "";
+      var fName = fc ? (fc.name || "") : "";
+      var bestName = gName.length ? (gName.length >= fName.length ? gName : fName) : fName;
+      var gAddr = goog ? (goog.address || "") : "";
+      var fAddr = fc ? (fc.address || "") : "";
+      var bestAddr = gAddr.length ? (gAddr.length >= fAddr.length ? gAddr : fAddr) : fAddr;
+
+      if (bestName) {
+        infoHtml += `<h3>${escapeHtml(bestName)}</h3>`;
+        if (bestAddr) infoHtml += `<p>${escapeHtml(bestAddr)}</p>`;
+        if (fc && goog) {
+          infoHtml += `<p style="font-size:0.75rem;color:#888;">Sources: Google Maps + FuelCheck API</p>`;
+        } else if (fc) {
+          infoHtml += `<p style="font-size:0.75rem;color:#888;">Source: FuelCheck API</p>`;
+        } else {
+          infoHtml += `<p style="font-size:0.75rem;color:#888;">Source: Google Maps</p>`;
+        }
+      } else {
         infoHtml += `<h3>Unknown station</h3>`;
       }
       if (distance != null) {
         infoHtml += `<p style="font-size:0.8rem;color:#888;">Match distance: ${Math.round(distance)}m</p>`;
       }
 
-      const mapsQuery = encodeURIComponent((fc ? fc.name : goog ? goog.name : "") + " " + (fc ? fc.address : goog ? goog.address : ""));
+      const mapsQuery = encodeURIComponent(bestName + " " + bestAddr);
       const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${mapsQuery}`;
       infoHtml += `<a href="${mapsUrl}" target="_blank" rel="noopener" style="display:inline-block;margin-top:6px;font-size:0.82rem;color:#4285f4;">Open in Google Maps</a>`;
 
@@ -1124,11 +1132,14 @@
         minWidth: 260,
         className: "station-popup-wrapper"
       });
-      const tooltipLines = [];
-      if (data.fuelcheck) tooltipLines.push(`<b>FC:</b> ${escapeHtml(data.fuelcheck.name)}<br><small>${escapeHtml(data.fuelcheck.address || "")}</small>`);
-      if (data.google) tooltipLines.push(`<b>G:</b> ${escapeHtml(data.google.name)}<br><small>${escapeHtml(data.google.address || "")}</small>`);
-      if (!data.fuelcheck && !data.google) tooltipLines.push("Unknown station");
-      marker.bindTooltip(DOMPurify.sanitize(tooltipLines.join("<hr style='margin:4px 0;border-color:#ddd'>")), {
+      var tGn = data.google ? (data.google.name || "") : "";
+      var tFn = data.fuelcheck ? (data.fuelcheck.name || "") : "";
+      var tName = tGn.length ? (tGn.length >= tFn.length ? tGn : tFn) : tFn;
+      var tGa = data.google ? (data.google.address || "") : "";
+      var tFa = data.fuelcheck ? (data.fuelcheck.address || "") : "";
+      var tAddr = tGa.length ? (tGa.length >= tFa.length ? tGa : tFa) : tFa;
+      var tooltipHtml = tName ? `${escapeHtml(tName)}${tAddr ? '<br><small>' + escapeHtml(tAddr) + '</small>' : ''}` : "Unknown station";
+      marker.bindTooltip(DOMPurify.sanitize(tooltipHtml), {
         direction: "top",
         sticky: false,
         opacity: 1,
