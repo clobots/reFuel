@@ -12,3 +12,6 @@ Thumbs.db
 
 # Historical price snapshots (local only)
 data/history/
+
+# Private gist links
+gist-links.md
