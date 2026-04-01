@@ -37,6 +37,11 @@
       box-sizing: border-box;
     }
 
+    html, body {
+      overflow-x: hidden;
+      width: 100%;
+    }
+
     body {
       margin: 0;
       min-height: 100vh;
@@ -62,6 +67,7 @@
       border-bottom: 1px solid var(--panel-border);
       box-shadow: var(--shadow);
       z-index: 1000;
+      width: 100%;
     }
 
     .topbar-inner {
@@ -70,6 +76,7 @@
       gap: 16px;
       align-items: flex-start;
       justify-content: space-between;
+      max-width: 100%;
     }
 
     .heading h1 {
@@ -96,9 +103,10 @@
 
     .summary {
       display: grid;
-      grid-template-columns: repeat(3, minmax(110px, 1fr));
+      grid-template-columns: repeat(3, minmax(90px, 1fr));
       gap: 10px;
-      min-width: min(100%, 460px);
+      width: 100%;
+      max-width: 460px;
     }
 
     .summary-card {
@@ -328,8 +336,8 @@
 
     .popup {
       color: #11202b;
-      min-width: 260px;
-      max-width: 340px;
+      min-width: 200px;
+      max-width: min(340px, 85vw);
     }
 
     .popup h3 {
@@ -546,52 +554,120 @@
     .station-table .name-col { white-space: nowrap; }
     .station-table .addr-col { max-width: 200px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 
-    @media (max-width: 600px) {
-      .station-list-section { padding: 0 10px 24px; }
-      .station-list-bar { gap: 6px; }
-      .station-list-bar input { min-width: 120px; font-size: 0.8rem; padding: 6px 10px; }
-      .station-list-bar select { font-size: 0.8rem; padding: 6px 8px; }
-      .station-table { font-size: 0.72rem; }
-      .station-table th, .station-table td { padding: 5px 7px; }
-      .station-table .addr-col { max-width: 120px; }
-      .station-list-wrap { max-height: 360px; }
-    }
-
+    /* Tablet / medium screens */
     @media (max-width: 900px) {
       .topbar {
-        padding: 18px 16px 14px;
+        padding: 16px 14px 12px;
       }
 
-      .summary {
-        grid-template-columns: repeat(2, minmax(120px, 1fr));
+      .topbar-inner {
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .heading h1 {
+        font-size: 1.6rem;
+      }
+
+      .heading p {
+        font-size: 0.85rem;
+      }
+
+      .summary-wrap {
         width: 100%;
       }
 
+      .summary {
+        grid-template-columns: repeat(3, 1fr);
+        width: 100%;
+        max-width: none;
+      }
+
       .map-wrap {
-        padding: 12px;
+        padding: 10px;
       }
 
       .map-frame {
-        height: calc(100vh - 255px);
-        min-height: 500px;
-      }
-    }
-
-    @media (max-width: 560px) {
-      .summary {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .map-status {
-        top: 20px;
-        left: 20px;
-        right: 20px;
+        height: 55vh;
+        min-height: 300px;
         border-radius: 14px;
       }
 
-      .map-frame {
-        height: calc(100vh - 304px);
+      .station-list-section { padding: 0 10px 24px; }
+      .station-list-bar { gap: 6px; }
+      .station-list-bar input { min-width: 0; flex: 1; font-size: 0.8rem; padding: 6px 10px; }
+      .station-list-bar select { font-size: 0.8rem; padding: 6px 8px; }
+      .station-table { font-size: 0.75rem; }
+      .station-table th, .station-table td { padding: 6px 8px; }
+      .station-table .addr-col { max-width: 140px; }
+      .station-list-wrap { max-height: 360px; }
+    }
+
+    /* Phone / small screens */
+    @media (max-width: 560px) {
+      .topbar {
+        padding: 12px 10px 10px;
       }
+
+      .heading h1 {
+        font-size: 1.3rem;
+      }
+
+      .heading p, .updated-at {
+        font-size: 0.75rem;
+      }
+
+      .avail-line {
+        font-size: 0.82rem !important;
+        margin: 6px 0 2px !important;
+      }
+
+      .disclaimer-note {
+        font-size: 0.62rem !important;
+      }
+
+      .summary {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 6px;
+      }
+
+      .summary-card {
+        padding: 8px 10px;
+        border-radius: 10px;
+      }
+
+      .summary-card dt {
+        font-size: 0.65rem;
+      }
+
+      .summary-card dd {
+        font-size: 1.2rem;
+      }
+
+      .map-wrap {
+        padding: 6px;
+      }
+
+      .map-frame {
+        height: 50vh;
+        min-height: 260px;
+        border-radius: 10px;
+      }
+
+      .map-status {
+        top: 16px;
+        left: 14px;
+        right: 14px;
+        border-radius: 12px;
+        font-size: 0.78rem;
+        padding: 7px 10px;
+      }
+
+      .station-list-section { padding: 0 6px 20px; }
+      .station-table { font-size: 0.68rem; }
+      .station-table th, .station-table td { padding: 5px 6px; }
+      .station-table .addr-col { max-width: 100px; }
+      .station-list-wrap { max-height: 300px; border-radius: 10px; }
     }
   </style>
 </head>
@@ -601,8 +677,8 @@
       <div class="topbar-inner">
         <div class="heading">
           <h1>reFuel</h1>
-          <p id="avail-line" style="color:var(--accent);font-size:1.05rem;margin:10px 0 4px;font-weight:600;">Loading...</p>
-          <p style="color:var(--muted);font-size:0.72rem;font-style:italic;margin:0 0 6px;">* assuming that fuel stations listed online sell all fuel types usually</p>
+          <p id="avail-line" class="avail-line" style="color:var(--accent);font-size:1.05rem;margin:10px 0 4px;font-weight:600;">Loading...</p>
+          <p class="disclaimer-note" style="color:var(--muted);font-size:0.72rem;font-style:italic;margin:0 0 6px;">* assuming that fuel stations listed online sell all fuel types usually</p>
           <div class="updated-at">Last updated: <span id="last-updated">-</span></div>
         </div>
         <div class="summary-wrap">
@@ -723,7 +799,7 @@
     let searchMarker = null;
     searchCtrl.onAdd = function() {
       const container = L.DomUtil.create("div", "leaflet-bar search-bar");
-      container.style.cssText = "display:flex;background:#fff;border-radius:4px;overflow:hidden;position:absolute;top:10px;left:50px;z-index:1000;";
+      container.style.cssText = "display:flex;background:#fff;border-radius:4px;overflow:hidden;position:absolute;top:10px;left:50px;z-index:1000;max-width:calc(100vw - 120px);";
       const input = L.DomUtil.create("input", "", container);
       input.type = "text";
       input.placeholder = "Search address...";
