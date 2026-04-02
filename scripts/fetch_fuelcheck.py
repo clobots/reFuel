@@ -17,10 +17,10 @@ from datetime import datetime, timezone
 # Bounding box covering Ryde, Auburn, Hornsby and surrounding suburbs
 # Generous bounds to avoid missing stations between centroids
 BOUNDS = {
-    "lat_min": -33.90,   # South of Auburn
+    "lat_min": -33.92,   # South to Canley Heights / Bass Hill
     "lat_max": -33.65,   # North of Hornsby
-    "lng_min": 150.95,   # West of Auburn
-    "lng_max": 151.25,   # East to Neutral Bay / Cammeray
+    "lng_min": 150.91,   # West to Smithfield / Fairfield
+    "lng_max": 151.26,   # East to Neutral Bay / Cammeray
 }
 
 API_BASE = "https://api.onegov.nsw.gov.au"

@@ -1221,7 +1221,7 @@
       // Reset table data
       tableData = { gaps: [], matched: [], google: [], fuelcheck: [] };
 
-      rawGoogleStations.forEach((googleStation) => {
+      rawGoogleStations.filter((s) => !s.closed).forEach((googleStation) => {
         const match = nearestFuelcheckStation(googleStation, fuelcheckFiltered, usedFuelIds);
         if (match) {
           const identifier = match.station.id || `${match.station.name}|${match.station.address}`;
