@@ -4,2043 +4,2335 @@
     "address": "924 Victoria Rd, West Ryde NSW",
     "lat": -33.8109474,
     "lng": 151.0934931,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "bp",
     "address": "295 Quarry Rd, Denistone East NSW 2112",
     "lat": -33.7958268,
     "lng": 151.1029349,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Metro Petroleum",
     "address": "36 Lane Cove Rd, Ryde NSW",
     "lat": -33.8076268,
     "lng": 151.1087361,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Apex Petroleum",
     "address": "898-902 Victoria Rd, West Ryde NSW",
     "lat": -33.8118926,
     "lng": 151.0947271,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "SPEEDWAY WEST RYDE",
     "address": "899 Victoria Rd, West Ryde NSW",
     "lat": -33.8105259,
     "lng": 151.094167,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Shell Reddy Express Ryde",
     "address": "45 Lane Cove Rd, Ryde NSW",
     "lat": -33.8072,
     "lng": 151.1099174,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Calvi Petrol Station",
     "address": "320 Lane Cove Rd, North Ryde NSW",
     "lat": -33.7924231,
     "lng": 151.1202452,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "SPEEDWAY KENT ROAD",
     "address": "34-38 Kent Rd, North Ryde NSW",
     "lat": -33.7917,
     "lng": 151.116,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Shell Reddy Express West Ryde",
     "address": "1032-1036 Victoria Rd, West Ryde NSW",
     "lat": -33.8073945,
     "lng": 151.0851171,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Ampol Foodary North Ryde",
     "address": "41-43 Epping Rd, North Ryde NSW",
     "lat": -33.7914072,
     "lng": 151.1311262,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "bp",
     "address": "1233 Victoria Road (Cnr Marsden Rd), West Ryde NSW 2114",
     "lat": -33.8067599,
     "lng": 151.0711349,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "BP PUTNEY",
     "address": "238 Morrison Rd, Putney NSW",
     "lat": -33.8237782,
     "lng": 151.1084371,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Shell Reddy Express North Ryde Wicks",
     "address": "96 Wicks Rd, North Ryde NSW",
     "lat": -33.7940243,
     "lng": 151.1269027,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Ryde Automative",
     "address": "332 Blaxland Rd, Ryde NSW",
     "lat": -33.8025054,
     "lng": 151.1003341,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "7-Eleven",
     "address": "400 Lane Cove Rd, North Ryde NSW",
     "lat": -33.7842736,
     "lng": 151.1287284,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Shell",
     "address": "275 Lane Cove Rd, North Ryde NSW 2113",
     "lat": -33.784879,
     "lng": 151.129067,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Enhance Eastwood / Mini Stop Express",
     "address": "2 Lovell Rd, Eastwood NSW",
     "lat": -33.7918084,
     "lng": 151.0894628,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Shell Reddy Express MARSFIELD",
     "address": "189 Epping Rd, Marsfield NSW",
     "lat": -33.7752308,
     "lng": 151.1053129,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Petro 711",
     "address": "917-921 Victoria Rd, West Ryde NSW",
     "lat": -33.8091625,
     "lng": 151.0934107,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Ampol Foodary Ermington",
     "address": "560-562 Victoria Rd, Ermington NSW",
     "lat": -33.8139846,
     "lng": 151.0548684,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Metro",
     "address": "700 Victoria Rd, Ermington NSW 2115",
     "lat": -33.8085971,
     "lng": 151.0661237,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "EG Ampol Marsfield",
     "address": "Cnr Epping & Balaclava Road, Marsfield NSW 2122",
     "lat": -33.778378,
     "lng": 151.107365,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Metro Petroleum Epping",
     "address": "30 BRIDGE ST, EPPING NSW 2121",
     "lat": -33.7747801,
     "lng": 151.0796801,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "BP Dundas (JASBE)",
     "address": "256 Kissing Point Rd, DUNDAS NSW 2117",
     "lat": -33.7989253,
     "lng": 151.0543765,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Medco Carlingford",
     "address": "286-288 Pennant Hills Road, Cnr Adderton Road, Carlingford NSW 2118",
     "lat": -33.7849589,
     "lng": 151.0435111,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Astron Rydalmere",
     "address": "262 - 272 VICTORIA RD Rydalmere NSW 2116",
     "lat": -33.810267,
     "lng": 151.0325029,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Budget Petrol Telopea",
     "address": "57 ADDERTON RD, TELOPEA NSW 2117",
     "lat": -33.7935565,
     "lng": 151.0413155,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "bp Truckstop",
     "address": "Cnr Victora Rd & Clyde St, Rydalmere NSW 2116",
     "lat": -33.8108865,
     "lng": 151.0327665,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "7-Eleven",
     "address": "246 Beecroft & Carlingford Roads, Epping NSW 2121",
     "lat": -33.7707916,
     "lng": 151.0808502,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Ampol Foodary Lane Cove West",
     "address": "UNIT 1 237-245 BURNS BAY RD, LANE COVE WEST NSW 2066",
     "lat": -33.8164917,
     "lng": 151.1514683,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "U-GO Carlingford Court",
     "address": "797 Pennant Hills Road, CARLINGFORD NSW 2118",
     "lat": -33.7757683,
     "lng": 151.0516363,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Ampol Foodary Rydalmere",
     "address": "309 Victoria Rd, RYDALMERE NSW 2116",
     "lat": -33.8119239,
     "lng": 151.0370993,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Ampol Foodary Carlingford",
     "address": "131 Pennant Hills Rd, Carlingford NSW 2118",
     "lat": -33.787648,
     "lng": 151.027913,
-    "source": "manual"
+    "source": "manual",
+    "closed": false
   },
   {
     "name": "7-Eleven Carlingford",
     "address": "243 Pennant Hills Road, Carlingford NSW 2118",
     "lat": -33.782875,
     "lng": 151.045752,
-    "source": "manual"
+    "source": "manual",
+    "closed": false
   },
   {
     "name": "BP Carlingford",
     "address": "712 Pennant Hills Road, Carlingford NSW 2118",
     "lat": -33.763701,
     "lng": 151.047355,
-    "source": "manual"
+    "source": "manual",
+    "closed": false
   },
   {
     "name": "Mobil 1 Carlingford Car Care",
     "address": "482 North Rocks Rd, Carlingford NSW 2118",
     "lat": -33.765073,
     "lng": 151.057902,
-    "source": "manual"
+    "source": "manual",
+    "closed": false
   },
   {
     "name": "North Ryde Petroleum",
     "address": "118 Coxs Rd, North Ryde NSW 2113",
     "lat": -33.80141,
     "lng": 151.13036,
-    "source": "manual"
+    "source": "manual",
+    "closed": false
   },
   {
     "name": "EG Ampol",
     "address": "154 Silverwater Rd",
     "lat": -33.831862,
     "lng": 151.0484514,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "bp Truckstop",
     "address": "Cnr Silverwater Road & Derby Street, SILVERWATER NSW 2128",
     "lat": -33.8375122,
     "lng": 151.0466064,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "EG Ampol Newington",
     "address": "1 Ave of the Americas",
     "lat": -33.8337761,
     "lng": 151.0555548,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Enhance Homebush",
     "address": "242 Parramatta Rd",
     "lat": -33.8616187,
     "lng": 151.0763942,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Ampol Foodary Lane Cove",
     "address": "237-245 Burns Bay Rd, Lane Cove West NSW 2066",
     "lat": -33.8146735,
     "lng": 151.1617834,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "bp",
     "address": "Cnr Hassall & James Ruse Drive, Rosehill NSW 2142",
     "lat": -33.8194933,
     "lng": 151.021292,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Shell Reddy Express Dundas",
     "address": "199-203 Kissing Point Rd (Corner, Kirby St",
     "lat": -33.7996193,
     "lng": 151.0450936,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "bp Truckstop",
     "address": "369 N Rocks Rd",
     "lat": -33.7691911,
     "lng": 151.0318678,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "7-Eleven",
     "address": "81 Macarthur St",
     "lat": -33.8091429,
     "lng": 151.0143749,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "SPEEDWAY PARRAMATTA",
     "address": "127A Alfred St",
     "lat": -33.8178101,
     "lng": 151.0175266,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Ampol Foodary Parramatta",
     "address": "159 Wigram St, Parramatta NSW 2150",
     "lat": -33.8110561,
     "lng": 151.0219959,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Shell Reddy Express Parramatta North",
     "address": "88 Victoria Rd (Cnr Buller St), Parramatta NSW 2150",
     "lat": -33.7817063,
     "lng": 151.0097543,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "7-Eleven",
     "address": "340 N Rocks Rd",
     "lat": -33.7689762,
     "lng": 151.0306897,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "bp",
     "address": "48-50 Aiken Road, West Pennant Hills NSW 2125",
     "lat": -33.7542,
     "lng": 151.0406,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Shell Reddy Express Parramatta",
     "address": "88 Victoria Rd (Corner, Buller St",
     "lat": -33.8086757,
     "lng": 151.0128315,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Enhance Eastwood",
     "address": "2 Lovell Rd, Eastwood NSW 2122",
     "lat": -33.7920625,
     "lng": 151.0815803,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "7-Eleven",
     "address": "246 Beecroft Rd & Carlingford Rd, Epping NSW 2121",
     "lat": -33.7726949,
     "lng": 151.0816204,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Shell Reddy Express Epping",
     "address": "246 Beecroft & Carlingford Rds, Epping NSW 2121",
     "lat": -33.7717753,
     "lng": 151.0826577,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "United",
     "address": "117 Seven Hills Rd, Baulkham Hills NSW 2153",
     "lat": -33.7639,
     "lng": 151.0017,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Shell Reddy Express Hunters Hill",
     "address": "4 Ryde Rd, Hunters Hill NSW",
     "lat": -33.831726,
     "lng": 151.1416645,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "7-Eleven Northmead",
     "address": "56 Windsor Rd, Northmead NSW",
     "lat": -33.7908201,
     "lng": 150.9968356,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Ampol Foodary Northmead",
     "address": "Windsor Rd Cnr, 98-100 Lombard St, Northmead NSW",
     "lat": -33.7878663,
     "lng": 150.9946557,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Shell Reddy Express Northmead",
     "address": "197 Windsor Rd, Northmead NSW",
     "lat": -33.7774448,
     "lng": 151.000022,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "7-Eleven Northmead",
     "address": "137 Windsor Rd, Northmead NSW",
     "lat": -33.7822905,
     "lng": 150.9970137,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Shell Reddy Express Northmead Briens",
     "address": "100 Briens Rd, Northmead NSW",
     "lat": -33.7963455,
     "lng": 150.988914,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Speedway Auburn Road",
     "address": "74-78 AUBURN RD, AUBURN NSW 2144",
     "lat": -33.8546338,
     "lng": 151.0324337,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Ampol",
     "address": "179 Parramatta Road, Auburn NSW 2144",
     "lat": -33.8411822,
     "lng": 151.0360054,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Speedway Auburn",
     "address": "238 Cumberland Rd, Auburn NSW 2144",
     "lat": -33.864177,
     "lng": 151.0231903,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "7-Eleven",
     "address": "Lot 3-4 Parramatta Road & Harbord Street, Granville East NSW 2142",
     "lat": -33.8349868,
     "lng": 151.0222883,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Budget Petrol Auburn",
     "address": "98 PARK RD, AUBURN NSW 2144",
     "lat": -33.8571385,
     "lng": 151.0289025,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Ampol Foodary Granville",
     "address": "144 Parramatta Rd, GRANVILLE NSW 2142",
     "lat": -33.8303309,
     "lng": 151.0109205,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Metro Petroleum Lidcombe",
     "address": "134 John Street, Lidcombe NSW 2141",
     "lat": -33.8546979,
     "lng": 151.0469509,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Metro Petroleum Guildford",
     "address": "2 Rawson Road, GUILDFORD NSW 2161",
     "lat": -33.8636891,
     "lng": 151.0088794,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "EG Ampol",
     "address": "158 Clyde Street (Cnr Redfern St), Granville NSW 2142",
     "lat": -33.8462252,
     "lng": 151.0126585,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Shell",
     "address": "18 Parramatta Road, Lidcombe NSW 2141",
     "lat": -33.8539738,
     "lng": 151.0592961,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "7-Eleven",
     "address": "154-160 Parramatta Road & Corner Bold Street, Granville NSW 2142",
     "lat": -33.8301402,
     "lng": 151.0101602,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Speedway Granville (Blaxcell St)",
     "address": "348 Blaxcell Street, Granville NSW 2142",
     "lat": -33.8572197,
     "lng": 151.0070598,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Speedway South Granville (Clyde St)",
     "address": "171 Clyde St, SOUTH GRANVILLE NSW 2142",
     "lat": -33.847445,
     "lng": 151.012921,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Akshar Enterprise PTY LTD T/A Power Fuel",
     "address": "101 Blaxcell St, GRANVILLE NSW 2142",
     "lat": -33.8425437,
     "lng": 151.0106205,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "SPEEDWAY PARK RD",
     "address": "360 PARK RD, REGENTS PARK NSW 2143",
     "lat": -33.8789873,
     "lng": 151.0247944,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Westside Petroleum",
     "address": "210 Guildford Road, GUILDFORD NSW 2161",
     "lat": -33.8550922,
     "lng": 150.990726,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Shell",
     "address": "1 Durham St, Rosehill NSW 2142",
     "lat": -33.8210585,
     "lng": 151.0397823,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Shell",
     "address": "1 DURHAM ST, ROSEHILL NSW 2142",
     "lat": -33.824544,
     "lng": 151.0376808,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Enhance Camellia",
     "address": "17 GRAND AV, CAMELLIA NSW 2142",
     "lat": -33.8205,
     "lng": 151.0356,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Costco Fuel Lidcombe",
     "address": "17-21 Parramatta Rd, Lidcombe NSW 2141",
     "lat": -33.8489946,
     "lng": 151.0510153,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Budget Petrol",
     "address": "27 Woodville Rd, Granville NSW 2142",
     "lat": -33.8306565,
     "lng": 151.0040102,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Speedway William Street",
     "address": "2 BLAXCELL ST, GRANVILLE NSW 2142",
     "lat": -33.8362603,
     "lng": 151.0110528,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Ampol Foodary Merrylands",
     "address": "150 Woodville Rd, MERRYLANDS NSW 2160",
     "lat": -33.8382125,
     "lng": 150.9997458,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "bp Truckstop",
     "address": "149 Great Western Hwy, Mays Hill NSW 2145",
     "lat": -33.819403,
     "lng": 150.989297,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "7-Eleven",
     "address": "295-297 Merrylands Road (Corner Windsor Street), Merrylands NSW 2160",
     "lat": -33.8354155,
     "lng": 150.9852976,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "EG Ampol",
     "address": "185 Pitt Street, MERRYLANDS NSW 2160",
     "lat": -33.8340841,
     "lng": 150.9917429,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "EG Ampol Strathfield",
     "address": "287 Liverpool Road, Burwood NSW 2134",
     "lat": -33.8854993,
     "lng": 151.0936326,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Ampol Foodary Concord",
     "address": "87-89 Parramatta Rd, CONCORD NSW 2137",
     "lat": -33.867857,
     "lng": 151.099422,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "7-Eleven",
     "address": "575-585 Liverpool Road, Strathfield South NSW 2136",
     "lat": -33.8873702,
     "lng": 151.0742618,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Ampol Foodary Strathfield South",
     "address": "600 Liverpool Rd, STRATHFIELD SOUTH NSW 2136",
     "lat": -33.8880956,
     "lng": 151.074658,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Shell",
     "address": "9 ALBERT RD, STRATHFIELD NSW 2135",
     "lat": -33.8709142,
     "lng": 151.0923278,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Budget Petrol North Strathfield",
     "address": "143 Concord Rd, North Strathfield NSW 2137",
     "lat": -33.8594614,
     "lng": 151.0927511,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "7-Eleven",
     "address": "575-585 Liverpool Rd, Strathfield South NSW 2136",
     "lat": -33.873042,
     "lng": 151.0943409,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "EG Ampol",
     "address": "400 Parramatta Road, Burwood NSW 2134",
     "lat": -33.8687132,
     "lng": 151.1014558,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "7-Eleven",
     "address": "Cnr Parramatta & Shaftsbury Rds, Burwood NSW 2134",
     "lat": -33.8695335,
     "lng": 151.108183,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Budget Petrol",
     "address": "365 LIVERPOOL RD, STRATHFIELD NSW 2135",
     "lat": -33.8882868,
     "lng": 151.0904793,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Ampol Foodary Homebush",
     "address": "334-336 Parramatta Rd, HOMEBUSH WEST NSW 2140",
     "lat": -33.8581457,
     "lng": 151.06818,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Shell Reddy Express Enfield",
     "address": "630-634 Liverpool Road, Strathfield South NSW 2136",
     "lat": -33.8867786,
     "lng": 151.0709043,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "bp",
     "address": "184 Liverpool Road, Enfield NSW 2136",
     "lat": -33.8872,
     "lng": 151.0978,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Bp Concord (Wild Bean Cafe)",
     "address": "20 Burwood Road, CONCORD NSW 2137",
     "lat": -33.8675728,
     "lng": 151.1053874,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "EG Ampol",
     "address": "97 Hume Highway, Chullora NSW 2190",
     "lat": -33.8916694,
     "lng": 151.0578706,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Shell",
     "address": "213-253 Parramatta Rd & Walker St, Five Dock NSW 2046",
     "lat": -33.8699971,
     "lng": 151.1147304,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Ampol Foodary Croydon",
     "address": "404-410 Liverpool Rd, CROYDON NSW 2132",
     "lat": -33.8884855,
     "lng": 151.1160102,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "EG Ampol Greenacre",
     "address": "51 Roberts Rd (Cnr Amarina St), Greenacre NSW 2190",
     "lat": -33.9002188,
     "lng": 151.0656951,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Shell OTR Greenacre West",
     "address": "74 ROBERTS RD, GREENACRE NSW 2190",
     "lat": -33.8921356,
     "lng": 151.0664154,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Shell Reddy Express Roberts Road East",
     "address": "74 Roberts Rd, Greenacre NSW 2190",
     "lat": -33.8841891,
     "lng": 151.0816862,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "bp Truckstop",
     "address": "155-157 Rockwood Rd, Yagoona NSW 2199",
     "lat": -33.8989367,
     "lng": 151.0558069,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Shell",
     "address": "194-206 Pacific Hwy, Hornsby NSW 2077",
     "lat": -33.7072598,
     "lng": 151.0990456,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "bp",
     "address": "Cnr George St and Burdett St, Hornsby NSW 2077",
     "lat": -33.7021419,
     "lng": 151.0996368,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "bp Truckstop",
     "address": "Cnr Pacific Highway & Jersey Street, Asquith NSW 2077",
     "lat": -33.6897851,
     "lng": 151.1061716,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Metro Petroleum",
     "address": "275 Pacific Highway, Hornsby NSW 2077",
     "lat": -33.6910592,
     "lng": 151.0995453,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Ampol Foodary Waitara",
     "address": "59-61 Pacific Highway, WAITARA NSW 2077",
     "lat": -33.7105301,
     "lng": 151.1024488,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Ampol Foodary Thornleigh",
     "address": "200-202 Pennant Hills Road, THORNLEIGH NSW 2120",
     "lat": -33.7265643,
     "lng": 151.0836514,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "7-Eleven",
     "address": "1579 Pacific Highway (Corner Redleaf Avenue), Wahroonga NSW 2076",
     "lat": -33.7197916,
     "lng": 151.1168423,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "bp",
     "address": "Pennant Hills Rd & Parkes St, THORNLEIGH NSW 2120",
     "lat": -33.7309357,
     "lng": 151.0806188,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Shell",
     "address": "188-190 Pennant Hills Rd, Thornleigh NSW 2120",
     "lat": -33.7249633,
     "lng": 151.0850774,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Ampol Hornsby Heights petrol Station",
     "address": "110 Galston Rd., Hornsby Heights NSW 2077",
     "lat": -33.6766728,
     "lng": 151.0982828,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Ampol Foodary Chatswood",
     "address": "572 Pacific Hwy, Chatswood NSW 2067",
     "lat": -33.8037586,
     "lng": 151.179011,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Shell",
     "address": "877-879 Pacific Hwy, Chatswood NSW 2067",
     "lat": -33.7918283,
     "lng": 151.1805159,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "EG Ampol Chatswood East",
     "address": "364-366 Eastern Valley Way, Chatswood East NSW 2067",
     "lat": -33.786599,
     "lng": 151.2010143,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Metro Petroleum Haberfield",
     "address": "163-165 PARRAMATTA RD, HABERFIELD NSW 2045",
     "lat": -33.8836129,
     "lng": 151.1344847,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "SPEEDWAY HABERFIELD",
     "address": "273 Parramatta Rd, Haberfield NSW 2045",
     "lat": -33.8750446,
     "lng": 151.1287596,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "7-Eleven",
     "address": "25 Parramatta Road, Haberfield NSW 2045",
     "lat": -33.8880001,
     "lng": 151.1428241,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "bp",
     "address": "95-97 Ramsay St, HABERFIELD NSW 2045",
     "lat": -33.8817,
     "lng": 151.1401,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "bp",
     "address": "580-586 Parramatta Road, Croydon NSW 2132",
     "lat": -33.8738956,
     "lng": 151.1268451,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "bp Truckstop",
     "address": "3 Carlton Cres, Summer Hill NSW 2130",
     "lat": -33.8923388,
     "lng": 151.1431054,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Ampol Foodary Five Dock",
     "address": "Ramsay Rd & Fairlight Street, FIVE DOCK NSW 2046",
     "lat": -33.8700881,
     "lng": 151.1304344,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "EG Ampol",
     "address": "774 Parramatta Road, Lewisham NSW 2049",
     "lat": -33.8902568,
     "lng": 151.1479364,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "7-Eleven",
     "address": "231-235 Great North Road, Five Dock NSW 2046",
     "lat": -33.8648707,
     "lng": 151.1299463,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Budget Petrol - Lewisham",
     "address": "204-208 New Canterbury Rd, LEWISHAM NSW 2049",
     "lat": -33.8970494,
     "lng": 151.1490622,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Metro Petroleum Leichhardt",
     "address": "127-129 MARION ST, LEICHHARDT NSW 2040",
     "lat": -33.883907,
     "lng": 151.1507412,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "7-Eleven",
     "address": "132 LIVERPOOL RD, ASHFIELD NSW 2131",
     "lat": -33.8905431,
     "lng": 151.1296062,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Shell",
     "address": "308-310 Parramatta Road, Stanmore NSW 2048",
     "lat": -33.8884331,
     "lng": 151.1643278,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "bp",
     "address": "Cnr Victoria Rd & Evans St, Rozelle NSW 2039",
     "lat": -33.8653,
     "lng": 151.1716,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Budget Petrol",
     "address": "22 Charlotte Street, ASHFIELD NSW 2131",
     "lat": -33.8864732,
     "lng": 151.1256629,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "U-GO Rozelle",
     "address": "121 Victoria Rd, ROZELLE NSW 2039",
     "lat": -33.8625435,
     "lng": 151.1684779,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Prime Petrol Petersham",
     "address": "8 CRYSTAL ST, PETERSHAM NSW 2049",
     "lat": -33.8886414,
     "lng": 151.158637,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Budget Petrol",
     "address": "37 Crystal St., Petersham NSW 2049",
     "lat": -33.8905108,
     "lng": 151.1586346,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "7-Eleven",
     "address": "342 Georges River Road & Burwood Road, Croydon Park NSW 2133",
     "lat": -33.8976397,
     "lng": 151.099796,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "7-Eleven",
     "address": "178-184 Victoria Road (Corner Moodie Street), Rozelle NSW 2039",
     "lat": -33.8630092,
     "lng": 151.1686,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "7-Eleven",
     "address": "132 Hume Hwy & Victoria St, Ashfield NSW 2131",
     "lat": -33.8956025,
     "lng": 151.1255814,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "7-Eleven",
     "address": "8 Crystal St, Petersham NSW 2049",
     "lat": -33.8976397,
     "lng": 151.1556,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Shell OTR Willoughby",
     "address": "616-626 WILLOUGHBY RD, WILLOUGHBY NSW 2068",
     "lat": -33.8060074,
     "lng": 151.1986755,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "bp",
     "address": "500 Willoughby Rd, Willoughby NSW 2068",
     "lat": -33.8103,
     "lng": 151.1993,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Metro Petroleum Willoughby",
     "address": "599 Willoughby Rd, WILLOUGHBY NSW 2068",
     "lat": -33.803882,
     "lng": 151.1997448,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "bp",
     "address": "316 PENSHURST ST, NORTH WILLOUGHBY NSW 2068",
     "lat": -33.79384,
     "lng": 151.195948,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "bp",
     "address": "157 Penshurst street, Willoughby NSW 2068",
     "lat": -33.7978876,
     "lng": 151.1981799,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "bp",
     "address": "169 Willoughby Road, Naremburn NSW 2065",
     "lat": -33.819985,
     "lng": 151.201087,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "bp",
     "address": "62-70 Epping Rd, Lane Cove NSW 2066",
     "lat": -33.811011,
     "lng": 151.1642,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Shell",
     "address": "254 BURNS BAY RD, LANE COVE NSW 2066",
     "lat": -33.8172087,
     "lng": 151.1517485,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Metro Petroleum Lane Cove",
     "address": "533 MOWBRAY RD WEST, LANE COVE NORTH NSW 2066",
     "lat": -33.8060036,
     "lng": 151.1663055,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "bp",
     "address": "422 Pacific Hwy, Artarmon NSW 2064",
     "lat": -33.8114089,
     "lng": 151.1755625,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Caltex Lane Cove",
     "address": "203 BURNS BAY RD, LANE COVE NSW 2066",
     "lat": -33.8146172,
     "lng": 151.1543106,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Shell",
     "address": "378 Pacific Hwy (Cnr Allison Ave), Lane Cove NSW 2066",
     "lat": -33.814041,
     "lng": 151.176869,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "7-Eleven",
     "address": "477 Pacific Highway, Artarmon NSW 2064",
     "lat": -33.8105526,
     "lng": 151.1773947,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "bp",
     "address": "7 NORTHWOOD RD, LONGUEVILLE NSW 2066",
     "lat": -33.824461,
     "lng": 151.1726718,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Ampol Foodary Crows Nest",
     "address": "111-121 Falcon Street, CROWS NEST NSW 2065",
     "lat": -33.8286801,
     "lng": 151.2060304,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "7-Eleven",
     "address": "Corner Pacific Highway and Boundary Street, Roseville NSW 2069",
     "lat": -33.7876972,
     "lng": 151.1797322,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Ampol Foodary Neutral Bay",
     "address": "16-38 Military Rd, Neutral Bay NSW 2089",
     "lat": -33.8291308,
     "lng": 151.216528,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "7-Eleven",
     "address": "238 Pacific Highway, Lindfield NSW 2070",
     "lat": -33.778887,
     "lng": 151.1690677,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "7-Eleven",
     "address": "457 Victoria Ave, Chatswood West NSW 2067",
     "lat": -33.7970045,
     "lng": 151.1802398,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "SPEEDWAY ROSEVILLE",
     "address": "20-22 BABBAGE RD, ROSEVILLE NSW 2069",
     "lat": -33.7780213,
     "lng": 151.1945551,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "7-Eleven",
     "address": "494 Pacific Hwy, Killara NSW 2071",
     "lat": -33.7713459,
     "lng": 151.1608,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "7-Eleven",
     "address": "271A Victoria Road, Drummoyne NSW 2047",
     "lat": -33.8470381,
     "lng": 151.1515194,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Shell",
     "address": "38-46 Victoria Rd, Drummoyne NSW 2047",
     "lat": -33.8558056,
     "lng": 151.1593689,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Shell Reddy Express Drummoyne South",
     "address": "39- 51 Victoria Rd, Drummoyne NSW 2047",
     "lat": -33.8559907,
     "lng": 151.1588711,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Metro Petroleum Croydon Park",
     "address": "274 GEORGES RIVER RD, CROYDON PARK NSW 2133",
     "lat": -33.8968028,
     "lng": 151.1032167,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Barista Bar Metro Croydon Park",
     "address": "236-240 GEORGES RIVER RD, CROYDON PARK NSW 2133",
     "lat": -33.8964276,
     "lng": 151.1052982,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "7-Eleven",
     "address": "45 Georges River Road, Croydon Park NSW 2133",
     "lat": -33.8943262,
     "lng": 151.1115438,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Shell Urbanista",
     "address": "418-424 LIVERPOOL RD, CROYDON NSW 2132",
     "lat": -33.8879843,
     "lng": 151.1152288,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Metro Petroleum Hurlstone Park",
     "address": "13 Canterbury Rd, Canterbury NSW 2193",
     "lat": -33.9077062,
     "lng": 151.1254005,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Shell",
     "address": "386 PENNANT HILLS RD, PENNANT HILLS NSW 2120",
     "lat": -33.7392958,
     "lng": 151.0678958,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Shell",
     "address": "369 PENNANT HILLS RD, PENNANT HILLS NSW 2120",
     "lat": -33.738672,
     "lng": 151.073777,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "7-Eleven",
     "address": "552 Pennant Hills Road, West Pennant Hills NSW 2125",
     "lat": -33.7468476,
     "lng": 151.0507795,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Metro Petroleum Thornleigh",
     "address": "169-171 PENNANT HILLS RD, THORNLEIGH NSW 2120",
     "lat": -33.7249247,
     "lng": 151.0882611,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "bp",
     "address": "155 Pennant Hills Rd, Normanhurst NSW 2076",
     "lat": -33.7245,
     "lng": 151.0901,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Ampol Foodary Old Guildford",
     "address": "636-644 Woodville Rd, OLD GUILDFORD NSW 2161",
     "lat": -33.8669129,
     "lng": 150.987916,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "bp",
     "address": "257 Guildford Rd, GUILDFORD NSW 2161",
     "lat": -33.8543833,
     "lng": 150.9888646,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "7-Eleven",
     "address": "272-278 Woodville Road, Guildford NSW 2161",
     "lat": -33.848063,
     "lng": 150.9969298,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "EG Ampol",
     "address": "35 Woodville Road (cnr Alpha), Chester Hill NSW 2162",
     "lat": -33.8666361,
     "lng": 150.9886964,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "EG Ampol Turramurra",
     "address": "1233 Pacific Highway, Turramurra NSW 2074",
     "lat": -33.7331801,
     "lng": 151.1312187,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "7-Eleven",
     "address": "1408 Pacific Highway (Corner Duff Street), Turramurra NSW 2074",
     "lat": -33.7330849,
     "lng": 151.1263698,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "bp",
     "address": "213 Kissing Point Rd, Turramurra NSW 2074",
     "lat": -33.7484621,
     "lng": 151.1121008,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Bobbin Head PETROL STATION",
     "address": "313 Bobbin Head Road, NORTH TURRAMURRA NSW 2074",
     "lat": -33.7090216,
     "lng": 151.1481085,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Ampol Foodary St Ives",
     "address": "164 Mona Vale Road, ST IVES NSW 2075",
     "lat": -33.7307758,
     "lng": 151.1570112,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "7-Eleven",
     "address": "157-159 Mona Vale Rd, ST IVES NSW 2075",
     "lat": -33.7325916,
     "lng": 151.1562703,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "BP",
     "address": "Cnr Pacific Hwy & Bannockburn Rd, Pymble NSW 2073",
     "lat": -33.7405606,
     "lng": 151.1379182,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Metro Petroleum Greenacre",
     "address": "1 DAVID ST, GREENACRE NSW 2190",
     "lat": -33.8964473,
     "lng": 151.0593036,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Temco Petroleum",
     "address": "190 Waterloo Rd, Greenacre NSW 2190",
     "lat": -33.906242,
     "lng": 151.0570765,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Ampol Foodary Greenacre",
     "address": "87-91 Roberts Rd (Cnr Moondo St), Greenacre NSW 2190",
     "lat": -33.9047231,
     "lng": 151.0645884,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "7-Eleven",
     "address": "301 Hume Hwy, Greenacre NSW 2190",
     "lat": -33.905108,
     "lng": 151.0418969,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Shell",
     "address": "9-11 Roberts Road, Greenacre NSW 2190",
     "lat": -33.8945099,
     "lng": 151.0666969,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Metro Petroleum Castle Cove",
     "address": "327 Eastern Valley Way, Castle Cove NSW 2069",
     "lat": -33.7848536,
     "lng": 151.2008864,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "SPEEDWAY CAMMERAY",
     "address": "330 Miller St, CAMMERAY NSW 2062",
     "lat": -33.8287134,
     "lng": 151.2088097,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Shell",
     "address": "477-483 Miller St & Palmer St, Cammeray NSW 2062",
     "lat": -33.8214266,
     "lng": 151.2107557,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "bp",
     "address": "175 Ourimbah Road, Mosman NSW 2088",
     "lat": -33.8211694,
     "lng": 151.2333219,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "bp",
     "address": "Cnr Avenue & Cowles Roads, Mosman NSW 2088",
     "lat": -33.8321189,
     "lng": 151.2374161,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "BP Silverwater South",
     "address": "51 Egerton St, Silverwater NSW 2128",
     "lat": -33.836306,
     "lng": 151.04789,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "7-Eleven Camperdown",
     "address": "198 Parramatta Rd, Camperdown NSW 2050",
     "lat": -33.886973,
     "lng": 151.174134,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "U-Go Mount Colah",
     "address": "603 Pacific Hwy, Mount Colah NSW 2079",
     "lat": -33.670381,
     "lng": 151.115192,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "7-Eleven Enmore",
     "address": "22 Stanmore Street, Enmore NSW 2042",
     "lat": -33.898417,
     "lng": 151.169933,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Metro Rozelle",
     "address": "127 Victoria Rd, Rozelle NSW 2039",
     "lat": -33.862044,
     "lng": 151.16767,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Shell Reddy Express Guildford",
     "address": "295 Woodville Rd, Guildford NSW 2161",
     "lat": -33.850752,
     "lng": 150.996951,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "7-Eleven Guildford West",
     "address": "534 Guildford Road West (Corner Fowler Road), Guildford West NSW 2161",
     "lat": -33.851431,
     "lng": 150.972137,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "BP Camperdown",
     "address": "Cnr Parramatta & Missenden Roads, Camperdown NSW 2050",
     "lat": -33.886251,
     "lng": 151.179144,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Shell Reddy Express Merrylands",
     "address": "398 Merrylands Rd (Cnr Fowler Rd), Merrylands NSW 2160",
     "lat": -33.834269,
     "lng": 150.977397,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "BP Potts Hill T/S",
     "address": "155-157 Rockwood Road, Yagoona NSW 2199",
     "lat": -33.893297,
     "lng": 151.039079,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Shell Reddy Express Pymble",
     "address": "21 Ryde Rd, Pymble NSW 2073",
     "lat": -33.751974,
     "lng": 151.143905,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Shell Reddy Express Wahroonga",
     "address": "1601 Pacific Hwy & Coonanbarra Rd, Wahroonga NSW 2076",
     "lat": -33.719557,
     "lng": 151.11588,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Shell Reddy Express St Ives",
     "address": "179-181 Mona Vale Rd, St Ives NSW 2075",
     "lat": -33.731206,
     "lng": 151.157571,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Shell Reddy Express Annandale",
     "address": "124-126 Johnston Street, Annandale NSW 2038",
     "lat": -33.880918,
     "lng": 151.170629,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Speedway Westmead",
     "address": "67-69 Hawkesbury Rd, Westmead NSW 2145",
     "lat": -33.813346,
     "lng": 150.98571,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Speedway Regents Park",
     "address": "27-29 Amy Steet, Regents Park NSW 2143",
     "lat": -33.883705,
     "lng": 151.026875,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Budget Erskineville",
     "address": "25-33 Erskineville Road, Erskineville NSW 2043",
     "lat": -33.898772,
     "lng": 151.182321,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "BP Merrylands West",
     "address": "65 Kenyons Road, Merrylands West NSW 2160",
     "lat": -33.836829,
     "lng": 150.968399,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Metro Fuel Alexandria",
     "address": "36 Henderson Road, Alexandria NSW 2015",
     "lat": -33.897447,
     "lng": 151.197261,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Tanwar Petroleum",
     "address": "281 New Canterbury Rd, Lewisham NSW 2049",
     "lat": -33.898544,
     "lng": 151.145666,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Speedway Villawood",
     "address": "45 Fairfield St, Villawood NSW 2163",
     "lat": -33.869642,
     "lng": 150.980674,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Caltex Chester Hill",
     "address": "41 Boundary Road, Chester Hill NSW 2162",
     "lat": -33.873839,
     "lng": 151.007145,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Metro St Ives Chase",
     "address": "164 Warrimoo Avenue, St Ives Chase NSW 2075",
     "lat": -33.710941,
     "lng": 151.159927,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Independent Turramurra",
     "address": "105 Eastern Rd, Turramurra NSW 2074",
     "lat": -33.720245,
     "lng": 151.131246,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Speedway Woodpark",
     "address": "32-36 Woodpark Rd, Woodpark NSW 2164",
     "lat": -33.841048,
     "lng": 150.963335,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Speedway Wenty",
     "address": "55-57 Station St, Wentworthville NSW 2145",
     "lat": -33.809174,
     "lng": 150.97135,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Enhance Merrylands",
     "address": "506 Merrylands Rd, Merrylands West NSW 2160",
     "lat": -33.832687,
     "lng": 150.96969,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "BP West Pymble",
     "address": "45 Yanko Rd, West Pymble NSW 2073",
     "lat": -33.762079,
     "lng": 151.128525,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "BP Woodpark Road",
     "address": "186 Woodpark Rd, Smithfield NSW 2164",
     "lat": -33.838954,
     "lng": 150.950501,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Otr Greystanes",
     "address": "661 Merrylands Rd, Greystanes NSW 2145",
     "lat": -33.829367,
     "lng": 150.952665,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Metro Petroleum Westleigh",
     "address": "128 Duffy Av, Westleigh NSW 2120",
     "lat": -33.720391,
     "lng": 151.068932,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Otr Baulkham Hills",
     "address": "Shell Petrol Station 363 Windsor Rd, Baulkham Hills NSW 2153",
     "lat": -33.760199,
     "lng": 150.991598,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Costco Auburn (Members Only)",
     "address": "Costco 17-21 Parramatta Rd, Lidcombe NSW 2141",
     "lat": -33.848086,
     "lng": 151.049695,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Metro Sefton",
     "address": "101 Hector St, Sefton NSW 2162",
     "lat": -33.884126,
     "lng": 151.007052,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Shell North Rocks",
     "address": "264 North Rocks Rd, North Rocks NSW 2151",
     "lat": -33.77511,
     "lng": 151.022676,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Astron Yagoona West",
     "address": "100 Rookwood Rd, Yagoona NSW 2199",
     "lat": -33.899293,
     "lng": 151.036862,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "EG Ampol Bass Hill",
     "address": "862 Hume Hwy, Bass Hill NSW 2197",
     "lat": -33.9010513,
     "lng": 150.9990874,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "SPEEDWAY BASS HILL",
     "address": "972 Hume Highway, Bass Hill NSW 2197",
     "lat": -33.896156,
     "lng": 150.9913566,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Shell",
     "address": "884-888 Hume Hwy (Cnr Strickland St), Bass Hill NSW 2197",
     "lat": -33.8996397,
     "lng": 150.9975495,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Enhance Bass Hill",
     "address": "924 HUME HWY, BASS HILL NSW 2197",
     "lat": -33.897821,
     "lng": 150.994838,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Metro Petroleum",
     "address": "172 Hector St, CHESTER HILL NSW 2162",
     "lat": -33.8889359,
     "lng": 151.0054319,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Shell Urbanista",
     "address": "740 Hume Hwy, Yagoona NSW 2199",
     "lat": -33.9048474,
     "lng": 151.0115336,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Metro Petroleum Yagoona",
     "address": "585 Hume Hwy, Yagoona NSW 2199",
     "lat": -33.9059014,
     "lng": 151.0139346,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Metro Villawood Truckstop",
     "address": "276 MILLER RD, VILLAWOOD NSW 2163",
     "lat": -33.8875801,
     "lng": 150.9921851,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Ampol Foodary Pendle Hill",
     "address": "602-606 Great Western Hwy, Pendle Hill NSW 2145",
     "lat": -33.8082628,
     "lng": 150.9420504,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "7-Eleven Pendle Hill",
     "address": "217 Wentworth Avenue (Corner Bungaree Road), Pendle Hill NSW 2145",
     "lat": -33.8018153,
     "lng": 150.9578287,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Metro Petroleum Pendle Hill",
     "address": "229 Wentworth Avenue, Pendle Hill NSW 2145",
     "lat": -33.8003426,
     "lng": 150.9558387,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Fast & Ezy",
     "address": "38A Gilba Rd, Girraween NSW 2145",
     "lat": -33.8019073,
     "lng": 150.9513459,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Metro Fuel Greystanes",
     "address": "73 Ettalong Rd, Greystanes NSW 2145",
     "lat": -33.8182199,
     "lng": 150.9513999,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "APW Store Wentworthville",
     "address": "449 Great Western Highway, WENTWORTHVILLE NSW 2145",
     "lat": -33.8133487,
     "lng": 150.9582424,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "BRAVO fuel station",
     "address": "133-137 Targo, Girraween NSW 2145",
     "lat": -33.7993181,
     "lng": 150.9520717,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Apex Petroleum",
     "address": "896A Woodville Rd, Villawood NSW 2163",
     "lat": -33.883899,
     "lng": 150.9760719,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Metro Petroleum Lansdowne",
     "address": "987 HUME HWY, LANSDOWNE NSW 2163",
     "lat": -33.8892356,
     "lng": 150.9709851,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "bp Truckstop Fairfield",
     "address": "183 The Horsley Drive, FAIRFIELD EAST NSW 2165",
     "lat": -33.877867,
     "lng": 150.9661521,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "7-Eleven Lansvale",
     "address": "44 Hume Highway & Knight Street, Lansvale South NSW 2166",
     "lat": -33.8916278,
     "lng": 150.9656102,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Ampol Foodary St Ives North",
     "address": "363 Mona Vale Road, ST IVES NORTH NSW 2075",
     "lat": -33.7168811,
     "lng": 151.1734876,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Metro Petroleum Fairfield",
     "address": "113 Sackville St, Fairfield NSW 2165",
     "lat": -33.8725786,
     "lng": 150.945931,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "SPEEDWAY FAIRFIELD",
     "address": "251 The Horsley Drive, Fairfield NSW 2165",
     "lat": -33.8712596,
     "lng": 150.9629668,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Metro Petroleum Fairfield 82",
     "address": "82-86 Hamilton Rd, Fairfield NSW 2165",
     "lat": -33.8730743,
     "lng": 150.9498846,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "SPEEDWAY COURT RD FAIRFIELD",
     "address": "32 COURT RD, FAIRFIELD NSW 2165",
     "lat": -33.870128,
     "lng": 150.958128,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "EG Ampol Fairfield Heights",
     "address": "163 The Boulevarde, Fairfield Heights NSW 2165",
     "lat": -33.866577,
     "lng": 150.9378458,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "7-Eleven Fairfield",
     "address": "234 Hamilton Rd, Fairfield West NSW 2165",
     "lat": -33.8721013,
     "lng": 150.9372422,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Budget Fairfield",
     "address": "62 Railway Pde, Fairfield NSW 2165",
     "lat": -33.8806631,
     "lng": 150.9486165,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Metro Petroleum Wakeley",
     "address": "72 Thorney Rd, Fairfield West NSW 2165",
     "lat": -33.873669,
     "lng": 150.9241931,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Speedway Smithfield",
     "address": "26-28 Smithfield Rd, Smithfield NSW 2164",
     "lat": -33.8514811,
     "lng": 150.9429322,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Metro Petroleum Canley Heights",
     "address": "190 Canley Vale Rd, Canley Heights NSW 2166",
     "lat": -33.8844325,
     "lng": 150.9285399,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Shell Ultimo",
     "address": "387 427 Wattle St, ULTIMO NSW 2007",
     "lat": -33.8813918,
     "lng": 151.1967783,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Budget Petrol Chippendale",
     "address": "66-70 Regent Street, CHIPPENDALE NSW 2008",
     "lat": -33.8878193,
     "lng": 151.2016919,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Ampol Foodary Lansvale",
     "address": "141-151 Hume Highway, Lansvale NSW 2166",
     "lat": -33.8943,
     "lng": 150.9572,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "U-Go Baulkham Hills",
     "address": "117 Seven Hills Rd, Baulkham Hills NSW 2153",
     "lat": -33.7614,
     "lng": 150.9751,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Coles Express Lansvale West",
     "address": "240 Hume Highway, Lansvale NSW 2166",
     "lat": -33.898,
     "lng": 150.9526,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Gas To Connect Guildford West",
     "address": "54C Fairfield Road, Guildford West NSW 2161",
     "lat": -33.8472,
     "lng": 150.9623,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Metro Petroleum Birrong",
     "address": "158 Auburn Rd, Birrong NSW 2143",
     "lat": -33.8975,
     "lng": 151.0212,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Shell Reddy Express Lansvale",
     "address": "65-99 Hume Highway, Canley Vale NSW 2166",
     "lat": -33.893,
     "lng": 150.9606,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "EG Ampol Lansvale",
     "address": "136 Hume Highway, Lansvale NSW 2166",
     "lat": -33.8947,
     "lng": 150.9582,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "BP Baulkham Hills",
     "address": "134 Seven Hills Rd, Baulkham Hills NSW 2153",
     "lat": -33.7617,
     "lng": 150.974,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Metro Toongabbie",
     "address": "5 Picasso Cr, Old Toongabbie NSW 2146",
     "lat": -33.7864,
     "lng": 150.9673,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "7-Eleven Baulkham Hills",
     "address": "224 Windsor Rd, Baulkham Hills NSW 2153",
     "lat": -33.7555,
     "lng": 150.9635,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "BP Seven Hills",
     "address": "Prospect Hwy & Redgum Ave, Seven Hills NSW 2147",
     "lat": -33.7672,
     "lng": 150.9502,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "7-Eleven Paddington",
     "address": "Cnr Oxford St & Greens Rd, Paddington NSW 2021",
     "lat": -33.883242,
     "lng": 151.220641,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "7-Eleven Mosman",
     "address": "162A Spit Road (Corner Mitchell Road), Mosman NSW 2088",
     "lat": -33.817498,
     "lng": 151.243383,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "7-Eleven Mosman",
     "address": "45 Spit Road, Mosman NSW 2088",
     "lat": -33.823058,
     "lng": 151.243459,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Shell Reddy Express Cremorne",
     "address": "227 Military Rd, Cremorne NSW 2090",
     "lat": -33.830574,
     "lng": 151.226235,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "EG Ampol Redfern",
     "address": "475 Cleveland St, Redfern NSW 2016",
     "lat": -33.892242,
     "lng": 151.216086,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Coles Express Neutral Bay",
     "address": "200-204 Ben Boyd Rd (Cnr Ernest St), Neutral Bay NSW 2089",
     "lat": -33.829109,
     "lng": 151.219571,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Metro Fuel Cremorne",
     "address": "51 Spofforth St, Cremorne NSW 2090",
     "lat": -33.832753,
     "lng": 151.229455,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "BP Redfern",
     "address": "411-417 Cleveland St, Redfern NSW 2016",
     "lat": -33.891804,
     "lng": 151.213294,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "BP Edgecliff",
     "address": "203 New South Head Rd, Edgecliff NSW 2027",
     "lat": -33.876974,
     "lng": 151.231099,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "OTR Woolloomooloo",
     "address": "1 Bourke St, Woolloomooloo NSW 2011",
     "lat": -33.869601,
     "lng": 151.221314,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "BP Woollahra",
     "address": "187 Oxford St, Woollahra NSW 2025",
     "lat": -33.889907,
     "lng": 151.247435,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Shell Reddy Express Bondi Junction",
     "address": "194 Oxford St, Bondi Junction NSW 2022",
     "lat": -33.895583,
     "lng": 151.248617,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Ampol Foodary Seven Hills",
     "address": "Prospect Hwy, Seven Hills NSW 2147",
     "lat": -33.766928,
     "lng": 150.954825,
-    "source": "google"
+    "source": "google",
+    "closed": false
   },
   {
     "name": "Coles Express Yagoona",
     "address": "Hume Hwy, Yagoona NSW 2199",
     "lat": -33.898673,
     "lng": 151.037094,
-    "source": "google"
+    "source": "google",
+    "closed": false
   }
 ]
