@@ -141,7 +141,7 @@
   },
   {
     "name": "Metro",
-    "address": "700 Victoria Rd, West Ryde NSW",
+    "address": "700 Victoria Rd, Ermington NSW 2115",
     "lat": -33.8085971,
     "lng": 151.0661237,
     "source": "google"
@@ -288,7 +288,7 @@
   },
   {
     "name": "Ampol Foodary Lane Cove",
-    "address": "266 Longueville Rd",
+    "address": "237-245 Burns Bay Rd, Lane Cove West NSW 2066",
     "lat": -33.8146735,
     "lng": 151.1617834,
     "source": "google"
@@ -330,14 +330,14 @@
   },
   {
     "name": "Ampol Foodary Parramatta",
-    "address": "159 Wigram St",
+    "address": "159 Wigram St, Parramatta NSW 2150",
     "lat": -33.8110561,
     "lng": 151.0219959,
     "source": "google"
   },
   {
     "name": "Shell Reddy Express Parramatta North",
-    "address": "246 Pennant Hills Rd",
+    "address": "88 Victoria Rd (Cnr Buller St), Parramatta NSW 2150",
     "lat": -33.7817063,
     "lng": 151.0097543,
     "source": "google"
@@ -365,28 +365,28 @@
   },
   {
     "name": "Enhance Eastwood",
-    "address": "Eastwood Plaza, Eastwood, New South Wales, 2122",
+    "address": "2 Lovell Rd, Eastwood NSW 2122",
     "lat": -33.7920625,
     "lng": 151.0815803,
     "source": "google"
   },
   {
     "name": "7-Eleven",
-    "address": "30 Beecroft Rd",
+    "address": "246 Beecroft Rd & Carlingford Rd, Epping NSW 2121",
     "lat": -33.7726949,
     "lng": 151.0816204,
     "source": "google"
   },
   {
     "name": "Shell Reddy Express Epping",
-    "address": "41 Beecroft Rd",
+    "address": "246 Beecroft & Carlingford Rds, Epping NSW 2121",
     "lat": -33.7717753,
     "lng": 151.0826577,
     "source": "google"
   },
   {
     "name": "United",
-    "address": "Canyon Road, Baulkham Hills, New South Wales, 2153",
+    "address": "117 Seven Hills Rd, Baulkham Hills NSW 2153",
     "lat": -33.7639,
     "lng": 151.0017,
     "source": "google"
@@ -547,7 +547,7 @@
   },
   {
     "name": "Shell",
-    "address": "Grand Avenue, Rosehill, New South Wales, 2142",
+    "address": "1 Durham St, Rosehill NSW 2142",
     "lat": -33.8210585,
     "lng": 151.0397823,
     "source": "google"
@@ -568,7 +568,7 @@
   },
   {
     "name": "Costco Fuel Lidcombe",
-    "address": "Parramatta Road, Lidcombe, New South Wales, 2141",
+    "address": "17-21 Parramatta Rd, Lidcombe NSW 2141",
     "lat": -33.8489946,
     "lng": 151.0510153,
     "source": "google"
@@ -659,7 +659,7 @@
   },
   {
     "name": "7-Eleven",
-    "address": "Albert Road, Strathfield, New South Wales, 2135",
+    "address": "575-585 Liverpool Rd, Strathfield South NSW 2136",
     "lat": -33.873042,
     "lng": 151.0943409,
     "source": "google"
@@ -736,7 +736,7 @@
   },
   {
     "name": "EG Ampol Greenacre",
-    "address": "Roberts Road, Greenacre, New South Wales, 2190",
+    "address": "51 Roberts Rd (Cnr Amarina St), Greenacre NSW 2190",
     "lat": -33.9002188,
     "lng": 151.0656951,
     "source": "google"
@@ -750,14 +750,14 @@
   },
   {
     "name": "Shell Reddy Express Roberts Road East",
-    "address": "Chalmers Road, Strathfield, New South Wales, 2135",
+    "address": "74 Roberts Rd, Greenacre NSW 2190",
     "lat": -33.8841891,
     "lng": 151.0816862,
     "source": "google"
   },
   {
     "name": "bp Truckstop",
-    "address": "Cardigan Road, Greenacre, New South Wales, 2190",
+    "address": "155-157 Rockwood Rd, Yagoona NSW 2199",
     "lat": -33.8989367,
     "lng": 151.0558069,
     "source": "google"
@@ -995,14 +995,14 @@
   },
   {
     "name": "7-Eleven",
-    "address": "Clissold Street, Ashfield, New South Wales, 2131",
+    "address": "132 Hume Hwy & Victoria St, Ashfield NSW 2131",
     "lat": -33.8956025,
     "lng": 151.1255814,
     "source": "google"
   },
   {
     "name": "7-Eleven",
-    "address": "Oxford Street, Petersham, New South Wales, 2049",
+    "address": "8 Crystal St, Petersham NSW 2049",
     "lat": -33.8976397,
     "lng": 151.1556,
     "source": "google"
@@ -1135,7 +1135,7 @@
   },
   {
     "name": "7-Eleven",
-    "address": "Victoria Avenue, Sydney, New South Wales, 2067",
+    "address": "457 Victoria Ave, Chatswood West NSW 2067",
     "lat": -33.7970045,
     "lng": 151.1802398,
     "source": "google"
@@ -1205,7 +1205,7 @@
   },
   {
     "name": "Metro Petroleum Hurlstone Park",
-    "address": "Canterbury Road, Canterbury, New South Wales, 2193",
+    "address": "13 Canterbury Rd, Canterbury NSW 2193",
     "lat": -33.9077062,
     "lng": 151.1254005,
     "source": "google"
@@ -1331,21 +1331,21 @@
   },
   {
     "name": "Temco Petroleum",
-    "address": "Waterloo Road, Greenacre, New South Wales, 2190",
+    "address": "190 Waterloo Rd, Greenacre NSW 2190",
     "lat": -33.906242,
     "lng": 151.0570765,
     "source": "google"
   },
   {
     "name": "Ampol Foodary Greenacre",
-    "address": "Roberts Road, Greenacre, New South Wales, 2190",
+    "address": "87-91 Roberts Rd (Cnr Moondo St), Greenacre NSW 2190",
     "lat": -33.9047231,
     "lng": 151.0645884,
     "source": "google"
   },
   {
     "name": "7-Eleven",
-    "address": "Hume Highway, Greenacre, New South Wales, 2190",
+    "address": "301 Hume Hwy, Greenacre NSW 2190",
     "lat": -33.905108,
     "lng": 151.0418969,
     "source": "google"
@@ -1646,7 +1646,7 @@
   },
   {
     "name": "EG Ampol Bass Hill",
-    "address": "Hume Highway, Bass Hill, New South Wales, 2197",
+    "address": "862 Hume Hwy, Bass Hill NSW 2197",
     "lat": -33.9010513,
     "lng": 150.9990874,
     "source": "google"
@@ -1681,14 +1681,14 @@
   },
   {
     "name": "Shell Urbanista",
-    "address": "Hume Highway, Yagoona, New South Wales, 2199",
+    "address": "740 Hume Hwy, Yagoona NSW 2199",
     "lat": -33.9048474,
     "lng": 151.0115336,
     "source": "google"
   },
   {
     "name": "Metro Petroleum Yagoona",
-    "address": "Hume Highway, Yagoona, New South Wales, 2199",
+    "address": "585 Hume Hwy, Yagoona NSW 2199",
     "lat": -33.9059014,
     "lng": 151.0139346,
     "source": "google"
@@ -1702,7 +1702,7 @@
   },
   {
     "name": "Ampol Foodary Pendle Hill",
-    "address": "Girraween Road, Girraween, New South Wales, 2145",
+    "address": "602-606 Great Western Hwy, Pendle Hill NSW 2145",
     "lat": -33.8082628,
     "lng": 150.9420504,
     "source": "google"
@@ -1786,7 +1786,7 @@
   },
   {
     "name": "Metro Petroleum Fairfield",
-    "address": "Sackville Street, Fairfield, New South Wales, 2165",
+    "address": "113 Sackville St, Fairfield NSW 2165",
     "lat": -33.8725786,
     "lng": 150.945931,
     "source": "google"
@@ -1800,7 +1800,7 @@
   },
   {
     "name": "Metro Petroleum Fairfield 82",
-    "address": "Hamilton Road, Fairfield, New South Wales, 2165",
+    "address": "82-86 Hamilton Rd, Fairfield NSW 2165",
     "lat": -33.8730743,
     "lng": 150.9498846,
     "source": "google"
@@ -1814,42 +1814,42 @@
   },
   {
     "name": "EG Ampol Fairfield Heights",
-    "address": "The Boulevarde, Fairfield Heights, New South Wales, 2165",
+    "address": "163 The Boulevarde, Fairfield Heights NSW 2165",
     "lat": -33.866577,
     "lng": 150.9378458,
     "source": "google"
   },
   {
     "name": "7-Eleven Fairfield",
-    "address": "Hamilton Road, Fairfield Heights, New South Wales, 2165",
+    "address": "234 Hamilton Rd, Fairfield West NSW 2165",
     "lat": -33.8721013,
     "lng": 150.9372422,
     "source": "google"
   },
   {
     "name": "Budget Fairfield",
-    "address": "The Grove, Fairfield, New South Wales, 2165",
+    "address": "62 Railway Pde, Fairfield NSW 2165",
     "lat": -33.8806631,
     "lng": 150.9486165,
     "source": "google"
   },
   {
     "name": "Metro Petroleum Wakeley",
-    "address": "Thorney Road, Fairfield West, New South Wales, 2165",
+    "address": "72 Thorney Rd, Fairfield West NSW 2165",
     "lat": -33.873669,
     "lng": 150.9241931,
     "source": "google"
   },
   {
     "name": "Speedway Smithfield",
-    "address": "Smithfield Road, Smithfield, New South Wales, 2165",
+    "address": "26-28 Smithfield Rd, Smithfield NSW 2164",
     "lat": -33.8514811,
     "lng": 150.9429322,
     "source": "google"
   },
   {
     "name": "Metro Petroleum Canley Heights",
-    "address": "Salisbury Street, Canley Heights, New South Wales, 2166",
+    "address": "190 Canley Vale Rd, Canley Heights NSW 2166",
     "lat": -33.8844325,
     "lng": 150.9285399,
     "source": "google"
