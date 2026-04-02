@@ -508,6 +508,21 @@
       cursor: pointer;
     }
 
+    .station-list-toggle {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--muted);
+      font-size: 0.82rem;
+      user-select: none;
+      cursor: pointer;
+    }
+
+    .station-list-toggle input {
+      accent-color: var(--accent);
+      cursor: pointer;
+    }
+
     .station-list-wrap {
       flex: 1;
       min-height: 0;
@@ -762,6 +777,10 @@
           <option value="name-desc">Name Z-A</option>
           <option value="suburb-asc">Suburb A-Z</option>
         </select>
+        <label class="station-list-toggle" for="toggle-notlisted">
+          <input type="checkbox" id="toggle-notlisted" checked />
+          <span>Show stores not listed with Fuel Check</span>
+        </label>
         <span id="station-list-count" style="color:var(--muted);font-size:0.8rem;"></span>
       </div>
       <div class="station-list-wrap">
@@ -1323,6 +1342,7 @@
     const FUEL_COL_ORDER = ["P98", "E10", "U91", "PDL", "P95", "DL", "LPG", "E85"];
     const FUEL_COL_LABELS = { U91:"U91", E10:"E10", P95:"P95", P98:"P98", DL:"Diesel", PDL:"P.Diesel", LPG:"LPG", E85:"E85" };
     let stationListSort = { col: "name", dir: "asc" };
+    let showNotListedWithFuelCheck = true;
 
     function getVisibleFuelCols() {
       return FUEL_COL_ORDER.filter(function(ft) { return selectedFuelTypes.has(ft); });
@@ -1350,7 +1370,8 @@
         rows.push({
           name: name, address: address, priceMap: priceMap, marker: m, type: m._stationType,
           lat: m._lat, lng: m._lng,
-          suburb: extractSuburb(address)
+          suburb: extractSuburb(address),
+          isNotListedWithFuelCheck: !!goog && !fc
         });
       });
       return rows;
@@ -1377,6 +1398,12 @@
       rows = rows.filter(function(r) {
         return bounds.contains([r.lat, r.lng]);
       });
+
+      if (!showNotListedWithFuelCheck) {
+        rows = rows.filter(function(r) {
+          return !r.isNotListedWithFuelCheck;
+        });
+      }
 
       if (searchVal) {
         rows = rows.filter(function(r) {
@@ -1489,6 +1516,10 @@
       if (v === "name-asc") stationListSort = { col: "name", dir: "asc" };
       else if (v === "name-desc") stationListSort = { col: "name", dir: "desc" };
       else if (v === "suburb-asc") stationListSort = { col: "suburb", dir: "asc" };
+      renderStationList();
+    });
+    document.getElementById("toggle-notlisted").addEventListener("change", function() {
+      showNotListedWithFuelCheck = this.checked;
       renderStationList();
     });
 

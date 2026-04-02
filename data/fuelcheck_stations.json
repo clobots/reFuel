@@ -28,7 +28,8 @@
         "price": 229.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "2141",
@@ -55,7 +56,8 @@
         "price": 227.5
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "2204",
@@ -74,7 +76,8 @@
         "price": 227.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "2221",
@@ -105,7 +108,8 @@
         "price": 229.5
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "2242",
@@ -132,7 +136,8 @@
         "price": 249.5
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "2240",
@@ -159,7 +164,8 @@
         "price": 247.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "2252",
@@ -190,7 +196,8 @@
         "price": 309.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "2305",
@@ -221,7 +228,8 @@
         "price": 227.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "2336",
@@ -240,7 +248,8 @@
         "price": 227.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "2337",
@@ -255,7 +264,8 @@
         "price": 227.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "2338",
@@ -282,7 +292,8 @@
         "price": 227.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "2349",
@@ -313,7 +324,8 @@
         "price": 227.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "2356",
@@ -344,7 +356,8 @@
         "price": 227.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "2362",
@@ -367,7 +380,8 @@
         "price": 227.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "2364",
@@ -398,7 +412,8 @@
         "price": 227.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "2374",
@@ -425,7 +440,8 @@
         "price": 227.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "2436",
@@ -444,7 +460,8 @@
         "price": 227.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "2439",
@@ -479,7 +496,8 @@
         "price": 233.5
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "2440",
@@ -506,7 +524,8 @@
         "price": 227.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "2452",
@@ -537,7 +556,8 @@
         "price": 228.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "2460",
@@ -564,7 +584,8 @@
         "price": 239.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "2608",
@@ -591,7 +612,8 @@
         "price": 227.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "2711",
@@ -622,7 +644,8 @@
         "price": 231.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "2714",
@@ -645,7 +668,8 @@
         "price": 227.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "8282",
@@ -672,7 +696,8 @@
         "price": 227.5
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "16908",
@@ -699,7 +724,8 @@
         "price": 227.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "16909",
@@ -734,7 +760,8 @@
         "price": 227.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "16915",
@@ -761,7 +788,8 @@
         "price": 227.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "16916",
@@ -784,7 +812,8 @@
         "price": 227.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "16924",
@@ -811,7 +840,8 @@
         "price": 229.7
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "17119",
@@ -842,7 +872,8 @@
         "price": 229.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "17121",
@@ -877,7 +908,8 @@
         "price": 229.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "17134",
@@ -912,7 +944,8 @@
         "price": 229.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "17139",
@@ -947,7 +980,8 @@
         "price": 229.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "17142",
@@ -982,7 +1016,8 @@
         "price": 229.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "17143",
@@ -1013,7 +1048,8 @@
         "price": 229.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "17146",
@@ -1044,7 +1080,8 @@
         "price": 229.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "17147",
@@ -1075,7 +1112,8 @@
         "price": 225.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "17162",
@@ -1106,7 +1144,8 @@
         "price": 228.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "17165",
@@ -1133,7 +1172,8 @@
         "price": 227.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "17232",
@@ -1156,7 +1196,8 @@
         "price": 309.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "17236",
@@ -1183,7 +1224,8 @@
         "price": 227.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "17240",
@@ -1210,7 +1252,8 @@
         "price": 229.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "17243",
@@ -1225,7 +1268,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "17269",
@@ -1248,7 +1292,8 @@
         "price": 227.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "17270",
@@ -1275,7 +1320,8 @@
         "price": 229.5
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "17278",
@@ -1306,7 +1352,8 @@
         "price": 229.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "17288",
@@ -1333,7 +1380,8 @@
         "price": 229.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "17294",
@@ -1352,7 +1400,8 @@
         "price": 227.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "17310",
@@ -1383,7 +1432,8 @@
         "price": 227.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "17317",
@@ -1406,7 +1456,8 @@
         "price": 229.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "17329",
@@ -1425,7 +1476,8 @@
         "price": 295.4
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "17341",
@@ -1448,7 +1500,8 @@
         "price": 228.5
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "17345",
@@ -1479,7 +1532,8 @@
         "price": 229.8
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "17362",
@@ -1498,7 +1552,8 @@
         "price": 227.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "17581",
@@ -1521,7 +1576,8 @@
         "price": 227.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "17776",
@@ -1544,7 +1600,8 @@
         "price": 229.7
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "17806",
@@ -1583,7 +1640,8 @@
         "price": 240.7
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "17975",
@@ -1606,7 +1664,8 @@
         "price": 259.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "17977",
@@ -1637,7 +1696,8 @@
         "price": 229.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "17991",
@@ -1664,7 +1724,8 @@
         "price": 228.5
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "18000",
@@ -1691,7 +1752,8 @@
         "price": 241.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "18009",
@@ -1718,7 +1780,8 @@
         "price": 247.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "18067",
@@ -1745,7 +1808,8 @@
         "price": 229.7
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "18099",
@@ -1776,7 +1840,8 @@
         "price": 229.8
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "18141",
@@ -1803,7 +1868,8 @@
         "price": 228.5
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "18146",
@@ -1834,7 +1900,8 @@
         "price": 227.5
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "18164",
@@ -1861,7 +1928,8 @@
         "price": 237.5
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "18171",
@@ -1884,7 +1952,8 @@
         "price": 249.4
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "18172",
@@ -1911,7 +1980,8 @@
         "price": 227.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "18201",
@@ -1942,7 +2012,8 @@
         "price": 229.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "18232",
@@ -1969,7 +2040,8 @@
         "price": 228.5
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "18249",
@@ -1984,7 +2056,8 @@
         "price": 227.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "18253",
@@ -2003,7 +2076,8 @@
         "price": 227.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "18264",
@@ -2034,7 +2108,8 @@
         "price": 227.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "18285",
@@ -2049,7 +2124,8 @@
         "price": 227.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "18286",
@@ -2076,7 +2152,8 @@
         "price": 237.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "18342",
@@ -2091,7 +2168,8 @@
         "price": 296.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "18357",
@@ -2118,7 +2196,8 @@
         "price": 228.5
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "18422",
@@ -2145,7 +2224,8 @@
         "price": 228.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "18424",
@@ -2172,7 +2252,8 @@
         "price": 227.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "18433",
@@ -2199,7 +2280,8 @@
         "price": 241.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "18444",
@@ -2222,7 +2304,8 @@
         "price": 253.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "18447",
@@ -2249,7 +2332,8 @@
         "price": 227.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "18454",
@@ -2272,7 +2356,8 @@
         "price": 243.7
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "18468",
@@ -2303,7 +2388,8 @@
         "price": 228.5
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "18492",
@@ -2330,7 +2416,8 @@
         "price": 229.7
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "18514",
@@ -2357,7 +2444,8 @@
         "price": 229.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "18533",
@@ -2384,7 +2472,8 @@
         "price": 229.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "18548",
@@ -2415,7 +2504,8 @@
         "price": 241.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "18584",
@@ -2442,7 +2532,8 @@
         "price": 228.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "18609",
@@ -2469,7 +2560,8 @@
         "price": 240.5
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "18616",
@@ -2500,7 +2592,8 @@
         "price": 226.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "18628",
@@ -2527,7 +2620,8 @@
         "price": 241.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "18652",
@@ -2542,7 +2636,8 @@
         "price": 325.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "18658",
@@ -2569,7 +2664,8 @@
         "price": 233.3
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "18670",
@@ -2600,7 +2696,8 @@
         "price": 239.4
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "18692",
@@ -2623,7 +2720,8 @@
         "price": 224.5
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "18703",
@@ -2650,7 +2748,8 @@
         "price": 228.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "18706",
@@ -2681,7 +2780,8 @@
         "price": 229.7
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "19018",
@@ -2712,7 +2812,8 @@
         "price": 239.8
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "19637",
@@ -2739,7 +2840,8 @@
         "price": 229.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "19642",
@@ -2770,7 +2872,8 @@
         "price": 229.7
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "19784",
@@ -2801,7 +2904,8 @@
         "price": 228.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "19082",
@@ -2816,7 +2920,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "19085",
@@ -2831,7 +2936,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "19088",
@@ -2846,7 +2952,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "19093",
@@ -2861,7 +2968,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "19096",
@@ -2876,7 +2984,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "19097",
@@ -2891,7 +3000,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "19103",
@@ -2906,7 +3016,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "19117",
@@ -2921,7 +3032,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "19120",
@@ -2936,7 +3048,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "19131",
@@ -2951,7 +3064,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "19132",
@@ -2966,7 +3080,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "19133",
@@ -2981,7 +3096,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "19143",
@@ -2996,7 +3112,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "19145",
@@ -3011,7 +3128,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "19146",
@@ -3026,7 +3144,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "19147",
@@ -3041,7 +3160,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "19156",
@@ -3056,7 +3176,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "19162",
@@ -3071,7 +3192,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "19166",
@@ -3086,7 +3208,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "19171",
@@ -3101,7 +3224,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "19172",
@@ -3116,7 +3240,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "19173",
@@ -3131,7 +3256,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "19174",
@@ -3146,7 +3272,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "19181",
@@ -3161,7 +3288,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "19188",
@@ -3176,7 +3304,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "19195",
@@ -3191,7 +3320,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "19202",
@@ -3206,7 +3336,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "19203",
@@ -3221,7 +3352,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "19207",
@@ -3236,7 +3368,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "19217",
@@ -3251,7 +3384,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "19226",
@@ -3266,7 +3400,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "19236",
@@ -3281,7 +3416,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "19237",
@@ -3296,7 +3432,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "19239",
@@ -3311,7 +3448,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "19247",
@@ -3326,7 +3464,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "19253",
@@ -3341,7 +3480,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "19255",
@@ -3356,7 +3496,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "19258",
@@ -3371,7 +3512,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "19260",
@@ -3386,7 +3528,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "19267",
@@ -3401,7 +3544,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "19269",
@@ -3416,7 +3560,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "19270",
@@ -3431,7 +3576,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "19271",
@@ -3446,7 +3592,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "19281",
@@ -3461,7 +3608,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "19282",
@@ -3476,7 +3624,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "19294",
@@ -3491,7 +3640,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "19299",
@@ -3506,7 +3656,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "19308",
@@ -3521,7 +3672,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "19309",
@@ -3536,7 +3688,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "19310",
@@ -3551,7 +3704,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "19312",
@@ -3566,7 +3720,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "19313",
@@ -3581,7 +3736,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "19315",
@@ -3596,7 +3752,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "19316",
@@ -3611,7 +3768,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "19320",
@@ -3626,7 +3784,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "19322",
@@ -3641,7 +3800,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "19326",
@@ -3656,7 +3816,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "19327",
@@ -3671,7 +3832,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "19333",
@@ -3686,7 +3848,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "19347",
@@ -3701,7 +3864,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "19348",
@@ -3716,7 +3880,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "19351",
@@ -3731,7 +3896,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "19352",
@@ -3746,7 +3912,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "19355",
@@ -3761,7 +3928,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "19367",
@@ -3776,7 +3944,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "19370",
@@ -3791,7 +3960,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "19371",
@@ -3806,7 +3976,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "19376",
@@ -3821,7 +3992,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "19383",
@@ -3836,7 +4008,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "19390",
@@ -3851,7 +4024,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "19394",
@@ -3866,7 +4040,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "19397",
@@ -3881,7 +4056,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "19398",
@@ -3896,7 +4072,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "19399",
@@ -3911,7 +4088,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "19400",
@@ -3926,7 +4104,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "19401",
@@ -3941,7 +4120,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "19409",
@@ -3956,7 +4136,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "19419",
@@ -3971,7 +4152,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "19422",
@@ -3986,7 +4168,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "19433",
@@ -4001,7 +4184,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "19435",
@@ -4016,7 +4200,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "19436",
@@ -4031,7 +4216,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "19440",
@@ -4046,7 +4232,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "19441",
@@ -4061,7 +4248,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "19442",
@@ -4076,7 +4264,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "19443",
@@ -4091,7 +4280,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "19452",
@@ -4106,7 +4296,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "19458",
@@ -4121,7 +4312,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "19460",
@@ -4136,7 +4328,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "19463",
@@ -4151,7 +4344,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "19466",
@@ -4166,7 +4360,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "19467",
@@ -4181,7 +4376,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "19468",
@@ -4196,7 +4392,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "19469",
@@ -4211,7 +4408,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "19470",
@@ -4226,7 +4424,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "19472",
@@ -4241,7 +4440,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "19473",
@@ -4256,7 +4456,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "19478",
@@ -4271,7 +4472,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "19480",
@@ -4286,7 +4488,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "19481",
@@ -4301,7 +4504,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "19489",
@@ -4316,7 +4520,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "19490",
@@ -4331,7 +4536,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "19493",
@@ -4346,7 +4552,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "19497",
@@ -4361,7 +4568,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "19509",
@@ -4376,7 +4584,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "19511",
@@ -4391,7 +4600,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "19513",
@@ -4406,7 +4616,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "19514",
@@ -4421,7 +4632,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "19515",
@@ -4436,7 +4648,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "19520",
@@ -4451,7 +4664,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "19526",
@@ -4466,7 +4680,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "19534",
@@ -4481,7 +4696,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "19535",
@@ -4496,7 +4712,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "19536",
@@ -4511,7 +4728,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "19537",
@@ -4526,7 +4744,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "19538",
@@ -4541,7 +4760,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "19541",
@@ -4556,7 +4776,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "19542",
@@ -4571,7 +4792,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "19543",
@@ -4586,7 +4808,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "19550",
@@ -4601,7 +4824,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "19551",
@@ -4616,7 +4840,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "19552",
@@ -4631,7 +4856,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "19699",
@@ -4646,7 +4872,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "19758",
@@ -4661,7 +4888,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "19759",
@@ -4676,7 +4904,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "19760",
@@ -4691,7 +4920,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "19761",
@@ -4706,7 +4936,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "19762",
@@ -4721,7 +4952,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "19769",
@@ -4736,7 +4968,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "19776",
@@ -4751,7 +4984,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "19778",
@@ -4766,7 +5000,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "19779",
@@ -4781,7 +5016,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "19780",
@@ -4796,7 +5032,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20116",
@@ -4811,7 +5048,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20117",
@@ -4826,7 +5064,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20275",
@@ -4841,7 +5080,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20283",
@@ -4856,7 +5096,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20284",
@@ -4871,7 +5112,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20285",
@@ -4886,7 +5128,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20290",
@@ -4901,7 +5144,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20306",
@@ -4916,7 +5160,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20307",
@@ -4931,7 +5176,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20312",
@@ -4946,7 +5192,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20314",
@@ -4961,7 +5208,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20315",
@@ -4976,7 +5224,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20319",
@@ -4991,7 +5240,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20326",
@@ -5006,7 +5256,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20332",
@@ -5021,7 +5272,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20360",
@@ -5036,7 +5288,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20361",
@@ -5051,7 +5304,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20363",
@@ -5066,7 +5320,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20366",
@@ -5081,7 +5336,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20368",
@@ -5096,7 +5352,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20372",
@@ -5111,7 +5368,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20373",
@@ -5126,7 +5384,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20375",
@@ -5141,7 +5400,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20377",
@@ -5156,7 +5416,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20378",
@@ -5171,7 +5432,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20379",
@@ -5186,7 +5448,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20380",
@@ -5201,7 +5464,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20381",
@@ -5216,7 +5480,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20383",
@@ -5231,7 +5496,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20387",
@@ -5246,7 +5512,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20389",
@@ -5261,7 +5528,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20390",
@@ -5276,7 +5544,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20396",
@@ -5291,7 +5560,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20399",
@@ -5306,7 +5576,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20400",
@@ -5321,7 +5592,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20403",
@@ -5336,7 +5608,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20407",
@@ -5351,7 +5624,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20408",
@@ -5366,7 +5640,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20414",
@@ -5381,7 +5656,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20415",
@@ -5396,7 +5672,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20422",
@@ -5411,7 +5688,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20424",
@@ -5426,7 +5704,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20434",
@@ -5441,7 +5720,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20435",
@@ -5456,7 +5736,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20438",
@@ -5471,7 +5752,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20445",
@@ -5486,7 +5768,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20451",
@@ -5501,7 +5784,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20456",
@@ -5516,7 +5800,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20460",
@@ -5531,7 +5816,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20461",
@@ -5546,7 +5832,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20464",
@@ -5561,7 +5848,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20465",
@@ -5576,7 +5864,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20468",
@@ -5591,7 +5880,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20470",
@@ -5606,7 +5896,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20478",
@@ -5621,7 +5912,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20481",
@@ -5636,7 +5928,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20484",
@@ -5651,7 +5944,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20491",
@@ -5666,7 +5960,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20493",
@@ -5681,7 +5976,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20504",
@@ -5696,7 +5992,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20505",
@@ -5711,7 +6008,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20506",
@@ -5726,7 +6024,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20508",
@@ -5741,7 +6040,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20510",
@@ -5756,7 +6056,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20658",
@@ -5771,7 +6072,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20659",
@@ -5786,7 +6088,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20660",
@@ -5801,7 +6104,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20662",
@@ -5816,7 +6120,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20663",
@@ -5831,7 +6136,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20665",
@@ -5846,7 +6152,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20666",
@@ -5861,7 +6168,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20667",
@@ -5876,7 +6184,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20669",
@@ -5891,7 +6200,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20671",
@@ -5906,7 +6216,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20672",
@@ -5921,7 +6232,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20674",
@@ -5936,7 +6248,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20675",
@@ -5951,7 +6264,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20676",
@@ -5966,7 +6280,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20677",
@@ -5981,7 +6296,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20678",
@@ -5996,7 +6312,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20679",
@@ -6011,7 +6328,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20680",
@@ -6026,7 +6344,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20681",
@@ -6041,7 +6360,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20682",
@@ -6056,7 +6376,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20683",
@@ -6071,7 +6392,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20684",
@@ -6086,7 +6408,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20685",
@@ -6101,7 +6424,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20686",
@@ -6116,7 +6440,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20688",
@@ -6131,7 +6456,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20689",
@@ -6146,7 +6472,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20690",
@@ -6161,7 +6488,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20691",
@@ -6176,7 +6504,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20692",
@@ -6191,7 +6520,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20693",
@@ -6206,7 +6536,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20695",
@@ -6221,7 +6552,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20697",
@@ -6236,7 +6568,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20698",
@@ -6251,7 +6584,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20699",
@@ -6266,7 +6600,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20700",
@@ -6281,7 +6616,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20701",
@@ -6296,7 +6632,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20702",
@@ -6311,7 +6648,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20703",
@@ -6326,7 +6664,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20704",
@@ -6341,7 +6680,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20705",
@@ -6356,7 +6696,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20708",
@@ -6371,7 +6712,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20710",
@@ -6386,7 +6728,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20711",
@@ -6401,7 +6744,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20712",
@@ -6416,7 +6760,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20713",
@@ -6431,7 +6776,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20715",
@@ -6446,7 +6792,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20718",
@@ -6461,7 +6808,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20719",
@@ -6476,7 +6824,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20721",
@@ -6491,7 +6840,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20722",
@@ -6506,7 +6856,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20723",
@@ -6521,7 +6872,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20724",
@@ -6536,7 +6888,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20725",
@@ -6551,7 +6904,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20727",
@@ -6566,7 +6920,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20728",
@@ -6581,7 +6936,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20731",
@@ -6596,7 +6952,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20732",
@@ -6611,7 +6968,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20733",
@@ -6626,7 +6984,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20734",
@@ -6641,7 +7000,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20735",
@@ -6656,7 +7016,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20736",
@@ -6671,7 +7032,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20737",
@@ -6686,7 +7048,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20738",
@@ -6701,7 +7064,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20739",
@@ -6716,7 +7080,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20741",
@@ -6731,7 +7096,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20742",
@@ -6746,7 +7112,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20743",
@@ -6761,7 +7128,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20744",
@@ -6776,7 +7144,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20745",
@@ -6791,7 +7160,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20746",
@@ -6806,7 +7176,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20747",
@@ -6821,7 +7192,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20748",
@@ -6836,7 +7208,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20749",
@@ -6851,7 +7224,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20750",
@@ -6866,7 +7240,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20751",
@@ -6881,7 +7256,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20752",
@@ -6896,7 +7272,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20753",
@@ -6911,7 +7288,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20754",
@@ -6926,7 +7304,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20756",
@@ -6941,7 +7320,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20757",
@@ -6956,7 +7336,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20758",
@@ -6971,7 +7352,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20760",
@@ -6986,7 +7368,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20761",
@@ -7001,7 +7384,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20763",
@@ -7016,7 +7400,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20764",
@@ -7031,7 +7416,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20765",
@@ -7046,7 +7432,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20766",
@@ -7061,7 +7448,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20767",
@@ -7076,7 +7464,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20768",
@@ -7091,7 +7480,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20769",
@@ -7106,7 +7496,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20770",
@@ -7121,7 +7512,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20773",
@@ -7136,7 +7528,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20775",
@@ -7151,7 +7544,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20776",
@@ -7166,7 +7560,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20777",
@@ -7181,7 +7576,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20780",
@@ -7196,7 +7592,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20783",
@@ -7211,7 +7608,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20784",
@@ -7226,7 +7624,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20785",
@@ -7241,7 +7640,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20786",
@@ -7256,7 +7656,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20787",
@@ -7271,7 +7672,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20788",
@@ -7286,7 +7688,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20789",
@@ -7301,7 +7704,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20790",
@@ -7316,7 +7720,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20791",
@@ -7331,7 +7736,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20792",
@@ -7346,7 +7752,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20795",
@@ -7361,7 +7768,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20796",
@@ -7376,7 +7784,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20797",
@@ -7391,7 +7800,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20798",
@@ -7406,7 +7816,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20799",
@@ -7421,7 +7832,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20800",
@@ -7436,7 +7848,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20801",
@@ -7451,7 +7864,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20802",
@@ -7466,7 +7880,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20803",
@@ -7481,7 +7896,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20804",
@@ -7496,7 +7912,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20805",
@@ -7511,7 +7928,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20806",
@@ -7526,7 +7944,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20807",
@@ -7541,7 +7960,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20808",
@@ -7556,7 +7976,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20810",
@@ -7571,7 +7992,8 @@
         "price": 0.0
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "12",
@@ -7590,7 +8012,8 @@
         "price": 254.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "34",
@@ -7621,7 +8044,8 @@
         "price": 229.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "35",
@@ -7644,7 +8068,8 @@
         "price": 254.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "45",
@@ -7671,7 +8096,8 @@
         "price": 229.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "48",
@@ -7702,7 +8128,8 @@
         "price": 229.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "49",
@@ -7733,7 +8160,8 @@
         "price": 229.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "51",
@@ -7764,7 +8192,8 @@
         "price": 229.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "52",
@@ -7791,7 +8220,8 @@
         "price": 229.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "55",
@@ -7818,7 +8248,8 @@
         "price": 229.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "61",
@@ -7845,7 +8276,8 @@
         "price": 254.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "62",
@@ -7868,7 +8300,8 @@
         "price": 254.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "63",
@@ -7899,7 +8332,8 @@
         "price": 229.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "65",
@@ -7926,7 +8360,8 @@
         "price": 229.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "69",
@@ -7957,7 +8392,8 @@
         "price": 229.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "73",
@@ -7980,7 +8416,8 @@
         "price": 254.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "74",
@@ -8015,7 +8452,8 @@
         "price": 229.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "76",
@@ -8042,7 +8480,8 @@
         "price": 229.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "88",
@@ -8065,7 +8504,8 @@
         "price": 254.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "105",
@@ -8096,7 +8536,8 @@
         "price": 229.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "113",
@@ -8123,7 +8564,8 @@
         "price": 254.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "117",
@@ -8150,7 +8592,8 @@
         "price": 309.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "128",
@@ -8181,7 +8624,8 @@
         "price": 229.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "130",
@@ -8212,7 +8656,8 @@
         "price": 229.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "133",
@@ -8239,7 +8684,8 @@
         "price": 229.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "134",
@@ -8262,7 +8708,8 @@
         "price": 309.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "135",
@@ -8289,7 +8736,8 @@
         "price": 229.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "137",
@@ -8320,7 +8768,8 @@
         "price": 229.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "141",
@@ -8339,7 +8788,8 @@
         "price": 229.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "145",
@@ -8366,7 +8816,8 @@
         "price": 229.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "146",
@@ -8397,7 +8848,8 @@
         "price": 229.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "154",
@@ -8428,7 +8880,8 @@
         "price": 229.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "167",
@@ -8463,7 +8916,8 @@
         "price": 229.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "184",
@@ -8494,7 +8948,8 @@
         "price": 229.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "186",
@@ -8525,7 +8980,8 @@
         "price": 229.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "188",
@@ -8556,7 +9012,8 @@
         "price": 229.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "190",
@@ -8583,7 +9040,8 @@
         "price": 309.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "201",
@@ -8614,7 +9072,8 @@
         "price": 229.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "208",
@@ -8649,7 +9108,8 @@
         "price": 229.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "211",
@@ -8680,7 +9140,8 @@
         "price": 229.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "215",
@@ -8711,7 +9172,8 @@
         "price": 229.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "221",
@@ -8746,7 +9208,8 @@
         "price": 229.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "227",
@@ -8773,7 +9236,8 @@
         "price": 229.8
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "230",
@@ -8800,7 +9264,8 @@
         "price": 229.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "231",
@@ -8835,7 +9300,8 @@
         "price": 229.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "238",
@@ -8866,7 +9332,8 @@
         "price": 229.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "239",
@@ -8901,7 +9368,8 @@
         "price": 229.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "240",
@@ -8932,7 +9400,8 @@
         "price": 229.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "249",
@@ -8963,7 +9432,8 @@
         "price": 229.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "250",
@@ -8990,7 +9460,8 @@
         "price": 229.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "251",
@@ -9021,7 +9492,8 @@
         "price": 229.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "260",
@@ -9048,7 +9520,8 @@
         "price": 229.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "262",
@@ -9079,7 +9552,8 @@
         "price": 229.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "264",
@@ -9110,7 +9584,8 @@
         "price": 229.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "266",
@@ -9137,7 +9612,8 @@
         "price": 229.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "278",
@@ -9168,7 +9644,8 @@
         "price": 229.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "281",
@@ -9195,7 +9672,8 @@
         "price": 307.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "283",
@@ -9226,7 +9704,8 @@
         "price": 229.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "284",
@@ -9257,7 +9736,8 @@
         "price": 229.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "288",
@@ -9292,7 +9772,8 @@
         "price": 229.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "291",
@@ -9319,7 +9800,8 @@
         "price": 254.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "292",
@@ -9350,7 +9832,8 @@
         "price": 229.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "294",
@@ -9381,7 +9864,8 @@
         "price": 229.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "295",
@@ -9416,7 +9900,8 @@
         "price": 229.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "296",
@@ -9447,7 +9932,8 @@
         "price": 229.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "300",
@@ -9470,7 +9956,8 @@
         "price": 306.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "301",
@@ -9493,7 +9980,8 @@
         "price": 306.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "302",
@@ -9520,7 +10008,8 @@
         "price": 229.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "306",
@@ -9551,7 +10040,8 @@
         "price": 229.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "309",
@@ -9582,7 +10072,8 @@
         "price": 229.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "311",
@@ -9613,7 +10104,8 @@
         "price": 229.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "322",
@@ -9640,7 +10132,8 @@
         "price": 303.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "326",
@@ -9667,7 +10160,8 @@
         "price": 309.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "327",
@@ -9690,7 +10184,8 @@
         "price": 229.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "331",
@@ -9717,7 +10212,8 @@
         "price": 309.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "332",
@@ -9744,7 +10240,8 @@
         "price": 304.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "344",
@@ -9771,7 +10268,8 @@
         "price": 306.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "345",
@@ -9798,7 +10296,8 @@
         "price": 309.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "346",
@@ -9821,7 +10320,8 @@
         "price": 229.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "348",
@@ -9844,7 +10344,8 @@
         "price": 306.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "355",
@@ -9871,7 +10372,8 @@
         "price": 309.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "356",
@@ -9898,7 +10400,8 @@
         "price": 229.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "359",
@@ -9917,7 +10420,8 @@
         "price": 304.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "361",
@@ -9944,7 +10448,8 @@
         "price": 229.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "362",
@@ -9971,7 +10476,8 @@
         "price": 229.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "363",
@@ -9998,7 +10504,8 @@
         "price": 229.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "365",
@@ -10025,7 +10532,8 @@
         "price": 306.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "369",
@@ -10052,7 +10560,8 @@
         "price": 229.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "373",
@@ -10079,7 +10588,8 @@
         "price": 229.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "379",
@@ -10102,7 +10612,8 @@
         "price": 229.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "380",
@@ -10129,7 +10640,8 @@
         "price": 229.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "391",
@@ -10156,7 +10668,8 @@
         "price": 229.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "401",
@@ -10187,7 +10700,8 @@
         "price": 306.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "402",
@@ -10210,7 +10724,8 @@
         "price": 254.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "403",
@@ -10237,7 +10752,8 @@
         "price": 306.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "409",
@@ -10264,7 +10780,8 @@
         "price": 306.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "410",
@@ -10291,7 +10808,8 @@
         "price": 302.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "413",
@@ -10318,7 +10836,8 @@
         "price": 229.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "435",
@@ -10349,7 +10868,8 @@
         "price": 229.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "447",
@@ -10376,7 +10896,8 @@
         "price": 229.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "458",
@@ -10403,7 +10924,8 @@
         "price": 229.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "491",
@@ -10430,7 +10952,8 @@
         "price": 254.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "495",
@@ -10461,7 +10984,8 @@
         "price": 229.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "502",
@@ -10484,7 +11008,8 @@
         "price": 229.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "503",
@@ -10511,7 +11036,8 @@
         "price": 313.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "507",
@@ -10542,7 +11068,8 @@
         "price": 229.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "513",
@@ -10573,7 +11100,8 @@
         "price": 229.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "520",
@@ -10604,7 +11132,8 @@
         "price": 229.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "526",
@@ -10635,7 +11164,8 @@
         "price": 229.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "544",
@@ -10662,7 +11192,8 @@
         "price": 229.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "558",
@@ -10693,7 +11224,8 @@
         "price": 229.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "567",
@@ -10720,7 +11252,8 @@
         "price": 313.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "569",
@@ -10751,7 +11284,8 @@
         "price": 229.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "582",
@@ -10782,7 +11316,8 @@
         "price": 229.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "586",
@@ -10809,7 +11344,8 @@
         "price": 229.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "590",
@@ -10840,7 +11376,8 @@
         "price": 229.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "591",
@@ -10867,7 +11404,8 @@
         "price": 229.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "600",
@@ -10898,7 +11436,8 @@
         "price": 229.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "602",
@@ -10929,7 +11468,8 @@
         "price": 229.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "609",
@@ -10960,7 +11500,8 @@
         "price": 229.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "613",
@@ -10991,7 +11532,8 @@
         "price": 229.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "614",
@@ -11022,7 +11564,8 @@
         "price": 229.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "625",
@@ -11053,7 +11596,8 @@
         "price": 229.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "635",
@@ -11076,7 +11620,8 @@
         "price": 254.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "640",
@@ -11115,7 +11660,8 @@
         "price": 229.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "643",
@@ -11146,7 +11692,8 @@
         "price": 233.6
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "647",
@@ -11177,7 +11724,8 @@
         "price": 199.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "653",
@@ -11204,7 +11752,8 @@
         "price": 233.6
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "657",
@@ -11231,7 +11780,8 @@
         "price": 254.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "660",
@@ -11262,7 +11812,8 @@
         "price": 233.6
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "661",
@@ -11293,7 +11844,8 @@
         "price": 229.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "663",
@@ -11324,7 +11876,8 @@
         "price": 229.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "666",
@@ -11351,7 +11904,8 @@
         "price": 229.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "669",
@@ -11382,7 +11936,8 @@
         "price": 229.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "673",
@@ -11413,7 +11968,8 @@
         "price": 233.6
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "680",
@@ -11444,7 +12000,8 @@
         "price": 229.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "682",
@@ -11475,7 +12032,8 @@
         "price": 229.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "710",
@@ -11502,7 +12060,8 @@
         "price": 227.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "782",
@@ -11521,7 +12080,8 @@
         "price": 227.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "787",
@@ -11552,7 +12112,8 @@
         "price": 227.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "802",
@@ -11575,7 +12136,8 @@
         "price": 254.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "813",
@@ -11594,7 +12156,8 @@
         "price": 256.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "824",
@@ -11621,7 +12184,8 @@
         "price": 254.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "833",
@@ -11644,7 +12208,8 @@
         "price": 227.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "834",
@@ -11675,7 +12240,8 @@
         "price": 227.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "924",
@@ -11702,7 +12268,8 @@
         "price": 229.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "942",
@@ -11733,7 +12300,8 @@
         "price": 227.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "975",
@@ -11764,7 +12332,8 @@
         "price": 225.7
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "1003",
@@ -11799,7 +12368,8 @@
         "price": 228.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "1005",
@@ -11826,7 +12396,8 @@
         "price": 227.3
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "1032",
@@ -11853,7 +12424,8 @@
         "price": 249.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "1041",
@@ -11880,7 +12452,8 @@
         "price": 244.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "1045",
@@ -11907,7 +12480,8 @@
         "price": 239.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "1046",
@@ -11934,7 +12508,8 @@
         "price": 239.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "1086",
@@ -11965,7 +12540,8 @@
         "price": 224.7
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "1089",
@@ -11996,7 +12572,8 @@
         "price": 242.5
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "1109",
@@ -12035,7 +12612,8 @@
         "price": 229.7
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "1150",
@@ -12062,7 +12640,8 @@
         "price": 327.8
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "1152",
@@ -12089,7 +12668,8 @@
         "price": 305.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "1175",
@@ -12116,7 +12696,8 @@
         "price": 229.5
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "1198",
@@ -12147,7 +12728,8 @@
         "price": 229.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "1206",
@@ -12170,7 +12752,8 @@
         "price": 319.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "1209",
@@ -12197,7 +12780,8 @@
         "price": 227.5
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "1219",
@@ -12224,7 +12808,8 @@
         "price": 308.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "1220",
@@ -12255,7 +12840,8 @@
         "price": 228.5
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "1229",
@@ -12290,7 +12876,8 @@
         "price": 248.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "1231",
@@ -12317,7 +12904,8 @@
         "price": 228.5
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "1239",
@@ -12340,7 +12928,8 @@
         "price": 299.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "1242",
@@ -12371,7 +12960,8 @@
         "price": 228.5
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "1243",
@@ -12398,7 +12988,8 @@
         "price": 239.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "1283",
@@ -12425,7 +13016,8 @@
         "price": 229.7
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "1306",
@@ -12452,7 +13044,8 @@
         "price": 227.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "1311",
@@ -12483,7 +13076,8 @@
         "price": 240.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "1334",
@@ -12510,7 +13104,8 @@
         "price": 229.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "1344",
@@ -12537,7 +13132,8 @@
         "price": 242.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "1357",
@@ -12564,7 +13160,8 @@
         "price": 315.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "1367",
@@ -12595,7 +13192,8 @@
         "price": 231.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "1377",
@@ -12622,7 +13220,8 @@
         "price": 228.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "1393",
@@ -12649,7 +13248,8 @@
         "price": 241.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "1407",
@@ -12676,7 +13276,8 @@
         "price": 229.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "1412",
@@ -12703,7 +13304,8 @@
         "price": 239.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "1415",
@@ -12730,7 +13332,8 @@
         "price": 229.5
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "1428",
@@ -12757,7 +13360,8 @@
         "price": 228.5
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "1444",
@@ -12784,7 +13388,8 @@
         "price": 233.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "1465",
@@ -12811,7 +13416,8 @@
         "price": 239.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "1490",
@@ -12838,7 +13444,8 @@
         "price": 227.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "1496",
@@ -12865,7 +13472,8 @@
         "price": 313.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "1502",
@@ -12896,7 +13504,8 @@
         "price": 229.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "1516",
@@ -12923,7 +13532,8 @@
         "price": 231.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "1518",
@@ -12954,7 +13564,8 @@
         "price": 234.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "1522",
@@ -12981,7 +13592,8 @@
         "price": 231.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "1565",
@@ -13008,7 +13620,8 @@
         "price": 239.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "1582",
@@ -13035,7 +13648,8 @@
         "price": 225.3
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "1590",
@@ -13062,7 +13676,8 @@
         "price": 315.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "1624",
@@ -13093,7 +13708,8 @@
         "price": 248.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "1626",
@@ -13116,7 +13732,8 @@
         "price": 229.6
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "1630",
@@ -13151,7 +13768,8 @@
         "price": 239.7
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "1631",
@@ -13178,7 +13796,8 @@
         "price": 228.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "1655",
@@ -13205,7 +13824,8 @@
         "price": 228.7
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "1660",
@@ -13232,7 +13852,8 @@
         "price": 255.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "1706",
@@ -13259,7 +13880,8 @@
         "price": 260.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "1733",
@@ -13290,7 +13912,8 @@
         "price": 239.7
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "1742",
@@ -13317,7 +13940,8 @@
         "price": 225.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "1743",
@@ -13344,7 +13968,8 @@
         "price": 237.5
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "1752",
@@ -13375,7 +14000,8 @@
         "price": 309.7
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "1757",
@@ -13394,7 +14020,8 @@
         "price": 230.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "1768",
@@ -13417,7 +14044,8 @@
         "price": 229.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "1778",
@@ -13448,7 +14076,8 @@
         "price": 240.6
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "1783",
@@ -13475,7 +14104,8 @@
         "price": 241.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "1785",
@@ -13502,7 +14132,8 @@
         "price": 241.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "1787",
@@ -13529,7 +14160,8 @@
         "price": 241.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "1788",
@@ -13556,7 +14188,8 @@
         "price": 303.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "1793",
@@ -13583,7 +14216,8 @@
         "price": 307.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "1794",
@@ -13614,7 +14248,8 @@
         "price": 241.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "1795",
@@ -13645,7 +14280,8 @@
         "price": 241.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "1796",
@@ -13676,7 +14312,8 @@
         "price": 229.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "1814",
@@ -13703,7 +14340,8 @@
         "price": 238.7
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "1828",
@@ -13734,7 +14372,8 @@
         "price": 228.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "1836",
@@ -13769,7 +14408,8 @@
         "price": 243.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "1860",
@@ -13796,7 +14436,8 @@
         "price": 249.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "1863",
@@ -13827,7 +14468,8 @@
         "price": 232.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "1912",
@@ -13850,7 +14492,8 @@
         "price": 227.5
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "1913",
@@ -13881,7 +14524,8 @@
         "price": 228.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "1927",
@@ -13904,7 +14548,8 @@
         "price": 231.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "1962",
@@ -13927,7 +14572,8 @@
         "price": 227.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "1988",
@@ -13958,7 +14604,8 @@
         "price": 229.8
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "2001",
@@ -13981,7 +14628,8 @@
         "price": 244.7
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "2024",
@@ -14008,7 +14656,8 @@
         "price": 228.5
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "2026",
@@ -14043,7 +14692,8 @@
         "price": 229.7
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "2070",
@@ -14074,7 +14724,8 @@
         "price": 227.5
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "2085",
@@ -14097,7 +14748,8 @@
         "price": 227.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20007",
@@ -14124,7 +14776,8 @@
         "price": 229.5
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20021",
@@ -14151,7 +14804,8 @@
         "price": 227.5
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20067",
@@ -14182,7 +14836,8 @@
         "price": 229.5
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20089",
@@ -14205,7 +14860,8 @@
         "price": 226.5
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20095",
@@ -14236,7 +14892,8 @@
         "price": 233.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20099",
@@ -14267,7 +14924,8 @@
         "price": 228.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20100",
@@ -14294,7 +14952,8 @@
         "price": 228.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20108",
@@ -14321,7 +14980,8 @@
         "price": 240.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20125",
@@ -14352,7 +15012,8 @@
         "price": 227.5
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20131",
@@ -14379,7 +15040,8 @@
         "price": 228.5
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20133",
@@ -14406,7 +15068,8 @@
         "price": 229.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20150",
@@ -14433,7 +15096,8 @@
         "price": 315.5
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20182",
@@ -14460,7 +15124,8 @@
         "price": 229.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20186",
@@ -14483,7 +15148,8 @@
         "price": 309.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20194",
@@ -14510,7 +15176,8 @@
         "price": 242.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20200",
@@ -14541,7 +15208,8 @@
         "price": 229.7
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20201",
@@ -14568,7 +15236,8 @@
         "price": 315.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20207",
@@ -14607,7 +15276,8 @@
         "price": 228.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20208",
@@ -14634,7 +15304,8 @@
         "price": 227.5
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20218",
@@ -14661,7 +15332,8 @@
         "price": 226.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20232",
@@ -14688,7 +15360,8 @@
         "price": 229.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20242",
@@ -14715,7 +15388,8 @@
         "price": 229.7
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20249",
@@ -14746,7 +15420,8 @@
         "price": 229.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20258",
@@ -14773,7 +15448,8 @@
         "price": 298.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20261",
@@ -14800,7 +15476,8 @@
         "price": 239.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20264",
@@ -14831,7 +15508,8 @@
         "price": 229.5
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20519",
@@ -14854,7 +15532,8 @@
         "price": 239.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20528",
@@ -14881,7 +15560,8 @@
         "price": 227.5
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20544",
@@ -14912,7 +15592,8 @@
         "price": 228.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20546",
@@ -14943,7 +15624,8 @@
         "price": 229.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20550",
@@ -14966,7 +15648,8 @@
         "price": 292.7
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20557",
@@ -15001,7 +15684,8 @@
         "price": 229.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20558",
@@ -15032,7 +15716,8 @@
         "price": 228.7
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20559",
@@ -15063,7 +15748,8 @@
         "price": 229.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20560",
@@ -15098,7 +15784,8 @@
         "price": 229.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20565",
@@ -15125,7 +15812,8 @@
         "price": 228.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20594",
@@ -15156,7 +15844,8 @@
         "price": 229.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20606",
@@ -15179,7 +15868,8 @@
         "price": 249.5
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20630",
@@ -15210,7 +15900,8 @@
         "price": 229.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20633",
@@ -15241,7 +15932,8 @@
         "price": 229.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20638",
@@ -15272,7 +15964,8 @@
         "price": 229.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20643",
@@ -15303,7 +15996,8 @@
         "price": 229.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20649",
@@ -15334,7 +16028,8 @@
         "price": 228.5
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20656",
@@ -15365,7 +16060,8 @@
         "price": 229.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20819",
@@ -15388,7 +16084,8 @@
         "price": 228.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20820",
@@ -15427,7 +16124,8 @@
         "price": 228.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20824",
@@ -15454,7 +16152,8 @@
         "price": 239.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20831",
@@ -15489,7 +16188,8 @@
         "price": 228.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20832",
@@ -15520,7 +16220,8 @@
         "price": 229.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20847",
@@ -15555,7 +16256,8 @@
         "price": 224.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   },
   {
     "id": "20848",
@@ -15582,6 +16284,7 @@
         "price": 231.9
       }
     ],
-    "source": "fuelcheck"
+    "source": "fuelcheck",
+    "closed": false
   }
 ]
