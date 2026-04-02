@@ -1188,6 +1188,7 @@
     // Raw data stored for re-rendering on filter change
     let rawGoogleStations = [];
     let rawFuelcheckStations = [];
+    let scrapedZones = new Set();
 
     function isEvOnly(station) {
       const types = (station.prices || []).map((p) => p.fuel_type);
@@ -1265,16 +1266,16 @@
         }
       });
 
-      // Only show fuelcheck-only markers near scraped areas (within 2km of any Google station)
-      const COVERAGE_RADIUS_M = 2000;
+      // Only show fuelcheck-only markers in scraped suburbs
       let fuelcheckOnlyCount = 0;
       fuelcheckFiltered.forEach((fuelStation) => {
         const identifier = fuelStation.id || `${fuelStation.name}|${fuelStation.address}`;
         if (!usedFuelIds.has(identifier)) {
-          const nearScraped = rawGoogleStations.some(
-            (g) => haversineDistanceMeters(g, fuelStation) <= COVERAGE_RADIUS_M
-          );
-          if (!nearScraped) return;
+          // Skip stations whose suburb hasn't been scraped
+          if (scrapedZones.size) {
+            const suburb = extractSuburb(fuelStation.address).toLowerCase();
+            if (!suburb || !scrapedZones.has(suburb)) return;
+          }
           fuelcheckOnlyCount += 1;
           const filtered = filterPricesToSelected(fuelStation);
           addMarker({
@@ -1507,6 +1508,11 @@
           googleMeta.last_updated,
           fuelcheckMeta.last_updated
         );
+
+        // Build set of scraped zone names (normalised to lower-case, spaces)
+        (googleMeta.zones_scraped || []).forEach((z) => {
+          scrapedZones.add(z.replace(/_/g, " ").toLowerCase());
+        });
 
         // Exclude EV-only stations permanently
         rawGoogleStations = googleStations;
