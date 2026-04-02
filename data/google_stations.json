@@ -2334,5 +2334,37 @@
     "lng": 151.037094,
     "source": "google",
     "closed": false
+  },
+  {
+    "name": "BP Fox Hills",
+    "address": "152 Toongabbie Rd, Girraween NSW 2145",
+    "lat": -33.79564,
+    "lng": 150.939075,
+    "source": "google",
+    "closed": false
+  },
+  {
+    "name": "7-Eleven Greystanes",
+    "address": "601-605 Great Western Hwy, Greystanes NSW 2145",
+    "lat": -33.808582,
+    "lng": 150.93593,
+    "source": "google",
+    "closed": false
+  },
+  {
+    "name": "Speedway Fairfield West",
+    "address": "115 Sackville St, Fairfield NSW 2165",
+    "lat": -33.87272,
+    "lng": 150.9452,
+    "source": "google",
+    "closed": false
+  },
+  {
+    "name": "BP Greystanes",
+    "address": "Cnr Merrylands Rd & Kippax St, Greystanes NSW 2145",
+    "lat": -33.8279379,
+    "lng": 150.9379178,
+    "source": "google",
+    "closed": false
   }
 ]
