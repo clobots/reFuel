@@ -530,14 +530,7 @@
     }
 
     .station-list-bar select {
-      padding: 8px 12px;
-      border: 1px solid var(--panel-border);
-      border-radius: 8px;
-      background: var(--panel);
-      color: var(--text);
-      font-size: 0.85rem;
-      font-family: inherit;
-      cursor: pointer;
+      display: none;
     }
 
     .station-list-toggle {
@@ -690,8 +683,7 @@
         max-height: 400px;
       }
       .station-list-bar { gap: 6px; }
-      .station-list-bar input { min-width: 0; flex: 1; font-size: 0.8rem; padding: 6px 10px; }
-      .station-list-bar select { font-size: 0.8rem; padding: 6px 8px; }
+      .station-list-bar input { min-width: 0; flex: 1; width: 100%; font-size: 0.85rem; padding: 8px 10px; }
       .station-table { font-size: 0.75rem; }
       .station-table th, .station-table td { padding: 6px 8px; }
       .station-table .addr-col { max-width: 140px; }
@@ -806,18 +798,13 @@
       <section class="station-list-section" id="station-list-section">
       <div class="station-list-bar">
         <input type="text" id="station-search" placeholder="Filter by name or address..." />
-        <select id="station-sort">
-          <option value="name-asc">Name A-Z</option>
-          <option value="name-desc">Name Z-A</option>
-          <option value="suburb-asc">Suburb A-Z</option>
-        </select>
         <label class="station-list-toggle" for="toggle-notlisted">
           <input type="checkbox" id="toggle-notlisted" />
           <span>Show only stations with fuel available</span>
         </label>
         <span id="station-list-count" style="color:var(--muted);font-size:0.8rem;"></span>
       </div>
-      <div class="outage-key">⚠️ Historical outage: this station used to list that fuel type in FuelCheck, but the latest refresh does not show it.</div>
+      <div class="outage-key">⚠️ Outage: this station used to list that fuel type in FuelCheck, but the latest refresh does not show it.</div>
       <div class="station-list-wrap">
         <table class="station-table" id="station-table">
           <thead id="station-thead"></thead>
