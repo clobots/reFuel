@@ -2,6 +2,7 @@ station_id,station_name,brand,address,lat,lng,status,status_label,usual_fuel_typ
 2204,Ampol Foodary Concord,Ampol Foodary,"87-89 Parramatta Rd, CONCORD NSW 2137",-33.867895,151.099444,red,Critical outage,"E10,P95,P98,PDL,U91","E10,P95,P98,U91",U91,"E10,P95,P98",5,4,3,75.0,4,false
 18249,Ampol Foodary Crows Nest,Ampol Foodary,"111-121 Falcon Street, CROWS NEST NSW 2065",-33.8286801,151.2060304,red,Critical outage,"E10,P95,P98,PDL,U91","E10,P95,P98,U91",U91,"E10,P95,P98",5,4,3,75.0,4,false
 782,Ampol Foodary Northmead,Ampol Foodary,"98-100 Windsor Rd Cnr Lombard Rd, Northmead NSW 2152",-33.788196,150.994927,orange,Most fuels out,"E10,P95,P98,PDL,U91","E10,P95,P98,U91",U91,"E10,P95,P98",5,4,3,75.0,2,false
+2436,Ampol Foodary Waitara,Ampol Foodary,"59-61 Pacific Highway, WAITARA NSW 2077",-33.710531,151.102447,yellow,Partial outage,"P95,P98,PDL,U91","P95,P98,U91",U91,"P95,P98",4,3,2,66.7,4,false
 2362,Ampol Foodary Carlingford,Ampol Foodary,"131 Pennant Hills Rd, CARLINGFORD NSW 2118",-33.787648,151.027913,yellow,Partial outage,"E10,P95,P98,PDL,U91","E10,P95,P98,U91","E10,U91","P95,P98",5,4,2,50.0,2,false
 17294,Ampol Foodary Woollahra,Ampol Foodary,"116-118 Old South Head Rd, WOOLLAHRA NSW 2025",-33.8896117,151.2553819,yellow,Partial outage,"E10,P95,P98,PDL,U91","E10,P95,P98,U91","E10,U91","P95,P98",5,4,2,50.0,2,false
 359,BP Seven Hills,BP,"Abbott Road, Seven Hills NSW 2147",-33.767172,150.95023,yellow,Partial outage,"P98,PDL,U91","P98,U91",P98,U91,3,2,1,50.0,2,false
@@ -83,7 +84,6 @@ station_id,station_name,brand,address,lat,lng,status,status_label,usual_fuel_typ
 710,Ampol Foodary Seven Hills,Ampol Foodary,"105 Station Rd Cnr Powers St, Seven Hills NSW 2147",-33.773892,150.944345,green,All usual fuels available,"DL,P95,P98,PDL,U91","P95,P98,U91","P95,P98,U91",,5,3,0,0.0,0,false
 18253,Ampol Foodary St Ives,Ampol Foodary,"164 Mona Vale Road, ST IVES NSW 2075",-33.7307318,151.157048,green,All usual fuels available,"E10,P95,P98,PDL,U91","E10,P95,P98,U91","E10,P95,P98,U91",,5,4,0,0.0,0,false
 2305,Ampol Foodary Strathfield South,Ampol Foodary,"600 Liverpool Rd, STRATHFIELD SOUTH NSW 2136",-33.888188,151.074621,green,All usual fuels available,"E10,P95,P98,PDL,U91","E10,P95,P98,U91","E10,P95,P98,U91",,5,4,0,0.0,0,false
-2436,Ampol Foodary Waitara,Ampol Foodary,"59-61 Pacific Highway, WAITARA NSW 2077",-33.710531,151.102447,green,All usual fuels available,"PDL,U91",U91,U91,,2,1,0,0.0,0,false
 1306,Ampol Hornsby Heights,Ampol,"110 Galston Rd., Hornsby Heights NSW 2077",-33.676494,151.098403,green,All usual fuels available,"P95,P98,PDL,U91","P95,P98,U91","P95,P98,U91",,4,3,0,0.0,0,false
 20207,Astron Yagoona,ASTRON,"45 ROOKWOOD RD, YAGOONA NSW 2199",-33.90187688,151.03717836,green,All usual fuels available,"DL,E10,E85,LPG,P95,P98,U91","E10,E85,P95,P98,U91","E10,E85,P95,P98,U91",,7,5,0,0.0,0,false
 18009,BOBBIN HEAD PETROL STATION,Independent,"313 Bobbin Head Road, NORTH TURRAMURRA NSW 2074",-33.7088474,151.1482707,green,All usual fuels available,"DL,E10,P98,U91","E10,P98,U91","E10,P98,U91",,4,3,0,0.0,0,false

@@ -271,10 +271,6 @@
         "price": 252.9
       },
       {
-        "fuel_type": "PDL",
-        "price": 288.4
-      },
-      {
         "fuel_type": "U91",
         "price": 227.9
       }
@@ -385,6 +381,10 @@
       {
         "fuel_type": "P95",
         "price": 243.9
+      },
+      {
+        "fuel_type": "P98",
+        "price": 252.9
       },
       {
         "fuel_type": "PDL",
@@ -1030,19 +1030,19 @@
     "prices": [
       {
         "fuel_type": "DL",
-        "price": 307.5
+        "price": 306.5
       },
       {
         "fuel_type": "E10",
-        "price": 227.5
+        "price": 220.5
       },
       {
         "fuel_type": "P98",
-        "price": 253.5
+        "price": 249.5
       },
       {
         "fuel_type": "U91",
-        "price": 229.5
+        "price": 222.5
       }
     ],
     "source": "fuelcheck"
@@ -1401,11 +1401,11 @@
     "prices": [
       {
         "fuel_type": "E10",
-        "price": 229.9
+        "price": 225.9
       },
       {
         "fuel_type": "P95",
-        "price": 259.9
+        "price": 255.9
       },
       {
         "fuel_type": "PDL",
@@ -1413,7 +1413,7 @@
       },
       {
         "fuel_type": "U91",
-        "price": 233.9
+        "price": 229.9
       }
     ],
     "source": "fuelcheck"
@@ -1428,19 +1428,19 @@
     "prices": [
       {
         "fuel_type": "DL",
-        "price": 307.9
+        "price": 302.9
       },
       {
         "fuel_type": "E10",
-        "price": 227.9
+        "price": 223.9
       },
       {
         "fuel_type": "P98",
-        "price": 254.9
+        "price": 249.9
       },
       {
         "fuel_type": "U91",
-        "price": 229.9
+        "price": 225.9
       }
     ],
     "source": "fuelcheck"
@@ -1455,23 +1455,23 @@
     "prices": [
       {
         "fuel_type": "E10",
-        "price": 227.8
+        "price": 221.5
       },
       {
         "fuel_type": "P95",
-        "price": 249.8
+        "price": 244.5
       },
       {
         "fuel_type": "P98",
-        "price": 259.8
+        "price": 253.5
       },
       {
         "fuel_type": "PDL",
-        "price": 314.5
+        "price": 307.7
       },
       {
         "fuel_type": "U91",
-        "price": 229.8
+        "price": 223.5
       }
     ],
     "source": "fuelcheck"
@@ -1544,15 +1544,15 @@
     "prices": [
       {
         "fuel_type": "P95",
-        "price": 269.7
+        "price": 249.7
       },
       {
         "fuel_type": "PDL",
-        "price": 317.7
+        "price": 307.4
       },
       {
         "fuel_type": "U91",
-        "price": 249.4
+        "price": 229.4
       }
     ],
     "source": "fuelcheck"
@@ -1571,15 +1571,15 @@
       },
       {
         "fuel_type": "E10",
-        "price": 225.9
+        "price": 223.9
       },
       {
         "fuel_type": "P98",
-        "price": 257.9
+        "price": 247.9
       },
       {
         "fuel_type": "U91",
-        "price": 227.9
+        "price": 225.9
       }
     ],
     "source": "fuelcheck"
@@ -1754,6 +1754,10 @@
       {
         "fuel_type": "PDL",
         "price": 312.9
+      },
+      {
+        "fuel_type": "U91",
+        "price": 223.9
       }
     ],
     "source": "fuelcheck"
@@ -1864,11 +1868,11 @@
       },
       {
         "fuel_type": "P98",
-        "price": 243.9
+        "price": 252.7
       },
       {
         "fuel_type": "U91",
-        "price": 197.9
+        "price": 221.7
       }
     ],
     "source": "fuelcheck"
@@ -1914,11 +1918,11 @@
     "prices": [
       {
         "fuel_type": "E10",
-        "price": 227.7
+        "price": 220.7
       },
       {
         "fuel_type": "P98",
-        "price": 249.7
+        "price": 248.7
       },
       {
         "fuel_type": "PDL",
@@ -1926,7 +1930,7 @@
       },
       {
         "fuel_type": "U91",
-        "price": 229.7
+        "price": 222.7
       }
     ],
     "source": "fuelcheck"
@@ -1999,11 +2003,11 @@
       },
       {
         "fuel_type": "P98",
-        "price": 251.9
+        "price": 246.9
       },
       {
         "fuel_type": "PDL",
-        "price": 304.9
+        "price": 305.9
       },
       {
         "fuel_type": "U91",
@@ -2080,19 +2084,19 @@
     "prices": [
       {
         "fuel_type": "E10",
-        "price": 239.9
+        "price": 220.9
       },
       {
         "fuel_type": "P98",
-        "price": 259.9
+        "price": 247.9
       },
       {
         "fuel_type": "PDL",
-        "price": 312.9
+        "price": 307.9
       },
       {
         "fuel_type": "U91",
-        "price": 241.9
+        "price": 222.9
       }
     ],
     "source": "fuelcheck"
@@ -2246,11 +2250,11 @@
       },
       {
         "fuel_type": "E10",
-        "price": 197.9
+        "price": 199.9
       },
       {
         "fuel_type": "P98",
-        "price": 239.9
+        "price": 249.9
       },
       {
         "fuel_type": "PDL",
@@ -5734,6 +5738,10 @@
     "lng": 151.047355,
     "prices": [
       {
+        "fuel_type": "E10",
+        "price": 221.9
+      },
+      {
         "fuel_type": "P95",
         "price": 241.9
       },
@@ -6126,7 +6134,7 @@
       },
       {
         "fuel_type": "PDL",
-        "price": 297.9
+        "price": 304.9
       }
     ],
     "source": "fuelcheck"
@@ -6243,6 +6251,14 @@
     "lat": -33.87388,
     "lng": 151.12688,
     "prices": [
+      {
+        "fuel_type": "E10",
+        "price": 221.9
+      },
+      {
+        "fuel_type": "P95",
+        "price": 239.9
+      },
       {
         "fuel_type": "P98",
         "price": 248.9
@@ -7833,7 +7849,7 @@
     "prices": [
       {
         "fuel_type": "DL",
-        "price": 310.9
+        "price": 311.9
       },
       {
         "fuel_type": "E10",
@@ -7841,15 +7857,15 @@
       },
       {
         "fuel_type": "P95",
-        "price": 240.9
+        "price": 239.9
       },
       {
         "fuel_type": "P98",
-        "price": 249.9
+        "price": 243.9
       },
       {
         "fuel_type": "PDL",
-        "price": 312.9
+        "price": 313.9
       },
       {
         "fuel_type": "U91",
@@ -7876,7 +7892,7 @@
       },
       {
         "fuel_type": "PDL",
-        "price": 308.3
+        "price": 304.3
       },
       {
         "fuel_type": "U91",
@@ -8282,7 +8298,7 @@
       },
       {
         "fuel_type": "PDL",
-        "price": 299.9
+        "price": 304.9
       },
       {
         "fuel_type": "U91",
@@ -8359,11 +8375,11 @@
     "prices": [
       {
         "fuel_type": "E10",
-        "price": 239.9
+        "price": 229.9
       },
       {
         "fuel_type": "P98",
-        "price": 262.9
+        "price": 252.9
       },
       {
         "fuel_type": "PDL",
@@ -8371,7 +8387,7 @@
       },
       {
         "fuel_type": "U91",
-        "price": 242.9
+        "price": 232.9
       }
     ],
     "source": "fuelcheck"
@@ -8417,11 +8433,11 @@
     "prices": [
       {
         "fuel_type": "E10",
-        "price": 197.9
+        "price": 220.7
       },
       {
         "fuel_type": "P98",
-        "price": 239.9
+        "price": 247.7
       },
       {
         "fuel_type": "PDL",
@@ -8664,23 +8680,23 @@
     "prices": [
       {
         "fuel_type": "E10",
-        "price": 229.9
+        "price": 225.9
       },
       {
         "fuel_type": "P95",
-        "price": 246.9
+        "price": 241.9
       },
       {
         "fuel_type": "P98",
-        "price": 258.9
+        "price": 253.9
       },
       {
         "fuel_type": "PDL",
-        "price": 315.9
+        "price": 309.9
       },
       {
         "fuel_type": "U91",
-        "price": 234.9
+        "price": 229.9
       }
     ],
     "source": "fuelcheck"
@@ -8815,15 +8831,15 @@
       },
       {
         "fuel_type": "E10",
-        "price": 226.7
+        "price": 220.7
       },
       {
         "fuel_type": "P98",
-        "price": 254.7
+        "price": 247.7
       },
       {
         "fuel_type": "U91",
-        "price": 228.7
+        "price": 222.7
       }
     ],
     "source": "fuelcheck"
@@ -8838,19 +8854,19 @@
     "prices": [
       {
         "fuel_type": "E10",
-        "price": 249.9
+        "price": 220.9
       },
       {
         "fuel_type": "P98",
-        "price": 279.9
+        "price": 245.9
       },
       {
         "fuel_type": "PDL",
-        "price": 317.9
+        "price": 309.9
       },
       {
         "fuel_type": "U91",
-        "price": 255.9
+        "price": 222.9
       }
     ],
     "source": "fuelcheck"
@@ -8985,15 +9001,15 @@
     "prices": [
       {
         "fuel_type": "DL",
-        "price": 310.9
+        "price": 304.9
       },
       {
         "fuel_type": "P98",
-        "price": 254.9
+        "price": 249.9
       },
       {
         "fuel_type": "U91",
-        "price": 229.9
+        "price": 223.9
       }
     ],
     "source": "fuelcheck"
@@ -9244,11 +9260,11 @@
       },
       {
         "fuel_type": "E10",
-        "price": 226.9
+        "price": 220.9
       },
       {
         "fuel_type": "P98",
-        "price": 254.9
+        "price": 247.9
       },
       {
         "fuel_type": "PDL",
@@ -9256,7 +9272,7 @@
       },
       {
         "fuel_type": "U91",
-        "price": 228.9
+        "price": 222.9
       }
     ],
     "source": "fuelcheck"
@@ -9310,7 +9326,7 @@
       },
       {
         "fuel_type": "E10",
-        "price": 246.9
+        "price": 227.9
       },
       {
         "fuel_type": "P95",
@@ -9318,7 +9334,7 @@
       },
       {
         "fuel_type": "U91",
-        "price": 249.9
+        "price": 230.9
       }
     ],
     "source": "fuelcheck"
@@ -9607,7 +9623,7 @@
       },
       {
         "fuel_type": "PDL",
-        "price": 319.9
+        "price": 304.9
       },
       {
         "fuel_type": "U91",
@@ -9819,7 +9835,7 @@
     "prices": [
       {
         "fuel_type": "DL",
-        "price": 302.9
+        "price": 297.9
       },
       {
         "fuel_type": "E10",
@@ -9997,19 +10013,19 @@
     "prices": [
       {
         "fuel_type": "E10",
-        "price": 227.5
+        "price": 219.8
       },
       {
         "fuel_type": "P98",
-        "price": 259.9
+        "price": 248.8
       },
       {
         "fuel_type": "PDL",
-        "price": 309.8
+        "price": 308.8
       },
       {
         "fuel_type": "U91",
-        "price": 229.5
+        "price": 223.8
       }
     ],
     "source": "fuelcheck"
@@ -10086,7 +10102,7 @@
       },
       {
         "fuel_type": "PDL",
-        "price": 319.9
+        "price": 304.9
       },
       {
         "fuel_type": "U91",
@@ -10122,6 +10138,29 @@
       {
         "fuel_type": "U91",
         "price": 223.5
+      }
+    ],
+    "source": "fuelcheck"
+  },
+  {
+    "id": "20550",
+    "name": "Costco Auburn (Members only)",
+    "brand": "Costco",
+    "address": "COSTCO 17-21 PARRAMATTA RD, LIDCOMBE NSW 2141",
+    "lat": -33.84808567,
+    "lng": 151.04969476,
+    "prices": [
+      {
+        "fuel_type": "E10",
+        "price": 220.7
+      },
+      {
+        "fuel_type": "P98",
+        "price": 246.7
+      },
+      {
+        "fuel_type": "PDL",
+        "price": 296.7
       }
     ],
     "source": "fuelcheck"
@@ -10415,7 +10454,7 @@
       },
       {
         "fuel_type": "E10",
-        "price": 222.9
+        "price": 199.9
       },
       {
         "fuel_type": "P95",
