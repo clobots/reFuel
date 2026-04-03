@@ -778,8 +778,8 @@
           <option value="suburb-asc">Suburb A-Z</option>
         </select>
         <label class="station-list-toggle" for="toggle-notlisted">
-          <input type="checkbox" id="toggle-notlisted" checked />
-          <span>Show stores not listed with Fuel Check</span>
+          <input type="checkbox" id="toggle-notlisted" />
+          <span>Show only stations with fuel available</span>
         </label>
         <span id="station-list-count" style="color:var(--muted);font-size:0.8rem;"></span>
       </div>
@@ -1172,29 +1172,16 @@
       allMarkers.push(marker);
     }
 
-    function nearestFuelcheckStation(googleStation, fuelStations, usedFuelIds) {
-      let bestMatch = null;
-      let bestDistance = Infinity;
-
-      fuelStations.forEach((fuelStation) => {
-        const identifier = fuelStation.id || `${fuelStation.name}|${fuelStation.address}`;
-        if (usedFuelIds.has(identifier)) {
-          return;
-        }
-
-        const distance = haversineDistanceMeters(googleStation, fuelStation);
-        if (distance < bestDistance) {
-          bestDistance = distance;
-          bestMatch = fuelStation;
-        }
-      });
-
-      if (!bestMatch || bestDistance > MATCH_THRESHOLD_METERS) {
-        return null;
-      }
-
-      return { station: bestMatch, distance: bestDistance };
-    }
+    const FC_PRICE_COLUMNS = {
+      U91: "fc_price_U91_cents",
+      E10: "fc_price_E10_cents",
+      E85: "fc_price_E85_cents",
+      P95: "fc_price_P95_cents",
+      P98: "fc_price_P98_cents",
+      DL: "fc_price_DL_cents",
+      PDL: "fc_price_PDL_cents",
+      LPG: "fc_price_LPG_cents"
+    };
 
     async function fetchJson(path) {
       const response = await fetch(path, { cache: "no-store" });
@@ -1204,103 +1191,213 @@
       return response.json();
     }
 
-    // Raw data stored for re-rendering on filter change
-    let rawGoogleStations = [];
-    let rawFuelcheckStations = [];
-    let scrapedZones = new Set();
-
-    function isEvOnly(station) {
-      const types = (station.prices || []).map((p) => p.fuel_type);
-      return types.length > 0 && types.every((t) => t === "EV");
+    async function fetchText(path) {
+      const response = await fetch(path, { cache: "no-store" });
+      if (!response.ok) {
+        throw new Error(`Failed to load ${path}: ${response.status}`);
+      }
+      return response.text();
     }
 
-    function hasSelectedFuelType(station) {
-      if (!station.prices || !station.prices.length) return true; // Google stations have no prices — always show
-      const types = (station.prices || []).map((p) => p.fuel_type);
-      return types.some((t) => selectedFuelTypes.has(t));
+    function parseCsv(text) {
+      const rows = [];
+      let row = [];
+      let field = "";
+      let inQuotes = false;
+
+      for (let i = 0; i < text.length; i += 1) {
+        const char = text[i];
+
+        if (inQuotes) {
+          if (char === "\"") {
+            if (text[i + 1] === "\"") {
+              field += "\"";
+              i += 1;
+            } else {
+              inQuotes = false;
+            }
+          } else {
+            field += char;
+          }
+          continue;
+        }
+
+        if (char === "\"") {
+          inQuotes = true;
+        } else if (char === ",") {
+          row.push(field);
+          field = "";
+        } else if (char === "\n") {
+          row.push(field);
+          rows.push(row);
+          row = [];
+          field = "";
+        } else if (char !== "\r") {
+          field += char;
+        }
+      }
+
+      if (field.length || row.length) {
+        row.push(field);
+        rows.push(row);
+      }
+
+      if (!rows.length) return [];
+
+      const headers = rows[0];
+      return rows.slice(1)
+        .filter((values) => values.some((value) => value !== ""))
+        .map((values) => {
+          const record = {};
+          headers.forEach((header, idx) => {
+            record[header] = values[idx] != null ? values[idx] : "";
+          });
+          return record;
+        });
+    }
+
+    async function fetchCsv(path) {
+      return parseCsv(await fetchText(path));
+    }
+
+    function toNumber(value) {
+      if (value == null || value === "") return null;
+      const num = Number(value);
+      return Number.isFinite(num) ? num : null;
+    }
+
+    function buildPricesFromRow(row) {
+      return ALL_FUEL_TYPES
+        .map((fuelType) => {
+          const price = toNumber(row[FC_PRICE_COLUMNS[fuelType]]);
+          return price == null ? null : { fuel_type: fuelType, price };
+        })
+        .filter(Boolean);
+    }
+
+    function normaliseMatchRow(row) {
+      const googleLat = toNumber(row.google_lat);
+      const googleLng = toNumber(row.google_lng);
+      const fcLat = toNumber(row.fc_lat);
+      const fcLng = toNumber(row.fc_lng);
+
+      const google = googleLat != null && googleLng != null ? {
+        name: row.google_name || "",
+        address: row.google_address_full || "",
+        lat: googleLat,
+        lng: googleLng,
+        source: "Google Maps"
+      } : null;
+
+      const fuelcheck = row.fc_id ? {
+        id: row.fc_id,
+        name: row.fc_name || "",
+        brand: row.fc_brand || "",
+        address: row.fc_address_full || "",
+        lat: fcLat,
+        lng: fcLng,
+        prices: buildPricesFromRow(row),
+        source: "FuelCheck API"
+      } : null;
+
+      return {
+        matchStatus: row.match_status,
+        matchDistanceMeters: toNumber(row.match_distance_m),
+        google,
+        fuelcheck
+      };
     }
 
     function filterPricesToSelected(station) {
-      if (!station.prices) return station;
+      if (!station || !station.prices) return station;
       return {
         ...station,
         prices: station.prices.filter((p) => selectedFuelTypes.has(p.fuel_type))
       };
     }
 
+    let rawMatchedRows = [];
+
     function rerender() {
       Object.values(layers).forEach((layer) => layer.clearLayers());
       allMarkers = [];
 
-      const fuelcheckFiltered = rawFuelcheckStations.filter((s) => hasSelectedFuelType(s));
-
-      const usedFuelIds = new Set();
-      let matchedCount = 0;
-      let gapCount = 0;
-
       // Reset table data
       tableData = { gaps: [], matched: [], google: [], fuelcheck: [] };
+      let matchedCount = 0;
+      let gapCount = 0;
+      let fuelcheckOnlyCount = 0;
+      let googleTotal = 0;
 
-      rawGoogleStations.filter((s) => !s.closed).forEach((googleStation) => {
-        const match = nearestFuelcheckStation(googleStation, fuelcheckFiltered, usedFuelIds);
-        if (match) {
-          const identifier = match.station.id || `${match.station.name}|${match.station.address}`;
-          usedFuelIds.add(identifier);
-          matchedCount += 1;
-          const filtered = filterPricesToSelected(match.station);
-          addMarker({
-            fuelcheck: match.station,
-            google: googleStation,
-            prices: filtered.prices,
-            matchDistanceMeters: match.distance,
-            lat: match.station.lat,
-            lng: match.station.lng
-          }, "matched");
-          tableData.matched.push([
-            match.station.name || "",
-            googleStation.name || "",
-            match.station.address || googleStation.address || "",
-            Math.round(match.distance) + "m"
-          ]);
-        } else {
+      rawMatchedRows.forEach((row) => {
+        const googleStation = row.google;
+        const fuelStation = row.fuelcheck;
+        const filteredFuelStation = filterPricesToSelected(fuelStation);
+        const selectedPrices = filteredFuelStation ? filteredFuelStation.prices : [];
+        const hasSelectedFuel = selectedPrices && selectedPrices.length > 0;
+
+        if (googleStation) {
+          googleTotal += 1;
+        }
+
+        if (row.matchStatus === "matched") {
+          if (hasSelectedFuel) {
+            matchedCount += 1;
+            addMarker({
+              fuelcheck: fuelStation,
+              google: googleStation,
+              prices: selectedPrices,
+              matchDistanceMeters: row.matchDistanceMeters,
+              lat: fuelStation.lat,
+              lng: fuelStation.lng
+            }, "matched");
+            tableData.matched.push([
+              fuelStation.name || "",
+              googleStation.name || "",
+              fuelStation.address || googleStation.address || "",
+              row.matchDistanceMeters != null ? Math.round(row.matchDistanceMeters) + "m" : "-"
+            ]);
+          } else {
+            gapCount += 1;
+            addMarker({
+              fuelcheck: fuelStation,
+              google: googleStation,
+              prices: [],
+              matchDistanceMeters: row.matchDistanceMeters,
+              lat: googleStation.lat,
+              lng: googleStation.lng
+            }, "gap");
+            tableData.gaps.push([
+              googleStation.name || fuelStation.name || "",
+              googleStation.address || fuelStation.address || "",
+              "Fuel not listed"
+            ]);
+          }
+          return;
+        }
+
+        if (row.matchStatus === "gap_google_only" && googleStation) {
           gapCount += 1;
           addMarker({
             google: googleStation,
             fuelcheck: null,
             lat: googleStation.lat,
             lng: googleStation.lng
-          }, fuelcheckFiltered.length ? "gap" : "google");
-          if (fuelcheckFiltered.length) {
-            tableData.gaps.push([
-              googleStation.name || "",
-              googleStation.address || "",
-              "Google Maps"
-            ]);
-          } else {
-            tableData.google.push([
-              googleStation.name || "",
-              googleStation.address || ""
-            ]);
-          }
+          }, "gap");
+          tableData.gaps.push([
+            googleStation.name || "",
+            googleStation.address || "",
+            "Google Maps"
+          ]);
+          return;
         }
-      });
 
-      // Only show fuelcheck-only markers in scraped suburbs
-      let fuelcheckOnlyCount = 0;
-      fuelcheckFiltered.forEach((fuelStation) => {
-        const identifier = fuelStation.id || `${fuelStation.name}|${fuelStation.address}`;
-        if (!usedFuelIds.has(identifier)) {
-          // Skip stations whose suburb hasn't been scraped
-          if (scrapedZones.size) {
-            const suburb = extractSuburb(fuelStation.address).toLowerCase();
-            if (!suburb || !scrapedZones.has(suburb)) return;
-          }
+        if (row.matchStatus === "fuelcheck_only" && fuelStation && hasSelectedFuel) {
           fuelcheckOnlyCount += 1;
-          const filtered = filterPricesToSelected(fuelStation);
           addMarker({
             fuelcheck: fuelStation,
             google: null,
-            prices: filtered.prices,
+            prices: selectedPrices,
             lat: fuelStation.lat,
             lng: fuelStation.lng
           }, "fuelcheck");
@@ -1308,7 +1405,7 @@
             fuelStation.name || "",
             fuelStation.brand || "",
             fuelStation.address || "",
-            (fuelStation.prices || []).map((p) => p.fuel_type).join(", ")
+            selectedPrices.map((p) => p.fuel_type).join(", ")
           ]);
           tableData.gaps.push([
             fuelStation.name || "",
@@ -1327,7 +1424,7 @@
       document.getElementById("map-status").style.display = "none";
 
       // Update availability percentage line
-      const pct = rawGoogleStations.length ? Math.round((matchedCount / rawGoogleStations.length) * 100) : 0;
+      const pct = googleTotal ? Math.round((matchedCount / googleTotal) * 100) : 0;
       const filtering = selectedFuelTypes.size < ALL_FUEL_TYPES.length;
       const fuelLabel = filtering ? [...selectedFuelTypes].join(", ") : "any";
       document.getElementById("avail-line").innerHTML = DOMPurify.sanitize(
@@ -1342,7 +1439,7 @@
     const FUEL_COL_ORDER = ["P98", "E10", "U91", "PDL", "P95", "DL", "LPG", "E85"];
     const FUEL_COL_LABELS = { U91:"U91", E10:"E10", P95:"P95", P98:"P98", DL:"Diesel", PDL:"P.Diesel", LPG:"LPG", E85:"E85" };
     let stationListSort = { col: "name", dir: "asc" };
-    let showNotListedWithFuelCheck = true;
+    let showOnlyStationsWithFuelAvailable = false;
 
     function getVisibleFuelCols() {
       return FUEL_COL_ORDER.filter(function(ft) { return selectedFuelTypes.has(ft); });
@@ -1371,7 +1468,7 @@
           name: name, address: address, priceMap: priceMap, marker: m, type: m._stationType,
           lat: m._lat, lng: m._lng,
           suburb: extractSuburb(address),
-          isNotListedWithFuelCheck: !!goog && !fc
+          hasFuelAvailable: m._stationType !== "gap" && Object.keys(priceMap).length > 0
         });
       });
       return rows;
@@ -1399,9 +1496,9 @@
         return bounds.contains([r.lat, r.lng]);
       });
 
-      if (!showNotListedWithFuelCheck) {
+      if (showOnlyStationsWithFuelAvailable) {
         rows = rows.filter(function(r) {
-          return !r.isNotListedWithFuelCheck;
+          return r.hasFuelAvailable;
         });
       }
 
@@ -1519,7 +1616,7 @@
       renderStationList();
     });
     document.getElementById("toggle-notlisted").addEventListener("change", function() {
-      showNotListedWithFuelCheck = this.checked;
+      showOnlyStationsWithFuelAvailable = this.checked;
       renderStationList();
     });
 
@@ -1528,9 +1625,8 @@
 
     async function loadApp() {
       try {
-        const [googleStations, fuelcheckStations, googleMeta, fuelcheckMeta] = await Promise.all([
-          fetchJson("data/google_stations.json").catch(() => []),
-          fetchJson("data/fuelcheck_stations.json").catch(() => []),
+        const [matchedRows, googleMeta, fuelcheckMeta] = await Promise.all([
+          fetchCsv("data/clean/matched_stations.csv").catch(() => []),
           fetchJson("data/google_meta.json").catch(() => ({})),
           fetchJson("data/fuelcheck_meta.json").catch(() => ({}))
         ]);
@@ -1540,19 +1636,16 @@
           fuelcheckMeta.last_updated
         );
 
-        // Build set of scraped zone names (normalised to lower-case, spaces)
-        (googleMeta.zones_scraped || []).forEach((z) => {
-          scrapedZones.add(z.replace(/_/g, " ").toLowerCase());
-        });
-
-        // Exclude EV-only stations permanently
-        rawGoogleStations = googleStations;
-        rawFuelcheckStations = fuelcheckStations.filter((s) => !isEvOnly(s));
+        rawMatchedRows = matchedRows.map(normaliseMatchRow);
 
         rerender();
 
-        const allCoords = rawGoogleStations
-          .map((s) => [s.lat, s.lng])
+        const allCoords = rawMatchedRows
+          .map((row) => {
+            const station = row.google || row.fuelcheck;
+            return station ? [station.lat, station.lng] : null;
+          })
+          .filter(Boolean)
           .filter(([lat, lng]) => Number.isFinite(lat) && Number.isFinite(lng));
 
         if (allCoords.length) {

@@ -9,6 +9,18 @@ Thumbs.db
 # Editor
 .vscode/
 .idea/
+.claude/
+
+# Python caches
+__pycache__/
+*.pyc
+
+# Local scratch and transcript files
+2026-03-28-fuel2.txt
+2026-03-29-213353-comtinue-with-last-task.txt
+cont-912.txt
+continue-now-1059.txt
+continue-where-you-left-off-202603292354.txt
 
 # Historical price snapshots (local only)
 data/history/
@@ -20,6 +32,11 @@ docs/2026-03-29_data-cleansing-plan.md
 
 # Private gist links
 gist-links.md
+gist-links 2.md
 
 # Bugs
 bugs/
+Bugs/
+
+# Local scripts and caches
+scripts/refresh_data.sh
