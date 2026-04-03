@@ -1889,13 +1889,6 @@
     }
 
     document.getElementById("station-search").addEventListener("input", renderStationList);
-    document.getElementById("station-sort").addEventListener("change", function() {
-      var v = this.value;
-      if (v === "name-asc") stationListSort = { col: "name", dir: "asc" };
-      else if (v === "name-desc") stationListSort = { col: "name", dir: "desc" };
-      else if (v === "suburb-asc") stationListSort = { col: "suburb", dir: "asc" };
-      renderStationList();
-    });
     document.getElementById("toggle-notlisted").addEventListener("change", function() {
       showOnlyStationsWithFuelAvailable = this.checked;
       renderStationList();
