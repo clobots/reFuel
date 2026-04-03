@@ -1317,6 +1317,7 @@
     }
 
     let rawMatchedRows = [];
+    let scrapedZones = new Set();
 
     function rerender() {
       Object.values(layers).forEach((layer) => layer.clearLayers());
@@ -1393,6 +1394,11 @@
         }
 
         if (row.matchStatus === "fuelcheck_only" && fuelStation && hasSelectedFuel) {
+          // Skip stations whose suburb hasn't been scraped
+          if (scrapedZones.size) {
+            var suburb = extractSuburb(fuelStation.address).toLowerCase();
+            if (!suburb || !scrapedZones.has(suburb)) return;
+          }
           fuelcheckOnlyCount += 1;
           addMarker({
             fuelcheck: fuelStation,
@@ -1635,6 +1641,11 @@
           googleMeta.last_updated,
           fuelcheckMeta.last_updated
         );
+
+        // Build set of scraped zone names (normalised to lower-case, spaces)
+        (googleMeta.zones_scraped || []).forEach((z) => {
+          scrapedZones.add(z.replace(/_/g, " ").toLowerCase());
+        });
 
         rawMatchedRows = matchedRows.map(normaliseMatchRow);
 
