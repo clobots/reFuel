@@ -432,14 +432,6 @@
     "closed": false
   },
   {
-    "name": "Shell Reddy Express Epping",
-    "address": "246 Beecroft & Carlingford Rds, Epping NSW 2121",
-    "lat": -33.7717753,
-    "lng": 151.0826577,
-    "source": "google",
-    "closed": false
-  },
-  {
     "name": "United",
     "address": "117 Seven Hills Rd, Baulkham Hills NSW 2153",
     "lat": -33.7639,
@@ -1144,14 +1136,6 @@
     "closed": false
   },
   {
-    "name": "7-Eleven",
-    "address": "8 Crystal St, Petersham NSW 2049",
-    "lat": -33.8976397,
-    "lng": 151.1556,
-    "source": "google",
-    "closed": false
-  },
-  {
     "name": "Shell OTR Willoughby",
     "address": "616-626 WILLOUGHBY RD, WILLOUGHBY NSW 2068",
     "lat": -33.8060074,
@@ -1292,14 +1276,6 @@
     "address": "238 Pacific Highway, Lindfield NSW 2070",
     "lat": -33.778887,
     "lng": 151.1690677,
-    "source": "google",
-    "closed": false
-  },
-  {
-    "name": "7-Eleven",
-    "address": "457 Victoria Ave, Chatswood West NSW 2067",
-    "lat": -33.7970045,
-    "lng": 151.1802398,
     "source": "google",
     "closed": false
   },
@@ -1844,14 +1820,6 @@
     "address": "Shell Petrol Station 363 Windsor Rd, Baulkham Hills NSW 2153",
     "lat": -33.760199,
     "lng": 150.991598,
-    "source": "google",
-    "closed": false
-  },
-  {
-    "name": "Costco Auburn (Members Only)",
-    "address": "Costco 17-21 Parramatta Rd, Lidcombe NSW 2141",
-    "lat": -33.848086,
-    "lng": 151.049695,
     "source": "google",
     "closed": false
   },
