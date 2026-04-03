@@ -14,6 +14,7 @@ sys.path.insert(0, os.path.join(PROJECT_DIR, "scripts"))
 
 from clean_fuelcheck import clean_fuelcheck_stations
 from clean_google import clean_google_stations
+from build_fuelcheck_history_dataset import write_history_dataset_csv, write_outage_dataset_csv
 from merge_matched import merge_stations
 
 
@@ -54,8 +55,14 @@ def main() -> None:
     print("\n[2/3] Cleaning FuelCheck stations...")
     clean_fuelcheck_stations()
 
-    print("\n[3/3] Merging matched stations...")
+    print("\n[3/5] Merging matched stations...")
     merge_stations()
+
+    print("\n[4/5] Building FuelCheck history dataset...")
+    write_history_dataset_csv()
+
+    print("\n[5/5] Building FuelCheck outage dataset...")
+    write_outage_dataset_csv()
 
     clean_dir = os.path.join(PROJECT_DIR, "data", "clean")
 
@@ -78,6 +85,16 @@ def main() -> None:
         os.path.join(clean_dir, "matched_stations.csv"),
         min_rows=1,
         required_cols=["match_status", "google_name", "fc_name"],
+    )
+    ok &= validate_csv(
+        os.path.join(clean_dir, "fuelcheck_history_dataset.csv"),
+        min_rows=1,
+        required_cols=["station_id", "latest_fuel_types", "fuel_types_ever"],
+    )
+    ok &= validate_csv(
+        os.path.join(clean_dir, "fuelcheck_outages.csv"),
+        min_rows=1,
+        required_cols=["station_id", "fuel_type", "tracked_in_fuel_check"],
     )
 
     if not ok:

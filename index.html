@@ -277,6 +277,17 @@
       flex: 0 0 12px;
     }
 
+    .legend-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 12px;
+      height: 12px;
+      font-size: 12px;
+      line-height: 1;
+      flex: 0 0 12px;
+    }
+
     .search-bar input {
       width: 180px;
     }
@@ -356,6 +367,22 @@
       box-shadow: 0 0 0 3px rgba(4, 10, 14, 0.18);
     }
 
+    .station-marker-wrap {
+      position: relative;
+      width: 18px;
+      height: 18px;
+    }
+
+    .marker-outage-badge {
+      position: absolute;
+      top: -11px;
+      right: -10px;
+      font-size: 12px;
+      line-height: 1;
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.65);
+      pointer-events: none;
+    }
+
     .station-marker.google { background: var(--google); }
     .station-marker.fuelcheck { background: var(--fuelcheck); }
     .station-marker.matched { background: var(--matched); }
@@ -388,6 +415,11 @@
     .popup p {
       margin: 0 0 4px;
       font-size: 0.88rem;
+    }
+
+    .popup .outage-note {
+      color: #9c4f08;
+      font-weight: 600;
     }
 
     .popup .tab-bar {
@@ -598,9 +630,11 @@
     .station-table .price-mid { color: #fbbf24; }
     .station-table .price-dear { color: #f87171; }
     .station-table .price-dear::after { content: " \25B2"; font-size: 0.6em; }
+    .station-table .price-outage { color: var(--accent); font-weight: 700; }
 
     .station-table .name-col { white-space: nowrap; }
     .station-table .addr-col { max-width: 200px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .outage-key { padding: 8px 2px 0; color: var(--muted); font-size: 0.75rem; }
 
     /* Tablet / narrow window — stack vertically */
     @media (max-width: 768px) {
@@ -783,6 +817,7 @@
         </label>
         <span id="station-list-count" style="color:var(--muted);font-size:0.8rem;"></span>
       </div>
+      <div class="outage-key">⚠️ Historical outage: this station used to list that fuel type in FuelCheck, but the latest refresh does not show it.</div>
       <div class="station-list-wrap">
         <table class="station-table" id="station-table">
           <thead id="station-thead"></thead>
@@ -932,6 +967,8 @@
     // Fuel types to show in the filter (EV excluded)
     const ALL_FUEL_TYPES = ["U91", "E10", "E85", "P95", "P98", "DL", "PDL", "LPG"];
     let selectedFuelTypes = new Set(ALL_FUEL_TYPES);
+    let showOnlyOutages = false;
+    let outageLookup = new Map();
 
     const controlPanel = L.control({ position: "bottomright" });
     controlPanel.onAdd = function onAdd() {
@@ -985,6 +1022,16 @@
         rerender();
       });
 
+      const outageLabel = L.DomUtil.create("label", "", filterBody);
+      const outageToggle = L.DomUtil.create("input", "", outageLabel);
+      outageToggle.type = "checkbox";
+      outageToggle.checked = false;
+      outageLabel.appendChild(document.createTextNode(" Show outages only"));
+      outageToggle.addEventListener("change", function() {
+        showOnlyOutages = this.checked;
+        rerender();
+      });
+
       toggle.addEventListener("click", function() {
         var body = filterContainer.querySelector(".fuel-filter-body");
         var isOpen = body.classList.toggle("open");
@@ -1004,6 +1051,10 @@
         swatch.style.background = color;
         item.appendChild(document.createTextNode(label));
       });
+      const outageItem = L.DomUtil.create("div", "legend-item", legendRow);
+      const outageIcon = L.DomUtil.create("span", "legend-icon", outageItem);
+      outageIcon.textContent = "⚠️";
+      outageItem.appendChild(document.createTextNode("Historical outage"));
 
       return div;
     };
@@ -1061,10 +1112,11 @@
       return 2 * earthRadius * Math.asin(Math.sqrt(h));
     }
 
-    function markerIcon(type) {
+    function markerIcon(type, hasOutage) {
+      const warningHtml = hasOutage ? '<span class="marker-outage-badge" aria-hidden="true">⚠️</span>' : "";
       return L.divIcon({
         className: "",
-        html: DOMPurify.sanitize(`<div class="station-marker ${type}"></div>`),
+        html: DOMPurify.sanitize(`<div class="station-marker-wrap"><div class="station-marker ${type}"></div>${warningHtml}</div>`),
         iconSize: [18, 18],
         iconAnchor: [9, 9],
         popupAnchor: [0, -10]
@@ -1075,14 +1127,20 @@
       return DOMPurify.sanitize(String(value ?? ""));
     }
 
-    function formatPrices(prices) {
+    function formatPrices(prices, outageFuelTypes) {
       if (!prices || !prices.length) {
-        return "<p>No FuelCheck pricing data.</p>";
+        const outageNote = outageFuelTypes && outageFuelTypes.length
+          ? `<p class="outage-note">⚠️ Historical outages: ${escapeHtml(outageFuelTypes.join(", "))}</p>`
+          : "";
+        return `<p>No FuelCheck pricing data.</p>${outageNote}`;
       }
       const items = prices
         .map((p) => `<li><strong>${escapeHtml(p.fuel_type)}</strong> ${escapeHtml(p.price)}¢/L</li>`)
         .join("");
-      return `<ul>${items}</ul>`;
+      const outageNote = outageFuelTypes && outageFuelTypes.length
+        ? `<p class="outage-note">⚠️ Historical outages: ${escapeHtml(outageFuelTypes.join(", "))}</p>`
+        : "";
+      return `<ul>${items}</ul>${outageNote}`;
     }
 
     let popupIdCounter = 0;
@@ -1092,6 +1150,7 @@
       const fc = data.fuelcheck;
       const goog = data.google;
       const distance = data.matchDistanceMeters;
+      const outageFuelTypes = data.outageFuelTypes || [];
 
       let infoHtml = "";
 
@@ -1124,7 +1183,9 @@
       const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${mapsQuery}`;
       infoHtml += `<a href="${mapsUrl}" target="_blank" rel="noopener" style="display:inline-block;margin-top:6px;font-size:0.82rem;color:#4285f4;">Open in Google Maps</a>`;
 
-      const fuelHtml = fc ? formatPrices(data.prices || fc.prices) : "<p>No FuelCheck data for this station.</p>";
+      const fuelHtml = fc
+        ? formatPrices(data.prices || fc.prices, outageFuelTypes)
+        : "<p>No FuelCheck data for this station.</p>";
 
       const content = `
         <div class="popup">
@@ -1145,7 +1206,7 @@
     function addMarker(data, type) {
       const lat = data.lat || (data.fuelcheck && data.fuelcheck.lat) || (data.google && data.google.lat);
       const lng = data.lng || (data.fuelcheck && data.fuelcheck.lng) || (data.google && data.google.lng);
-      const marker = L.marker([lat, lng], { icon: markerIcon(type) });
+      const marker = L.marker([lat, lng], { icon: markerIcon(type, (data.outageFuelTypes || []).length > 0) });
       marker.bindPopup(popupContent(data), {
         maxWidth: 360,
         minWidth: 260,
@@ -1182,6 +1243,143 @@
       PDL: "fc_price_PDL_cents",
       LPG: "fc_price_LPG_cents"
     };
+    const TRACKED_SUBURB_KEYS = new Set([
+      "alexandria|2015",
+      "annandale|2038",
+      "artarmon|2064",
+      "ashfield|2131",
+      "asquith|2077",
+      "auburn|2144",
+      "bass hill|2197",
+      "baulkham hills|2153",
+      "birrong|2143",
+      "bondi junction|2022",
+      "burwood|2134",
+      "camellia|2142",
+      "cammeray|2062",
+      "camperdown|2050",
+      "canley heights|2166",
+      "canley vale|2166",
+      "canterbury|2193",
+      "carlingford|2118",
+      "castle cove|2069",
+      "chatswood|2067",
+      "chatswood east|2067",
+      "chatswood west|2067",
+      "chester hill|2162",
+      "chippendale|2008",
+      "chullora|2190",
+      "concord|2137",
+      "cremorne|2090",
+      "crows nest|2065",
+      "croydon|2132",
+      "croydon park|2133",
+      "denistone east|2112",
+      "drummoyne|2047",
+      "dundas|2117",
+      "eastwood|2122",
+      "edgecliff|2027",
+      "enfield|2136",
+      "enmore|2042",
+      "epping|2121",
+      "ermington|2115",
+      "erskineville|2043",
+      "fairfield|2165",
+      "fairfield east|2165",
+      "fairfield heights|2165",
+      "fairfield west|2165",
+      "five dock|2046",
+      "girraween|2145",
+      "granville|2142",
+      "granville east|2142",
+      "greenacre|2190",
+      "greystanes|2145",
+      "guildford|2161",
+      "guildford west|2161",
+      "haberfield|2045",
+      "homebush west|2140",
+      "hornsby|2077",
+      "hornsby heights|2077",
+      "killara|2071",
+      "lane cove|2066",
+      "lane cove north|2066",
+      "lane cove west|2066",
+      "lansdowne|2163",
+      "lansvale|2166",
+      "lansvale south|2166",
+      "leichhardt|2040",
+      "lewisham|2049",
+      "lidcombe|2141",
+      "lindfield|2070",
+      "longueville|2066",
+      "marsfield|2122",
+      "mays hill|2145",
+      "merrylands|2160",
+      "merrylands west|2160",
+      "mosman|2088",
+      "mount colah|2079",
+      "naremburn|2065",
+      "neutral bay|2089",
+      "normanhurst|2076",
+      "north rocks|2151",
+      "north ryde|2113",
+      "north strathfield|2137",
+      "north turramurra|2074",
+      "north willoughby|2068",
+      "old guildford|2161",
+      "old toongabbie|2146",
+      "paddington|2021",
+      "parramatta|2150",
+      "pendle hill|2145",
+      "pennant hills|2120",
+      "petersham|2049",
+      "pymble|2073",
+      "redfern|2016",
+      "regents park|2143",
+      "rosehill|2142",
+      "roseville|2069",
+      "rozelle|2039",
+      "rydalmere|2116",
+      "sefton|2162",
+      "seven hills|2147",
+      "silverwater|2128",
+      "smithfield|2164",
+      "south granville|2142",
+      "st ives|2075",
+      "st ives chase|2075",
+      "st ives north|2075",
+      "stanmore|2048",
+      "strathfield|2135",
+      "strathfield south|2136",
+      "summer hill|2130",
+      "telopea|2117",
+      "thornleigh|2120",
+      "turramurra|2074",
+      "ultimo|2007",
+      "villawood|2163",
+      "wahroonga|2076",
+      "waitara|2077",
+      "wentworthville|2145",
+      "west pennant hills|2125",
+      "west pymble|2073",
+      "west ryde|2114",
+      "westleigh|2120",
+      "westmead|2145",
+      "willoughby|2068",
+      "woodpark|2164",
+      "woollahra|2025",
+      "woolloomooloo|2011",
+      "yagoona|2199",
+    ]);
+    const TRACKED_SUBURB_POSTCODES = (() => {
+      const map = new Map();
+      TRACKED_SUBURB_KEYS.forEach((key) => {
+        const [suburb, postcode] = key.split("|");
+        if (!map.has(suburb)) map.set(suburb, new Set());
+        map.get(suburb).add(postcode);
+      });
+      return map;
+    })();
 
     async function fetchJson(path) {
       const response = await fetch(path, { cache: "no-store" });
@@ -1260,10 +1458,79 @@
       return parseCsv(await fetchText(path));
     }
 
+    function buildOutageLookup(rows) {
+      const lookup = new Map();
+      rows.forEach((row) => {
+        if (!row || row.tracked_in_fuel_check !== "true" || row.is_outage !== "true") return;
+        const stationId = String(row.station_id || "").trim();
+        const fuelType = String(row.fuel_type || "").trim();
+        if (!stationId || !fuelType) return;
+        if (!lookup.has(stationId)) lookup.set(stationId, new Set());
+        lookup.get(stationId).add(fuelType);
+      });
+      return lookup;
+    }
+
     function toNumber(value) {
       if (value == null || value === "") return null;
       const num = Number(value);
       return Number.isFinite(num) ? num : null;
+    }
+
+    function normaliseTrackedSuburb(suburb) {
+      return String(suburb || "").toLowerCase().replace(/\s+/g, " ").trim();
+    }
+
+    function makeTrackedSuburbKey(suburb, postcode) {
+      const normalisedSuburb = normaliseTrackedSuburb(suburb);
+      const normalisedPostcode = String(postcode || "").trim();
+      return normalisedSuburb && normalisedPostcode ? `${normalisedSuburb}|${normalisedPostcode}` : "";
+    }
+
+    function extractTrackedKeyFromAddress(address) {
+      if (!address) return "";
+      const match = String(address).match(/,\s*([^,]+?)\s+NSW\s+(\d{4})$/i);
+      return match ? makeTrackedSuburbKey(match[1], match[2]) : "";
+    }
+
+    function extractTrackedKeysFromSuburbField(value) {
+      const keys = new Set();
+      const raw = String(value || "").trim();
+      if (!raw) return keys;
+
+      const withPostcode = raw.match(/^(.*?)\s+(?:NSW\s+)?(\d{4})$/i);
+      if (withPostcode) {
+        keys.add(makeTrackedSuburbKey(withPostcode[1], withPostcode[2]));
+      }
+
+      const suburbOnly = normaliseTrackedSuburb(withPostcode ? withPostcode[1] : raw);
+      if (suburbOnly && TRACKED_SUBURB_POSTCODES.has(suburbOnly)) {
+        TRACKED_SUBURB_POSTCODES.get(suburbOnly).forEach((postcode) => {
+          keys.add(makeTrackedSuburbKey(suburbOnly, postcode));
+        });
+      }
+
+      return keys;
+    }
+
+    function extractTrackedKeysFromRow(row) {
+      const keys = new Set();
+      [
+        extractTrackedKeyFromAddress(row.google_address_full),
+        extractTrackedKeyFromAddress(row.fc_address_full),
+        makeTrackedSuburbKey(row.fc_suburb, row.fc_postcode),
+      ].forEach((key) => {
+        if (key) keys.add(key);
+      });
+
+      extractTrackedKeysFromSuburbField(row.google_suburb).forEach((key) => keys.add(key));
+      extractTrackedKeysFromSuburbField(row.fc_suburb).forEach((key) => keys.add(key));
+
+      return [...keys];
+    }
+
+    function rowMatchesTrackedSuburb(row) {
+      return extractTrackedKeysFromRow(row).some((key) => TRACKED_SUBURB_KEYS.has(key));
     }
 
     function buildPricesFromRow(row) {
@@ -1300,11 +1567,16 @@
         source: "FuelCheck API"
       } : null;
 
+      const outageFuelTypes = row.fc_id && outageLookup.has(String(row.fc_id))
+        ? Array.from(outageLookup.get(String(row.fc_id))).sort()
+        : [];
+
       return {
         matchStatus: row.match_status,
         matchDistanceMeters: toNumber(row.match_distance_m),
         google,
-        fuelcheck
+        fuelcheck,
+        outageFuelTypes
       };
     }
 
@@ -1317,7 +1589,6 @@
     }
 
     let rawMatchedRows = [];
-    let scrapedZones = new Set();
 
     function rerender() {
       Object.values(layers).forEach((layer) => layer.clearLayers());
@@ -1336,9 +1607,15 @@
         const filteredFuelStation = filterPricesToSelected(fuelStation);
         const selectedPrices = filteredFuelStation ? filteredFuelStation.prices : [];
         const hasSelectedFuel = selectedPrices && selectedPrices.length > 0;
+        const outageFuelTypes = row.outageFuelTypes || [];
+        const hasOutages = outageFuelTypes.length > 0;
 
         if (googleStation) {
           googleTotal += 1;
+        }
+
+        if (showOnlyOutages && !hasOutages) {
+          return;
         }
 
         if (row.matchStatus === "matched") {
@@ -1349,6 +1626,7 @@
               google: googleStation,
               prices: selectedPrices,
               matchDistanceMeters: row.matchDistanceMeters,
+              outageFuelTypes,
               lat: fuelStation.lat,
               lng: fuelStation.lng
             }, "matched");
@@ -1365,6 +1643,7 @@
               google: googleStation,
               prices: [],
               matchDistanceMeters: row.matchDistanceMeters,
+              outageFuelTypes,
               lat: googleStation.lat,
               lng: googleStation.lng
             }, "gap");
@@ -1382,6 +1661,7 @@
           addMarker({
             google: googleStation,
             fuelcheck: null,
+            outageFuelTypes: [],
             lat: googleStation.lat,
             lng: googleStation.lng
           }, "gap");
@@ -1394,16 +1674,12 @@
         }
 
         if (row.matchStatus === "fuelcheck_only" && fuelStation && hasSelectedFuel) {
-          // Skip stations whose suburb hasn't been scraped
-          if (scrapedZones.size) {
-            var suburb = extractSuburb(fuelStation.address).toLowerCase();
-            if (!suburb || !scrapedZones.has(suburb)) return;
-          }
           fuelcheckOnlyCount += 1;
           addMarker({
             fuelcheck: fuelStation,
             google: null,
             prices: selectedPrices,
+            outageFuelTypes,
             lat: fuelStation.lat,
             lng: fuelStation.lng
           }, "fuelcheck");
@@ -1470,11 +1746,14 @@
         var priceMap = {};
         var prices = d.prices || (fc && fc.prices) || [];
         prices.forEach(function(p) { priceMap[p.fuel_type] = p.price; });
+        var outageFuelTypes = Array.isArray(d.outageFuelTypes) ? d.outageFuelTypes.slice() : [];
         rows.push({
           name: name, address: address, priceMap: priceMap, marker: m, type: m._stationType,
           lat: m._lat, lng: m._lng,
           suburb: extractSuburb(address),
-          hasFuelAvailable: m._stationType !== "gap" && Object.keys(priceMap).length > 0
+          hasFuelAvailable: m._stationType !== "gap" && Object.keys(priceMap).length > 0,
+          outageFuelTypes: outageFuelTypes,
+          hasOutages: outageFuelTypes.length > 0
         });
       });
       return rows;
@@ -1601,6 +1880,10 @@
               else if (price <= terciles[ft].q2) td.classList.add("price-mid");
               else td.classList.add("price-dear");
             }
+          } else if (r.outageFuelTypes.indexOf(ft) >= 0) {
+            td.textContent = "⚠️";
+            td.classList.add("price-outage");
+            td.title = "Historical outage: this station used to list " + (FUEL_COL_LABELS[ft] || ft) + " in FuelCheck, but the latest refresh does not show it.";
           } else {
             td.textContent = "-";
             td.style.color = "var(--muted)";
@@ -1631,8 +1914,9 @@
 
     async function loadApp() {
       try {
-        const [matchedRows, googleMeta, fuelcheckMeta] = await Promise.all([
+        const [matchedRows, outageRows, googleMeta, fuelcheckMeta] = await Promise.all([
           fetchCsv("data/clean/matched_stations.csv").catch(() => []),
+          fetchCsv("data/clean/fuelcheck_outages.csv").catch(() => []),
           fetchJson("data/google_meta.json").catch(() => ({})),
           fetchJson("data/fuelcheck_meta.json").catch(() => ({}))
         ]);
@@ -1642,12 +1926,11 @@
           fuelcheckMeta.last_updated
         );
 
-        // Build set of scraped zone names (normalised to lower-case, spaces)
-        (googleMeta.zones_scraped || []).forEach((z) => {
-          scrapedZones.add(z.replace(/_/g, " ").toLowerCase());
-        });
+        outageLookup = buildOutageLookup(outageRows);
 
-        rawMatchedRows = matchedRows.map(normaliseMatchRow);
+        rawMatchedRows = matchedRows
+          .filter(rowMatchesTrackedSuburb)
+          .map(normaliseMatchRow);
 
         rerender();
 
