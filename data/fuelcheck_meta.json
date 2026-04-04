@@ -1,9 +1,9 @@
 {
-  "last_updated": "2026-04-03T23:01:21.076521+00:00",
-  "total_nsw": 3252,
+  "last_updated": "2026-04-04T01:18:11.169946+00:00",
+  "total_nsw": 3251,
   "in_bounds": 704,
   "in_scraped_suburbs": 437,
   "scraped_suburb_count": 135,
   "full_output_file": "fuelcheck_stations_full.json",
-  "history_file": "fuelcheck_full_2026-04-03T230121.json"
+  "history_file": "fuelcheck_full_2026-04-04T011811.json"
 }
