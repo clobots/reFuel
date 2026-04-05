@@ -28,7 +28,7 @@ fc_id,fc_name,fc_brand,fc_brand_group,fc_address_full,fc_street,fc_suburb,fc_sta
 17143,7-Eleven Yagoona,7-Eleven,7-Eleven,"519 Hume Hwy, Yagoona NSW 2199",519 Hume Hwy,Yagoona,NSW,2199,-33.907609,151.020773,"E10,LPG,P98,PDL,U91",5,,227.9,,119.9,,253.9,308.9,229.9,false
 17146,7-Eleven Five Dock,7-Eleven,7-Eleven,"231-235 Great North Road, Five Dock NSW 2046",231-235 Great North Road,Five Dock,NSW,2046,-33.864910,151.130081,"E10,P95,P98,PDL,U91",5,,223.9,,,242.9,252.9,305.9,225.9,false
 17147,U-Go Baulkham Hills (Unmanned),U-Go,U-Go,"117 Seven Hills Rd, Baulkham Hills NSW 2153",117 Seven Hills Rd,Baulkham Hills,NSW,2153,-33.761395,150.975073,"E10,P95,P98,PDL,U91",5,,223.9,,,241.9,250.8,301.9,225.9,false
-17162,Budget Petroleum Smithfield,Budget,Budget,"729 The Horsley Dr, Smithfield NSW 2164",729 The Horsley Dr,Smithfield,NSW,2164,-33.852266,150.935734,"DL,E10,LPG,P98,U91",5,309.9,226.9,,119.9,,254.5,,228.9,false
+17162,Budget Petroleum Smithfield,Budget,Budget,"729 The Horsley Dr, Smithfield NSW 2164",729 The Horsley Dr,Smithfield,NSW,2164,-33.852266,150.935734,"DL,E10,LPG,P98,U91",5,315.9,226.9,,165.9,,254.5,,228.9,false
 17165,Ampol Foodary Rydalmere,Ampol Foodary,Ampol,"309 Victoria Rd, Rydalmere NSW 2116",309 Victoria Rd,Rydalmere,NSW,2116,-33.811960,151.037117,"P95,P98,PDL,U91",4,,,,,243.9,252.9,313.4,227.9,false
 17232,Metro Willoughby,Metro Fuel,Metro,"599 Willoughby Rd, Willoughby NSW 2068",599 Willoughby Rd,Willoughby,NSW,2068,-33.803882,151.199745,"E10,P98,PDL",3,,229.9,,,,260.9,305.9,,false
 17236,Ampol Foodary Guildford,Ampol Foodary,Ampol,"636-644 Woodville Rd, Old Guildford NSW 2161",636-644 Woodville Rd,Old Guildford,NSW,2161,-33.866504,150.988145,"P95,P98,PDL,U91",4,,,,,243.9,252.9,309.4,227.9,false
@@ -73,7 +73,7 @@ fc_id,fc_name,fc_brand,fc_brand_group,fc_address_full,fc_street,fc_suburb,fc_sta
 18616,Metro Fuel Croydon Park,Metro Fuel,Metro,"274 Georges River Rd, Croydon Park NSW 2133",274 Georges River Rd,Croydon Park,NSW,2133,-33.896926,151.103217,"E10,LPG,P98,PDL,U91",5,,224.9,,89.9,,246.9,307.9,226.9,false
 18628,Enhance Eastwood,Enhance,Enhance,"2 Lovell Rd, Eastwood NSW 2122",2 Lovell Rd,Eastwood,NSW,2122,-33.791629,151.089544,"E10,P98,PDL,U91",4,,218.9,,,,245.9,305.9,220.9,false
 18652,Enhance Camellia,Enhance,Enhance,"17 Grand Av, Camellia NSW 2142",17 Grand Av,Camellia,NSW,2142,-33.820505,151.035636,DL,1,325.9,,,,,,,,false
-18658,Budget Petrol Telopea,Budget,Budget,"57 Adderton Rd, Telopea NSW 2117",57 Adderton Rd,Telopea,NSW,2117,-33.793476,151.041268,"E10,P95,PDL,U91",4,,227.3,,,245.3,,303.3,229.3,false
+18658,Budget Petrol Telopea,Budget,Budget,"57 Adderton Rd, Telopea NSW 2117",57 Adderton Rd,Telopea,NSW,2117,-33.793476,151.041268,"E10,P95,PDL,U91",4,,221.3,,,239.3,,301.3,223.3,false
 18670,Metro Petroleum Leichhardt,Metro Fuel,Metro,"127-129 Marion St, Leichhardt NSW 2040",127-129 Marion St,Leichhardt,NSW,2040,-33.883940,151.150779,"DL,E10,P98,PDL,U91",5,319.9,225.7,,,,269.9,319.9,229.5,false
 18706,Metro Greenacre,Metro Fuel,Metro,"1 David St, Greenacre NSW 2190",1 David St,Greenacre,NSW,2190,-33.896403,151.059272,"DL,P95,P98,PDL,U91",5,307.9,,,,233.9,243.9,307.9,209.9,false
 19018,Metro Villawood,Metro Fuel,Metro,"276 Miller Rd, Villawood NSW 2163",276 Miller Rd,Villawood,NSW,2163,-33.887614,150.992089,"E10,P95,P98,PDL,U91",5,,227.8,,,244.8,249.8,315.8,229.8,false
@@ -129,7 +129,7 @@ fc_id,fc_name,fc_brand,fc_brand_group,fc_address_full,fc_street,fc_suburb,fc_sta
 291,Shell Reddy Express Cremorne,Reddy Express,Shell,"227 Military Rd, Cremorne NSW 2090",227 Military Rd,Cremorne,NSW,2090,-33.830574,151.226235,"DL,E10,P95,P98",4,309.9,221.5,,,239.0,248.5,,,false
 292,7-Eleven Strathfield South,7-Eleven,7-Eleven,"575-585 Liverpool Road, Strathfield South NSW 2136",575-585 Liverpool Road,Strathfield South,NSW,2136,-33.887371,151.074269,"E10,P95,P98,PDL,U91",5,,225.9,,,242.9,251.9,307.9,227.9,false
 295,7-Eleven Turramurra,7-Eleven,7-Eleven,"1408 Pacific Highway (Corner Duff Street), Turramurra NSW 2074",1408 Pacific Highway (Corner Duff Street),Turramurra,NSW,2074,-33.733062,151.126513,"E10,LPG,P95,P98,PDL,U91",6,,222.9,,108.9,242.9,252.9,307.9,224.9,false
-296,7-Eleven Wahroonga,7-Eleven,7-Eleven,"1579 Pacific Highway (Corner Redleaf Avenue), Wahroonga NSW 2076",1579 Pacific Highway (Corner Redleaf Avenue),Wahroonga,NSW,2076,-33.719857,151.116805,"E10,P95,P98,PDL,U91",5,,221.5,,,242.5,252.5,304.9,223.5,false
+296,7-Eleven Wahroonga,7-Eleven,7-Eleven,"1579 Pacific Highway (Corner Redleaf Avenue), Wahroonga NSW 2076",1579 Pacific Highway (Corner Redleaf Avenue),Wahroonga,NSW,2076,-33.719857,151.116805,"E10,P95,P98,PDL,U91",5,,221.5,,,242.5,252.5,313.9,223.5,false
 300,BP Mosman (0926),BP,BP,"Cnr Avenue & Cowles Roads, Mosman NSW 2088",Cnr Avenue & Cowles Roads,Mosman,NSW,2088,-33.832039,151.237292,"E10,P95,PDL",3,,221.9,,,237.9,,304.9,,false
 301,BP Naremburn,BP,BP,"169 Willoughby Road, Naremburn NSW 2065",169 Willoughby Road,Naremburn,NSW,2065,-33.820024,151.201159,"P95,P98,PDL",3,,,,,239.9,248.9,304.9,,false
 302,Shell Reddy Express Hunters Hill,Reddy Express,Shell,"4 Ryde Rd, Hunters Hill NSW 2110",4 Ryde Rd,Hunters Hill,NSW,2110,-33.831761,151.141656,"DL,P95,P98,U91",4,309.9,,,,241.0,250.5,,223.5,false
