@@ -1,7 +1,7 @@
 fc_id,fc_name,fc_brand,fc_brand_group,fc_address_full,fc_street,fc_suburb,fc_state,fc_postcode,fc_lat,fc_lng,fc_fuel_types,fc_num_fuel_types,fc_price_DL_cents,fc_price_E10_cents,fc_price_E85_cents,fc_price_LPG_cents,fc_price_P95_cents,fc_price_P98_cents,fc_price_PDL_cents,fc_price_U91_cents,fc_has_price_outlier
 2129,EG Ampol West Ryde,EG Ampol,Ampol,"924 Victoria Rd, West Ryde NSW 2114",924 Victoria Rd,West Ryde,NSW,2114,-33.810887,151.093485,"E10,P95,P98,PDL,U91",5,,222.2,,,239.2,248.2,307.9,224.2,false
 2141,Powerfuel,Powerfuel,Powerfuel,"101 Blaxcell St, Granville NSW 2142",101 Blaxcell St,Granville,NSW,2142,-33.842551,151.010602,"DL,E10,P95,U91",4,295.9,225.5,,,255.5,,,227.5,false
-2204,Ampol Foodary Concord,Ampol Foodary,Ampol,"87-89 Parramatta Rd, Concord NSW 2137",87-89 Parramatta Rd,Concord,NSW,2137,-33.867895,151.099444,"PDL,U91",2,,,,,,,309.4,227.9,false
+2204,Ampol Foodary Concord,Ampol Foodary,Ampol,"87-89 Parramatta Rd, Concord NSW 2137",87-89 Parramatta Rd,Concord,NSW,2137,-33.867895,151.099444,"P95,P98,PDL,U91",4,,,,,243.9,252.9,309.4,227.9,false
 2221,BP Guildford,BP,BP,"257 Guildford Rd, Guildford NSW 2161",257 Guildford Rd,Guildford,NSW,2161,-33.854370,150.988836,"DL,E10,P98,PDL,U91",5,302.5,227.5,,,,258.5,304.5,229.5,false
 2242,Metro Petroleum Chester Hill,Metro Fuel,Metro,"172 Hector St, Chester Hill NSW 2162",172 Hector St,Chester Hill,NSW,2162,-33.888900,151.005411,"E10,P98,PDL,U91",4,,227.5,,,,255.5,309.5,229.5,false
 2240,BP Haberfield,BP,BP,"95-97 Ramsay St, Haberfield NSW 2045",95-97 Ramsay St,Haberfield,NSW,2045,-33.881623,151.140229,"E10,P98,PDL,U91",4,,225.9,,,,253.9,309.9,228.9,false
@@ -14,7 +14,7 @@ fc_id,fc_name,fc_brand,fc_brand_group,fc_address_full,fc_street,fc_suburb,fc_sta
 2452,Metro Yagoona,Metro Fuel,Metro,"585 Hume Hwy, Yagoona NSW 2199",585 Hume Hwy,Yagoona,NSW,2199,-33.906106,151.014058,"E10,P95,P98,PDL,U91",5,,220.7,,,235.7,245.7,302.7,222.7,false
 2608,Ampol Foodary Thornleigh,Ampol Foodary,Ampol,"200-202 Pennant Hills Road, Thornleigh NSW 2120",200-202 Pennant Hills Road,Thornleigh,NSW,2120,-33.726600,151.083630,"E10,P95,P98,PDL,U91",5,,225.9,,,243.9,252.9,303.4,227.9,false
 2711,BP Silverwater South,BP,BP,"51 Egerton St, Silverwater NSW 2128",51 Egerton St,Silverwater,NSW,2128,-33.836306,151.047890,"E10,LPG,P98,PDL,U91",5,,222.9,,104.9,,249.9,309.9,224.9,false
-2714,Speedway Cammeray,Speedway,Speedway,"330 Miller St, Cammeray NSW 2062",330 Miller St,Cammeray,NSW,2062,-33.828713,151.208810,"DL,P98,U91",3,302.9,,,,,252.9,,227.9,false
+2714,Speedway Cammeray,Speedway,Speedway,"330 Miller St, Cammeray NSW 2062",330 Miller St,Cammeray,NSW,2062,-33.828713,151.208810,"DL,P98,U91",3,306.9,,,,,252.9,,227.9,false
 8282,Speedway South Granville,Speedway,Speedway,"171 Clyde St, South Granville NSW 2142",171 Clyde St,South Granville,NSW,2142,-33.847465,151.012920,"DL,E10,P98,U91",4,310.5,220.5,,,,247.5,,222.5,false
 16908,Ampol Foodary Merrylands,Ampol Foodary,Ampol,"150 Woodville Rd, Merrylands NSW 2160",150 Woodville Rd,Merrylands,NSW,2160,-33.838025,150.999690,"E10,P95,P98,PDL,U91",5,,225.9,,,243.9,252.9,296.4,227.9,false
 16909,Ampol Foodary Alexandria,Ampol Foodary,Ampol,"133 Wyndham Street, Alexandria NSW 2015",133 Wyndham Street,Alexandria,NSW,2015,-33.902032,151.200054,"E10,P95,P98,PDL,U91",5,,225.9,,,243.9,252.9,303.4,227.9,false
@@ -32,7 +32,7 @@ fc_id,fc_name,fc_brand,fc_brand_group,fc_address_full,fc_street,fc_suburb,fc_sta
 17165,Ampol Foodary Rydalmere,Ampol Foodary,Ampol,"309 Victoria Rd, Rydalmere NSW 2116",309 Victoria Rd,Rydalmere,NSW,2116,-33.811960,151.037117,"P95,P98,PDL,U91",4,,,,,243.9,252.9,313.4,227.9,false
 17232,Metro Willoughby,Metro Fuel,Metro,"599 Willoughby Rd, Willoughby NSW 2068",599 Willoughby Rd,Willoughby,NSW,2068,-33.803882,151.199745,"E10,P98,PDL",3,,229.9,,,,260.9,305.9,,false
 17236,Ampol Foodary Guildford,Ampol Foodary,Ampol,"636-644 Woodville Rd, Old Guildford NSW 2161",636-644 Woodville Rd,Old Guildford,NSW,2161,-33.866504,150.988145,"P95,P98,PDL,U91",4,,,,,243.9,252.9,309.4,227.9,false
-17240,Metro Fuel,Metro Fuel,Metro,"36-38 Lane Cove Rd, Ryde NSW 2112",36-38 Lane Cove Rd,Ryde,NSW,2112,-33.807511,151.108604,"E10,P98,PDL,U91",4,,220.9,,,,247.9,307.9,222.9,false
+17240,Metro Fuel,Metro Fuel,Metro,"36-38 Lane Cove Rd, Ryde NSW 2112",36-38 Lane Cove Rd,Ryde,NSW,2112,-33.807511,151.108604,"E10,P98,PDL,U91",4,,219.9,,,,247.9,307.9,222.9,false
 17269,Ampol Foodary Homebush,Ampol Foodary,Ampol,"334-336 Parramatta Rd, Homebush West NSW 2140",334-336 Parramatta Rd,Homebush West,NSW,2140,-33.858167,151.068139,"E10,P98,PDL,U91",4,,225.9,,,,252.9,312.4,227.9,false
 17270,Speedway Kent Road,Speedway,Speedway,"38 Kent Rd, North Ryde NSW 2113",38 Kent Rd,North Ryde,NSW,2113,-33.791687,151.115981,"DL,E10,P98,U91",4,306.5,220.5,,,,249.5,,222.5,false
 17278,EG Ampol Silverwater,EG Ampol,Ampol,"154 Silverwater Rd, Silverwater NSW 2128",154 Silverwater Rd,Silverwater,NSW,2128,-33.831671,151.048545,"E10,P95,P98,PDL,U91",5,,222.2,,,239.2,248.2,307.9,224.2,false
@@ -43,7 +43,7 @@ fc_id,fc_name,fc_brand,fc_brand_group,fc_address_full,fc_street,fc_suburb,fc_sta
 17345,BP Fairfield,BP,BP,"183 The Horsley Drive, Fairfield East NSW 2165",183 The Horsley Drive,Fairfield East,NSW,2165,-33.877840,150.966162,"DL,P95,P98,PDL,U91",5,303.8,,,,235.8,245.8,305.8,215.8,false
 17362,Ampol Foodary Croydon,Ampol Foodary,Ampol,"404-410 Liverpool Rd, Croydon NSW 2132",404-410 Liverpool Rd,Croydon,NSW,2132,-33.888472,151.115729,"E10,P95,P98,PDL,U91",5,,225.9,,,243.9,252.9,298.4,227.9,false
 17581,Ampol Foodary Five Dock,Ampol Foodary,Ampol,"Ramsay Rd & Fairlight Street, Five Dock NSW 2046",Ramsay Rd & Fairlight Street,Five Dock,NSW,2046,-33.870023,151.130434,"PDL,U91",2,,,,,,,313.4,227.9,false
-17806,Budget Petrol Lewisham,Budget,Budget,"204-208 New Canterbury Rd, Lewisham NSW 2049",204-208 New Canterbury Rd,Lewisham,NSW,2049,-33.897098,151.149028,"E10,E85,LPG,P95,P98,PDL,U91",7,,237.7,475.0,99.7,254.7,261.7,310.7,240.7,true
+17806,Budget Petrol Lewisham,Budget,Budget,"204-208 New Canterbury Rd, Lewisham NSW 2049",204-208 New Canterbury Rd,Lewisham,NSW,2049,-33.897098,151.149028,"E10,E85,LPG,P95,P98,PDL,U91",7,,227.7,475.0,99.7,244.7,251.7,309.7,230.7,true
 17975,BP Fox Hills,BP,BP,"152 Toongabbie Rd, Girraween NSW 2145",152 Toongabbie Rd,Girraween,NSW,2145,-33.795640,150.939075,"P98,PDL,U91",3,,,,,,284.9,321.9,259.9,false
 17977,Coles Express Lansvale West,Coles Express,Ampol,"240 Hume Highway, Lansvale NSW 2166",240 Hume Highway,Lansvale,NSW,2166,-33.897960,150.952614,"E10,P95,P98,U91",4,,221.5,,,241.0,250.5,,223.5,false
 17991,Metro Wakeley,Metro Fuel,Metro,"72 Thorney Rd, Fairfield West NSW 2165",72 Thorney Rd,Fairfield West,NSW,2165,-33.873668,150.924193,"E10,P98,PDL,U91",4,,226.5,,,,254.5,309.5,228.5,false
@@ -59,7 +59,7 @@ fc_id,fc_name,fc_brand,fc_brand_group,fc_address_full,fc_street,fc_suburb,fc_sta
 18249,Ampol Foodary Crows Nest,Ampol Foodary,Ampol,"111-121 Falcon Street, Crows Nest NSW 2065",111-121 Falcon Street,Crows Nest,NSW,2065,-33.828680,151.206030,"E10,P95,P98,PDL,U91",5,,225.9,,,243.9,252.9,312.4,227.9,false
 18253,Ampol Foodary St Ives,Ampol Foodary,Ampol,"164 Mona Vale Road, St Ives NSW 2075",164 Mona Vale Road,St Ives,NSW,2075,-33.730732,151.157048,"E10,P95,P98,PDL,U91",5,,225.9,,,243.9,252.9,303.4,227.9,false
 18264,Ampol Foodary Lane Cove West,Ampol Foodary,Ampol,"Unit 1 237-245 Burns Bay Rd, Lane Cove West NSW 2066",Unit 1 237-245 Burns Bay Rd,Lane Cove West,NSW,2066,-33.816452,151.151394,"E10,P95,P98,PDL,U91",5,,225.9,,,243.9,252.9,300.4,227.9,false
-18286,Metro Petroleum Epping,Metro Fuel,Metro,"30 Bridge St, Epping NSW 2121",30 Bridge St,Epping,NSW,2121,-33.774806,151.079736,"P95,P98,PDL,U91",4,,,,,235.9,245.9,312.9,223.9,false
+18286,Metro Petroleum Epping,Metro Fuel,Metro,"30 Bridge St, Epping NSW 2121",30 Bridge St,Epping,NSW,2121,-33.774806,151.079736,"P95,P98,PDL,U91",4,,,,,235.9,245.9,309.9,223.9,false
 18342,Shell Parramatta Cvro (Self-Serve),Shell,Shell,"1 Durham St, Rosehill NSW 2142",1 Durham St,Rosehill,NSW,2142,-33.824103,151.037335,DL,1,296.9,,,,,,,,false
 18422,Speedway Roseville,Speedway,Speedway,"20-22 Babbage Rd, Roseville NSW 2069",20-22 Babbage Rd,Roseville,NSW,2069,-33.778021,151.194555,"E10,P98,PDL,U91",4,,220.5,,,,259.5,309.5,222.5,false
 18444,BP Smithfield NSW,BP,BP,"846 The Horsley Drive, Smithfield NSW 2164",846 The Horsley Drive,Smithfield,NSW,2164,-33.851569,150.925684,"E10,P98,U91",3,,239.9,,,,269.9,,242.9,false
@@ -68,16 +68,16 @@ fc_id,fc_name,fc_brand,fc_brand_group,fc_address_full,fc_street,fc_suburb,fc_sta
 18492,Metro Rozelle,Metro Fuel,Metro,"127 Victoria Rd, Rozelle NSW 2039",127 Victoria Rd,Rozelle,NSW,2039,-33.862044,151.167670,"E10,P98,PDL,U91",4,,220.7,,,,248.7,307.7,222.7,false
 18514,Shell Lane Cove,Shell,Shell,"254 Burns Bay Rd, Lane Cove NSW 2066",254 Burns Bay Rd,Lane Cove,NSW,2066,-33.817191,151.151876,"P95,P98,PDL,U91",4,,,,,239.0,248.5,304.9,223.5,false
 18533,Metro Canley Heights,Metro Fuel,Metro,"190 Canley Vale Rd, Canley Heights NSW 2166",190 Canley Vale Rd,Canley Heights,NSW,2166,-33.884527,150.928557,"E10,P98,PDL,U91",4,,227.9,,,,254.9,309.9,229.9,false
-18584,Shell Croydon,Shell,Shell,"418-424 Liverpool Rd, Croydon NSW 2132",418-424 Liverpool Rd,Croydon,NSW,2132,-33.888152,151.115062,"E10,P98,PDL,U91",4,,224.9,,,,246.9,305.9,226.9,false
+18584,Shell Croydon,Shell,Shell,"418-424 Liverpool Rd, Croydon NSW 2132",418-424 Liverpool Rd,Croydon,NSW,2132,-33.888152,151.115062,"E10,P98,PDL,U91",4,,224.9,,,,246.9,307.9,226.9,false
 18609,Jack & Co Lane Cove,Independent,Independent,"203 Burns Bay Rd, Lane Cove NSW 2066",203 Burns Bay Rd,Lane Cove,NSW,2066,-33.814598,151.154353,"E10,P98,PDL,U91",4,,229.5,,,,259.5,309.5,233.5,false
 18616,Metro Fuel Croydon Park,Metro Fuel,Metro,"274 Georges River Rd, Croydon Park NSW 2133",274 Georges River Rd,Croydon Park,NSW,2133,-33.896926,151.103217,"E10,LPG,P98,PDL,U91",5,,224.9,,89.9,,246.9,307.9,226.9,false
-18628,Enhance Eastwood,Enhance,Enhance,"2 Lovell Rd, Eastwood NSW 2122",2 Lovell Rd,Eastwood,NSW,2122,-33.791629,151.089544,"E10,P98,PDL,U91",4,,220.9,,,,247.9,307.9,222.9,false
+18628,Enhance Eastwood,Enhance,Enhance,"2 Lovell Rd, Eastwood NSW 2122",2 Lovell Rd,Eastwood,NSW,2122,-33.791629,151.089544,"E10,P98,PDL,U91",4,,219.9,,,,246.9,306.9,221.9,false
 18652,Enhance Camellia,Enhance,Enhance,"17 Grand Av, Camellia NSW 2142",17 Grand Av,Camellia,NSW,2142,-33.820505,151.035636,DL,1,325.9,,,,,,,,false
 18658,Budget Petrol Telopea,Budget,Budget,"57 Adderton Rd, Telopea NSW 2117",57 Adderton Rd,Telopea,NSW,2117,-33.793476,151.041268,"E10,P95,PDL,U91",4,,227.3,,,245.3,,303.3,229.3,false
 18670,Metro Petroleum Leichhardt,Metro Fuel,Metro,"127-129 Marion St, Leichhardt NSW 2040",127-129 Marion St,Leichhardt,NSW,2040,-33.883940,151.150779,"DL,E10,P98,PDL,U91",5,319.9,225.7,,,,269.9,319.9,229.5,false
 18706,Metro Greenacre,Metro Fuel,Metro,"1 David St, Greenacre NSW 2190",1 David St,Greenacre,NSW,2190,-33.896403,151.059272,"DL,P95,P98,PDL,U91",5,307.9,,,,233.9,243.9,307.9,209.9,false
 19018,Metro Villawood,Metro Fuel,Metro,"276 Miller Rd, Villawood NSW 2163",276 Miller Rd,Villawood,NSW,2163,-33.887614,150.992089,"E10,P95,P98,PDL,U91",5,,227.8,,,244.8,249.8,315.8,229.8,false
-19642,Metro Petroleum Thornleigh,Metro Fuel,Metro,"169-171 Pennant Hills Rd, Thornleigh NSW 2120",169-171 Pennant Hills Rd,Thornleigh,NSW,2120,-33.724925,151.088261,"DL,E10,P98,PDL,U91",5,299.9,199.9,,,,249.9,299.9,222.9,false
+19642,Metro Petroleum Thornleigh,Metro Fuel,Metro,"169-171 Pennant Hills Rd, Thornleigh NSW 2120",169-171 Pennant Hills Rd,Thornleigh,NSW,2120,-33.724925,151.088261,"DL,E10,P98,PDL,U91",5,303.9,199.9,,,,249.9,303.9,222.9,false
 19784,Metro Petroleum Birrong,Metro Fuel,Metro,"158 Auburn Rd, Birrong NSW 2143",158 Auburn Rd,Birrong,NSW,2143,-33.897470,151.021220,"E10,P95,P98,PDL,U91",5,,227.9,,,245.9,253.9,311.9,228.9,false
 12,Shell Reddy Express Lansvale,Reddy Express,Shell,"65-99 Hume Highway, Canley Vale NSW 2166",65-99 Hume Highway,Canley Vale,NSW,2166,-33.893006,150.960593,"E10,P98",2,,221.5,,,,248.5,,,false
 34,Shell Reddy Express Chatswood,Reddy Express,Shell,"877-879 Pacific Hwy, Chatswood NSW 2067",877-879 Pacific Hwy,Chatswood,NSW,2067,-33.791717,151.180472,"DL,E10,P95,P98,U91",5,304.9,221.5,,,241.0,250.5,,223.5,false
@@ -144,7 +144,7 @@ fc_id,fc_name,fc_brand,fc_brand_group,fc_address_full,fc_street,fc_suburb,fc_sta
 348,BP Camperdown,BP,BP,"Cnr Parramatta & Missenden Roads, Camperdown NSW 2050",Cnr Parramatta & Missenden Roads,Camperdown,NSW,2050,-33.886251,151.179144,"P95,P98,PDL,U91",4,,,,,239.9,248.9,304.9,223.9,false
 355,BP Rosehill,BP,BP,"Cnr Hassall & James Ruse Drive, Rosehill NSW 2142",Cnr Hassall & James Ruse Drive,Rosehill,NSW,2142,-33.819266,151.021834,"E10,P95,P98,PDL",4,,221.9,,,240.9,249.9,303.9,,false
 356,BP Rozelle,BP,BP,"Cnr Victoria Rd & Evans St, Rozelle NSW 2039",Cnr Victoria Rd & Evans St,Rozelle,NSW,2039,-33.865443,151.172119,"P95,P98,PDL,U91",4,,,,,239.9,248.9,304.9,223.9,false
-359,BP Seven Hills,BP,BP,"Abbott Road, Seven Hills NSW 2147",Abbott Road,Seven Hills,NSW,2147,-33.767172,150.950230,"P98,PDL",2,,,,,,250.9,298.9,,false
+359,BP Seven Hills,BP,BP,"Abbott Road, Seven Hills NSW 2147",Abbott Road,Seven Hills,NSW,2147,-33.767172,150.950230,"P98,PDL",2,,,,,,250.9,304.9,,false
 362,BP Thornleigh,BP,BP,"Pennant Hills Rd & Parkes St, Thornleigh NSW 2120",Pennant Hills Rd & Parkes St,Thornleigh,NSW,2120,-33.730900,151.080610,"P95,P98,PDL,U91",4,,,,,241.9,250.9,304.9,223.9,false
 365,BP Woollahra,BP,BP,"39 Vernon Street, Woollahra NSW 2025",39 Vernon Street,Woollahra,NSW,2025,-33.889907,151.247435,"E10,P95,P98,PDL",4,,221.9,,,240.9,249.9,304.9,,false
 369,Coles Express Greenacre,Coles Express,Ampol,"9-11 Roberts Road, Greenacre NSW 2190",9-11 Roberts Road,Greenacre,NSW,2190,-33.894346,151.066705,"DL,E10,P95,P98,U91",5,304.9,221.5,,,241.0,250.5,,223.5,false
@@ -171,7 +171,7 @@ fc_id,fc_name,fc_brand,fc_brand_group,fc_address_full,fc_street,fc_suburb,fc_sta
 582,EG Ampol Chester Hill,EG Ampol,Ampol,"35 Woodville Road (Cnr Alpha), Chester Hill NSW 2162",35 Woodville Road (Cnr Alpha),Chester Hill,NSW,2162,-33.866702,150.988670,"E10,P95,P98,PDL,U91",5,,222.2,,,240.2,249.2,307.9,224.2,false
 591,Shell Reddy Express Thornleigh,Reddy Express,Shell,"188-190 Pennant Hills Rd, Thornleigh NSW 2120",188-190 Pennant Hills Rd,Thornleigh,NSW,2120,-33.725031,151.085021,"E10,P95,P98,U91",4,,221.5,,,241.0,250.5,,223.5,false
 600,EG Ampol Lewisham,EG Ampol,Ampol,"774 Parramatta Road, Lewisham NSW 2049",774 Parramatta Road,Lewisham,NSW,2049,-33.890314,151.147982,"E10,P95,P98,PDL,U91",5,,221.9,,,238.9,247.9,307.9,223.9,false
-602,Shell Reddy Express Wahroonga,Reddy Express,Shell,"1601 Pacific Hwy & Coonanbarra Rd, Wahroonga NSW 2076",1601 Pacific Hwy & Coonanbarra Rd,Wahroonga,NSW,2076,-33.719557,151.115880,"E10,P95,PDL,U91",4,,221.5,,,241.0,,308.9,223.5,false
+602,Shell Reddy Express Wahroonga,Reddy Express,Shell,"1601 Pacific Hwy & Coonanbarra Rd, Wahroonga NSW 2076",1601 Pacific Hwy & Coonanbarra Rd,Wahroonga,NSW,2076,-33.719557,151.115880,"E10,P95,P98,PDL,U91",5,,221.5,,,241.0,250.5,308.9,223.5,false
 609,EG Ampol Bass Hill,EG Ampol,Ampol,"862 Hume Highway, Bass Hill NSW 2197",862 Hume Highway,Bass Hill,NSW,2197,-33.901064,150.999178,"E10,P95,P98,PDL,U91",5,,222.2,,,240.2,244.2,307.9,224.2,false
 613,Shell Reddy Express St Ives,Reddy Express,Shell,"179-181 Mona Vale Rd, St Ives NSW 2075",179-181 Mona Vale Rd,St Ives,NSW,2075,-33.731206,151.157571,"E10,P95,P98,PDL,U91",5,,221.5,,,241.0,250.5,308.9,223.5,false
 614,EG Ampol Seven Hills,EG Ampol,Ampol,"240 Prospect Highway, Seven Hills NSW 2147",240 Prospect Highway,Seven Hills,NSW,2147,-33.776264,150.933269,"E10,P95,P98,PDL,U91",5,,222.2,,,240.2,248.2,307.9,224.2,false
@@ -196,13 +196,13 @@ fc_id,fc_name,fc_brand,fc_brand_group,fc_address_full,fc_street,fc_suburb,fc_sta
 924,Shell Reddy Express North Ryde,Reddy Express,Shell,"275 Lane Cove Rd, North Ryde NSW 2113",275 Lane Cove Rd,North Ryde,NSW,2113,-33.785039,151.128758,"E10,P95,P98,U91",4,,221.5,,,241.0,250.5,,223.5,false
 942,Ampol Foodary Chatswood,Ampol Foodary,Ampol,"572 Pacific Hwy, Chatswood NSW 2067",572 Pacific Hwy,Chatswood,NSW,2067,-33.803715,151.179001,"E10,P95,P98,PDL,U91",5,,225.9,,,243.9,252.9,313.4,227.9,false
 975,Apex Petroleum Villawood,Independent,Independent,"896A Woodville Rd, Villawood NSW 2163",896A Woodville Rd,Villawood,NSW,2163,-33.883891,150.976027,"E10,P95,P98,PDL,U91",5,,215.7,,,227.7,239.7,298.7,217.7,false
-1003,Shell Yagoona,Shell,Shell,"740 Hume Highway, Yagoona NSW 2199",740 Hume Highway,Yagoona,NSW,2199,-33.904856,151.011464,"DL,E10,P95,P98,PDL,U91",6,311.9,220.9,,,239.9,243.9,313.9,222.9,false
-1005,Metro Fuel Greystanes,Metro Fuel,Metro,"73 Ettalong Rd, Greystanes NSW 2145",73 Ettalong Rd,Greystanes,NSW,2145,-33.818292,150.951550,"E10,P98,PDL,U91",4,,221.3,,,,247.3,304.3,223.3,false
-1046,Metro Fuel Canterbury,Metro Fuel,Metro,"280 Canterbury Road, Canterbury NSW 2193",280 Canterbury Road,Canterbury,NSW,2193,-33.914023,151.115187,"E10,P98,PDL,U91",4,,220.5,,,,249.5,309.9,224.5,false
-1086,Apex Petroleum (West Ryde),Independent,Independent,"898-902 Victoria Rd, West Ryde NSW 2114",898-902 Victoria Rd,West Ryde,NSW,2114,-33.811860,151.094724,"E10,P95,P98,PDL,U91",5,,215.7,,,227.7,239.7,297.7,217.7,false
+1003,Shell Yagoona,Shell,Shell,"740 Hume Highway, Yagoona NSW 2199",740 Hume Highway,Yagoona,NSW,2199,-33.904856,151.011464,"DL,E10,P95,P98,PDL,U91",6,309.9,220.9,,,239.9,243.9,311.9,222.9,false
+1005,Metro Fuel Greystanes,Metro Fuel,Metro,"73 Ettalong Rd, Greystanes NSW 2145",73 Ettalong Rd,Greystanes,NSW,2145,-33.818292,150.951550,"E10,P98,PDL,U91",4,,219.3,,,,247.3,304.3,220.3,false
+1046,Metro Fuel Canterbury,Metro Fuel,Metro,"280 Canterbury Road, Canterbury NSW 2193",280 Canterbury Road,Canterbury,NSW,2193,-33.914023,151.115187,"E10,P98,PDL,U91",4,,220.5,,,,249.5,308.9,224.5,false
+1086,Apex Petroleum (West Ryde),Independent,Independent,"898-902 Victoria Rd, West Ryde NSW 2114",898-902 Victoria Rd,West Ryde,NSW,2114,-33.811860,151.094724,"E10,P95,P98,PDL,U91",5,,215.7,,,230.7,239.7,297.7,217.7,false
 1089,Metro Lane Cove North,Metro Fuel,Metro,"533 Mowbray Rd West, Lane Cove North NSW 2066",533 Mowbray Rd West,Lane Cove North,NSW,2066,-33.805971,151.166274,"DL,E10,P98,PDL,U91",5,319.5,225.7,,,,269.9,319.5,227.7,false
 1109,Ampol Auburn,Ampol,Ampol,"179 Parramatta Road, Auburn NSW 2144",179 Parramatta Road,Auburn,NSW,2144,-33.841080,151.035998,"DL,E10,LPG,P95,P98,PDL,U91",7,313.9,227.7,,108.9,243.7,253.7,315.9,229.7,false
-1152,BP North Willoughby,BP,BP,"157 Penshurst Street, Willoughby NSW 2068",157 Penshurst Street,Willoughby,NSW,2068,-33.797944,151.198197,"E10,P95,P98,PDL",4,,245.9,,,260.9,270.9,310.9,,false
+1152,BP North Willoughby,BP,BP,"157 Penshurst Street, Willoughby NSW 2068",157 Penshurst Street,Willoughby,NSW,2068,-33.797944,151.198197,"E10,P95,P98,PDL",4,,227.9,,,260.9,270.9,310.9,,false
 1175,Speedway Westmead,Speedway,Speedway,"67-69 Hawkesbury Rd, Westmead NSW 2145",67-69 Hawkesbury Rd,Westmead,NSW,2145,-33.813346,150.985710,"DL,E10,P98,U91",4,319.5,220.5,,,,247.5,,222.5,false
 1198,BP Denistone East,BP,BP,"295 Quarry Rd, Denistone East NSW 2112",295 Quarry Rd,Denistone East,NSW,2112,-33.795773,151.102887,"E10,P95,P98,PDL,U91",5,,227.9,,,252.9,253.9,309.9,229.9,false
 1206,BP Enfield,BP,BP,"184 Liverpool Road, Enfield NSW 2136",184 Liverpool Road,Enfield,NSW,2136,-33.887232,151.097782,"E10,P98,PDL",3,,239.9,,,,268.9,319.9,,false
@@ -215,26 +215,26 @@ fc_id,fc_name,fc_brand,fc_brand_group,fc_address_full,fc_street,fc_suburb,fc_sta
 1311,Budget Petrol,Budget,Budget,"37 Crystal St., Petersham NSW 2049",37 Crystal St.,Petersham,NSW,2049,-33.890509,151.158759,"E10,P95,P98,PDL,U91",5,,227.9,,,244.9,252.9,310.9,230.9,false
 1334,Speedway Regents Park,Speedway,Speedway,"27-29 Amy Steet, Regents Park NSW 2143",27-29 Amy Steet,Regents Park,NSW,2143,-33.883705,151.026875,"DL,E10,P98,U91",4,309.9,227.9,,,,259.9,,229.9,false
 1344,Budget Erskineville,Budget,Budget,"25-33 Erskineville Road, Erskineville NSW 2043",25-33 Erskineville Road,Erskineville,NSW,2043,-33.898772,151.182321,"E10,P98,PDL,U91",4,,229.9,,,,252.9,317.9,232.9,false
-1367,Budget Granville,Budget,Budget,"27 Woodville Rd, Granville NSW 2142",27 Woodville Rd,Granville,NSW,2142,-33.830990,151.004080,"E10,P95,P98,PDL,U91",5,,229.9,,,248.9,255.9,309.9,231.9,false
+1367,Budget Granville,Budget,Budget,"27 Woodville Rd, Granville NSW 2142",27 Woodville Rd,Granville,NSW,2142,-33.830990,151.004080,"E10,P95,P98,PDL,U91",5,,224.9,,,239.9,249.9,304.9,226.9,false
 1377,Metro Fuel Hornsby,Metro Fuel,Metro,"275 Pacific Highway, Hornsby NSW 2077",275 Pacific Highway,Hornsby,NSW,2077,-33.690987,151.099631,"E10,P98,PDL,U91",4,,220.7,,,,247.7,309.9,222.7,false
 1393,BP Greystanes,BP,BP,"2-4 Kippax St, Greystanes NSW 2145",2-4 Kippax St,Greystanes,NSW,2145,-33.827913,150.937925,"E10,P98,PDL,U91",4,,229.9,,,,263.9,315.9,231.9,false
 1412,BP Turramurra,BP,BP,"213 Kissing Point Rd, Turramurra NSW 2074",213 Kissing Point Rd,Turramurra,NSW,2074,-33.748363,151.112454,"E10,P98,PDL,U91",4,,229.9,,,,253.9,308.9,229.9,false
 1428,Metro Fuel Fairfield,Metro Fuel,Metro,"130 Hamilton Road, Fairfield NSW 2165",130 Hamilton Road,Fairfield,NSW,2165,-33.872643,150.945893,"E10,P98,PDL,U91",4,,220.5,,,,245.5,299.5,222.5,false
 1465,BP Normanhurst,BP,BP,"155 Pennant Hills Rd, Normanhurst NSW 2076",155 Pennant Hills Rd,Normanhurst,NSW,2076,-33.724599,151.089992,"P95,P98,PDL,U91",4,,,,,241.9,250.9,315.9,225.9,false
 1490,Metro Fuel Homebush,Metro Fuel,Metro,"134 John Street, Lidcombe NSW 2141",134 John Street,Lidcombe,NSW,2141,-33.854822,151.046648,"E10,P98,PDL,U91",4,,199.9,,,,246.9,309.9,221.9,false
-1496,BP North Rocks,BP,BP,"369 North Rocks Rd, North Rocks NSW 2151",369 North Rocks Rd,North Rocks,NSW,2151,-33.769346,151.031858,"E10,P95,P98,PDL",4,,227.9,,,244.9,253.9,309.9,,false
+1496,BP North Rocks,BP,BP,"369 North Rocks Rd, North Rocks NSW 2151",369 North Rocks Rd,North Rocks,NSW,2151,-33.769346,151.031858,"E10,P95,P98,PDL",4,,227.9,,,244.9,253.9,308.9,,false
 1502,Mobil 1 Carlingford Car Care,Mobil 1 Carlingford Car Care,Mobil,"482 North Rocks Rd, Carlingford NSW 2118",482 North Rocks Rd,Carlingford,NSW,2118,-33.765073,151.057902,"E10,P95,P98,PDL,U91",5,,227.9,,,259.9,268.9,313.9,229.9,false
 1516,Metro Fuel Cremorne,Metro Fuel,Metro,"51 Spofforth St, Cremorne NSW 2090",51 Spofforth St,Cremorne,NSW,2090,-33.832753,151.229455,"E10,P98,PDL,U91",4,,227.9,,,,254.9,309.9,231.9,false
 1518,BP Summer Hill,BP,BP,"3 Carlton Cres, Summer Hill NSW 2130",3 Carlton Cres,Summer Hill,NSW,2130,-33.892492,151.143151,"E10,P95,P98,PDL,U91",5,,225.9,,,241.9,253.9,309.9,229.9,false
-1565,BP Yagoona,BP,BP,"405 Hume Highway, Yagoona NSW 2199",405 Hume Highway,Yagoona,NSW,2199,-33.908972,151.029147,"P95,P98,PDL,U91",4,,,,,255.9,265.9,319.9,239.9,false
+1565,BP Yagoona,BP,BP,"405 Hume Highway, Yagoona NSW 2199",405 Hume Highway,Yagoona,NSW,2199,-33.908972,151.029147,"P95,P98,PDL,U91",4,,,,,245.9,255.9,319.9,229.9,false
 1582,Apw,Apw,Apw,"449 Great Western Highway, Wentworthville NSW 2145",449 Great Western Highway,Wentworthville,NSW,2145,-33.813328,150.958250,"P95,P98,PDL,U91",4,,,,,237.3,247.3,303.3,219.3,false
 1590,BP Merrylands West,BP,BP,"65 Kenyons Road, Merrylands West NSW 2160",65 Kenyons Road,Merrylands West,NSW,2160,-33.836829,150.968399,"E10,P95,P98,PDL",4,,226.9,,,249.9,259.9,315.9,,false
-1630,Budget Petrol,Budget,Budget,"143 Concord Rd, North Strathfield NSW 2137",143 Concord Rd,North Strathfield,NSW,2137,-33.859435,151.092720,"DL,E10,LPG,P95,P98,U91",6,319.9,227.7,,119.9,249.7,259.7,,229.7,false
+1630,Budget Petrol,Budget,Budget,"143 Concord Rd, North Strathfield NSW 2137",143 Concord Rd,North Strathfield,NSW,2137,-33.859435,151.092720,"DL,E10,LPG,P95,P98,U91",6,309.9,227.7,,119.9,249.7,259.7,,229.7,false
 1655,Speedway Bass Hill,Speedway,Speedway,"972 Hume Highway, Bass Hill NSW 2197",972 Hume Highway,Bass Hill,NSW,2197,-33.896169,150.991302,"DL,E10,P98,U91",4,310.7,220.7,,,,247.7,,222.7,false
 1660,Metro Fuel Alexandria,Metro Fuel,Metro,"36 Henderson Road, Alexandria NSW 2015",36 Henderson Road,Alexandria,NSW,2015,-33.897447,151.197261,"E10,P98,PDL,U91",4,,220.9,,,,245.9,309.9,222.9,false
 1706,BP Edgecliff,BP,BP,"67 New South Head Rd, Edgecliff NSW 2027",67 New South Head Rd,Edgecliff,NSW,2027,-33.876974,151.231099,"E10,P98,PDL,U91",4,,237.9,,,,277.9,314.9,240.9,false
 1733,Speedway West Ryde,Speedway,Speedway,"899 Victoria Road, West Ryde NSW 2114",899 Victoria Road,West Ryde,NSW,2114,-33.810270,151.094204,"DL,E10,LPG,P98,U91",5,307.7,222.7,,117.7,,247.7,,224.7,false
-1742,Calvi Petrol Station,Calvi Petrol,Calvi Petrol,"320 Lane Cove Road, North Ryde NSW 2113",320 Lane Cove Road,North Ryde,NSW,2113,-33.792349,151.120171,"P95,P98,PDL,U91",4,,,,,247.9,250.9,304.9,217.9,false
+1742,Calvi Petrol Station,Calvi Petrol,Calvi Petrol,"320 Lane Cove Road, North Ryde NSW 2113",320 Lane Cove Road,North Ryde,NSW,2113,-33.792349,151.120171,"P98,PDL,U91",3,,,,,,250.9,304.9,217.9,false
 1752,BP Mays Hill,BP,BP,"149 Great Western Hwy, Mays Hill NSW 2145",149 Great Western Hwy,Mays Hill,NSW,2145,-33.819412,150.989313,"DL,E10,LPG,P95,P98,PDL",6,313.7,227.7,,109.7,244.7,253.7,315.7,,false
 1768,BP Putney,BP,BP,"236 Morrison Road, Putney NSW 2112",236 Morrison Road,Putney,NSW,2112,-33.823874,151.108405,"DL,P98,U91",3,309.9,,,,,249.9,,223.9,false
 1778,Tanwar Petroleum,Independent,Independent,"281 New Canterbury Rd, Lewisham NSW 2049",281 New Canterbury Rd,Lewisham,NSW,2049,-33.898544,151.145666,"DL,E10,P95,P98,U91",5,310.6,237.6,,,254.6,275.6,,240.6,false
@@ -248,9 +248,9 @@ fc_id,fc_name,fc_brand,fc_brand_group,fc_address_full,fc_street,fc_suburb,fc_sta
 1828,Speedway Villawood,Speedway,Speedway,"45 Fairfield St, Villawood NSW 2163",45 Fairfield St,Villawood,NSW,2163,-33.869642,150.980674,"DL,E10,P98,PDL,U91",5,310.9,220.9,,,,247.9,315.9,222.9,false
 1836,Liberty Girraween,Liberty,Liberty,"38A Gilba Rd, Girraween NSW 2145",38A Gilba Rd,Girraween,NSW,2145,-33.801823,150.951190,"DL,E10,P95,P98,PDL,U91",6,314.9,241.9,,,259.9,269.9,312.9,243.9,false
 1860,Budget Fairfield,Budget,Budget,"62 Railway Parade, Fairfield NSW 2165",62 Railway Parade,Fairfield,NSW,2165,-33.880537,150.948533,"DL,E10,P95,U91",4,315.9,227.9,,,260.9,,,230.9,false
-1863,Caltex Chester Hill,Caltex,Ampol,"41 Boundary Road, Chester Hill NSW 2162",41 Boundary Road,Chester Hill,NSW,2162,-33.873839,151.007145,"E10,P95,P98,PDL,U91",5,,209.9,,,239.5,249.9,305.9,222.9,false
+1863,Caltex Chester Hill,Caltex,Ampol,"41 Boundary Road, Chester Hill NSW 2162",41 Boundary Road,Chester Hill,NSW,2162,-33.873839,151.007145,"E10,P95,P98,PDL,U91",5,,218.9,,,239.5,249.9,307.9,222.9,false
 1912,Bravo Girraween,Independent,Independent,"133-137 Targo, Girraween NSW 2145",133-137 Targo,Girraween,NSW,2145,-33.799420,150.951879,"DL,P98,U91",3,319.5,,,,,269.5,,227.5,false
-1962,Metro St Ives Chase,Metro Fuel,Metro,"164 Warrimoo Avenue, St Ives Chase NSW 2075",164 Warrimoo Avenue,St Ives Chase,NSW,2075,-33.710941,151.159927,"P98,PDL,U91",3,,,,,,248.9,302.9,219.9,false
+1962,Metro St Ives Chase,Metro Fuel,Metro,"164 Warrimoo Avenue, St Ives Chase NSW 2075",164 Warrimoo Avenue,St Ives Chase,NSW,2075,-33.710941,151.159927,"P98,PDL,U91",3,,,,,,248.9,302.9,223.9,false
 2001,Independent Turramurra,Independent,Independent,"105 Eastern Rd, Turramurra NSW 2074",105 Eastern Rd,Turramurra,NSW,2074,-33.720245,151.131246,"DL,P98,U91",3,313.6,,,,,268.5,,244.7,false
 2024,Speedway Woodpark,Speedway,Speedway,"32-36 Woodpark Rd, Woodpark NSW 2164",32-36 Woodpark Rd,Woodpark,NSW,2164,-33.841048,150.963335,"DL,E10,P98,U91",4,319.9,221.9,,,,253.9,,223.9,false
 2026,Speedway Haberfield,Speedway,Speedway,"273 Parramatta Rd, Haberfield NSW 2045",273 Parramatta Rd,Haberfield,NSW,2045,-33.875166,151.128637,"DL,E10,LPG,P98,PDL,U91",6,307.9,221.7,,119.9,,249.7,309.9,223.7,false
@@ -258,7 +258,7 @@ fc_id,fc_name,fc_brand,fc_brand_group,fc_address_full,fc_street,fc_suburb,fc_sta
 2085,Metro Pendle Hill,Metro Fuel,Metro,"229 Wentworth Avenue, Pendle Hill NSW 2145",229 Wentworth Avenue,Pendle Hill,NSW,2145,-33.800251,150.955916,"E10,PDL,U91",3,,225.9,,,,,309.9,227.9,false
 20021,Speedway Wenty,Speedway,Speedway,"55-57 Station St, Wentworthville NSW 2145",55-57 Station St,Wentworthville,NSW,2145,-33.809174,150.971350,"DL,E10,P98,U91",4,319.5,220.5,,,,247.5,,222.5,false
 20089,Speedway Parramatta,Speedway,Speedway,"127A Alfred St, Parramatta NSW 2150",127A Alfred St,Parramatta,NSW,2150,-33.817864,151.017544,"DL,P98,U91",3,310.5,,,,,249.5,,222.5,false
-20100,Enhance Merrylands,Enhance,Enhance,"506 Merrylands Rd, Merrylands West NSW 2160",506 Merrylands Rd,Merrylands West,NSW,2160,-33.832687,150.969690,"E10,P98,PDL,U91",4,,226.9,,,,255.9,304.9,228.9,false
+20100,Enhance Merrylands,Enhance,Enhance,"506 Merrylands Rd, Merrylands West NSW 2160",506 Merrylands Rd,Merrylands West,NSW,2160,-33.832687,150.969690,"E10,P98,PDL,U91",4,,220.5,,,,249.5,307.5,222.5,false
 20108,Prime Petersham,Prime,Prime,"8 Crystal St, Petersham NSW 2049",8 Crystal St,Petersham,NSW,2049,-33.888684,151.158573,"DL,E10,P98,U91",4,310.9,227.9,,,,252.9,,230.9,false
 20125,Speedway Auburn Road,Speedway,Speedway,"74-78 Auburn Rd, Auburn NSW 2144",74-78 Auburn Rd,Auburn,NSW,2144,-33.854649,151.032508,"DL,E10,P95,P98,U91",5,310.5,220.5,,,240.5,247.5,,222.5,false
 20131,Speedway Park Road,Speedway,Speedway,"360 Park Rd, Regents Park NSW 2143",360 Park Rd,Regents Park,NSW,2143,-33.879403,151.024905,"DL,E10,P98,U91",4,310.5,225.5,,,,258.5,,228.5,false
@@ -266,7 +266,7 @@ fc_id,fc_name,fc_brand,fc_brand_group,fc_address_full,fc_street,fc_suburb,fc_sta
 20186,BP West Pymble,BP,BP,"45 Yanko Rd, West Pymble NSW 2073",45 Yanko Rd,West Pymble,NSW,2073,-33.762079,151.128525,"E10,P95,P98,PDL",4,,221.9,,,241.9,247.9,309.9,,false
 20194,BP Woodpark Road,BP,BP,"186 Woodpark Rd, Smithfield NSW 2164",186 Woodpark Rd,Smithfield,NSW,2164,-33.838954,150.950501,"E10,P98,PDL,U91",4,,239.9,,,,266.9,315.9,242.9,false
 20201,BP Willoughby,BP,BP,"316 Penshurst St, North Willoughby NSW 2068",316 Penshurst St,North Willoughby,NSW,2068,-33.793815,151.195894,"E10,P95,P98,PDL",4,,227.9,,,245.9,254.9,315.9,,false
-20207,Astron Yagoona,Astron,Astron,"45 Rookwood Rd, Yagoona NSW 2199",45 Rookwood Rd,Yagoona,NSW,2199,-33.901877,151.037178,"DL,E10,E85,LPG,P95,P98,U91",7,297.9,219.9,219.9,114.9,239.9,247.9,,221.9,false
+20207,Astron Yagoona,Astron,Astron,"45 Rookwood Rd, Yagoona NSW 2199",45 Rookwood Rd,Yagoona,NSW,2199,-33.901877,151.037178,"DL,E10,E85,LPG,P95,P98,U91",7,302.5,219.9,206.9,114.9,239.9,247.9,,221.9,false
 20208,Budget Auburn,Budget,Budget,"98 Park Rd, Auburn NSW 2144",98 Park Rd,Auburn,NSW,2144,-33.857141,151.028921,"DL,E10,P98,U91",4,319.5,224.5,,,,258.5,,227.5,false
 20218,Metro Barista Bar Croydon Park,Metro Fuel,Metro,"236-240 Georges River Rd, Croydon Park NSW 2133",236-240 Georges River Rd,Croydon Park,NSW,2133,-33.896412,151.105288,"E10,P98,PDL,U91",4,,224.9,,,,246.9,307.9,226.9,false
 20242,Metro Petroleum (Haberfield),Metro Fuel,Metro,"163-165 Parramatta Rd, Haberfield NSW 2045",163-165 Parramatta Rd,Haberfield,NSW,2045,-33.883649,151.134535,"E10,P98,PDL,U91",4,,227.7,,,,256.7,309.5,229.7,false
@@ -275,9 +275,8 @@ fc_id,fc_name,fc_brand,fc_brand_group,fc_address_full,fc_street,fc_suburb,fc_sta
 20261,Metro Hurlstone Park,Metro Fuel,Metro,"13 Canterbury Rd, Canterbury NSW 2193",13 Canterbury Rd,Canterbury,NSW,2193,-33.907813,151.125233,"E10,P98,PDL,U91",4,,219.8,,,,248.8,308.8,223.8,false
 20519,Metro Petroleum Westleigh,Metro Fuel,Metro,"128 Duffy Av, Westleigh NSW 2120",128 Duffy Av,Westleigh,NSW,2120,-33.720391,151.068932,"P98,PDL,U91",3,,,,,,246.9,304.9,220.9,false
 20528,Speedway William Street,Speedway,Speedway,"2 Blaxcell St, Granville NSW 2142",2 Blaxcell St,Granville,NSW,2142,-33.836256,151.011013,"DL,E10,P98,U91",4,310.5,225.5,,,,258.5,,227.5,false
-20544,Enhance Bass Hill,Enhance,Enhance,"924 Hume Hwy, Bass Hill NSW 2197",924 Hume Hwy,Bass Hill,NSW,2197,-33.897808,150.994824,"E10,E85,P98,PDL,U91",5,,220.5,205.9,,,249.5,304.9,222.5,false
+20544,Enhance Bass Hill,Enhance,Enhance,"924 Hume Hwy, Bass Hill NSW 2197",924 Hume Hwy,Bass Hill,NSW,2197,-33.897808,150.994824,"E10,E85,P98,PDL,U91",5,,199.9,205.9,,,249.5,304.9,222.5,false
 20546,Otr Baulkham Hills,Shell,Shell,"Shell Petrol Station 363 Windsor Rd, Baulkham Hills NSW 2153",Shell Petrol Station 363 Windsor Rd,Baulkham Hills,NSW,2153,-33.760199,150.991598,"E10,P95,P98,PDL,U91",5,,221.5,,,239.0,248.5,304.9,223.5,false
-20550,Costco Auburn (Members Only),Costco,Costco,"Costco 17-21 Parramatta Rd, Lidcombe NSW 2141",Costco 17-21 Parramatta Rd,Lidcombe,NSW,2141,-33.848086,151.049695,"E10,P98,PDL",3,,220.7,,,,246.7,296.7,,false
 20558,Budget Petrol,Budget,Budget,"365 Liverpool Rd, Strathfield NSW 2135",365 Liverpool Rd,Strathfield,NSW,2135,-33.888277,151.090551,"DL,E10,P95,P98,U91",5,299.9,226.7,,,243.7,253.7,,228.7,false
 20559,Otr Pennant Hills East,Shell,Shell,"369 Pennant Hills Rd, Pennant Hills NSW 2120",369 Pennant Hills Rd,Pennant Hills,NSW,2120,-33.738773,151.073757,"E10,P95,P98,PDL,U91",5,,221.5,,,239.0,248.5,304.9,223.5,false
 20594,Otr Willoughby,Shell,Shell,"616-626 Willoughby Rd, Willoughby NSW 2068",616-626 Willoughby Rd,Willoughby,NSW,2068,-33.805911,151.198819,"E10,P95,P98,PDL,U91",5,,221.5,,,239.0,248.5,304.9,223.5,false
@@ -287,5 +286,5 @@ fc_id,fc_name,fc_brand,fc_brand_group,fc_address_full,fc_street,fc_suburb,fc_sta
 20649,Shell North Rocks,Shell,Shell,"264 North Rocks Rd, North Rocks NSW 2151",264 North Rocks Rd,North Rocks,NSW,2151,-33.775110,151.022676,"DL,E10,P98,PDL,U91",5,308.5,224.5,,,,252.5,308.5,226.5,false
 20831,Astron Yagoona West,Astron,Astron,"100 Rookwood Rd, Yagoona NSW 2199",100 Rookwood Rd,Yagoona,NSW,2199,-33.899293,151.036862,"DL,E10,E85,LPG,P98,U91",6,302.5,219.9,205.9,119.9,,247.9,,221.9,false
 20832,Otr Woolloomooloo,Shell,Shell,"61 Cowper Wharf Roadway, Woolloomooloo NSW 2011",61 Cowper Wharf Roadway,Woolloomooloo,NSW,2011,-33.869601,151.221314,"E10,P95,P98,PDL,U91",5,,221.5,,,239.0,248.5,304.9,223.5,false
-20847,Metro Lansdowne,Metro Fuel,Metro,"987 Hume Hwy, Lansdowne NSW 2163",987 Hume Hwy,Lansdowne,NSW,2163,-33.889304,150.971023,"DL,E10,P95,P98,PDL,U91",6,296.9,199.9,,,236.9,243.9,297.9,224.9,false
+20847,Metro Lansdowne,Metro Fuel,Metro,"987 Hume Hwy, Lansdowne NSW 2163",987 Hume Hwy,Lansdowne,NSW,2163,-33.889304,150.971023,"DL,E10,P95,P98,PDL,U91",6,296.9,199.9,,,236.9,243.9,297.9,216.9,false
 20848,Metro Toongabbie,Metro Fuel,Metro,"5 Picasso Cr, Old Toongabbie NSW 2146",5 Picasso Cr,Old Toongabbie,NSW,2146,-33.786361,150.967341,"E10,P98,PDL,U91",4,,225.9,,,,253.9,309.9,227.9,false
