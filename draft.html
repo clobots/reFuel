@@ -905,9 +905,13 @@
       <div class="topbar-inner">
         <div class="heading">
           <h1>reFuel</h1>
+          <div class="updated-at">Last updated: <span id="last-updated">-</span></div>
+          <div id="ai-summary-topbar" style="display:none;margin:8px 0 6px;">
+            <p id="ai-summary-text-top" style="font-size:0.85rem;line-height:1.45;margin:0 0 4px;color:var(--text);"></p>
+            <p id="ai-summary-suburbs-top" style="font-size:0.68rem;color:var(--muted);margin:0;line-height:1.3;"></p>
+          </div>
           <p id="avail-line" class="avail-line" style="color:var(--accent);font-size:1.05rem;margin:10px 0 4px;font-weight:600;">Loading...</p>
           <p class="disclaimer-note" style="color:var(--muted);font-size:0.72rem;font-style:italic;margin:0 0 6px;">* assuming that fuel stations listed online sell all fuel types usually</p>
-          <div class="updated-at">Last updated: <span id="last-updated">-</span></div>
         </div>
         <div class="summary-wrap">
           <dl class="summary" id="summary-panel">
@@ -2117,6 +2121,7 @@
         );
 
         outageLookup = buildOutageLookup(outageRows);
+        renderAiSummary(outageRows);
 
         (googleMeta.zones_scraped || []).forEach((z) => {
           scrapedZones.add(z.replace(/_/g, " ").toLowerCase());
@@ -2407,6 +2412,9 @@
 
       textEl.textContent = summary;
 
+      // Also populate topbar version
+      document.getElementById("ai-summary-text-top").textContent = "AI Summary: " + summary;
+
       // Suburbs list from outage stations
       var suburbs = [];
       outages.forEach(function(r) {
@@ -2423,9 +2431,11 @@
 
       if (suburbs.length) {
         suburbsEl.textContent = "Suburbs with outages: " + suburbs.join(", ");
+        document.getElementById("ai-summary-suburbs-top").textContent = "Suburbs with outages: " + suburbs.join(", ");
       }
 
       card.style.display = "";
+      document.getElementById("ai-summary-topbar").style.display = "";
     }
 
     // ── Outage grid ──
