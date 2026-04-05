@@ -2063,6 +2063,12 @@
       while (tbody.firstChild) tbody.removeChild(tbody.firstChild);
       rows.forEach(function(r) {
         var tr = document.createElement("tr");
+        tr.style.cursor = "pointer";
+        tr.addEventListener("dblclick", function() {
+          map.setView([r.lat, r.lng], 17);
+          r.marker.openPopup();
+          document.getElementById("map").scrollIntoView({ behavior: "smooth" });
+        });
         // Name cell - clickable
         var tdName = document.createElement("td");
         var nameLink = document.createElement("a");
