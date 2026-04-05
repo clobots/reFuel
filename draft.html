@@ -2415,23 +2415,15 @@
       // Also populate topbar version
       document.getElementById("ai-summary-text-top").textContent = "AI Summary: " + summary;
 
-      // Suburbs list from outage stations
-      var suburbs = [];
-      outages.forEach(function(r) {
-        var addr = r.address || "";
-        var m = addr.match(/,\s*(.+?)\s+NSW\s+\d{4}/i);
-        if (m) {
-          var sub = m[1].trim();
-          // Title case
-          sub = sub.toLowerCase().replace(/\b\w/g, function(c) { return c.toUpperCase(); });
-          if (suburbs.indexOf(sub) === -1) suburbs.push(sub);
-        }
-      });
-      suburbs.sort();
+      // List all tracked suburbs from scrapedZones
+      var suburbs = Array.from(scrapedZones).map(function(s) {
+        return s.replace(/\b\w/g, function(c) { return c.toUpperCase(); });
+      }).sort();
 
       if (suburbs.length) {
-        suburbsEl.textContent = "Suburbs with outages: " + suburbs.join(", ");
-        document.getElementById("ai-summary-suburbs-top").textContent = "Suburbs with outages: " + suburbs.join(", ");
+        var suburbText = "Suburbs: " + suburbs.join(", ");
+        suburbsEl.textContent = suburbText;
+        document.getElementById("ai-summary-suburbs-top").textContent = suburbText;
       }
 
       card.style.display = "";
