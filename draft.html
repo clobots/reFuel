@@ -971,6 +971,13 @@
           <p class="trends-subtitle">Based on <span id="trends-days">-</span> days of FuelCheck data across <span id="trends-stations">-</span> tracked stations</p>
         </div>
 
+        <!-- AI Summary -->
+        <div class="trends-card" id="ai-summary-card" style="display:none;">
+          <h3>AI Summary</h3>
+          <p id="ai-summary-text" style="font-size:0.9rem;line-height:1.5;margin:0 0 8px;"></p>
+          <p id="ai-summary-suburbs" style="font-size:0.72rem;color:var(--muted);margin:0;line-height:1.4;"></p>
+        </div>
+
         <!-- Availability % chart -->
         <div class="trends-card">
           <h3>Daily availability</h3>
@@ -2174,6 +2181,7 @@
           (typeof USE_EMBEDDED !== 'undefined' && USE_EMBEDDED) ? EMBEDDED_DAILY_AGG : null,
           (typeof USE_EMBEDDED !== 'undefined' && USE_EMBEDDED) ? EMBEDDED_TREND_STATION_COUNT : 0
         );
+        renderAiSummary(outageRows);
         renderOutageGrid(outageRows);
         renderBrandBreakdown(outageRows);
         renderFuelBreakdown(outageRows);
@@ -2336,6 +2344,88 @@
         ctx.textAlign = "left";
         ctx.fillText(last.toFixed(1) + "%", xPos(days.length - 1) + 8, yPos(last) + 4);
       }
+    }
+
+    // ── AI Summary ──
+    function renderAiSummary(outageRows) {
+      var card = document.getElementById("ai-summary-card");
+      var textEl = document.getElementById("ai-summary-text");
+      var suburbsEl = document.getElementById("ai-summary-suburbs");
+
+      // Get availability data
+      var aggData = (typeof EMBEDDED_DAILY_AGG !== 'undefined') ? EMBEDDED_DAILY_AGG : [];
+      if (!aggData.length) { return; }
+
+      var first = aggData[0];
+      var last = aggData[aggData.length - 1];
+      var firstPct = first.total ? (first.avail / first.total * 100) : 0;
+      var lastPct = last.total ? (last.avail / last.total * 100) : 0;
+      var days = aggData.length;
+
+      // Current outages
+      var outages = outageRows.filter(function(r) { return r.is_outage === "true"; });
+      var outageStations = {};
+      outages.forEach(function(r) {
+        if (!outageStations[r.station_id]) outageStations[r.station_id] = { name: r.station_name, brand: r.brand, fuels: [] };
+        outageStations[r.station_id].fuels.push(r.fuel_type);
+      });
+      var numOutageStations = Object.keys(outageStations).length;
+
+      // Top brands affected
+      var brandCounts = {};
+      outages.forEach(function(r) { brandCounts[r.brand] = (brandCounts[r.brand] || 0) + 1; });
+      var topBrands = Object.entries(brandCounts).sort(function(a, b) { return b[1] - a[1]; }).slice(0, 2).map(function(e) { return e[0]; });
+
+      // Top fuel types missing
+      var fuelCounts = {};
+      outages.forEach(function(r) { fuelCounts[r.fuel_type] = (fuelCounts[r.fuel_type] || 0) + 1; });
+      var topFuels = Object.entries(fuelCounts).sort(function(a, b) { return b[1] - a[1]; }).slice(0, 2).map(function(e) { return e[0]; });
+
+      // Build summary text
+      var summary = "";
+      if (lastPct >= 95) {
+        summary = "Things are looking good";
+      } else if (lastPct >= 85) {
+        summary = "Availability is reasonable";
+      } else {
+        summary = "Availability is below normal";
+      }
+
+      if (days >= 2 && lastPct - firstPct > 5) {
+        summary += " \u2014 availability jumped from " + Math.round(firstPct) + "% to " + Math.round(lastPct) + "% this week.";
+      } else if (days >= 2 && firstPct - lastPct > 5) {
+        summary += " \u2014 availability dropped from " + Math.round(firstPct) + "% to " + Math.round(lastPct) + "% this week.";
+      } else {
+        summary += " at " + Math.round(lastPct) + "%.";
+      }
+
+      if (numOutageStations > 0 && topBrands.length) {
+        summary += " A handful of stations (mostly " + topBrands.join(" and ") + ") are still missing " + topFuels.join(" or ") + ", but nothing to worry about for most drivers.";
+      } else if (numOutageStations === 0) {
+        summary += " No outages detected across any tracked stations.";
+      }
+
+      textEl.textContent = summary;
+
+      // Suburbs list from outage stations
+      var suburbs = [];
+      outages.forEach(function(r) {
+        var addr = r.address || "";
+        var m = addr.match(/,\s*(.+?)\s+NSW\s+\d{4}/i);
+        if (m) {
+          var sub = m[1].trim();
+          // Title case
+          sub = sub.toLowerCase().replace(/\b\w/g, function(c) { return c.toUpperCase(); });
+          if (suburbs.indexOf(sub) === -1) suburbs.push(sub);
+        }
+      });
+      suburbs.sort();
+
+      if (suburbs.length) {
+        suburbsEl.textContent = "Suburbs with outages: " + suburbs.join(", ");
+      }
+
+      card.style.display = "";
     }
 
     // ── Outage grid ──
