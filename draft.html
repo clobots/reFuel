@@ -839,6 +839,13 @@
       font-size: 0.8rem;
       margin: 0 0 14px;
     }
+    .trends-section-headline {
+      font-size: 0.92rem;
+      color: var(--muted);
+      line-height: 1.5;
+      margin: 6px 0 16px;
+      padding: 0 2px;
+    }
     .chart-container {
       position: relative;
       width: 100%;
@@ -1012,6 +1019,9 @@
             <canvas id="availability-chart" height="200"></canvas>
           </div>
         </div>
+
+        <!-- Section transition -->
+        <p id="outage-headline" class="trends-section-headline" style="display:none;"></p>
 
         <!-- Outage summary -->
         <div class="trends-card">
@@ -2451,6 +2461,25 @@
       var outages = rows.filter(function(r) { return r.is_outage === "true"; });
       var el = document.getElementById("outage-grid");
       var summary = document.getElementById("outage-summary-text");
+      var headline = document.getElementById("outage-headline");
+
+      // Build section headline from availability + outage data
+      var aggData = (typeof EMBEDDED_DAILY_AGG !== 'undefined') ? EMBEDDED_DAILY_AGG : [];
+      var lastPct = 0;
+      if (aggData.length) {
+        var last = aggData[aggData.length - 1];
+        lastPct = last.total ? Math.round(last.avail / last.total * 100) : 0;
+      }
+      var outageStationIds = new Set();
+      outages.forEach(function(r) { outageStationIds.add(r.station_id); });
+      var numOutageStations = outageStationIds.size;
+
+      if (numOutageStations > 0) {
+        headline.textContent = "On average, stations in the included areas have " + lastPct + "% availability. Only " + numOutageStations + " station" + (numOutageStations !== 1 ? "s have" : " has") + " outages, and they only cover specific fuel types — not a full loss of supply.";
+      } else {
+        headline.textContent = "Stations in the included areas have " + lastPct + "% availability. No outages detected across any tracked stations.";
+      }
+      headline.style.display = "";
 
       if (!outages.length) {
         summary.textContent = "No fuel type outages detected.";
