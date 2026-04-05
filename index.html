@@ -403,16 +403,6 @@
       height: 18px;
     }
 
-    .marker-outage-badge {
-      position: absolute;
-      top: -11px;
-      right: -10px;
-      font-size: 12px;
-      line-height: 1;
-      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.65);
-      pointer-events: none;
-    }
-
     .station-marker.google { background: var(--google); }
     .station-marker.fuelcheck { background: var(--fuelcheck); }
     .station-marker.matched { background: var(--matched); }
@@ -420,84 +410,86 @@
 
     .popup {
       color: #11202b;
-      min-width: 200px;
-      max-width: min(340px, 85vw);
+      min-width: 220px;
+      max-width: min(320px, 85vw);
+      font-size: 0.85rem;
     }
 
-    .popup h3 {
-      margin: 0 0 4px;
-      font-size: 0.92rem;
-      color: #333;
+    .popup .popup-header {
+      margin: 0 0 6px;
     }
 
-    .popup .src-label {
-      font-size: 0.72rem;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      color: #888;
-      margin: 8px 0 2px;
+    .popup .popup-name {
+      margin: 0;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #11202b;
+      line-height: 1.2;
     }
 
-    .popup .src-label:first-child {
-      margin-top: 0;
-    }
-
-    .popup p {
-      margin: 0 0 4px;
-      font-size: 0.88rem;
-    }
-
-    .popup .outage-note {
-      color: #9c4f08;
-      font-weight: 600;
-    }
-
-    .popup .tab-bar {
-      display: flex;
-      gap: 0;
-      border-bottom: 2px solid #ddd;
-      margin: 8px 0 6px;
-    }
-
-    .popup .tab-btn {
-      padding: 4px 10px;
-      font-size: 0.8rem;
-      border: none;
-      background: none;
-      cursor: pointer;
-      border-bottom: 2px solid transparent;
-      margin-bottom: -2px;
+    .popup .popup-addr {
+      margin: 2px 0 0;
+      font-size: 0.78rem;
       color: #666;
     }
 
-    .popup .tab-btn.active {
-      border-bottom-color: #4d9fff;
-      color: #11202b;
-      font-weight: 600;
+    .popup .popup-meta {
+      font-size: 0.7rem;
+      color: #999;
+      margin: 4px 0 0;
     }
 
-    .popup .tab-panel {
-      display: none;
+    .popup .popup-divider {
+      border: none;
+      border-top: 1px solid #e5e5e5;
+      margin: 8px 0;
     }
 
-    .popup .tab-panel.active {
-      display: block;
-    }
-
-    .popup ul {
+    .popup .fuel-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4px 12px;
       margin: 0;
       padding: 0;
-      list-style: none;
-      font-size: 0.88rem;
     }
 
-    .popup li + li {
-      margin-top: 3px;
+    .popup .fuel-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 4px 8px;
+      border-radius: 6px;
+      font-size: 0.82rem;
     }
 
-    .popup li strong {
-      display: inline-block;
-      min-width: 36px;
+    .popup .fuel-item.outage {
+      background: #fff8e1;
+      border: 1px solid #f0c76e;
+    }
+
+    .popup .fuel-type {
+      font-weight: 600;
+      color: #333;
+    }
+
+    .popup .fuel-price {
+      color: #555;
+    }
+
+    .popup .fuel-price.missing {
+      color: #c0862a;
+      font-style: italic;
+      font-size: 0.75rem;
+    }
+
+    .popup .popup-actions {
+      margin-top: 8px;
+    }
+
+    .popup .popup-actions a {
+      font-size: 0.78rem;
+      color: #4285f4;
+      text-decoration: none;
     }
 
     .station-tooltip {
@@ -657,7 +649,6 @@
 
     .station-table .name-col { white-space: nowrap; }
     .station-table .addr-col { max-width: 200px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-    .outage-key { padding: 8px 2px 0; color: var(--muted); font-size: 0.75rem; }
 
     /* Tablet / narrow window — stack vertically */
     @media (max-width: 768px) {
@@ -992,7 +983,6 @@
         </label>
         <span id="station-list-count" style="color:var(--muted);font-size:0.8rem;"></span>
       </div>
-      <div class="outage-key">⚠️ Outage: this station used to list that fuel type in FuelCheck, but the latest refresh does not show it.</div>
       <div class="station-list-wrap">
         <table class="station-table" id="station-table">
           <thead id="station-thead"></thead>
@@ -1070,18 +1060,7 @@
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
 
-    // Event delegation for popup tab switching (DOMPurify strips onclick)
-    document.addEventListener("click", function(e) {
-      var btn = e.target.closest("[data-tab-target]");
-      if (!btn) return;
-      var popup = btn.closest(".popup");
-      if (!popup) return;
-      popup.querySelectorAll(".tab-btn").forEach(function(b) { b.classList.remove("active"); });
-      popup.querySelectorAll(".tab-panel").forEach(function(p) { p.classList.remove("active"); });
-      btn.classList.add("active");
-      var target = document.getElementById(btn.getAttribute("data-tab-target"));
-      if (target) target.classList.add("active");
-    });
+
 
     L.control.scale({ imperial: false }).addTo(map);
 
@@ -1278,11 +1257,6 @@
         swatch.style.background = color;
         item.appendChild(document.createTextNode(label));
       });
-      const outageItem = L.DomUtil.create("div", "legend-item", legendRow);
-      const outageIcon = L.DomUtil.create("span", "legend-icon", outageItem);
-      outageIcon.textContent = "⚠️";
-      outageItem.appendChild(document.createTextNode("Historical outage"));
-
       return div;
     };
     controlPanel.addTo(map);
@@ -1339,11 +1313,10 @@
       return 2 * earthRadius * Math.asin(Math.sqrt(h));
     }
 
-    function markerIcon(type, hasOutage) {
-      const warningHtml = hasOutage ? '<span class="marker-outage-badge" aria-hidden="true">⚠️</span>' : "";
+    function markerIcon(type) {
       return L.divIcon({
         className: "",
-        html: DOMPurify.sanitize(`<div class="station-marker-wrap"><div class="station-marker ${type}"></div>${warningHtml}</div>`),
+        html: DOMPurify.sanitize(`<div class="station-marker-wrap"><div class="station-marker ${type}"></div></div>`),
         iconSize: [18, 18],
         iconAnchor: [9, 9],
         popupAnchor: [0, -10]
@@ -1354,34 +1327,14 @@
       return DOMPurify.sanitize(String(value ?? ""));
     }
 
-    function formatPrices(prices, outageFuelTypes) {
-      if (!prices || !prices.length) {
-        const outageNote = outageFuelTypes && outageFuelTypes.length
-          ? `<p class="outage-note">⚠️ Historical outages: ${escapeHtml(outageFuelTypes.join(", "))}</p>`
-          : "";
-        return `<p>No FuelCheck pricing data.</p>${outageNote}`;
-      }
-      const items = prices
-        .map((p) => `<li><strong>${escapeHtml(p.fuel_type)}</strong> ${escapeHtml(p.price)}¢/L</li>`)
-        .join("");
-      const outageNote = outageFuelTypes && outageFuelTypes.length
-        ? `<p class="outage-note">⚠️ Historical outages: ${escapeHtml(outageFuelTypes.join(", "))}</p>`
-        : "";
-      return `<ul>${items}</ul>${outageNote}`;
-    }
-
-    let popupIdCounter = 0;
-
     function popupContent(data) {
-      const id = "pop" + (popupIdCounter++);
       const fc = data.fuelcheck;
       const goog = data.google;
       const distance = data.matchDistanceMeters;
       const outageFuelTypes = data.outageFuelTypes || [];
+      const outageSet = new Set(outageFuelTypes.map(function(f) { return f.toUpperCase(); }));
 
-      let infoHtml = "";
-
-      // Pick best name/address across sources
+      // Best name/address
       var gName = goog ? (goog.name || "") : "";
       var fName = fc ? (fc.name || "") : "";
       var bestName = gName.length ? (gName.length >= fName.length ? gName : fName) : fName;
@@ -1389,42 +1342,65 @@
       var fAddr = fc ? (fc.address || "") : "";
       var bestAddr = gAddr.length ? (gAddr.length >= fAddr.length ? gAddr : fAddr) : fAddr;
 
-      if (bestName) {
-        infoHtml += `<h3>${escapeHtml(bestName)}</h3>`;
-        if (bestAddr) infoHtml += `<p>${escapeHtml(bestAddr)}</p>`;
-        if (fc && goog) {
-          infoHtml += `<p style="font-size:0.75rem;color:#888;">Sources: Google Maps + FuelCheck API</p>`;
-        } else if (fc) {
-          infoHtml += `<p style="font-size:0.75rem;color:#888;">Source: FuelCheck API</p>`;
-        } else {
-          infoHtml += `<p style="font-size:0.75rem;color:#888;">Source: Google Maps</p>`;
-        }
-      } else {
-        infoHtml += `<h3>Unknown station</h3>`;
+      var html = '<div class="popup"><div class="popup-header">';
+      html += '<div class="popup-name">' + escapeHtml(bestName || "Unknown station") + '</div>';
+      if (bestAddr) html += '<div class="popup-addr">' + escapeHtml(bestAddr) + '</div>';
+
+      // Source + match distance on one line
+      var meta = [];
+      if (fc && goog) meta.push("Google + FuelCheck");
+      else if (fc) meta.push("FuelCheck");
+      else meta.push("Google Maps");
+      if (distance != null) meta.push(Math.round(distance) + "m match");
+      html += '<div class="popup-meta">' + escapeHtml(meta.join(" · ")) + '</div>';
+      html += '</div>';
+
+      // Fuel grid
+      html += '<hr class="popup-divider">';
+      var prices = data.prices || (fc ? fc.prices : null);
+      if (prices && prices.length) {
+        html += '<div class="fuel-grid">';
+        prices.forEach(function(p) {
+          var isOutage = outageSet.has((p.fuel_type || "").toUpperCase());
+          html += '<div class="fuel-item' + (isOutage ? ' outage' : '') + '">';
+          html += '<span class="fuel-type">' + escapeHtml(p.fuel_type) + '</span>';
+          if (isOutage) {
+            html += '<span class="fuel-price missing">outage</span>';
+          } else {
+            html += '<span class="fuel-price">' + escapeHtml(p.price) + '¢</span>';
+          }
+          html += '</div>';
+        });
+        // Show outage fuel types that aren't in the price list
+        outageFuelTypes.forEach(function(ft) {
+          var inList = prices.some(function(p) { return (p.fuel_type || "").toUpperCase() === ft.toUpperCase(); });
+          if (!inList) {
+            html += '<div class="fuel-item outage">';
+            html += '<span class="fuel-type">' + escapeHtml(ft) + '</span>';
+            html += '<span class="fuel-price missing">outage</span>';
+            html += '</div>';
+          }
+        });
+        html += '</div>';
+      } else if (outageFuelTypes.length) {
+        html += '<div class="fuel-grid">';
+        outageFuelTypes.forEach(function(ft) {
+          html += '<div class="fuel-item outage">';
+          html += '<span class="fuel-type">' + escapeHtml(ft) + '</span>';
+          html += '<span class="fuel-price missing">outage</span>';
+          html += '</div>';
+        });
+        html += '</div>';
+      } else if (!fc) {
+        html += '<div class="popup-meta">No FuelCheck data for this station.</div>';
       }
-      if (distance != null) {
-        infoHtml += `<p style="font-size:0.8rem;color:#888;">Match distance: ${Math.round(distance)}m</p>`;
-      }
 
-      const mapsQuery = encodeURIComponent(bestName + " " + bestAddr);
-      const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${mapsQuery}`;
-      infoHtml += `<a href="${mapsUrl}" target="_blank" rel="noopener" style="display:inline-block;margin-top:6px;font-size:0.82rem;color:#4285f4;">Open in Google Maps</a>`;
+      // Google Maps link
+      var mapsQuery = encodeURIComponent(bestName + " " + bestAddr);
+      html += '<div class="popup-actions"><a href="https://www.google.com/maps/search/?api=1&query=' + mapsQuery + '" target="_blank" rel="noopener">Open in Google Maps ›</a></div>';
+      html += '</div>';
 
-      const fuelHtml = fc
-        ? formatPrices(data.prices || fc.prices, outageFuelTypes)
-        : "<p>No FuelCheck data for this station.</p>";
-
-      const content = `
-        <div class="popup">
-          <div class="tab-bar">
-            <button class="tab-btn active" data-tab-target="${id}-info">Info</button>
-            <button class="tab-btn" data-tab-target="${id}-fuel">Fuel</button>
-          </div>
-          <div id="${id}-info" class="tab-panel active">${infoHtml}</div>
-          <div id="${id}-fuel" class="tab-panel">${fuelHtml}</div>
-        </div>
-      `;
-      return DOMPurify.sanitize(content, { ADD_ATTR: ["data-tab-target"] });
+      return DOMPurify.sanitize(html);
     }
 
     // Store all markers for table click-to-focus
@@ -1433,7 +1409,7 @@
     function addMarker(data, type) {
       const lat = data.lat || (data.fuelcheck && data.fuelcheck.lat) || (data.google && data.google.lat);
       const lng = data.lng || (data.fuelcheck && data.fuelcheck.lng) || (data.google && data.google.lng);
-      const marker = L.marker([lat, lng], { icon: markerIcon(type, (data.outageFuelTypes || []).length > 0) });
+      const marker = L.marker([lat, lng], { icon: markerIcon(type) });
       marker.bindPopup(popupContent(data), {
         maxWidth: 360,
         minWidth: 260,
