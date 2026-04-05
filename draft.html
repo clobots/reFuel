@@ -2465,13 +2465,16 @@
       var stationMap = {};
       outages.forEach(function(r) {
         var key = r.station_id;
-        if (!stationMap[key]) stationMap[key] = { name: r.station_name, brand: r.brand, fuels: [] };
+        if (!stationMap[key]) {
+          var totalFuelTypes = (r.fuel_types_ever || "").split(",").filter(Boolean).length;
+          stationMap[key] = { name: r.station_name, brand: r.brand, fuels: [], totalFuels: totalFuelTypes };
+        }
         stationMap[key].fuels.push(r.fuel_type);
       });
 
       var stationIds = Object.keys(stationMap);
-      var totalFuels = outages.length;
-      summary.textContent = totalFuels + " fuel type" + (totalFuels !== 1 ? "s" : "") + " missing across " + stationIds.length + " station" + (stationIds.length !== 1 ? "s" : "");
+      var totalOutages = outages.length;
+      summary.textContent = totalOutages + " fuel type" + (totalOutages !== 1 ? "s" : "") + " missing across " + stationIds.length + " station" + (stationIds.length !== 1 ? "s" : "");
 
       el.textContent = "";
       stationIds.forEach(function(id) {
@@ -2484,7 +2487,7 @@
         nameEl.textContent = s.name;
         var detailEl = document.createElement("div");
         detailEl.className = "oi-detail";
-        detailEl.textContent = s.brand + " — missing: " + s.fuels.join(", ");
+        detailEl.textContent = s.fuels.length + "/" + s.totalFuels + " fuel types outage (" + s.fuels.join(", ") + ")";
         inner.appendChild(nameEl);
         inner.appendChild(detailEl);
         item.appendChild(inner);
