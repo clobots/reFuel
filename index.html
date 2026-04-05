@@ -126,8 +126,14 @@
       color: var(--accent);
       font-size: 1.15rem;
       font-weight: 700;
-      margin: 0 0 10px;
+      margin: 0 0 2px;
       line-height: 1.3;
+    }
+
+    .avail-line-detail {
+      color: var(--muted);
+      font-size: 0.78rem;
+      margin: 0 0 10px;
     }
 
     .ai-summary-block {
@@ -937,6 +943,7 @@
 
         <!-- Row 2: Hero metric -->
         <p id="avail-line" class="avail-line">Loading...</p>
+        <p id="avail-line-detail" class="avail-line-detail"></p>
 
         <!-- Row 3: AI Summary -->
         <div id="ai-summary-topbar" class="ai-summary-block" style="display:none;">
@@ -1005,10 +1012,10 @@
           <p class="trends-subtitle">Based on <span id="trends-days">-</span> days of FuelCheck data across <span id="trends-stations">-</span> tracked stations</p>
         </div>
 
-        <!-- Availability % chart -->
+        <!-- Recovery chart -->
         <div class="trends-card">
-          <h3>Daily availability</h3>
-          <p class="trends-card-sub">Percentage of fuel types available across all tracked stations</p>
+          <h3>Outage recovery</h3>
+          <p class="trends-card-sub">Fuel type outages that have been resolved over time</p>
           <div class="chart-container">
             <canvas id="availability-chart" height="200"></canvas>
           </div>
@@ -1017,9 +1024,16 @@
         <!-- Section transition -->
         <p id="outage-headline" class="trends-section-headline" style="display:none;"></p>
 
-        <!-- Outage summary -->
+        <!-- Outage duration by fuel type -->
         <div class="trends-card">
-          <h3>Current outages</h3>
+          <h3>Average outage duration by fuel type</h3>
+          <p class="trends-card-sub">How long each fuel type has been unavailable (across <span id="trends-days-tracked">-</span> days tracked)</p>
+          <div id="duration-breakdown"></div>
+        </div>
+
+        <!-- Current outages -->
+        <div class="trends-card">
+          <h3>Remaining outages</h3>
           <p class="trends-card-sub" id="outage-summary-text">-</p>
           <div class="outage-grid" id="outage-grid"></div>
         </div>
@@ -1052,7 +1066,7 @@
     var EMBEDDED_TREND_STATION_COUNT = 290;
     var EMBEDDED_GOOGLE_META = {"last_updated": "2026-03-30T09:46:38.757674+00:00", "zones_scraped": ["ryde", "denistone", "west_ryde", "meadowbank", "gladesville", "hunters_hill", "putney", "oatlands", "northmead", "carlingford", "dundas", "telopea", "ermington", "eastwood", "marsfield", "auburn", "granville", "strathfield", "hornsby", "chatswood", "haberfield", "willoughby", "lane_cove", "artarmon", "drummoyne", "croydon_park", "pennant_hills", "guildford", "turramurra", "greenacre", "castlecrag", "northbridge", "naremburn", "bass_hill", "pendle_hill", "wentworthville", "girraween", "greystanes", "villawood", "chester_hill", "sefton", "birrong", "st_ives_north", "fairfield", "ultimo"], "total_stations": 235, "station_count": 292, "zone_count": 45};
     var EMBEDDED_FC_META = {"last_updated": "2026-04-05T02:18:07.680215+00:00", "total_nsw": 3245, "in_bounds": 702, "in_scraped_suburbs": 435, "scraped_suburb_count": 135, "full_output_file": "fuelcheck_stations_full.json", "history_file": "fuelcheck_full_2026-04-05T021807.json"};
-    var USE_EMBEDDED = true;
+    var USE_EMBEDDED = false;
     const MATCH_THRESHOLD_METERS = 100;
 
     const map = L.map("map", {
@@ -1921,13 +1935,15 @@
 
       document.getElementById("map-status").style.display = "none";
 
-      // Update availability percentage line
-      const pct = googleTotal ? Math.round((matchedCount / googleTotal) * 100) : 0;
-      const filtering = selectedFuelTypes.size < ALL_FUEL_TYPES.length;
-      const fuelLabel = filtering ? [...selectedFuelTypes].join(", ") : "any";
-      document.getElementById("avail-line").innerHTML = DOMPurify.sanitize(
-        `<strong>${pct}%</strong> of local petrol stations have <span style="color:var(--fuelcheck);font-weight:600;">${escapeHtml(fuelLabel)}</span> fuel, based on NSW Govt Fuel Check data.*`
-      );
+      // Update availability percentage line (station-level: fully available = matched + no outages)
+      const stationsWithOutage = outageLookup.size;
+      const noDataCount = gapCount;
+      const fullyAvailable = googleTotal - stationsWithOutage - noDataCount;
+      const pct = googleTotal ? Math.round((fullyAvailable / googleTotal) * 100) : 0;
+      document.getElementById("avail-line").textContent = pct + "% of local stations have full fuel availability";
+      document.getElementById("avail-line-detail").textContent =
+        stationsWithOutage + " partial outage" + (stationsWithOutage !== 1 ? "s" : "") +
+        " · " + noDataCount + " unverified";
 
       updateTableBadges();
       renderTable();
@@ -2200,11 +2216,16 @@
     async function loadTrends() {
       trendsLoaded = true;
       try {
-        var outageRows = (typeof USE_EMBEDDED !== 'undefined' && USE_EMBEDDED) ? EMBEDDED_OUTAGES : await fetchCsv("data/clean/fuelcheck_outages.csv").catch(function() { return []; });
-        renderAvailabilityChartFromAgg(
-          (typeof USE_EMBEDDED !== 'undefined' && USE_EMBEDDED) ? EMBEDDED_DAILY_AGG : null,
-          (typeof USE_EMBEDDED !== 'undefined' && USE_EMBEDDED) ? EMBEDDED_TREND_STATION_COUNT : 0
-        );
+        var [dailyRows, outageRows] = await Promise.all([
+          fetchCsv("data/clean/fuelcheck_daily_availability.csv").catch(function() { return []; }),
+          fetchCsv("data/clean/fuelcheck_outages.csv").catch(function() { return []; })
+        ]);
+
+        // Build recovery data from daily rows
+        var recoveryData = buildRecoveryData(dailyRows);
+        window._lastRecoveryData = recoveryData;
+        renderRecoveryChart(recoveryData);
+        renderDurationBreakdown(dailyRows);
         renderAiSummary(outageRows);
         renderOutageGrid(outageRows);
         renderBrandBreakdown(outageRows);
@@ -2214,176 +2235,230 @@
       }
     }
 
+    function buildRecoveryData(rows) {
+      if (!rows.length) return null;
+      var days = [];
+      var daySet = {};
+      rows.forEach(function(r) { if (r.day && !daySet[r.day]) { daySet[r.day] = true; days.push(r.day); } });
+      days.sort();
 
-    // Render chart from pre-aggregated daily data [{day, avail, total}, ...]
-    function renderAvailabilityChartFromAgg(aggData, stationCount) {
-      if (!aggData || !aggData.length) return;
-      var days = aggData.map(function(d) { return d.day; });
-      var pcts = aggData.map(function(d) { return d.total ? (d.avail / d.total * 100) : 0; });
+      // Track each station+fuel combo
+      var combos = {};
+      rows.forEach(function(r) {
+        var key = r.station_id + "|" + r.fuel_type;
+        if (!combos[key]) combos[key] = { days: {} };
+        combos[key].days[r.day] = r.fuel_available_on_day === "true";
+      });
+
+      // Find combos that had outage on first day
+      var firstDay = days[0];
+      var outageOnFirst = {};
+      Object.keys(combos).forEach(function(key) {
+        if (combos[key].days[firstDay] === false) outageOnFirst[key] = combos[key];
+      });
+
+      var totalInitial = Object.keys(outageOnFirst).length;
+      if (!totalInitial) return { days: days, stillOut: days.map(function() { return 0; }), recovered: days.map(function() { return 0; }), total: 0, stationCount: Object.keys(daySet).length };
+
+      var stillOut = [];
+      var recovered = [];
+      days.forEach(function(day) {
+        var out = 0;
+        var rec = 0;
+        Object.keys(outageOnFirst).forEach(function(key) {
+          if (outageOnFirst[key].days[day] === false) out++;
+          else if (outageOnFirst[key].days[day] === true) rec++;
+        });
+        stillOut.push(out);
+        recovered.push(rec);
+      });
+
+      var stationIds = new Set();
+      rows.forEach(function(r) { if (r.station_id) stationIds.add(r.station_id); });
+
+      return { days: days, stillOut: stillOut, recovered: recovered, total: totalInitial, stationCount: stationIds.size };
+    }
+
+
+    // ── Recovery chart: stacked area (still out vs recovered) ──
+    function renderRecoveryChart(data) {
+      if (!data || !data.days.length || !data.total) return;
+      var days = data.days;
+      var total = data.total;
+
       document.getElementById("trends-days").textContent = days.length;
-      document.getElementById("trends-stations").textContent = stationCount;
+      document.getElementById("trends-stations").textContent = data.stationCount;
 
       var canvas = document.getElementById("availability-chart");
       var dpr = window.devicePixelRatio || 1;
       var cw = canvas.parentElement.offsetWidth;
-      var ch = 200;
+      var ch = 220;
       canvas.width = cw * dpr;
       canvas.height = ch * dpr;
       canvas.style.width = cw + "px";
       canvas.style.height = ch + "px";
       var ctx = canvas.getContext("2d");
       ctx.scale(dpr, dpr);
-      var pad = { top: 20, right: 16, bottom: 36, left: 44 };
+
+      var pad = { top: 24, right: 16, bottom: 40, left: 44 };
       var plotW = cw - pad.left - pad.right;
       var plotH = ch - pad.top - pad.bottom;
-      var yMin = Math.max(0, Math.floor(Math.min.apply(null, pcts) - 2));
-      var yMax = 100;
+
       function xPos(i) { return pad.left + (days.length > 1 ? i / (days.length - 1) * plotW : plotW / 2); }
-      function yPos(v) { return pad.top + plotH - ((v - yMin) / (yMax - yMin)) * plotH; }
+      function yPos(v) { return pad.top + plotH - (v / total) * plotH; }
+
+      // Grid lines
       ctx.strokeStyle = "rgba(255,255,255,0.08)";
       ctx.lineWidth = 1;
-      for (var g = yMin; g <= yMax; g += 5) {
+      var step = total <= 50 ? 10 : total <= 200 ? 50 : 100;
+      for (var g = 0; g <= total; g += step) {
         var gy = yPos(g);
         ctx.beginPath(); ctx.moveTo(pad.left, gy); ctx.lineTo(cw - pad.right, gy); ctx.stroke();
         ctx.fillStyle = "#9eb7c8"; ctx.font = "11px sans-serif"; ctx.textAlign = "right";
-        ctx.fillText(g + "%", pad.left - 6, gy + 4);
+        ctx.fillText(g, pad.left - 6, gy + 4);
       }
+
+      // X labels
       ctx.fillStyle = "#9eb7c8"; ctx.font = "10px sans-serif"; ctx.textAlign = "center";
-      var labelStep = Math.max(1, Math.floor(days.length / 7));
       days.forEach(function(d, i) {
-        if (i % labelStep === 0 || i === days.length - 1) {
-          var parts = d.split("-"); ctx.fillText(parts[2] + "/" + parts[1], xPos(i), ch - pad.bottom + 16);
-        }
+        var parts = d.split("-");
+        ctx.fillText(parts[2] + "/" + parts[1], xPos(i), ch - pad.bottom + 16);
       });
-      ctx.beginPath(); ctx.moveTo(xPos(0), yPos(yMin));
-      pcts.forEach(function(v, i) { ctx.lineTo(xPos(i), yPos(v)); });
-      ctx.lineTo(xPos(days.length - 1), yPos(yMin)); ctx.closePath();
-      var grad = ctx.createLinearGradient(0, pad.top, 0, ch - pad.bottom);
-      grad.addColorStop(0, "rgba(71, 194, 125, 0.25)"); grad.addColorStop(1, "rgba(71, 194, 125, 0.02)");
-      ctx.fillStyle = grad; ctx.fill();
+
+      // Still-out area (red/amber)
       ctx.beginPath();
-      pcts.forEach(function(v, i) { if (i === 0) ctx.moveTo(xPos(i), yPos(v)); else ctx.lineTo(xPos(i), yPos(v)); });
+      ctx.moveTo(xPos(0), yPos(0));
+      data.stillOut.forEach(function(v, i) { ctx.lineTo(xPos(i), yPos(v)); });
+      ctx.lineTo(xPos(days.length - 1), yPos(0));
+      ctx.closePath();
+      var gradOut = ctx.createLinearGradient(0, pad.top, 0, ch - pad.bottom);
+      gradOut.addColorStop(0, "rgba(240, 199, 110, 0.35)");
+      gradOut.addColorStop(1, "rgba(240, 199, 110, 0.05)");
+      ctx.fillStyle = gradOut;
+      ctx.fill();
+
+      // Still-out line
+      ctx.beginPath();
+      data.stillOut.forEach(function(v, i) {
+        if (i === 0) ctx.moveTo(xPos(i), yPos(v)); else ctx.lineTo(xPos(i), yPos(v));
+      });
+      ctx.strokeStyle = "#f0c76e"; ctx.lineWidth = 2.5; ctx.lineJoin = "round"; ctx.stroke();
+
+      // Recovered line (green)
+      ctx.beginPath();
+      data.recovered.forEach(function(v, i) {
+        if (i === 0) ctx.moveTo(xPos(i), yPos(v)); else ctx.lineTo(xPos(i), yPos(v));
+      });
       ctx.strokeStyle = "#47c27d"; ctx.lineWidth = 2.5; ctx.lineJoin = "round"; ctx.stroke();
-      pcts.forEach(function(v, i) {
+
+      // Dots
+      data.stillOut.forEach(function(v, i) {
+        ctx.beginPath(); ctx.arc(xPos(i), yPos(v), 3.5, 0, Math.PI * 2);
+        ctx.fillStyle = "#f0c76e"; ctx.fill(); ctx.strokeStyle = "#07131a"; ctx.lineWidth = 1.5; ctx.stroke();
+      });
+      data.recovered.forEach(function(v, i) {
         ctx.beginPath(); ctx.arc(xPos(i), yPos(v), 3.5, 0, Math.PI * 2);
         ctx.fillStyle = "#47c27d"; ctx.fill(); ctx.strokeStyle = "#07131a"; ctx.lineWidth = 1.5; ctx.stroke();
       });
-      if (pcts.length) {
-        var last = pcts[pcts.length - 1];
-        ctx.fillStyle = "#47c27d"; ctx.font = "bold 12px sans-serif"; ctx.textAlign = "left";
-        ctx.fillText(last.toFixed(1) + "%", xPos(days.length - 1) + 8, yPos(last) + 4);
-      }
+
+      // End labels
+      var lastOut = data.stillOut[data.stillOut.length - 1];
+      var lastRec = data.recovered[data.recovered.length - 1];
+      ctx.font = "bold 11px sans-serif"; ctx.textAlign = "left";
+      ctx.fillStyle = "#f0c76e";
+      ctx.fillText(lastOut + " remaining", xPos(days.length - 1) + 8, yPos(lastOut) + 4);
+      ctx.fillStyle = "#47c27d";
+      ctx.fillText(lastRec + " recovered", xPos(days.length - 1) + 8, yPos(lastRec) + 4);
+
+      // Legend
+      ctx.font = "10px sans-serif"; ctx.textAlign = "left";
+      var lx = pad.left + 4, ly = pad.top + 2;
+      ctx.fillStyle = "#9eb7c8";
+      ctx.fillText("of " + total + " outages on " + days[0].split("-").slice(1).join("/"), lx, ly);
     }
 
-    // ── Availability line chart (pure canvas) ──
-    function renderAvailabilityChart(rows) {
+    // ── Outage duration by fuel type ──
+    function renderDurationBreakdown(rows) {
       if (!rows.length) return;
-      var dayMap = {};
+      var days = [];
+      var daySet = {};
+      rows.forEach(function(r) { if (r.day && !daySet[r.day]) { daySet[r.day] = true; days.push(r.day); } });
+      days.sort();
+      var numDays = days.length;
+      var lastDay = days[days.length - 1];
+
+      document.getElementById("trends-days-tracked").textContent = numDays;
+
+      // Per combo: count days in outage
+      var combos = {};
       rows.forEach(function(r) {
-        var day = r.day;
-        if (!day) return;
-        if (!dayMap[day]) dayMap[day] = { avail: 0, total: 0 };
-        dayMap[day].total++;
-        if (r.fuel_available_on_day === "true") dayMap[day].avail++;
+        var key = r.station_id + "|" + r.fuel_type;
+        if (!combos[key]) combos[key] = { fuel: r.fuel_type, outageDays: 0, total: 0, lastAvail: true };
+        combos[key].total++;
+        if (r.fuel_available_on_day !== "true") combos[key].outageDays++;
+        if (r.day === lastDay) combos[key].lastAvail = r.fuel_available_on_day === "true";
       });
-      var days = Object.keys(dayMap).sort();
-      var pcts = days.map(function(d) { return dayMap[d].total ? (dayMap[d].avail / dayMap[d].total * 100) : 0; });
-      var stationIds = new Set();
-      rows.forEach(function(r) { if (r.station_id) stationIds.add(r.station_id); });
-      document.getElementById("trends-days").textContent = days.length;
-      document.getElementById("trends-stations").textContent = stationIds.size;
 
-      var canvas = document.getElementById("availability-chart");
-      var dpr = window.devicePixelRatio || 1;
-      var cw = canvas.parentElement.offsetWidth;
-      var ch = 200;
-      canvas.width = cw * dpr;
-      canvas.height = ch * dpr;
-      canvas.style.width = cw + "px";
-      canvas.style.height = ch + "px";
-      var ctx = canvas.getContext("2d");
-      ctx.scale(dpr, dpr);
+      // Aggregate by fuel type — only combos that had at least 1 outage day
+      var fuelStats = {};
+      Object.keys(combos).forEach(function(key) {
+        var c = combos[key];
+        if (c.outageDays === 0) return;
+        if (!fuelStats[c.fuel]) fuelStats[c.fuel] = { count: 0, totalDays: 0, maxDays: 0, stillActive: 0 };
+        fuelStats[c.fuel].count++;
+        fuelStats[c.fuel].totalDays += c.outageDays;
+        if (c.outageDays > fuelStats[c.fuel].maxDays) fuelStats[c.fuel].maxDays = c.outageDays;
+        if (!c.lastAvail) fuelStats[c.fuel].stillActive++;
+      });
 
-      var pad = { top: 20, right: 16, bottom: 36, left: 44 };
-      var plotW = cw - pad.left - pad.right;
-      var plotH = ch - pad.top - pad.bottom;
-      var yMin = Math.max(0, Math.floor(Math.min.apply(null, pcts) - 2));
-      var yMax = 100;
+      var el = document.getElementById("duration-breakdown");
+      el.textContent = "";
 
-      function xPos(i) { return pad.left + (days.length > 1 ? i / (days.length - 1) * plotW : plotW / 2); }
-      function yPos(v) { return pad.top + plotH - ((v - yMin) / (yMax - yMin)) * plotH; }
-
-      ctx.strokeStyle = "rgba(255,255,255,0.08)";
-      ctx.lineWidth = 1;
-      for (var g = yMin; g <= yMax; g += 5) {
-        var gy = yPos(g);
-        ctx.beginPath(); ctx.moveTo(pad.left, gy); ctx.lineTo(cw - pad.right, gy); ctx.stroke();
-        ctx.fillStyle = "#9eb7c8";
-        ctx.font = "11px sans-serif";
-        ctx.textAlign = "right";
-        ctx.fillText(g + "%", pad.left - 6, gy + 4);
+      var sorted = Object.entries(fuelStats).sort(function(a, b) { return b[1].count - a[1].count; });
+      if (!sorted.length) {
+        var p = document.createElement("p");
+        p.style.cssText = "color:var(--muted);font-size:0.85rem;";
+        p.textContent = "No outages recorded.";
+        el.appendChild(p);
+        return;
       }
-      ctx.fillStyle = "#9eb7c8";
-      ctx.font = "10px sans-serif";
-      ctx.textAlign = "center";
-      var labelStep = Math.max(1, Math.floor(days.length / 7));
-      days.forEach(function(d, i) {
-        if (i % labelStep === 0 || i === days.length - 1) {
-          var parts = d.split("-");
-          ctx.fillText(parts[2] + "/" + parts[1], xPos(i), ch - pad.bottom + 16);
-        }
+
+      sorted.forEach(function(entry) {
+        var ft = entry[0];
+        var s = entry[1];
+        var avg = (s.totalDays / s.count).toFixed(1);
+
+        var row = document.createElement("div");
+        row.className = "breakdown-row";
+
+        var label = document.createElement("span");
+        label.className = "breakdown-label";
+        label.textContent = ft;
+
+        var barWrap = document.createElement("div");
+        barWrap.className = "breakdown-bar-wrap";
+        var bar = document.createElement("div");
+        bar.className = "breakdown-bar";
+        bar.style.width = (avg / numDays * 100).toFixed(0) + "%";
+        bar.style.background = s.stillActive > 0 ? "var(--accent)" : "var(--matched)";
+        barWrap.appendChild(bar);
+
+        var val = document.createElement("span");
+        val.className = "breakdown-value";
+        val.textContent = avg + "d avg";
+        val.title = s.count + " outages, max " + s.maxDays + "d, " + s.stillActive + " still active";
+
+        row.appendChild(label);
+        row.appendChild(barWrap);
+        row.appendChild(val);
+        el.appendChild(row);
       });
-      ctx.beginPath();
-      ctx.moveTo(xPos(0), yPos(yMin));
-      pcts.forEach(function(v, i) { ctx.lineTo(xPos(i), yPos(v)); });
-      ctx.lineTo(xPos(days.length - 1), yPos(yMin));
-      ctx.closePath();
-      var grad = ctx.createLinearGradient(0, pad.top, 0, ch - pad.bottom);
-      grad.addColorStop(0, "rgba(71, 194, 125, 0.25)");
-      grad.addColorStop(1, "rgba(71, 194, 125, 0.02)");
-      ctx.fillStyle = grad;
-      ctx.fill();
-      ctx.beginPath();
-      pcts.forEach(function(v, i) {
-        if (i === 0) ctx.moveTo(xPos(i), yPos(v));
-        else ctx.lineTo(xPos(i), yPos(v));
-      });
-      ctx.strokeStyle = "#47c27d";
-      ctx.lineWidth = 2.5;
-      ctx.lineJoin = "round";
-      ctx.stroke();
-      pcts.forEach(function(v, i) {
-        ctx.beginPath();
-        ctx.arc(xPos(i), yPos(v), 3.5, 0, Math.PI * 2);
-        ctx.fillStyle = "#47c27d";
-        ctx.fill();
-        ctx.strokeStyle = "#07131a";
-        ctx.lineWidth = 1.5;
-        ctx.stroke();
-      });
-      if (pcts.length) {
-        var last = pcts[pcts.length - 1];
-        ctx.fillStyle = "#47c27d";
-        ctx.font = "bold 12px sans-serif";
-        ctx.textAlign = "left";
-        ctx.fillText(last.toFixed(1) + "%", xPos(days.length - 1) + 8, yPos(last) + 4);
-      }
     }
 
     // ── AI Summary ──
     function renderAiSummary(outageRows) {
       var textEl = document.getElementById("ai-summary-text-top");
       var suburbsEl = document.getElementById("ai-summary-suburbs-top");
-
-      // Get availability data
-      var aggData = (typeof EMBEDDED_DAILY_AGG !== 'undefined') ? EMBEDDED_DAILY_AGG : [];
-      if (!aggData.length) { return; }
-
-      var first = aggData[0];
-      var last = aggData[aggData.length - 1];
-      var firstPct = first.total ? (first.avail / first.total * 100) : 0;
-      var lastPct = last.total ? (last.avail / last.total * 100) : 0;
-      var days = aggData.length;
 
       // Current outages
       var outages = outageRows.filter(function(r) { return r.is_outage === "true"; });
@@ -2393,39 +2468,33 @@
         outageStations[r.station_id].fuels.push(r.fuel_type);
       });
       var numOutageStations = Object.keys(outageStations).length;
+      var numOutageFuels = outages.length;
 
-      // Top brands affected
+      // Top brands
       var brandCounts = {};
       outages.forEach(function(r) { brandCounts[r.brand] = (brandCounts[r.brand] || 0) + 1; });
       var topBrands = Object.entries(brandCounts).sort(function(a, b) { return b[1] - a[1]; }).slice(0, 2).map(function(e) { return e[0]; });
 
-      // Top fuel types missing
+      // Top fuel types
       var fuelCounts = {};
       outages.forEach(function(r) { fuelCounts[r.fuel_type] = (fuelCounts[r.fuel_type] || 0) + 1; });
       var topFuels = Object.entries(fuelCounts).sort(function(a, b) { return b[1] - a[1]; }).slice(0, 2).map(function(e) { return e[0]; });
 
-      // Build summary text
+      // Use recovery data if available
+      var recovery = window._lastRecoveryData;
       var summary = "";
-      if (lastPct >= 95) {
-        summary = "Things are looking good";
-      } else if (lastPct >= 85) {
-        summary = "Availability is reasonable";
-      } else {
-        summary = "Availability is below normal";
-      }
 
-      if (days >= 2 && lastPct - firstPct > 5) {
-        summary += " \u2014 availability jumped from " + Math.round(firstPct) + "% to " + Math.round(lastPct) + "% this week.";
-      } else if (days >= 2 && firstPct - lastPct > 5) {
-        summary += " \u2014 availability dropped from " + Math.round(firstPct) + "% to " + Math.round(lastPct) + "% this week.";
-      } else {
-        summary += " at " + Math.round(lastPct) + "%.";
+      if (recovery && recovery.total > 0) {
+        var lastRec = recovery.recovered[recovery.recovered.length - 1];
+        var lastOut = recovery.stillOut[recovery.stillOut.length - 1];
+        var recPct = Math.round(lastRec / recovery.total * 100);
+        summary = recPct + "% of fuel type outages from " + recovery.days[0].split("-").slice(1).reverse().join("/") + " have been resolved.";
       }
 
       if (numOutageStations > 0 && topBrands.length) {
-        summary += " A handful of stations (mostly " + topBrands.join(" and ") + ") are still missing " + topFuels.join(" or ") + ", but nothing to worry about for most drivers.";
+        summary += " " + numOutageStations + " station" + (numOutageStations !== 1 ? "s" : "") + " still affected, mostly " + topBrands.join(" and ") + " missing " + topFuels.join(" and ") + ".";
       } else if (numOutageStations === 0) {
-        summary += " No outages detected across any tracked stations.";
+        summary += " No outages remain across any tracked stations.";
       }
 
       textEl.textContent = "AI Summary: " + summary;
@@ -2449,21 +2518,19 @@
       var summary = document.getElementById("outage-summary-text");
       var headline = document.getElementById("outage-headline");
 
-      // Build section headline from availability + outage data
-      var aggData = (typeof EMBEDDED_DAILY_AGG !== 'undefined') ? EMBEDDED_DAILY_AGG : [];
-      var lastPct = 0;
-      if (aggData.length) {
-        var last = aggData[aggData.length - 1];
-        lastPct = last.total ? Math.round(last.avail / last.total * 100) : 0;
-      }
       var outageStationIds = new Set();
       outages.forEach(function(r) { outageStationIds.add(r.station_id); });
       var numOutageStations = outageStationIds.size;
+      var recovery = window._lastRecoveryData;
 
-      if (numOutageStations > 0) {
-        headline.textContent = "On average, stations in the included areas have " + lastPct + "% availability. Only " + numOutageStations + " station" + (numOutageStations !== 1 ? "s have" : " has") + " outages, and they only cover specific fuel types — not a full loss of supply.";
+      if (recovery && recovery.total > 0) {
+        var lastRec = recovery.recovered[recovery.recovered.length - 1];
+        var recPct = Math.round(lastRec / recovery.total * 100);
+        headline.textContent = recPct + "% of outages have been resolved. " + numOutageStations + " station" + (numOutageStations !== 1 ? "s" : "") + " still " + (numOutageStations !== 1 ? "have" : "has") + " partial outages — specific fuel types only, not a full loss of supply.";
+      } else if (numOutageStations > 0) {
+        headline.textContent = numOutageStations + " station" + (numOutageStations !== 1 ? "s have" : " has") + " partial outages — specific fuel types only, not a full loss of supply.";
       } else {
-        headline.textContent = "Stations in the included areas have " + lastPct + "% availability. No outages detected across any tracked stations.";
+        headline.textContent = "No outages detected across any tracked stations.";
       }
       headline.style.display = "";
 
