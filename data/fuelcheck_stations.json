@@ -756,7 +756,7 @@
       },
       {
         "fuel_type": "LPG",
-        "price": 127.9
+        "price": 109.7
       },
       {
         "fuel_type": "P95",
@@ -1099,10 +1099,6 @@
     "lng": 151.2553819,
     "prices": [
       {
-        "fuel_type": "E10",
-        "price": 225.9
-      },
-      {
         "fuel_type": "P95",
         "price": 243.9
       },
@@ -1268,6 +1264,18 @@
     "lat": -33.870023,
     "lng": 151.130434,
     "prices": [
+      {
+        "fuel_type": "E10",
+        "price": 225.9
+      },
+      {
+        "fuel_type": "P95",
+        "price": 243.9
+      },
+      {
+        "fuel_type": "P98",
+        "price": 252.9
+      },
       {
         "fuel_type": "PDL",
         "price": 313.4
