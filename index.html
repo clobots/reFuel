@@ -2237,10 +2237,27 @@
 
     function buildRecoveryData(rows) {
       if (!rows.length) return null;
+      var realDays = [];
+      var realDaySet = {};
+      rows.forEach(function(r) { if (r.day && !realDaySet[r.day]) { realDaySet[r.day] = true; realDays.push(r.day); } });
+      realDays.sort();
+
+      // Expand to full calendar range, flagging gaps as imputed
       var days = [];
-      var daySet = {};
-      rows.forEach(function(r) { if (r.day && !daySet[r.day]) { daySet[r.day] = true; days.push(r.day); } });
-      days.sort();
+      var imputed = [];
+      if (realDays.length > 1) {
+        var cur = new Date(realDays[0] + 'T12:00:00Z');
+        var endD = new Date(realDays[realDays.length - 1] + 'T12:00:00Z');
+        while (cur <= endD) {
+          var ds = cur.toISOString().slice(0, 10);
+          days.push(ds);
+          imputed.push(!realDaySet[ds]);
+          cur = new Date(cur.getTime() + 86400000);
+        }
+      } else {
+        days = realDays.slice();
+        imputed = [false];
+      }
 
       // Track each station+fuel combo
       var combos = {};
@@ -2258,16 +2275,25 @@
       });
 
       var totalInitial = Object.keys(outageOnFirst).length;
-      if (!totalInitial) return { days: days, stillOut: days.map(function() { return 0; }), recovered: days.map(function() { return 0; }), total: 0, stationCount: Object.keys(daySet).length };
+      if (!totalInitial) return { days: days, imputed: imputed, stillOut: days.map(function() { return 0; }), recovered: days.map(function() { return 0; }), total: 0, stationCount: Object.keys(realDaySet).length };
+
+      // For imputed days, carry forward the last known status per combo
+      function comboStatusOnDay(combo, dayIdx) {
+        for (var i = dayIdx; i >= 0; i--) {
+          if (combo.days.hasOwnProperty(days[i])) return combo.days[days[i]];
+        }
+        return undefined;
+      }
 
       var stillOut = [];
       var recovered = [];
-      days.forEach(function(day) {
+      days.forEach(function(day, i) {
         var out = 0;
         var rec = 0;
         Object.keys(outageOnFirst).forEach(function(key) {
-          if (outageOnFirst[key].days[day] === false) out++;
-          else if (outageOnFirst[key].days[day] === true) rec++;
+          var status = comboStatusOnDay(outageOnFirst[key], i);
+          if (status === false) out++;
+          else if (status === true) rec++;
         });
         stillOut.push(out);
         recovered.push(rec);
@@ -2276,7 +2302,7 @@
       var stationIds = new Set();
       rows.forEach(function(r) { if (r.station_id) stationIds.add(r.station_id); });
 
-      return { days: days, stillOut: stillOut, recovered: recovered, total: totalInitial, stationCount: stationIds.size };
+      return { days: days, imputed: imputed, stillOut: stillOut, recovered: recovered, total: totalInitial, stationCount: stationIds.size };
     }
 
 
@@ -2318,11 +2344,28 @@
         ctx.fillText(g, pad.left - 6, gy + 4);
       }
 
+      // Gray shading for imputed (gap) days
+      if (data.imputed) {
+        data.imputed.forEach(function(isImputed, i) {
+          if (!isImputed) return;
+          var x0 = i > 0 ? (xPos(i - 1) + xPos(i)) / 2 : xPos(i);
+          var x1 = i < days.length - 1 ? (xPos(i) + xPos(i + 1)) / 2 : xPos(i);
+          ctx.fillStyle = "rgba(255,255,255,0.04)";
+          ctx.fillRect(x0, pad.top, x1 - x0, plotH);
+          ctx.strokeStyle = "rgba(255,255,255,0.06)";
+          ctx.lineWidth = 0.5;
+          ctx.beginPath(); ctx.moveTo(x0, pad.top); ctx.lineTo(x0, pad.top + plotH); ctx.stroke();
+          ctx.beginPath(); ctx.moveTo(x1, pad.top); ctx.lineTo(x1, pad.top + plotH); ctx.stroke();
+        });
+      }
+
       // X labels
       ctx.fillStyle = "#9eb7c8"; ctx.font = "10px sans-serif"; ctx.textAlign = "center";
       days.forEach(function(d, i) {
         var parts = d.split("-");
-        ctx.fillText(parts[2] + "/" + parts[1], xPos(i), ch - pad.bottom + 16);
+        var label = parts[2] + "/" + parts[1];
+        ctx.fillStyle = data.imputed && data.imputed[i] ? "rgba(158,183,200,0.4)" : "#9eb7c8";
+        ctx.fillText(label, xPos(i), ch - pad.bottom + 16);
       });
 
       // Still-out area (red/amber)
@@ -2353,12 +2396,16 @@
 
       // Dots
       data.stillOut.forEach(function(v, i) {
-        ctx.beginPath(); ctx.arc(xPos(i), yPos(v), 3.5, 0, Math.PI * 2);
-        ctx.fillStyle = "#f0c76e"; ctx.fill(); ctx.strokeStyle = "#07131a"; ctx.lineWidth = 1.5; ctx.stroke();
+        var imp = data.imputed && data.imputed[i];
+        ctx.beginPath(); ctx.arc(xPos(i), yPos(v), imp ? 2.5 : 3.5, 0, Math.PI * 2);
+        ctx.fillStyle = imp ? "rgba(240,199,110,0.35)" : "#f0c76e"; ctx.fill();
+        ctx.strokeStyle = "#07131a"; ctx.lineWidth = 1.5; ctx.stroke();
       });
       data.recovered.forEach(function(v, i) {
-        ctx.beginPath(); ctx.arc(xPos(i), yPos(v), 3.5, 0, Math.PI * 2);
-        ctx.fillStyle = "#47c27d"; ctx.fill(); ctx.strokeStyle = "#07131a"; ctx.lineWidth = 1.5; ctx.stroke();
+        var imp = data.imputed && data.imputed[i];
+        ctx.beginPath(); ctx.arc(xPos(i), yPos(v), imp ? 2.5 : 3.5, 0, Math.PI * 2);
+        ctx.fillStyle = imp ? "rgba(71,194,125,0.35)" : "#47c27d"; ctx.fill();
+        ctx.strokeStyle = "#07131a"; ctx.lineWidth = 1.5; ctx.stroke();
       });
 
       // End labels
