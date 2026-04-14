@@ -166,7 +166,7 @@
 
     .summary {
       display: grid;
-      grid-template-columns: repeat(5, 1fr);
+      grid-template-columns: repeat(4, 1fr);
       gap: 10px;
       margin: 0 0 8px;
     }
@@ -1022,13 +1022,9 @@
             <dt style="color:var(--partial)">Partial out</dt>
             <small class="summary-sub" id="partial-sub" style="color:var(--manual)"></small>
           </div>
-          <div class="summary-card" title="Every usual fuel currently unavailable">
-            <dd id="critical-count">-</dd>
-            <dt style="color:var(--critical)">All out</dt>
-          </div>
-          <div class="summary-card" title="Temporarily closed (manually verified)">
-            <dd id="closed-count">-</dd>
-            <dt style="color:var(--closed)">Closed</dt>
+          <div class="summary-card" title="Completely out (closed or all fuels unavailable)">
+            <dd id="unavailable-count">-</dd>
+            <dt style="color:var(--critical)">Unavailable</dt>
           </div>
           <div class="summary-card" title="Google-only station — no fuel data available">
             <dd id="unknown-count">-</dd>
@@ -1364,9 +1360,8 @@
       const legendRow = L.DomUtil.create("div", "legend-row", div);
       const legendItems = [
         { cls: "matched", label: "Available", title: "Live FuelCheck data, all usual fuels available" },
-        { cls: "partial", label: "Partial out", title: "75% or more of usual (ever-had) fuels unavailable" },
-        { cls: "critical", label: "All out", title: "Every usual fuel currently unavailable" },
-        { cls: "closed", label: "Closed", title: "Temporarily closed (manually verified)" },
+        { cls: "partial", label: "Partial out", title: "1 or more fuels unavailable" },
+        { cls: "critical", label: "Unavailable", title: "Completely out (closed or all fuels unavailable)" },
         { cls: "unknown", label: "Unknown", title: "Google-only station — no fuel data available" },
         { cls: "manual", label: "Manual", title: "Manually collected data at -24hr delay" }
       ];
@@ -1413,10 +1408,8 @@
       var partSub = document.getElementById("partial-sub");
       if (partSub) partSub.textContent = (stats.manualPartial || 0) > 0 ? (stats.manualPartial + " manual*") : "";
 
-      var critEl = document.getElementById("critical-count");
-      if (critEl) critEl.textContent = stats.critical != null ? stats.critical : 0;
-      var closEl = document.getElementById("closed-count");
-      if (closEl) closEl.textContent = stats.closed != null ? stats.closed : 0;
+      var unavailEl = document.getElementById("unavailable-count");
+      if (unavailEl) unavailEl.textContent = (stats.critical || 0) + (stats.closed || 0);
       var unkEl = document.getElementById("unknown-count");
       if (unkEl) unkEl.textContent = stats.unknown != null ? stats.unknown : 0;
     }
