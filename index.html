@@ -2204,7 +2204,7 @@
       const fullyAvailable = googleTotal - unavailableCount - partialCount;
       const pct = googleTotal ? Math.round((fullyAvailable / googleTotal) * 100) : 0;
       document.getElementById("avail-line").textContent = pct + "% of local stations have full fuel availability";
-      const outageTotal = partialCount + criticalCount;
+      const outageTotal = partialCount + criticalCount + closedCount;
       document.getElementById("avail-line-detail").textContent =
         outageTotal + " station" + (outageTotal !== 1 ? "s" : "") + " with partial / full outages";
 
