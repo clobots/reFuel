@@ -248,15 +248,15 @@
     .map-controls {
       line-height: 1.5;
       color: var(--text);
-      padding: 12px 14px;
+      padding: 10px 12px;
       border: 1px solid var(--panel-border);
       border-radius: 16px;
       display: flex;
       flex-direction: column;
+      gap: 6px;
       background: rgba(7, 19, 26, 0.9);
       box-shadow: var(--shadow);
-      max-height: 70vh;
-      overflow-y: auto;
+      overflow: visible;
     }
 
     .map-controls strong {
@@ -274,20 +274,63 @@
       border-bottom: 1px solid var(--panel-border);
       width: 100%;
       min-width: 0;
+      position: relative;
+    }
+
+    .fuel-filter-toggle {
+      display: inline-flex !important;
+      align-items: center;
+      gap: 6px;
+      background: rgba(11, 24, 32, 0.6);
+      border: 1px solid var(--panel-border);
+      color: var(--accent);
+      font-size: 0.82rem;
+      padding: 6px 12px;
+      border-radius: 99px;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    .fuel-filter-toggle:hover {
+      border-color: var(--accent);
     }
 
     .fuel-filter-body {
+      display: none;
+      position: absolute;
+      bottom: calc(100% + 6px);
+      right: 0;
+      min-width: 200px;
+      max-height: 60vh;
+      overflow-y: auto;
+      background: var(--panel);
+      border: 1px solid var(--panel-border);
+      border-radius: 12px;
+      padding: 12px 14px;
+      box-shadow: var(--shadow);
+      z-index: 1001;
+      backdrop-filter: blur(14px);
+    }
+
+    .fuel-filter-body.open {
       display: flex;
       flex-direction: column;
       gap: 2px;
-      width: 100%;
+    }
+
+    .fuel-filter-body > strong {
+      color: var(--accent);
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 6px;
     }
 
     .fuel-filter label {
       display: flex;
       align-items: center;
       gap: 6px;
-      margin: 4px 0;
+      margin: 2px 0;
       font-size: 0.88rem;
       cursor: pointer;
       flex-shrink: 0;
@@ -301,7 +344,9 @@
     .fuel-filter-actions {
       display: flex;
       gap: 8px;
-      margin-top: 6px;
+      margin-top: 8px;
+      padding-top: 8px;
+      border-top: 1px solid var(--panel-border);
       flex-wrap: wrap;
       width: 100%;
     }
@@ -417,18 +462,9 @@
         margin-bottom: 6px;
         padding-bottom: 6px;
       }
-      .fuel-filter-toggle {
-        display: inline-flex !important;
-      }
       .fuel-filter-body {
-        display: none;
-      }
-      .fuel-filter-body.open {
-        display: block;
-      }
-      .fuel-filter-body {
-        max-height: none;
-        overflow-y: visible;
+        min-width: 180px;
+        max-height: 50vh;
       }
       .fuel-filter label {
         font-size: 0.8rem;
@@ -1316,8 +1352,13 @@
       const filterContainer = L.DomUtil.create("div", "fuel-filter", div);
 
       const toggle = L.DomUtil.create("button", "fuel-filter-toggle", filterContainer);
-      toggle.textContent = "Fuel Types \u25BC";
-      toggle.style.cssText = "display:none;background:none;border:1px solid var(--panel-border);color:var(--accent);font-size:0.78rem;padding:3px 10px;border-radius:99px;cursor:pointer;margin-bottom:4px;";
+      function updateToggleLabel() {
+        var total = ALL_FUEL_TYPES.length;
+        var selected = selectedFuelTypes.size;
+        var body = filterContainer.querySelector(".fuel-filter-body");
+        var isOpen = body && body.classList.contains("open");
+        toggle.textContent = "Fuel Types (" + selected + "/" + total + ") " + (isOpen ? "\u25B2" : "\u25BC");
+      }
 
       const filterBody = L.DomUtil.create("div", "fuel-filter-body", filterContainer);
       const filterTitle = L.DomUtil.create("strong", "", filterBody);
@@ -1338,6 +1379,7 @@
           } else {
             selectedFuelTypes.delete(this.value);
           }
+          updateToggleLabel();
           rerender();
         });
       });
@@ -1347,14 +1389,20 @@
       btnAll.textContent = "All";
       btnAll.addEventListener("click", () => {
         selectedFuelTypes = new Set(ALL_FUEL_TYPES);
-        div.querySelectorAll('.fuel-filter-body input[type="checkbox"]').forEach((cb) => { cb.checked = true; });
+        div.querySelectorAll('.fuel-filter-body input[type="checkbox"]').forEach((cb) => {
+          if (cb !== outageToggle) cb.checked = true;
+        });
+        updateToggleLabel();
         rerender();
       });
       const btnNone = L.DomUtil.create("button", "", actions);
       btnNone.textContent = "None";
       btnNone.addEventListener("click", () => {
         selectedFuelTypes.clear();
-        div.querySelectorAll('.fuel-filter-body input[type="checkbox"]').forEach((cb) => { cb.checked = false; });
+        div.querySelectorAll('.fuel-filter-body input[type="checkbox"]').forEach((cb) => {
+          if (cb !== outageToggle) cb.checked = false;
+        });
+        updateToggleLabel();
         rerender();
       });
 
@@ -1368,11 +1416,23 @@
         rerender();
       });
 
-      toggle.addEventListener("click", function() {
+      toggle.addEventListener("click", function(e) {
+        e.stopPropagation();
         var body = filterContainer.querySelector(".fuel-filter-body");
-        var isOpen = body.classList.toggle("open");
-        toggle.textContent = "Fuel Types " + (isOpen ? "\u25B2" : "\u25BC");
+        body.classList.toggle("open");
+        updateToggleLabel();
       });
+
+      // Close popover when clicking outside the filter container
+      document.addEventListener("click", function(e) {
+        var body = filterContainer.querySelector(".fuel-filter-body");
+        if (body && body.classList.contains("open") && !filterContainer.contains(e.target)) {
+          body.classList.remove("open");
+          updateToggleLabel();
+        }
+      });
+
+      updateToggleLabel();
 
       // Legend — horizontal row
       const legendRow = L.DomUtil.create("div", "legend-row", div);
@@ -2454,20 +2514,8 @@
 
     map.on("moveend", renderStationList);
 
-    // Sync map-controls panel max-height to actual map container height
-    function syncMapControlsHeight() {
-      var mapH = map.getContainer().clientHeight;
-      var panels = document.querySelectorAll(".leaflet-control .map-controls");
-      panels.forEach(function(p) {
-        p.style.maxHeight = Math.max(120, mapH - 40) + "px";
-      });
-    }
-    map.on("resize", syncMapControlsHeight);
-    window.addEventListener("resize", syncMapControlsHeight);
-    setTimeout(syncMapControlsHeight, 250);
-
     // Leaflet needs a nudge when the CSS grid layout settles
-    setTimeout(function() { map.invalidateSize(); syncMapControlsHeight(); }, 200);
+    setTimeout(function() { map.invalidateSize(); }, 200);
 
     // ── Main tab switching ──
     document.getElementById("tab-nav").addEventListener("click", function(e) {
