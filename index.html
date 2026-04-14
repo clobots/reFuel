@@ -414,6 +414,12 @@
       font-size: 0.92rem;
     }
 
+    .legend-label-short { display: none; }
+    @media (max-width: 768px) {
+      .legend-label-full { display: none; }
+      .legend-label-short { display: inline; }
+    }
+
     .legend-swatch-matched { background: var(--matched); }
     .legend-swatch-partial { background: var(--partial); }
     .legend-swatch-critical { background: var(--critical); }
@@ -1482,13 +1488,13 @@
       // Legend — horizontal row
       const legendRow = L.DomUtil.create("div", "legend-row", div);
       const legendItems = [
-        { cls: "matched", label: "Available", title: "Live FuelCheck data, all usual fuels available" },
-        { cls: "partial", label: "Partial out", title: "1 or more fuels unavailable" },
-        { cls: "critical", label: "Unavailable", title: "Completely out (closed or all fuels unavailable)" },
-        { cls: "unknown", label: "Unknown", title: "Google-only station — no fuel data available" },
-        { cls: "manual", label: "Manual", title: "Manually collected data at -24hr delay" }
+        { cls: "matched", label: "Available", short: "Avail.", title: "Live FuelCheck data, all usual fuels available" },
+        { cls: "partial", label: "Partial out", short: "Part. Out", title: "1 or more fuels unavailable" },
+        { cls: "critical", label: "Unavailable", short: "Out", title: "Completely out (closed or all fuels unavailable)" },
+        { cls: "unknown", label: "Unknown", short: "Unk", title: "Google-only station — no fuel data available" },
+        { cls: "manual", label: "Manual", short: "Manual", title: "Manually collected data at -24hr delay" }
       ];
-      legendItems.forEach(({ cls, label, title }) => {
+      legendItems.forEach(({ cls, label, short, title }) => {
         const item = L.DomUtil.create("div", "legend-item", legendRow);
         if (title) item.title = title;
         const swatch = L.DomUtil.create("span", "legend-swatch legend-swatch-" + cls, item);
@@ -1502,7 +1508,10 @@
           swatch.style.justifyContent = "center";
           swatch.style.lineHeight = "1";
         }
-        item.appendChild(document.createTextNode(label));
+        const fullSpan = L.DomUtil.create("span", "legend-label-full", item);
+        fullSpan.textContent = label;
+        const shortSpan = L.DomUtil.create("span", "legend-label-short", item);
+        shortSpan.textContent = short;
       });
       return div;
     };
