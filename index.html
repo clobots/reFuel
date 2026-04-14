@@ -717,7 +717,7 @@
 
     .station-list-bar input {
       flex: 1;
-      min-width: 0;
+      min-width: 195px;
       padding: 8px 12px;
       border: 1px solid var(--panel-border);
       border-radius: 8px;
@@ -743,6 +743,11 @@
       font-size: 0.82rem;
       user-select: none;
       cursor: pointer;
+      line-height: 1.25;
+      max-width: 160px;
+    }
+    .station-list-toggle span {
+      white-space: normal;
     }
 
     .station-list-toggle input {
@@ -1174,7 +1179,7 @@
         <input type="text" id="station-search" placeholder="Filter by name or address..." />
         <label class="station-list-toggle" for="toggle-notlisted">
           <input type="checkbox" id="toggle-notlisted" />
-          <span>Show only stations with fuel available</span>
+          <span>Only stations w/ fuel available</span>
         </label>
         <span id="station-list-count" style="color:var(--muted);font-size:0.8rem;"></span>
       </div>
