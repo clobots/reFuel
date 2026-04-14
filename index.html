@@ -2200,22 +2200,13 @@
       document.getElementById("map-status").style.display = "none";
 
       // Update availability percentage line (station-level: fully available = all non-out stations with data)
-      const stationsWithOutage = outageLookup.size;
       const unavailableCount = criticalCount + unknownCount;
       const fullyAvailable = googleTotal - unavailableCount - partialCount;
       const pct = googleTotal ? Math.round((fullyAvailable / googleTotal) * 100) : 0;
       document.getElementById("avail-line").textContent = pct + "% of local stations have full fuel availability";
-      var detailParts = [
-        stationsWithOutage + " partial outage" + (stationsWithOutage !== 1 ? "s" : ""),
-        unknownCount + " unknown"
-      ];
-      if (criticalCount > 0) {
-        detailParts.unshift(criticalCount + " fully out");
-      }
-      if (manualCount > 0) {
-        detailParts.push(manualCount + " manual");
-      }
-      document.getElementById("avail-line-detail").textContent = detailParts.join(" · ");
+      const outageTotal = partialCount + criticalCount;
+      document.getElementById("avail-line-detail").textContent =
+        outageTotal + " station" + (outageTotal !== 1 ? "s" : "") + " with partial / full outages";
 
       updateTableBadges();
       renderTable();
