@@ -18,6 +18,48 @@ OUTPUT_FILE = os.path.join(PROJECT_DIR, "data", "clean", "google_stations.csv")
 STATE_CODES = {"NSW", "VIC", "QLD", "SA", "WA", "TAS", "NT", "ACT"}
 UPPER_TOKENS = {"BP", "EG", "LPG", "EV", *STATE_CODES}
 
+# Names containing any of these keywords are NOT petrol retailers and must be
+# dropped — Google Maps "petrol station" searches leak mechanics, tyre shops,
+# car washes, etc. See google_stations.json "Ryde Automative" incident.
+NON_PETROL_KEYWORDS = (
+    "automotive", "automative",
+    "mechanic", "mechanics",
+    "car repair", "auto repair", "auto electrical", "auto electric",
+    "smash repair", "panel beater", "panel beaters", "panel & paint",
+    "tyre", "tyres", "tire centre", "tire center",
+    "car wash", "carwash",
+    "detailing",
+    "car dealer", "dealership", "used cars",
+    "muffler", "exhaust centre", "exhaust center",
+    "brake specialist", "transmission specialist",
+    "oil change", "lube centre", "lube center",
+    "workshop",
+    "auto parts", "car parts",
+)
+
+# If any of these appear in the name, keep the station even if a non-petrol
+# keyword also matches (real petrol brand trumps generic exclusion).
+FUEL_BRAND_TOKENS = (
+    "7-eleven", "7 eleven", "seven eleven",
+    "shell", "bp", "caltex", "ampol", "mobil", "metro",
+    "united petroleum", "united fuel", "liberty",
+    "coles express", "woolworths", "reddy express", "foodary",
+    "costco fuel", "costco petrol",
+    "budget petrol", "matilda", "puma", "nightowl", "otr",
+    "eg ampol", "eg fuel",
+    "service station", "petrol station", "service centre",
+)
+
+
+def is_non_petrol(name: str) -> bool:
+    """Return True when the Google Maps name clearly indicates a non-fuel business."""
+    lowered = (name or "").lower()
+    if not lowered:
+        return False
+    if any(brand in lowered for brand in FUEL_BRAND_TOKENS):
+        return False
+    return any(kw in lowered for kw in NON_PETROL_KEYWORDS)
+
 FIELDNAMES = [
     "google_name",
     "google_address_full",
@@ -84,14 +126,19 @@ def coerce_coord(value: object) -> str:
     return f"{numeric:.6f}"
 
 
-def build_rows(stations: Iterable[dict]) -> list[dict[str, object]]:
+def build_rows(stations: Iterable[dict]) -> tuple[list[dict[str, object]], list[dict[str, str]]]:
     rows: list[dict[str, object]] = []
+    dropped: list[dict[str, str]] = []
     for station in stations:
+        raw_name = str(station.get("name", "") or "")
         address = str(station.get("address", "") or "")
+        if is_non_petrol(raw_name):
+            dropped.append({"name": raw_name, "address": address})
+            continue
         street, suburb, state = parse_address(address)
         rows.append(
             {
-                "google_name": title_case_name(str(station.get("name", "") or "")),
+                "google_name": title_case_name(raw_name),
                 "google_address_full": normalize_address_full(address),
                 "google_street": street,
                 "google_suburb": suburb,
@@ -101,7 +148,7 @@ def build_rows(stations: Iterable[dict]) -> list[dict[str, object]]:
                 "google_address_missing": str(not bool(address.strip())).lower(),
             }
         )
-    return rows
+    return rows, dropped
 
 
 def clean_google_stations(input_file: str = INPUT_FILE, output_file: str = OUTPUT_FILE) -> list[dict[str, object]]:
@@ -117,7 +164,7 @@ def clean_google_stations(input_file: str = INPUT_FILE, output_file: str = OUTPU
         print(f"ERROR: Expected a JSON list in {input_file}", file=sys.stderr)
         sys.exit(1)
 
-    rows = build_rows(stations)
+    rows, dropped = build_rows(stations)
 
     os.makedirs(os.path.dirname(output_file), exist_ok=True)
     with open(output_file, "w", newline="", encoding="utf-8") as handle:
@@ -128,6 +175,9 @@ def clean_google_stations(input_file: str = INPUT_FILE, output_file: str = OUTPU
     missing_count = sum(row["google_address_missing"] == "true" for row in rows)
     print(f"Wrote {len(rows)} rows to {output_file}")
     print(f"Address missing: {missing_count}")
+    print(f"Dropped (non-petrol): {len(dropped)}")
+    for d in dropped:
+        print(f"  - {d['name']} @ {d['address']}")
     return rows
 
 

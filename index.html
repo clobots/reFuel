@@ -710,24 +710,25 @@
     .station-list-bar {
       display: flex;
       flex-wrap: wrap;
-      gap: 10px 12px;
+      gap: 8px 10px;
       align-items: center;
       padding: 12px 0;
     }
 
-    .station-list-bar input {
-      flex: 1 1 100%;
-      min-width: 195px;
-      padding: 8px 12px;
+    .station-list-bar > input[type="text"] {
+      flex: 0 1 113px;
+      min-width: 50px;
+      max-width: 78%;
+      padding: 7px 11px;
       border: 1px solid var(--panel-border);
       border-radius: 8px;
       background: var(--panel);
       color: var(--text);
-      font-size: 0.85rem;
+      font-size: 0.82rem;
       font-family: inherit;
     }
 
-    .station-list-bar input:focus {
+    .station-list-bar > input[type="text"]:focus {
       outline: 1px solid var(--accent);
     }
 
@@ -738,9 +739,9 @@
     .station-list-toggle {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
+      gap: 6px;
       color: var(--muted);
-      font-size: 0.82rem;
+      font-size: 0.78rem;
       user-select: none;
       cursor: pointer;
       white-space: nowrap;
@@ -753,6 +754,9 @@
     #station-list-count {
       margin-left: auto;
       flex: 0 0 auto;
+      white-space: nowrap;
+      color: var(--muted);
+      font-size: 0.78rem;
     }
 
     .station-list-toggle input {
@@ -878,8 +882,10 @@
         padding: 0 10px 24px;
         max-height: 400px;
       }
-      .station-list-bar { gap: 6px; }
-      .station-list-bar input { min-width: 0; flex: 1; width: 100%; font-size: 0.85rem; padding: 8px 10px; }
+      .station-list-bar { gap: 6px 8px; }
+      .station-list-bar > input[type="text"] { min-width: 50px; flex: 1 1 100px; font-size: 0.82rem; padding: 7px 10px; }
+      .station-list-toggle { font-size: 0.75rem; gap: 5px; }
+      #station-list-count { font-size: 0.75rem; }
       .station-table { font-size: 0.75rem; }
       .station-table th, .station-table td { padding: 6px 8px; }
       .station-table .addr-col { max-width: 140px; }
@@ -1186,7 +1192,7 @@
           <input type="checkbox" id="toggle-notlisted" />
           <span>w/ fuel only</span>
         </label>
-        <span id="station-list-count" style="color:var(--muted);font-size:0.8rem;"></span>
+        <span id="station-list-count"></span>
       </div>
       <div class="station-list-wrap">
         <table class="station-table" id="station-table">

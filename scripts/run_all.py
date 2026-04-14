@@ -3,6 +3,7 @@
 
 from __future__ import annotations
 
+import argparse
 import csv
 import os
 import subprocess
@@ -45,6 +46,11 @@ def validate_csv(path: str, min_rows: int, required_cols: list[str]) -> bool:
 
 
 def main() -> None:
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--no-commit", action="store_true",
+                        help="Skip git commit/push. Used when refresh_data.sh orchestrates a single end-of-pipeline commit.")
+    args = parser.parse_args()
+
     print("=" * 60)
     print("reFuel Data Cleansing Pipeline")
     print("=" * 60)
@@ -103,7 +109,10 @@ def main() -> None:
 
     print("\nAll validations passed.")
 
-    # Auto-commit and push data changes
+    if args.no_commit:
+        print("\n--no-commit set. Caller will handle commit.")
+        return
+
     now_local = datetime.now().strftime("%Y-%m-%d %H:%M")
     try:
         subprocess.run(["git", "add", "data/"], cwd=PROJECT_DIR, check=True)

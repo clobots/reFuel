@@ -98,9 +98,53 @@ def address_similarity(addr1: str, addr2: str) -> float:
     return SequenceMatcher(None, a, b).ratio()
 
 
+_STREET_NUM_RE = re.compile(
+    r"^\s*(?:unit\s+\w+\s*[,/]\s*|shop\s+\w+\s*[,/]\s*|lot\s+)?(\d+)(?:\s*[-–/]\s*(\d+))?\b",
+    re.IGNORECASE,
+)
+
+
+def extract_street_number_range(address: str) -> tuple[int, int] | None:
+    """Parse a leading street number (or range like '326-328') into (low, high).
+
+    Returns None if no numeric street number can be cleanly extracted (e.g. the
+    address starts with 'Cnr ...' or is blank).
+    """
+    if not address:
+        return None
+    m = _STREET_NUM_RE.match(address)
+    if not m:
+        return None
+    try:
+        low = int(m.group(1))
+        high = int(m.group(2)) if m.group(2) else low
+        return (min(low, high), max(low, high))
+    except ValueError:
+        return None
+
+
+def street_numbers_conflict(addr1: str, addr2: str) -> bool:
+    """True when both addresses expose clean numeric ranges that do NOT overlap.
+
+    Returns False when either side is unparseable — don't reject based on an
+    unknown, only when we can prove the two numbers can't refer to the same
+    building (e.g. 332 vs 326-328 on Blaxland Rd).
+    """
+    r1 = extract_street_number_range(addr1)
+    r2 = extract_street_number_range(addr2)
+    if r1 is None or r2 is None:
+        return False
+    return not (r1[0] <= r2[1] and r2[0] <= r1[1])
+
+
 ADDR_EXACT_THRESHOLD = 0.95  # normalised addresses nearly identical
 ADDR_FUZZY_THRESHOLD = 0.70  # fuzzy fallback — same street, minor differences
-ADDR_EXACT_MAX_DISTANCE_M = 5000.0  # exact matches can be far (bad geocoding)
+# Exact-address matches were previously allowed up to 5 km on the theory that
+# FuelCheck geocoding can be poor. In practice the far-distance matches we saw
+# were Google duplicates (same address string, wrong coords) mis-claiming a FC
+# row and shadowing the correct Google record as a gap. 1 km is generous for
+# gov geocoding error but cuts out the duplicates.
+ADDR_EXACT_MAX_DISTANCE_M = 1000.0
 ADDR_FUZZY_MAX_DISTANCE_M = 300.0  # fuzzy matches must be close
 
 
@@ -174,42 +218,47 @@ def merge_stations(
     fc_norm_addrs = [normalise_address(r.get("fc_address_full", "")) for r in fuelcheck_rows]
 
     # --- Pass 1: Exact address match (score >= ADDR_EXACT_THRESHOLD) ---
+    # Collect every (google, fc) candidate that clears the exact-address bar,
+    # then assign greedily in (-score, distance) order so the closest
+    # coordinate pair wins a tie. Previously the outer Google loop claimed
+    # the first FC that qualified — when Google had duplicate records for the
+    # same address (common during brand rebrands) the wrong Google record
+    # could win and the correct one was left as an unmatched gap.
+    pass1_candidates: list[tuple[float, float, int, int]] = []
     for g_idx, google_row in enumerate(google_rows):
         google_addr = normalise_address(google_row.get("google_address_full", ""))
         if not google_addr:
             continue
         google_lat = to_float(google_row.get("google_lat", ""))
         google_lng = to_float(google_row.get("google_lng", ""))
-
-        best_fc = None
-        best_score = 0.0
-        best_dist = float("inf")
-
         for f_idx, fc_row in enumerate(fuelcheck_rows):
-            fc_id = fc_row.get("fc_id", "")
-            if fc_id and fc_id in used_fc_ids:
-                continue
             score = SequenceMatcher(None, google_addr, fc_norm_addrs[f_idx]).ratio()
-            if score >= ADDR_EXACT_THRESHOLD and score > best_score:
-                fc_lat = to_float(fc_row.get("fc_lat", ""))
-                fc_lng = to_float(fc_row.get("fc_lng", ""))
-                dist = (
-                    haversine_meters(google_lat, google_lng, fc_lat, fc_lng)
-                    if google_lat and google_lng and fc_lat and fc_lng
-                    else 0.0
-                )
-                if dist > ADDR_EXACT_MAX_DISTANCE_M:
-                    continue
-                best_fc = fc_row
-                best_score = score
-                best_dist = dist
+            if score < ADDR_EXACT_THRESHOLD:
+                continue
+            fc_lat = to_float(fc_row.get("fc_lat", ""))
+            fc_lng = to_float(fc_row.get("fc_lng", ""))
+            dist = (
+                haversine_meters(google_lat, google_lng, fc_lat, fc_lng)
+                if google_lat and google_lng and fc_lat and fc_lng
+                else 0.0
+            )
+            if dist > ADDR_EXACT_MAX_DISTANCE_M:
+                continue
+            pass1_candidates.append((-score, dist, g_idx, f_idx))
 
-        if best_fc:
-            fc_id = best_fc.get("fc_id", "")
-            if fc_id:
-                used_fc_ids.add(fc_id)
-            used_google_idxs.add(g_idx)
-            merged_rows.append(_make_matched_row(google_row, best_fc, best_dist, "high"))
+    pass1_candidates.sort()
+    for neg_score, dist, g_idx, f_idx in pass1_candidates:
+        if g_idx in used_google_idxs:
+            continue
+        fc_row = fuelcheck_rows[f_idx]
+        fc_id = fc_row.get("fc_id", "")
+        if fc_id and fc_id in used_fc_ids:
+            continue
+        google_row = google_rows[g_idx]
+        if fc_id:
+            used_fc_ids.add(fc_id)
+        used_google_idxs.add(g_idx)
+        merged_rows.append(_make_matched_row(google_row, fc_row, dist, "high"))
 
     # --- Pass 2: Fuzzy address match (score >= ADDR_FUZZY_THRESHOLD, within 2 km) ---
     for g_idx, google_row in enumerate(google_rows):
@@ -237,6 +286,11 @@ def merge_stations(
                 continue
             dist = haversine_meters(google_lat, google_lng, fc_lat, fc_lng)
             if dist > ADDR_FUZZY_MAX_DISTANCE_M:
+                continue
+            if street_numbers_conflict(
+                google_row.get("google_address_full", ""),
+                fc_row.get("fc_address_full", ""),
+            ):
                 continue
             score = SequenceMatcher(None, google_addr, fc_norm_addrs[f_idx]).ratio()
             if score >= ADDR_FUZZY_THRESHOLD and score > best_score:
@@ -272,6 +326,11 @@ def merge_stations(
             fc_lat = to_float(fc_row.get("fc_lat", ""))
             fc_lng = to_float(fc_row.get("fc_lng", ""))
             if fc_lat is None or fc_lng is None:
+                continue
+            if street_numbers_conflict(
+                google_row.get("google_address_full", ""),
+                fc_row.get("fc_address_full", ""),
+            ):
                 continue
             distance = haversine_meters(google_lat, google_lng, fc_lat, fc_lng)
             if distance < best_distance:
