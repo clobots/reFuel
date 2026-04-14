@@ -1491,8 +1491,7 @@
         { cls: "matched", label: "Available", short: "Avail.", title: "Live FuelCheck data, all usual fuels available" },
         { cls: "partial", label: "Partial out", short: "Part. Out", title: "1 or more fuels unavailable" },
         { cls: "critical", label: "Unavailable", short: "Out", title: "Completely out (closed or all fuels unavailable)" },
-        { cls: "unknown", label: "Unknown", short: "Unk", title: "Google-only station — no fuel data available" },
-        { cls: "manual", label: "Manual", short: "Manual", title: "Manually collected data at -24hr delay" }
+        { cls: "unknown", label: "Unknown", short: "Unk", title: "Google-only station — no fuel data available" }
       ];
       legendItems.forEach(({ cls, label, short, title }) => {
         const item = L.DomUtil.create("div", "legend-item", legendRow);
@@ -1527,18 +1526,16 @@
 
     function setSummary(stats) {
       var availableTotal = (stats.available || 0) + (stats.manual || 0);
-      var availMain = availableTotal + ((stats.manual || 0) > 0 ? "*" : "");
       var availEl = document.getElementById("available-count");
-      if (availEl) availEl.textContent = availMain;
+      if (availEl) availEl.textContent = availableTotal;
       var availSub = document.getElementById("available-sub");
-      if (availSub) availSub.textContent = (stats.manual || 0) > 0 ? (stats.manual + " manual*") : "";
+      if (availSub) availSub.textContent = "";
 
       var partialTotal = (stats.partial || 0) + (stats.manualPartial || 0);
-      var partMain = partialTotal + ((stats.manualPartial || 0) > 0 ? "*" : "");
       var partEl = document.getElementById("partial-count");
-      if (partEl) partEl.textContent = partMain;
+      if (partEl) partEl.textContent = partialTotal;
       var partSub = document.getElementById("partial-sub");
-      if (partSub) partSub.textContent = (stats.manualPartial || 0) > 0 ? (stats.manualPartial + " manual*") : "";
+      if (partSub) partSub.textContent = "";
 
       var unavailEl = document.getElementById("unavailable-count");
       if (unavailEl) unavailEl.textContent = (stats.critical || 0) + (stats.closed || 0);
