@@ -1715,19 +1715,9 @@
         minWidth: 260,
         className: "station-popup-wrapper"
       });
-      var tGn = data.google ? (data.google.name || "") : "";
-      var tFn = data.fuelcheck ? (data.fuelcheck.name || "") : "";
-      var tName = tGn.length ? (tGn.length >= tFn.length ? tGn : tFn) : tFn;
-      var tGa = data.google ? (data.google.address || "") : "";
-      var tFa = data.fuelcheck ? (data.fuelcheck.address || "") : "";
-      var tAddr = tGa.length ? (tGa.length >= tFa.length ? tGa : tFa) : tFa;
-      var tooltipHtml = tName ? `${escapeHtml(tName)}${tAddr ? '<br><small>' + escapeHtml(tAddr) + '</small>' : ''}` : "Unknown station";
-      marker.bindTooltip(DOMPurify.sanitize(tooltipHtml), {
-        direction: "top",
-        sticky: false,
-        opacity: 1,
-        className: "station-tooltip"
-      });
+      if (!L.Browser.mobile) {
+        marker.on("mouseover", function () { this.openPopup(); });
+      }
       layers[type].addLayer(marker);
       marker._stationData = data;
       marker._stationType = type;
