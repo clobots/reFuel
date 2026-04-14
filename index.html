@@ -165,10 +165,19 @@
 
     .summary {
       display: grid;
-      grid-template-columns: repeat(5, 1fr);
+      grid-template-columns: repeat(4, 1fr);
       gap: 10px;
       margin: 0 0 8px;
     }
+
+    .summary-sub {
+      display: block;
+      margin-top: 2px;
+      font-size: 0.68rem;
+      line-height: 1.1;
+      opacity: 0.85;
+    }
+    .summary-sub:empty { display: none; }
 
     .summary-card {
       padding: 12px 14px;
@@ -998,17 +1007,15 @@
 
         <!-- Row 4: Stat cards -->
         <dl class="summary" id="summary-panel">
-          <div class="summary-card" title="Live FuelCheck data, all usual fuels available">
+          <div class="summary-card" title="Live FuelCheck data + manually collected">
             <dd id="available-count">-</dd>
             <dt style="color:var(--matched)">Available</dt>
-          </div>
-          <div class="summary-card" title="Manually collected data at -24hr delay">
-            <dd id="manual-count">-</dd>
-            <dt style="color:var(--manual)">Manual</dt>
+            <small class="summary-sub" id="available-sub" style="color:var(--manual)"></small>
           </div>
           <div class="summary-card" title="75% or more of usual (ever-had) fuels unavailable">
             <dd id="partial-count">-</dd>
             <dt style="color:var(--partial)">Partial out</dt>
+            <small class="summary-sub" id="partial-sub" style="color:var(--manual)"></small>
           </div>
           <div class="summary-card" title="Every usual fuel currently unavailable">
             <dd id="critical-count">-</dd>
@@ -1379,15 +1386,24 @@
     }
 
     function setSummary(stats) {
-      var setText = function(id, v) {
-        var el = document.getElementById(id);
-        if (el) el.textContent = (v != null ? v : 0);
-      };
-      setText("available-count", stats.available);
-      setText("manual-count", stats.manual);
-      setText("partial-count", stats.partial);
-      setText("critical-count", stats.critical);
-      setText("unknown-count", stats.unknown);
+      var availableTotal = (stats.available || 0) + (stats.manual || 0);
+      var availMain = availableTotal + ((stats.manual || 0) > 0 ? "*" : "");
+      var availEl = document.getElementById("available-count");
+      if (availEl) availEl.textContent = availMain;
+      var availSub = document.getElementById("available-sub");
+      if (availSub) availSub.textContent = (stats.manual || 0) > 0 ? (stats.manual + " manual*") : "";
+
+      var partialTotal = (stats.partial || 0) + (stats.manualPartial || 0);
+      var partMain = partialTotal + ((stats.manualPartial || 0) > 0 ? "*" : "");
+      var partEl = document.getElementById("partial-count");
+      if (partEl) partEl.textContent = partMain;
+      var partSub = document.getElementById("partial-sub");
+      if (partSub) partSub.textContent = (stats.manualPartial || 0) > 0 ? (stats.manualPartial + " manual*") : "";
+
+      var critEl = document.getElementById("critical-count");
+      if (critEl) critEl.textContent = stats.critical != null ? stats.critical : 0;
+      var unkEl = document.getElementById("unknown-count");
+      if (unkEl) unkEl.textContent = stats.unknown != null ? stats.unknown : 0;
     }
 
     function formatUpdatedDate(...timestamps) {
