@@ -251,6 +251,8 @@
       padding: 12px 14px;
       border: 1px solid var(--panel-border);
       border-radius: 16px;
+      display: flex;
+      flex-direction: column;
       background: rgba(7, 19, 26, 0.9);
       box-shadow: var(--shadow);
       max-height: 70vh;
@@ -277,10 +279,8 @@
     .fuel-filter-body {
       display: flex;
       flex-direction: column;
-      gap: 4px;
+      gap: 2px;
       width: 100%;
-      max-height: calc(100vh - 200px);
-      overflow-y: auto;
     }
 
     .fuel-filter label {
@@ -2454,8 +2454,20 @@
 
     map.on("moveend", renderStationList);
 
+    // Sync map-controls panel max-height to actual map container height
+    function syncMapControlsHeight() {
+      var mapH = map.getContainer().clientHeight;
+      var panels = document.querySelectorAll(".leaflet-control .map-controls");
+      panels.forEach(function(p) {
+        p.style.maxHeight = Math.max(120, mapH - 40) + "px";
+      });
+    }
+    map.on("resize", syncMapControlsHeight);
+    window.addEventListener("resize", syncMapControlsHeight);
+    setTimeout(syncMapControlsHeight, 250);
+
     // Leaflet needs a nudge when the CSS grid layout settles
-    setTimeout(function() { map.invalidateSize(); }, 200);
+    setTimeout(function() { map.invalidateSize(); syncMapControlsHeight(); }, 200);
 
     // ── Main tab switching ──
     document.getElementById("tab-nav").addEventListener("click", function(e) {
