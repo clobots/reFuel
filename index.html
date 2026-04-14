@@ -628,6 +628,26 @@
       border: 1px solid #f0c76e;
     }
 
+    .popup .fuel-item.out {
+      background: #c62828;
+      border: 1px solid #a41f1f;
+    }
+    .popup .fuel-item.out .fuel-type,
+    .popup .fuel-item.out .fuel-price {
+      color: #fff;
+      font-weight: 700;
+    }
+
+    .popup .fuel-item.na {
+      background: #e0e0e0;
+      border: 1px solid #bdbdbd;
+    }
+    .popup .fuel-item.na .fuel-type,
+    .popup .fuel-item.na .fuel-price {
+      color: #8b1919;
+      font-weight: 600;
+    }
+
     .popup .fuel-type {
       font-weight: 600;
       color: #333;
@@ -1623,40 +1643,40 @@
       html += '<div class="popup-meta">' + escapeHtml(meta.join(" · ")) + '</div>';
       html += '</div>';
 
-      // Fuel grid
+      // Fuel grid — always show everything, regardless of filter
       html += '<hr class="popup-divider">';
-      var prices = data.prices || (fc ? fc.prices : null);
-      if (prices && prices.length) {
+      var stationPrices = (fc && fc.prices) ? fc.prices : [];
+      var priceByFuel = {};
+      stationPrices.forEach(function(p) {
+        priceByFuel[(p.fuel_type || "").toUpperCase()] = p;
+      });
+      var rowFuels = new Set();
+      Object.keys(priceByFuel).forEach(function(ft) { rowFuels.add(ft); });
+      outageFuelTypes.forEach(function(ft) { rowFuels.add(ft.toUpperCase()); });
+      if (typeof selectedFuelTypes !== "undefined" && selectedFuelTypes) {
+        selectedFuelTypes.forEach(function(ft) { rowFuels.add(ft.toUpperCase()); });
+      }
+      if (rowFuels.size && fc) {
         html += '<div class="fuel-grid">';
-        prices.forEach(function(p) {
-          var isOutage = outageSet.has((p.fuel_type || "").toUpperCase());
-          html += '<div class="fuel-item' + (isOutage ? ' outage' : '') + '">';
-          html += '<span class="fuel-type">' + escapeHtml(p.fuel_type) + '</span>';
-          if (isOutage) {
-            html += '<span class="fuel-price missing">outage</span>';
-          } else {
-            html += '<span class="fuel-price">' + escapeHtml(p.price) + '¢</span>';
-          }
-          html += '</div>';
-        });
-        // Show outage fuel types that aren't in the price list
-        outageFuelTypes.forEach(function(ft) {
-          var inList = prices.some(function(p) { return (p.fuel_type || "").toUpperCase() === ft.toUpperCase(); });
-          if (!inList) {
-            html += '<div class="fuel-item outage">';
+        FUEL_COL_ORDER.forEach(function(ft) {
+          if (!rowFuels.has(ft)) return;
+          var entry = priceByFuel[ft];
+          if (entry) {
+            html += '<div class="fuel-item">';
             html += '<span class="fuel-type">' + escapeHtml(ft) + '</span>';
-            html += '<span class="fuel-price missing">outage</span>';
+            html += '<span class="fuel-price">' + escapeHtml(entry.price) + '¢</span>';
+            html += '</div>';
+          } else if (outageSet.has(ft)) {
+            html += '<div class="fuel-item out">';
+            html += '<span class="fuel-type">' + escapeHtml(ft) + '</span>';
+            html += '<span class="fuel-price">OUT</span>';
+            html += '</div>';
+          } else {
+            html += '<div class="fuel-item na">';
+            html += '<span class="fuel-type">' + escapeHtml(ft) + '</span>';
+            html += '<span class="fuel-price">N/A</span>';
             html += '</div>';
           }
-        });
-        html += '</div>';
-      } else if (outageFuelTypes.length) {
-        html += '<div class="fuel-grid">';
-        outageFuelTypes.forEach(function(ft) {
-          html += '<div class="fuel-item outage">';
-          html += '<span class="fuel-type">' + escapeHtml(ft) + '</span>';
-          html += '<span class="fuel-price missing">outage</span>';
-          html += '</div>';
         });
         html += '</div>';
       } else if (!fc) {
