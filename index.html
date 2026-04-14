@@ -2821,7 +2821,7 @@
       var suburbsEl = document.getElementById("ai-summary-suburbs-top");
 
       // Current outages
-      var outages = outageRows.filter(function(r) { return r.is_outage === "true"; });
+      var outages = outageRows.filter(function(r) { return r.is_outage === "true" && r.tracked_in_fuel_check === "true"; });
       var outageStations = {};
       outages.forEach(function(r) {
         if (!outageStations[r.station_id]) outageStations[r.station_id] = { name: r.station_name, brand: r.brand, fuels: [] };
@@ -2873,7 +2873,7 @@
 
     // ── Outage grid ──
     function renderOutageGrid(rows) {
-      var outages = rows.filter(function(r) { return r.is_outage === "true"; });
+      var outages = rows.filter(function(r) { return r.is_outage === "true" && r.tracked_in_fuel_check === "true"; });
       var el = document.getElementById("outage-grid");
       var summary = document.getElementById("outage-summary-text");
       var headline = document.getElementById("outage-headline");
@@ -2939,7 +2939,7 @@
 
     // ── Brand breakdown ──
     function renderBrandBreakdown(rows) {
-      var outages = rows.filter(function(r) { return r.is_outage === "true"; });
+      var outages = rows.filter(function(r) { return r.is_outage === "true" && r.tracked_in_fuel_check === "true"; });
       var brandCounts = {};
       outages.forEach(function(r) {
         var b = r.brand || "Unknown";
@@ -2982,7 +2982,7 @@
 
     // ── Fuel type breakdown ──
     function renderFuelBreakdown(rows) {
-      var outages = rows.filter(function(r) { return r.is_outage === "true"; });
+      var outages = rows.filter(function(r) { return r.is_outage === "true" && r.tracked_in_fuel_check === "true"; });
       var fuelCounts = {};
       outages.forEach(function(r) {
         var f = r.fuel_type || "Unknown";

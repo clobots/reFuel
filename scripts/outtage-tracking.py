@@ -232,8 +232,7 @@ def classify_station_status(summary_rows: list[dict[str, str]]) -> list[dict[str
     for station_id, rows in grouped.items():
         sample = rows[0]
         usual_fuels = split_fuels(sample.get("fuel_types_ever", ""))
-        petrol_fuels = [fuel for fuel in usual_fuels if fuel in PETROL_FUEL_TYPES]
-        basis_fuels = petrol_fuels if petrol_fuels else usual_fuels
+        basis_fuels = usual_fuels
 
         currently_unavailable_rows = [row for row in rows if csv_bool(row["currently_unavailable"])]
         unavailable_all = sorted({row["fuel_type"] for row in currently_unavailable_rows})
