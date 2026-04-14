@@ -269,96 +269,97 @@
     }
 
     .fuel-filter {
-      margin-bottom: 10px;
-      padding-bottom: 10px;
-      border-bottom: 1px solid var(--panel-border);
       width: 100%;
       min-width: 0;
-      position: relative;
     }
 
-    .fuel-filter-toggle {
-      display: inline-flex !important;
-      align-items: center;
-      gap: 6px;
-      background: rgba(11, 24, 32, 0.6);
-      border: 1px solid var(--panel-border);
+    .fuel-filter-label {
+      display: block;
       color: var(--accent);
-      font-size: 0.82rem;
-      padding: 6px 12px;
-      border-radius: 99px;
-      cursor: pointer;
-      white-space: nowrap;
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 6px;
+      font-weight: 600;
     }
 
-    .fuel-filter-toggle:hover {
+    .fuel-chip-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+      align-items: center;
+    }
+
+    .fuel-chip {
+      padding: 4px 10px;
+      border: 1px solid var(--panel-border);
+      border-radius: 99px;
+      background: transparent;
+      color: var(--muted);
+      font-size: 0.76rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+      user-select: none;
+      line-height: 1.3;
+      min-height: 26px;
+      letter-spacing: 0.02em;
+    }
+
+    .fuel-chip:hover {
+      border-color: var(--accent);
+      color: var(--text);
+    }
+
+    .fuel-chip.active {
+      background: var(--accent);
+      color: #1a1a1a;
       border-color: var(--accent);
     }
 
-    .fuel-filter-body {
-      display: none;
-      position: absolute;
-      bottom: calc(100% + 6px);
-      right: 0;
-      min-width: 200px;
-      max-height: 60vh;
-      overflow-y: auto;
-      background: var(--panel);
-      border: 1px solid var(--panel-border);
-      border-radius: 12px;
-      padding: 12px 14px;
-      box-shadow: var(--shadow);
-      z-index: 1001;
-      backdrop-filter: blur(14px);
+    .fuel-chip.active:hover {
+      background: #f5d183;
     }
 
-    .fuel-filter-body.open {
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
+    .fuel-chip-quick {
+      font-size: 0.72rem;
+      color: var(--muted);
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px 6px;
+      margin-left: 2px;
     }
 
-    .fuel-filter-body > strong {
+    .fuel-chip-quick:hover {
       color: var(--accent);
-      font-size: 0.78rem;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      margin-bottom: 6px;
+      text-decoration: underline;
     }
 
-    .fuel-filter label {
+    .fuel-filter-divider {
+      height: 1px;
+      background: var(--panel-border);
+      margin: 10px 0 8px;
+      width: 100%;
+    }
+
+    .outage-toggle {
       display: flex;
       align-items: center;
       gap: 6px;
-      margin: 2px 0;
-      font-size: 0.88rem;
+      font-size: 0.78rem;
+      color: var(--muted);
       cursor: pointer;
-      flex-shrink: 0;
+      user-select: none;
     }
 
-    .fuel-filter input[type="checkbox"] {
+    .outage-toggle input[type="checkbox"] {
       accent-color: var(--accent);
       cursor: pointer;
     }
 
-    .fuel-filter-actions {
-      display: flex;
-      gap: 8px;
-      margin-top: 8px;
-      padding-top: 8px;
-      border-top: 1px solid var(--panel-border);
-      flex-wrap: wrap;
-      width: 100%;
-    }
-
-    .fuel-filter-actions button {
-      background: none;
-      border: 1px solid var(--panel-border);
-      color: var(--muted);
-      font-size: 0.78rem;
-      padding: 2px 8px;
-      border-radius: 6px;
-      cursor: pointer;
+    .outage-toggle:hover {
+      color: var(--text);
     }
 
     .fuel-filter-actions button:hover {
@@ -458,18 +459,19 @@
         font-size: 0.75rem;
         margin-bottom: 4px;
       }
-      .fuel-filter {
-        margin-bottom: 6px;
-        padding-bottom: 6px;
+      .fuel-chip {
+        padding: 6px 12px;
+        font-size: 0.78rem;
+        min-height: 32px;
       }
-      .fuel-filter-body {
-        min-width: 180px;
-        max-height: 50vh;
+      .fuel-chip-quick {
+        padding: 6px 8px;
+        font-size: 0.74rem;
+        min-height: 32px;
       }
-      .fuel-filter label {
-        font-size: 0.8rem;
-        margin: 2px 0;
-        gap: 4px;
+      .outage-toggle {
+        font-size: 0.82rem;
+        padding: 4px 0;
       }
       .legend-item {
         font-size: 0.78rem;
@@ -1348,65 +1350,69 @@
       L.DomEvent.disableClickPropagation(div);
       L.DomEvent.disableScrollPropagation(div);
 
-      // Build filter with collapsible toggle for mobile
+      // Fuel filter — always-visible chip row
       const filterContainer = L.DomUtil.create("div", "fuel-filter", div);
 
-      const toggle = L.DomUtil.create("button", "fuel-filter-toggle", filterContainer);
-      function updateToggleLabel() {
-        var total = ALL_FUEL_TYPES.length;
-        var selected = selectedFuelTypes.size;
-        var body = filterContainer.querySelector(".fuel-filter-body");
-        var isOpen = body && body.classList.contains("open");
-        toggle.textContent = "Fuel Types (" + selected + "/" + total + ") " + (isOpen ? "\u25B2" : "\u25BC");
-      }
+      const filterLabel = L.DomUtil.create("span", "fuel-filter-label", filterContainer);
+      filterLabel.textContent = "Fuel Types";
 
-      const filterBody = L.DomUtil.create("div", "fuel-filter-body", filterContainer);
-      const filterTitle = L.DomUtil.create("strong", "", filterBody);
-      filterTitle.textContent = "Fuel Types";
+      const chipRow = L.DomUtil.create("div", "fuel-chip-row", filterContainer);
 
-      var FUEL_LABELS = { U91: "U91", E10: "E10", E85: "E85", P95: "P95", P98: "P98", DL: "Diesel", PDL: "Premium Diesel", LPG: "LPG" };
+      const FUEL_LABELS = { U91: "U91", E10: "E10", E85: "E85", P95: "P95", P98: "P98", DL: "DL", PDL: "PDL", LPG: "LPG" };
+      const FUEL_FULL = { U91: "Unleaded 91", E10: "Ethanol 10", E85: "Ethanol 85", P95: "Premium 95", P98: "Premium 98", DL: "Diesel", PDL: "Premium Diesel", LPG: "LPG" };
 
+      const chips = {};
       ALL_FUEL_TYPES.forEach((ft) => {
-        const label = L.DomUtil.create("label", "", filterBody);
-        const cb = L.DomUtil.create("input", "", label);
-        cb.type = "checkbox";
-        cb.value = ft;
-        cb.checked = true;
-        label.appendChild(document.createTextNode(" " + (FUEL_LABELS[ft] || ft)));
-        cb.addEventListener("change", function () {
-          if (this.checked) {
-            selectedFuelTypes.add(this.value);
+        const chip = L.DomUtil.create("button", "fuel-chip active", chipRow);
+        chip.type = "button";
+        chip.textContent = FUEL_LABELS[ft] || ft;
+        chip.title = FUEL_FULL[ft] || ft;
+        chip.dataset.fuel = ft;
+        chip.setAttribute("aria-pressed", "true");
+        chip.addEventListener("click", function () {
+          if (selectedFuelTypes.has(ft)) {
+            selectedFuelTypes.delete(ft);
+            chip.classList.remove("active");
+            chip.setAttribute("aria-pressed", "false");
           } else {
-            selectedFuelTypes.delete(this.value);
+            selectedFuelTypes.add(ft);
+            chip.classList.add("active");
+            chip.setAttribute("aria-pressed", "true");
           }
-          updateToggleLabel();
           rerender();
         });
+        chips[ft] = chip;
       });
 
-      const actions = L.DomUtil.create("div", "fuel-filter-actions", filterBody);
-      const btnAll = L.DomUtil.create("button", "", actions);
+      const btnAll = L.DomUtil.create("button", "fuel-chip-quick", chipRow);
+      btnAll.type = "button";
       btnAll.textContent = "All";
+      btnAll.title = "Select all fuel types";
       btnAll.addEventListener("click", () => {
         selectedFuelTypes = new Set(ALL_FUEL_TYPES);
-        div.querySelectorAll('.fuel-filter-body input[type="checkbox"]').forEach((cb) => {
-          if (cb !== outageToggle) cb.checked = true;
+        Object.values(chips).forEach((c) => {
+          c.classList.add("active");
+          c.setAttribute("aria-pressed", "true");
         });
-        updateToggleLabel();
-        rerender();
-      });
-      const btnNone = L.DomUtil.create("button", "", actions);
-      btnNone.textContent = "None";
-      btnNone.addEventListener("click", () => {
-        selectedFuelTypes.clear();
-        div.querySelectorAll('.fuel-filter-body input[type="checkbox"]').forEach((cb) => {
-          if (cb !== outageToggle) cb.checked = false;
-        });
-        updateToggleLabel();
         rerender();
       });
 
-      const outageLabel = L.DomUtil.create("label", "", filterBody);
+      const btnNone = L.DomUtil.create("button", "fuel-chip-quick", chipRow);
+      btnNone.type = "button";
+      btnNone.textContent = "None";
+      btnNone.title = "Deselect all fuel types";
+      btnNone.addEventListener("click", () => {
+        selectedFuelTypes.clear();
+        Object.values(chips).forEach((c) => {
+          c.classList.remove("active");
+          c.setAttribute("aria-pressed", "false");
+        });
+        rerender();
+      });
+
+      L.DomUtil.create("div", "fuel-filter-divider", filterContainer);
+
+      const outageLabel = L.DomUtil.create("label", "outage-toggle", filterContainer);
       const outageToggle = L.DomUtil.create("input", "", outageLabel);
       outageToggle.type = "checkbox";
       outageToggle.checked = false;
@@ -1415,24 +1421,6 @@
         showOnlyOutages = this.checked;
         rerender();
       });
-
-      toggle.addEventListener("click", function(e) {
-        e.stopPropagation();
-        var body = filterContainer.querySelector(".fuel-filter-body");
-        body.classList.toggle("open");
-        updateToggleLabel();
-      });
-
-      // Close popover when clicking outside the filter container
-      document.addEventListener("click", function(e) {
-        var body = filterContainer.querySelector(".fuel-filter-body");
-        if (body && body.classList.contains("open") && !filterContainer.contains(e.target)) {
-          body.classList.remove("open");
-          updateToggleLabel();
-        }
-      });
-
-      updateToggleLabel();
 
       // Legend — horizontal row
       const legendRow = L.DomUtil.create("div", "legend-row", div);
