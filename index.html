@@ -268,59 +268,82 @@
       letter-spacing: 0.08em;
     }
 
-    .fuel-filter {
-      width: 100%;
-      min-width: 0;
+    .fuel-pill-bar {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 24px;
+      border-bottom: 1px solid var(--panel-border);
+      background: rgba(11, 24, 32, 0.5);
+      backdrop-filter: blur(8px);
+      position: sticky;
+      top: 0;
+      z-index: 5;
     }
 
-    .fuel-filter-header {
+    .fuel-pills {
+      display: flex;
+      gap: 6px;
+      overflow-x: auto;
+      scroll-snap-type: x proximity;
+      scrollbar-width: none;
+      -webkit-overflow-scrolling: touch;
+      flex: 1;
+      min-width: 0;
+      padding: 2px;
+      mask-image: linear-gradient(to right, transparent 0, #000 8px, #000 calc(100% - 24px), transparent 100%);
+      -webkit-mask-image: linear-gradient(to right, transparent 0, #000 8px, #000 calc(100% - 24px), transparent 100%);
+    }
+    .fuel-pills::-webkit-scrollbar { display: none; }
+    .fuel-pills > * {
+      scroll-snap-align: start;
+      flex-shrink: 0;
+    }
+
+    .fuel-pill-count {
+      font-size: 0.72rem;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+
+    .fuel-pill-reset {
+      background: none;
+      border: 1px solid var(--panel-border);
+      color: var(--muted);
+      font-size: 0.72rem;
+      padding: 4px 10px;
+      border-radius: 99px;
+      cursor: pointer;
+      white-space: nowrap;
+      font-family: inherit;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.15s ease;
+    }
+    .fuel-pill-bar.filtered .fuel-pill-reset {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .fuel-pill-reset:hover {
+      color: var(--accent);
+      border-color: var(--accent);
+    }
+
+    .fuel-pill-outage {
       display: flex;
       align-items: center;
       gap: 6px;
-      background: none;
-      border: none;
-      color: var(--accent);
-      font-size: 0.7rem;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      font-weight: 600;
+      font-size: 0.78rem;
+      color: var(--muted);
       cursor: pointer;
-      padding: 2px 0;
-      width: 100%;
-      justify-content: flex-start;
-      font-family: inherit;
+      white-space: nowrap;
+      user-select: none;
     }
-
-    .fuel-filter-header:hover {
-      color: #f5d183;
+    .fuel-pill-outage input {
+      accent-color: var(--accent);
+      cursor: pointer;
     }
-
-    .fuel-filter-caret {
-      transition: transform 0.18s ease;
-      font-size: 0.55rem;
-      display: inline-block;
-      margin-left: auto;
-    }
-
-    .fuel-filter.open .fuel-filter-caret {
-      transform: rotate(180deg);
-    }
-
-    .fuel-filter-content {
-      display: none;
-      padding-top: 8px;
-    }
-
-    .fuel-filter.open .fuel-filter-content {
-      display: block;
-    }
-
-    .fuel-chip-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 4px;
-      align-items: center;
-    }
+    .fuel-pill-outage:hover { color: var(--text); }
 
     .fuel-chip {
       padding: 4px 10px;
@@ -499,18 +522,16 @@
       }
       .fuel-chip {
         padding: 6px 12px;
-        font-size: 0.78rem;
-        min-height: 32px;
+        font-size: 0.8rem;
+        min-height: 34px;
       }
-      .fuel-chip-quick {
-        padding: 6px 8px;
-        font-size: 0.74rem;
-        min-height: 32px;
+      .fuel-pill-bar {
+        padding: 6px 12px;
+        gap: 8px;
       }
-      .outage-toggle {
-        font-size: 0.82rem;
-        padding: 4px 0;
-      }
+      .fuel-pill-outage { font-size: 0.74rem; }
+      .fuel-pill-reset { font-size: 0.7rem; padding: 4px 8px; }
+      .fuel-pill-count { font-size: 0.68rem; }
       .legend-item {
         font-size: 0.78rem;
         margin: 2px 0;
@@ -1157,6 +1178,15 @@
 
     <!-- Tab: Live (existing map + table) -->
     <div class="tab-content active" id="tab-live">
+    <div class="fuel-pill-bar" id="fuel-pill-bar">
+      <div class="fuel-pills" id="fuel-pills" role="group" aria-label="Filter by fuel type"></div>
+      <span class="fuel-pill-count" id="fuel-pill-count" aria-live="polite"></span>
+      <button class="fuel-pill-reset" id="fuel-pill-reset" type="button" title="Select all fuel types">Reset</button>
+      <label class="fuel-pill-outage">
+        <input type="checkbox" id="outage-only-toggle">
+        <span>Outages only</span>
+      </label>
+    </div>
     <div class="content-area">
       <main class="map-wrap">
         <div class="map-status" id="map-status">Loading station datasets...</div>
@@ -1402,51 +1432,35 @@
       return lookup;
     }
 
-    const controlPanel = L.control({ position: "bottomright" });
-    controlPanel.onAdd = function onAdd() {
-      const div = L.DomUtil.create("div", "map-controls");
-      L.DomEvent.disableClickPropagation(div);
-      L.DomEvent.disableScrollPropagation(div);
-
-      // Fuel filter — collapsible chip row
-      const filterContainer = L.DomUtil.create("div", "fuel-filter", div);
-
-      const filterHeader = L.DomUtil.create("button", "fuel-filter-header", filterContainer);
-      filterHeader.type = "button";
-      const headerLabel = L.DomUtil.create("span", "", filterHeader);
-      headerLabel.textContent = "Fuel Types";
-      const headerCount = L.DomUtil.create("span", "fuel-filter-count", filterHeader);
-      headerCount.style.cssText = "font-weight:500;opacity:0.7;margin-left:6px;letter-spacing:0.02em;text-transform:none;font-size:0.68rem;";
-      const caret = L.DomUtil.create("span", "fuel-filter-caret", filterHeader);
-      caret.textContent = "\u25BC";
-      filterHeader.setAttribute("aria-expanded", "false");
-      filterHeader.addEventListener("click", function(e) {
-        e.stopPropagation();
-        var isOpen = filterContainer.classList.toggle("open");
-        filterHeader.setAttribute("aria-expanded", isOpen ? "true" : "false");
-      });
-
-      const filterContent = L.DomUtil.create("div", "fuel-filter-content", filterContainer);
-
-      const chipRow = L.DomUtil.create("div", "fuel-chip-row", filterContent);
+    // ── Fuel pill bar (above map, always-visible) ──
+    (function initFuelPillBar() {
+      const pillsEl = document.getElementById("fuel-pills");
+      const countEl = document.getElementById("fuel-pill-count");
+      const resetEl = document.getElementById("fuel-pill-reset");
+      const barEl = document.getElementById("fuel-pill-bar");
+      const outageEl = document.getElementById("outage-only-toggle");
+      if (!pillsEl) return;
 
       const FUEL_LABELS = { U91: "U91", E10: "E10", E85: "E85", P95: "P95", P98: "P98", DL: "DL", PDL: "PDL", LPG: "LPG" };
       const FUEL_FULL = { U91: "Unleaded 91", E10: "Ethanol 10", E85: "Ethanol 85", P95: "Premium 95", P98: "Premium 98", DL: "Diesel", PDL: "Premium Diesel", LPG: "LPG" };
 
-      function updateHeaderCount() {
-        var total = ALL_FUEL_TYPES.length;
-        var selected = selectedFuelTypes.size;
-        headerCount.textContent = (selected === total) ? "" : "(" + selected + "/" + total + ")";
+      function updateCount() {
+        const total = ALL_FUEL_TYPES.length;
+        const selected = selectedFuelTypes.size;
+        countEl.textContent = (selected === total) ? "" : selected + "/" + total;
+        barEl.classList.toggle("filtered", selected !== total);
       }
 
       const chips = {};
       ALL_FUEL_TYPES.forEach((ft) => {
-        const chip = L.DomUtil.create("button", "fuel-chip active", chipRow);
+        const chip = document.createElement("button");
+        chip.className = "fuel-chip active";
         chip.type = "button";
         chip.textContent = FUEL_LABELS[ft] || ft;
         chip.title = FUEL_FULL[ft] || ft;
         chip.dataset.fuel = ft;
         chip.setAttribute("aria-pressed", "true");
+        chip.setAttribute("aria-label", FUEL_FULL[ft] || ft);
         chip.addEventListener("click", function () {
           if (selectedFuelTypes.has(ft)) {
             selectedFuelTypes.delete(ft);
@@ -1457,53 +1471,36 @@
             chip.classList.add("active");
             chip.setAttribute("aria-pressed", "true");
           }
-          updateHeaderCount();
+          updateCount();
           rerender();
         });
+        pillsEl.appendChild(chip);
         chips[ft] = chip;
       });
 
-      const btnAll = L.DomUtil.create("button", "fuel-chip-quick", chipRow);
-      btnAll.type = "button";
-      btnAll.textContent = "All";
-      btnAll.title = "Select all fuel types";
-      btnAll.addEventListener("click", () => {
+      resetEl.addEventListener("click", () => {
         selectedFuelTypes = new Set(ALL_FUEL_TYPES);
         Object.values(chips).forEach((c) => {
           c.classList.add("active");
           c.setAttribute("aria-pressed", "true");
         });
-        updateHeaderCount();
+        updateCount();
         rerender();
       });
 
-      const btnNone = L.DomUtil.create("button", "fuel-chip-quick", chipRow);
-      btnNone.type = "button";
-      btnNone.textContent = "None";
-      btnNone.title = "Deselect all fuel types";
-      btnNone.addEventListener("click", () => {
-        selectedFuelTypes.clear();
-        Object.values(chips).forEach((c) => {
-          c.classList.remove("active");
-          c.setAttribute("aria-pressed", "false");
-        });
-        updateHeaderCount();
-        rerender();
-      });
-
-      updateHeaderCount();
-
-      L.DomUtil.create("div", "fuel-filter-divider", filterContent);
-
-      const outageLabel = L.DomUtil.create("label", "outage-toggle", filterContent);
-      const outageToggle = L.DomUtil.create("input", "", outageLabel);
-      outageToggle.type = "checkbox";
-      outageToggle.checked = false;
-      outageLabel.appendChild(document.createTextNode(" Show outages only"));
-      outageToggle.addEventListener("change", function() {
+      outageEl.addEventListener("change", function () {
         showOnlyOutages = this.checked;
         rerender();
       });
+
+      updateCount();
+    })();
+
+    const controlPanel = L.control({ position: "bottomright" });
+    controlPanel.onAdd = function onAdd() {
+      const div = L.DomUtil.create("div", "map-controls");
+      L.DomEvent.disableClickPropagation(div);
+      L.DomEvent.disableScrollPropagation(div);
 
       // Legend — horizontal row
       const legendRow = L.DomUtil.create("div", "legend-row", div);
