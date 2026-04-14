@@ -273,14 +273,46 @@
       min-width: 0;
     }
 
-    .fuel-filter-label {
-      display: block;
+    .fuel-filter-header {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: none;
+      border: none;
       color: var(--accent);
-      font-size: 0.68rem;
+      font-size: 0.7rem;
       text-transform: uppercase;
       letter-spacing: 0.1em;
-      margin-bottom: 6px;
       font-weight: 600;
+      cursor: pointer;
+      padding: 2px 0;
+      width: 100%;
+      justify-content: flex-start;
+      font-family: inherit;
+    }
+
+    .fuel-filter-header:hover {
+      color: #f5d183;
+    }
+
+    .fuel-filter-caret {
+      transition: transform 0.18s ease;
+      font-size: 0.55rem;
+      display: inline-block;
+      margin-left: auto;
+    }
+
+    .fuel-filter.open .fuel-filter-caret {
+      transform: rotate(180deg);
+    }
+
+    .fuel-filter-content {
+      display: none;
+      padding-top: 8px;
+    }
+
+    .fuel-filter.open .fuel-filter-content {
+      display: block;
     }
 
     .fuel-chip-row {
@@ -1350,16 +1382,36 @@
       L.DomEvent.disableClickPropagation(div);
       L.DomEvent.disableScrollPropagation(div);
 
-      // Fuel filter — always-visible chip row
+      // Fuel filter — collapsible chip row
       const filterContainer = L.DomUtil.create("div", "fuel-filter", div);
 
-      const filterLabel = L.DomUtil.create("span", "fuel-filter-label", filterContainer);
-      filterLabel.textContent = "Fuel Types";
+      const filterHeader = L.DomUtil.create("button", "fuel-filter-header", filterContainer);
+      filterHeader.type = "button";
+      const headerLabel = L.DomUtil.create("span", "", filterHeader);
+      headerLabel.textContent = "Fuel Types";
+      const headerCount = L.DomUtil.create("span", "fuel-filter-count", filterHeader);
+      headerCount.style.cssText = "font-weight:500;opacity:0.7;margin-left:6px;letter-spacing:0.02em;text-transform:none;font-size:0.68rem;";
+      const caret = L.DomUtil.create("span", "fuel-filter-caret", filterHeader);
+      caret.textContent = "\u25BC";
+      filterHeader.setAttribute("aria-expanded", "false");
+      filterHeader.addEventListener("click", function(e) {
+        e.stopPropagation();
+        var isOpen = filterContainer.classList.toggle("open");
+        filterHeader.setAttribute("aria-expanded", isOpen ? "true" : "false");
+      });
 
-      const chipRow = L.DomUtil.create("div", "fuel-chip-row", filterContainer);
+      const filterContent = L.DomUtil.create("div", "fuel-filter-content", filterContainer);
+
+      const chipRow = L.DomUtil.create("div", "fuel-chip-row", filterContent);
 
       const FUEL_LABELS = { U91: "U91", E10: "E10", E85: "E85", P95: "P95", P98: "P98", DL: "DL", PDL: "PDL", LPG: "LPG" };
       const FUEL_FULL = { U91: "Unleaded 91", E10: "Ethanol 10", E85: "Ethanol 85", P95: "Premium 95", P98: "Premium 98", DL: "Diesel", PDL: "Premium Diesel", LPG: "LPG" };
+
+      function updateHeaderCount() {
+        var total = ALL_FUEL_TYPES.length;
+        var selected = selectedFuelTypes.size;
+        headerCount.textContent = (selected === total) ? "" : "(" + selected + "/" + total + ")";
+      }
 
       const chips = {};
       ALL_FUEL_TYPES.forEach((ft) => {
@@ -1379,6 +1431,7 @@
             chip.classList.add("active");
             chip.setAttribute("aria-pressed", "true");
           }
+          updateHeaderCount();
           rerender();
         });
         chips[ft] = chip;
@@ -1394,6 +1447,7 @@
           c.classList.add("active");
           c.setAttribute("aria-pressed", "true");
         });
+        updateHeaderCount();
         rerender();
       });
 
@@ -1407,12 +1461,15 @@
           c.classList.remove("active");
           c.setAttribute("aria-pressed", "false");
         });
+        updateHeaderCount();
         rerender();
       });
 
-      L.DomUtil.create("div", "fuel-filter-divider", filterContainer);
+      updateHeaderCount();
 
-      const outageLabel = L.DomUtil.create("label", "outage-toggle", filterContainer);
+      L.DomUtil.create("div", "fuel-filter-divider", filterContent);
+
+      const outageLabel = L.DomUtil.create("label", "outage-toggle", filterContent);
       const outageToggle = L.DomUtil.create("input", "", outageLabel);
       outageToggle.type = "checkbox";
       outageToggle.checked = false;
