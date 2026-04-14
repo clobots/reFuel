@@ -1,0 +1,287 @@
+{
+  "generated_at": "2026-04-14T00:00:00",
+  "found_date": "13-04",
+  "note": "Manually curated from Google Search aggregator results (Petrol Spy, FuelRadar, Fuel Snoop, FuelCheck). Fuels represent types offered at the station; prices are indicative only — the site's live prices come from FuelCheck for matched stations.",
+  "stations": [
+    {
+      "google_name": "Metro",
+      "google_address": "700 Victoria Rd, Ermington NSW 2115",
+      "google_lat": "-33.808597",
+      "google_lng": "151.066124",
+      "status": "temporarily_closed",
+      "manual_fuels": {},
+      "notes": "Google listing: Temporarily closed. No current pricing available.",
+      "source": "google-search",
+      "found_date": "13-04"
+    },
+    {
+      "google_name": "Medco Carlingford",
+      "google_address": "286-288 Pennant Hills Road, Cnr Adderton Road, Carlingford NSW 2118",
+      "google_lat": "-33.784959",
+      "google_lng": "151.043511",
+      "status": "operational",
+      "manual_fuels": {
+        "U91": {"available": true, "price": 209.5},
+        "P95": {"available": true, "price": 227.5},
+        "P98": {"available": true, "price": 229.7},
+        "DL":  {"available": true, "price": 304.7},
+        "PDL": {"available": true, "price": 305.4}
+      },
+      "notes": "Open 24 hours. Independent. No E10 or LPG.",
+      "source": "google-search",
+      "found_date": "13-04"
+    },
+    {
+      "google_name": "Astron Rydalmere",
+      "google_address": "262 - 272 Victoria Rd Rydalmere NSW 2116",
+      "google_lat": "-33.810267",
+      "google_lng": "151.032503",
+      "status": "operational",
+      "manual_fuels": {
+        "U91": {"available": true, "price": 214.5},
+        "E10": {"available": true, "price": 212.5},
+        "P95": {"available": true, "price": 233.9},
+        "P98": {"available": true, "price": 242.9},
+        "DL":  {"available": true, "price": 319.9},
+        "LPG": {"available": true, "price": 125.9},
+        "E85": {"available": true, "price": 219.9}
+      },
+      "notes": "Full lineup incl. LPG and E85.",
+      "source": "google-search",
+      "found_date": "13-04"
+    },
+    {
+      "google_name": "EG Ampol Newington",
+      "google_address": "1 Ave Of The Americas",
+      "google_lat": "-33.833776",
+      "google_lng": "151.055555",
+      "status": "operational",
+      "manual_fuels": {
+        "U91": {"available": true, "price": 219.9},
+        "E10": {"available": true},
+        "P95": {"available": true, "price": 235.9},
+        "P98": {"available": true, "price": 244.9},
+        "DL":  {"available": true},
+        "PDL": {"available": true, "price": 323.9}
+      },
+      "source": "google-search",
+      "found_date": "13-04"
+    },
+    {
+      "google_name": "Enhance Homebush",
+      "google_address": "242 Parramatta Rd",
+      "google_lat": "-33.861619",
+      "google_lng": "151.076394",
+      "status": "operational",
+      "manual_fuels": {
+        "U91": {"available": true, "price": 212.8},
+        "E10": {"available": true, "price": 209.8},
+        "P95": {"available": true, "price": 234.8},
+        "P98": {"available": true, "price": 235.8},
+        "DL":  {"available": true, "price": 315.8},
+        "LPG": {"available": true, "price": 125.8}
+      },
+      "source": "google-search",
+      "found_date": "13-04"
+    },
+    {
+      "google_name": "Ampol Foodary Lane Cove",
+      "google_address": "237-245 Burns Bay Rd, Lane Cove West NSW 2066",
+      "google_lat": "-33.814673",
+      "google_lng": "151.161783",
+      "status": "operational",
+      "manual_fuels": {
+        "U91": {"available": true, "price": 218.5},
+        "E10": {"available": true, "price": 216.5},
+        "P95": {"available": true, "price": 236.4},
+        "P98": {"available": true, "price": 244.5},
+        "PDL": {"available": true, "price": 318.4}
+      },
+      "notes": "Listed on FuelCheck as Ampol Foodary Lane Cove West.",
+      "source": "google-search",
+      "found_date": "13-04"
+    },
+    {
+      "google_name": "Ampol Foodary Parramatta",
+      "google_address": "159 Wigram St, Parramatta NSW 2150",
+      "google_lat": "-33.811056",
+      "google_lng": "151.021996",
+      "status": "operational",
+      "manual_fuels": {
+        "U91": {"available": true, "price": 219.0},
+        "E10": {"available": true},
+        "P95": {"available": true},
+        "P98": {"available": true},
+        "DL":  {"available": true}
+      },
+      "notes": "Specific per-fuel prices not indexed; assumed standard Ampol Foodary lineup.",
+      "source": "google-search",
+      "found_date": "13-04"
+    },
+    {
+      "google_name": "Shell Reddy Express Parramatta",
+      "google_address": "88 Victoria Rd (Corner, Buller St)",
+      "google_lat": "-33.808676",
+      "google_lng": "151.012832",
+      "status": "operational",
+      "manual_fuels": {
+        "U91": {"available": true},
+        "E10": {"available": true, "price": 216.9},
+        "P95": {"available": true, "price": 234.4},
+        "P98": {"available": true, "price": 243.9},
+        "DL":  {"available": true}
+      },
+      "notes": "Shell V-Power 98. Standard Reddy Express lineup.",
+      "source": "google-search",
+      "found_date": "13-04"
+    },
+    {
+      "google_name": "Enhance Eastwood",
+      "google_address": "2 Lovell Rd, Eastwood NSW 2122",
+      "google_lat": "-33.792063",
+      "google_lng": "151.081580",
+      "status": "operational",
+      "manual_fuels": {
+        "U91": {"available": true, "price": 213.9},
+        "E10": {"available": true, "price": 211.9},
+        "P95": {"available": true, "price": 237.9},
+        "P98": {"available": true, "price": 237.9},
+        "PDL": {"available": true, "price": 315.9}
+      },
+      "notes": "AdBlue available on-site.",
+      "source": "google-search",
+      "found_date": "13-04"
+    },
+    {
+      "google_name": "7-Eleven",
+      "google_address": "246 Beecroft Rd & Carlingford Rd, Epping NSW 2121",
+      "google_lat": "-33.772695",
+      "google_lng": "151.081620",
+      "status": "operational",
+      "manual_fuels": {
+        "U91": {"available": true, "price": 218.9},
+        "E10": {"available": true, "price": 216.9},
+        "P95": {"available": true, "price": 244.9},
+        "P98": {"available": true, "price": 244.9},
+        "PDL": {"available": true, "price": 329.9}
+      },
+      "notes": "7-Eleven Epping.",
+      "source": "google-search",
+      "found_date": "13-04"
+    },
+    {
+      "google_name": "Shell",
+      "google_address": "1 Durham St, Rosehill NSW 2142",
+      "google_lat": "-33.824544",
+      "google_lng": "151.037681",
+      "status": "operational",
+      "manual_fuels": {
+        "DL": {"available": true, "price": 317.5}
+      },
+      "notes": "Shell Parramatta CVRO (self-serve). Diesel-only per Petrol Spy; AI overview suggests V-Power and unleaded may also be offered but unconfirmed.",
+      "source": "google-search",
+      "found_date": "13-04"
+    },
+    {
+      "google_name": "7-Eleven",
+      "google_address": "575-585 Liverpool Rd, Strathfield South NSW 2136",
+      "google_lat": "-33.873042",
+      "google_lng": "151.094341",
+      "status": "operational",
+      "manual_fuels": {
+        "U91": {"available": true, "price": 218.9},
+        "E10": {"available": true, "price": 216.9},
+        "P95": {"available": true, "price": 233.9},
+        "P98": {"available": true, "price": 242.9},
+        "PDL": {"available": true, "price": 329.9}
+      },
+      "notes": "7-Eleven Strathfield South.",
+      "source": "google-search",
+      "found_date": "13-04"
+    },
+    {
+      "google_name": "Shell Reddy Express Roberts Road East",
+      "google_address": "74 Roberts Rd, Greenacre NSW 2190",
+      "google_lat": "-33.884189",
+      "google_lng": "151.081686",
+      "status": "operational",
+      "manual_fuels": {
+        "U91": {"available": true, "price": 218.9},
+        "E10": {"available": true, "price": 216.9},
+        "P95": {"available": true, "price": 236.4},
+        "P98": {"available": true, "price": 245.9},
+        "DL":  {"available": true, "price": 316.9}
+      },
+      "notes": "Open 24 hours. Shell V-Power 98.",
+      "source": "google-search",
+      "found_date": "13-04"
+    },
+    {
+      "google_name": "7-Eleven",
+      "google_address": "132 Hume Hwy & Victoria St, Ashfield NSW 2131",
+      "google_lat": "-33.895603",
+      "google_lng": "151.125581",
+      "status": "operational",
+      "manual_fuels": {
+        "E10": {"available": true, "price": 215.9},
+        "P95": {"available": true, "price": 241.9},
+        "P98": {"available": true, "price": 241.9},
+        "PDL": {"available": true, "price": 325.9},
+        "LPG": {"available": true, "price": 104.9}
+      },
+      "notes": "7-Eleven Ashfield. Aggregators list E10/P95/P98/PDL/LPG; U91 not listed.",
+      "source": "google-search",
+      "found_date": "13-04"
+    },
+    {
+      "google_name": "BP Potts Hill T/S",
+      "google_address": "155-157 Rockwood Road, Yagoona NSW 2199",
+      "google_lat": "-33.893297",
+      "google_lng": "151.039079",
+      "status": "operational",
+      "manual_fuels": {
+        "E10": {"available": true, "price": 216.9},
+        "P95": {"available": true, "price": 234.9},
+        "P98": {"available": true, "price": 243.9},
+        "DL":  {"available": true, "price": 316.9},
+        "PDL": {"available": true, "price": 319.9}
+      },
+      "notes": "BP Potts Hill Truckstop. B-double access, diesel-focused.",
+      "source": "google-search",
+      "found_date": "13-04"
+    },
+    {
+      "google_name": "Metro Petroleum Fairfield 82",
+      "google_address": "82-86 Hamilton Rd, Fairfield NSW 2165",
+      "google_lat": "-33.873074",
+      "google_lng": "150.949885",
+      "status": "operational",
+      "manual_fuels": {
+        "U91": {"available": true, "price": 212.5},
+        "E10": {"available": true, "price": 210.5},
+        "P98": {"available": true, "price": 235.5},
+        "PDL": {"available": true, "price": 309.5}
+      },
+      "notes": "Metro Petroleum brand; this specific site not actively tracked by some aggregators. Lineup inferred from sibling Metro Fairfield station.",
+      "source": "google-search",
+      "found_date": "13-04"
+    },
+    {
+      "google_name": "U-Go Baulkham Hills",
+      "google_address": "117 Seven Hills Rd, Baulkham Hills NSW 2153",
+      "google_lat": "-33.761400",
+      "google_lng": "150.975100",
+      "status": "operational",
+      "manual_fuels": {
+        "U91": {"available": true, "price": 216.9},
+        "E10": {"available": true, "price": 214.9},
+        "P95": {"available": true, "price": 232.4},
+        "P98": {"available": true, "price": 241.9},
+        "PDL": {"available": true, "price": 309.9}
+      },
+      "notes": "Unmanned station.",
+      "source": "google-search",
+      "found_date": "13-04"
+    }
+  ]
+}

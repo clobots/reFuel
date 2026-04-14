@@ -30,6 +30,11 @@
       --fuelcheck: #f0c76e;
       --matched: #47c27d;
       --gap: #ff5f5f;
+      --manual: #b4e8b0;
+      --partial: #f0c76e;
+      --critical: #ff5f5f;
+      --unknown: #d659c9;
+      --manual-stripe: rgba(130, 130, 130, 0.38);
       --shadow: 0 18px 44px rgba(0, 0, 0, 0.28);
     }
 
@@ -70,6 +75,8 @@
     @media (min-width: 769px) {
       .content-area {
         flex-direction: row;
+        flex: 1;
+        min-height: 0;
       }
       .content-area > .map-wrap {
         flex: 2;
@@ -158,7 +165,7 @@
 
     .summary {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(5, 1fr);
       gap: 10px;
       margin: 0 0 8px;
     }
@@ -305,6 +312,21 @@
       font-size: 0.92rem;
     }
 
+    .legend-swatch-matched { background: var(--matched); }
+    .legend-swatch-partial { background: var(--partial); }
+    .legend-swatch-critical { background: var(--critical); }
+    .legend-swatch-unknown { background: var(--unknown); }
+    .legend-swatch-manual {
+      background-color: var(--manual);
+      background-image: repeating-linear-gradient(
+        45deg,
+        var(--manual-stripe) 0,
+        var(--manual-stripe) 1.5px,
+        transparent 1.5px,
+        transparent 4px
+      );
+    }
+
     .legend-swatch {
       width: 12px;
       height: 12px;
@@ -413,6 +435,29 @@
     .station-marker.fuelcheck { background: var(--fuelcheck); }
     .station-marker.matched { background: var(--matched); }
     .station-marker.gap { background: var(--gap); }
+    .station-marker.partial { background: var(--partial); }
+    .station-marker.critical { background: var(--critical); }
+    .station-marker.unknown {
+      background: var(--unknown);
+      color: #ffffff;
+      font-weight: 700;
+      font-size: 12px;
+      line-height: 18px;
+      text-align: center;
+    }
+    .station-marker.unknown::before {
+      content: "?";
+    }
+    .station-marker.manual {
+      background-color: var(--manual);
+      background-image: repeating-linear-gradient(
+        45deg,
+        var(--manual-stripe) 0,
+        var(--manual-stripe) 2px,
+        transparent 2px,
+        transparent 5px
+      );
+    }
 
     .popup {
       color: #11202b;
@@ -953,17 +998,25 @@
 
         <!-- Row 4: Stat cards -->
         <dl class="summary" id="summary-panel">
-          <div class="summary-card">
+          <div class="summary-card" title="Live FuelCheck data, all usual fuels available">
             <dd id="available-count">-</dd>
             <dt style="color:var(--matched)">Available</dt>
           </div>
-          <div class="summary-card">
-            <dd id="notlisted-count">-</dd>
-            <dt style="color:var(--gap)">N/A</dt>
+          <div class="summary-card" title="Manually collected data at -24hr delay">
+            <dd id="manual-count">-</dd>
+            <dt style="color:var(--manual)">Manual</dt>
           </div>
-          <div class="summary-card">
-            <dd id="unsure-count">-</dd>
-            <dt style="color:var(--fuelcheck)">Unsure</dt>
+          <div class="summary-card" title="75% or more of usual (ever-had) fuels unavailable">
+            <dd id="partial-count">-</dd>
+            <dt style="color:var(--partial)">Partial out</dt>
+          </div>
+          <div class="summary-card" title="Every usual fuel currently unavailable">
+            <dd id="critical-count">-</dd>
+            <dt style="color:var(--critical)">All out</dt>
+          </div>
+          <div class="summary-card" title="Google-only station — no fuel data available">
+            <dd id="unknown-count">-</dd>
+            <dt style="color:var(--unknown)">Unknown</dt>
           </div>
         </dl>
         <p class="disclaimer-note">N/A = not listed as having fuel in official NSW FuelCheck data. * Assumes listed stations sell all fuel types usually.</p>
@@ -1185,7 +1238,11 @@
       google: L.layerGroup().addTo(map),
       fuelcheck: L.layerGroup().addTo(map),
       matched: L.layerGroup().addTo(map),
-      gap: L.layerGroup().addTo(map)
+      gap: L.layerGroup().addTo(map),
+      manual: L.layerGroup().addTo(map),
+      partial: L.layerGroup().addTo(map),
+      critical: L.layerGroup().addTo(map),
+      unknown: L.layerGroup().addTo(map)
     };
 
     // Fuel types to show in the filter (EV excluded)
@@ -1193,6 +1250,28 @@
     let selectedFuelTypes = new Set(ALL_FUEL_TYPES);
     let showOnlyOutages = false;
     let outageLookup = new Map();
+    let stationStatusLookup = new Map();
+
+    function buildStationStatusLookup(rows) {
+      const lookup = new Map();
+      rows.forEach(function(r) {
+        const id = String(r.station_id || "").trim();
+        if (!id) return;
+        const ratio = parseFloat(r.unavailable_ratio_pct);
+        const completelyOut = r.completely_out_of_all_usual === "true";
+        let severity = "ok";
+        if (completelyOut) severity = "critical";
+        else if (!isNaN(ratio) && ratio >= 75) severity = "partial";
+        lookup.set(id, {
+          severity: severity,
+          ratio: isNaN(ratio) ? 0 : ratio,
+          completelyOut: completelyOut,
+          usual: r.usual_fuel_types || "",
+          unavailable: r.unavailable_now || ""
+        });
+      });
+      return lookup;
+    }
 
     const controlPanel = L.control({ position: "bottomright" });
     controlPanel.onAdd = function onAdd() {
@@ -1265,14 +1344,26 @@
       // Legend — horizontal row
       const legendRow = L.DomUtil.create("div", "legend-row", div);
       const legendItems = [
-        { color: cssVar("--matched"), label: "Available" },
-        { color: cssVar("--gap"), label: "N/A" },
-        { color: cssVar("--fuelcheck"), label: "Unsure - check" }
+        { cls: "matched", label: "Available", title: "Live FuelCheck data, all usual fuels available" },
+        { cls: "partial", label: "Partial out", title: "75% or more of usual (ever-had) fuels unavailable" },
+        { cls: "critical", label: "All out", title: "Every usual fuel currently unavailable" },
+        { cls: "unknown", label: "Unknown", title: "Google-only station — no fuel data available" },
+        { cls: "manual", label: "Manual", title: "Manually collected data at -24hr delay" }
       ];
-      legendItems.forEach(({ color, label }) => {
+      legendItems.forEach(({ cls, label, title }) => {
         const item = L.DomUtil.create("div", "legend-item", legendRow);
-        const swatch = L.DomUtil.create("span", "legend-swatch", item);
-        swatch.style.background = color;
+        if (title) item.title = title;
+        const swatch = L.DomUtil.create("span", "legend-swatch legend-swatch-" + cls, item);
+        if (cls === "unknown") {
+          swatch.textContent = "?";
+          swatch.style.color = "#fff";
+          swatch.style.fontSize = "9px";
+          swatch.style.fontWeight = "700";
+          swatch.style.display = "inline-flex";
+          swatch.style.alignItems = "center";
+          swatch.style.justifyContent = "center";
+          swatch.style.lineHeight = "1";
+        }
         item.appendChild(document.createTextNode(label));
       });
       return div;
@@ -1288,9 +1379,15 @@
     }
 
     function setSummary(stats) {
-      document.getElementById("available-count").textContent = stats.available;
-      document.getElementById("notlisted-count").textContent = stats.notlisted;
-      document.getElementById("unsure-count").textContent = stats.unsure;
+      var setText = function(id, v) {
+        var el = document.getElementById(id);
+        if (el) el.textContent = (v != null ? v : 0);
+      };
+      setText("available-count", stats.available);
+      setText("manual-count", stats.manual);
+      setText("partial-count", stats.partial);
+      setText("critical-count", stats.critical);
+      setText("unknown-count", stats.unknown);
     }
 
     function formatUpdatedDate(...timestamps) {
@@ -1410,7 +1507,39 @@
         });
         html += '</div>';
       } else if (!fc) {
-        html += '<div class="popup-meta">No FuelCheck data for this station.</div>';
+        var manualEntry = data.manualEntry;
+        if (manualEntry && manualEntry.status === "temporarily_closed") {
+          html += '<div class="popup-meta">⚠️ Temporarily closed (manually verified ' + escapeHtml(manualEntry.found_date || "") + ')</div>';
+          if (manualEntry.notes) {
+            html += '<div class="popup-meta">' + escapeHtml(manualEntry.notes) + '</div>';
+          }
+        } else if (manualEntry && manualEntry.manual_fuels) {
+          var manualFuels = manualEntry.manual_fuels;
+          var manualKeys = Object.keys(manualFuels);
+          if (manualKeys.length) {
+            var tooltip = "Manually found " + (manualEntry.found_date || "");
+            html += '<div class="fuel-grid" title="' + escapeHtml(tooltip) + '">';
+            FUEL_COL_ORDER.forEach(function(ft) {
+              if (!manualFuels[ft] || manualFuels[ft].available === false) return;
+              var entry = manualFuels[ft];
+              html += '<div class="fuel-item" title="' + escapeHtml(tooltip) + '">';
+              html += '<span class="fuel-type">' + escapeHtml(ft) + '*</span>';
+              if (entry.price != null) {
+                html += '<span class="fuel-price">' + escapeHtml(entry.price) + '¢</span>';
+              } else {
+                html += '<span class="fuel-price missing">available</span>';
+              }
+              html += '</div>';
+            });
+            html += '</div>';
+            html += '<div class="popup-meta" style="margin-top:6px;font-size:10px;">* manually found (' + escapeHtml(manualEntry.found_date || "") + ') — not in FuelCheck</div>';
+          }
+          if (manualEntry.notes) {
+            html += '<div class="popup-meta" style="font-size:10px;">' + escapeHtml(manualEntry.notes) + '</div>';
+          }
+        } else {
+          html += '<div class="popup-meta">No FuelCheck data for this station.</div>';
+        }
       }
 
       // Google Maps link
@@ -1815,6 +1944,22 @@
 
     let rawMatchedRows = [];
     let scrapedZones = new Set();
+    let manualGapLookup = {};
+    let manualGapFoundDate = "";
+
+    function manualGapKey(lat, lng) {
+      if (lat == null || lng == null) return "";
+      return Number(lat).toFixed(4) + "|" + Number(lng).toFixed(4);
+    }
+
+    function lookupManualFuels(googleStation) {
+      if (!googleStation) return null;
+      var key = manualGapKey(googleStation.lat, googleStation.lng);
+      if (key && manualGapLookup[key]) return manualGapLookup[key];
+      var nm = (googleStation.name || "").toLowerCase().trim();
+      if (nm && manualGapLookup["n:" + nm]) return manualGapLookup["n:" + nm];
+      return null;
+    }
 
     function rerender() {
       Object.values(layers).forEach((layer) => layer.clearLayers());
@@ -1824,8 +1969,12 @@
       tableData = { gaps: [], matched: [], google: [], fuelcheck: [] };
       let matchedCount = 0;
       let gapCount = 0;
+      let manualCount = 0;
       let fuelcheckOnlyCount = 0;
       let googleTotal = 0;
+      let partialCount = 0;
+      let criticalCount = 0;
+      let unknownCount = 0;
 
       rawMatchedRows.forEach((row) => {
         const googleStation = row.google;
@@ -1845,17 +1994,24 @@
         }
 
         if (row.matchStatus === "matched") {
+          const fcId = fuelStation && fuelStation.id ? String(fuelStation.id) : "";
+          const statusEntry = fcId ? stationStatusLookup.get(fcId) : null;
+          const severity = statusEntry ? statusEntry.severity : "ok";
           if (hasSelectedFuel) {
-            matchedCount += 1;
+            var markerType = "matched";
+            if (severity === "critical") { markerType = "critical"; criticalCount += 1; }
+            else if (severity === "partial") { markerType = "partial"; partialCount += 1; }
+            else { matchedCount += 1; }
             addMarker({
               fuelcheck: fuelStation,
               google: googleStation,
               prices: selectedPrices,
               matchDistanceMeters: row.matchDistanceMeters,
               outageFuelTypes,
+              statusEntry: statusEntry,
               lat: fuelStation.lat,
               lng: fuelStation.lng
-            }, "matched");
+            }, markerType);
             tableData.matched.push([
               fuelStation.name || "",
               googleStation.name || "",
@@ -1863,16 +2019,17 @@
               row.matchDistanceMeters != null ? Math.round(row.matchDistanceMeters) + "m" : "-"
             ]);
           } else {
-            gapCount += 1;
+            criticalCount += 1;
             addMarker({
               fuelcheck: fuelStation,
               google: googleStation,
               prices: [],
               matchDistanceMeters: row.matchDistanceMeters,
               outageFuelTypes,
+              statusEntry: statusEntry,
               lat: googleStation.lat,
               lng: googleStation.lng
-            }, "gap");
+            }, "critical");
             tableData.gaps.push([
               googleStation.name || fuelStation.name || "",
               googleStation.address || fuelStation.address || "",
@@ -1883,18 +2040,22 @@
         }
 
         if (row.matchStatus === "gap_google_only" && googleStation) {
-          gapCount += 1;
+          var manualEntry = lookupManualFuels(googleStation);
+          var hasManualFuels = manualEntry && manualEntry.manual_fuels && Object.keys(manualEntry.manual_fuels).length > 0;
+          var markerType = hasManualFuels ? "manual" : "unknown";
+          if (hasManualFuels) { manualCount += 1; } else { unknownCount += 1; }
           addMarker({
             google: googleStation,
             fuelcheck: null,
             outageFuelTypes: [],
             lat: googleStation.lat,
-            lng: googleStation.lng
-          }, "gap");
+            lng: googleStation.lng,
+            manualEntry: manualEntry
+          }, markerType);
           tableData.gaps.push([
             googleStation.name || "",
             googleStation.address || "",
-            "Google Maps"
+            hasManualFuels ? "Google Maps (manual *)" : "Google Maps"
           ]);
           return;
         }
@@ -1904,15 +2065,21 @@
             var suburb = extractSuburb(fuelStation.address).toLowerCase();
             if (!suburb || !scrapedZones.has(suburb)) return;
           }
-          fuelcheckOnlyCount += 1;
+          const fcoId = fuelStation.id ? String(fuelStation.id) : "";
+          const fcoStatus = fcoId ? stationStatusLookup.get(fcoId) : null;
+          var fcoMarker = "fuelcheck";
+          if (fcoStatus && fcoStatus.severity === "critical") { fcoMarker = "critical"; criticalCount += 1; }
+          else if (fcoStatus && fcoStatus.severity === "partial") { fcoMarker = "partial"; partialCount += 1; }
+          else { fuelcheckOnlyCount += 1; }
           addMarker({
             fuelcheck: fuelStation,
             google: null,
             prices: selectedPrices,
             outageFuelTypes,
+            statusEntry: fcoStatus,
             lat: fuelStation.lat,
             lng: fuelStation.lng
-          }, "fuelcheck");
+          }, fcoMarker);
           tableData.fuelcheck.push([
             fuelStation.name || "",
             fuelStation.brand || "",
@@ -1928,22 +2095,32 @@
       });
 
       setSummary({
-        available: matchedCount,
-        notlisted: gapCount,
-        unsure: fuelcheckOnlyCount
+        available: matchedCount + fuelcheckOnlyCount,
+        manual: manualCount,
+        partial: partialCount,
+        critical: criticalCount,
+        unknown: unknownCount
       });
 
       document.getElementById("map-status").style.display = "none";
 
-      // Update availability percentage line (station-level: fully available = matched + no outages)
+      // Update availability percentage line (station-level: fully available = all non-out stations with data)
       const stationsWithOutage = outageLookup.size;
-      const noDataCount = gapCount;
-      const fullyAvailable = googleTotal - stationsWithOutage - noDataCount;
+      const unavailableCount = criticalCount + unknownCount;
+      const fullyAvailable = googleTotal - unavailableCount - partialCount;
       const pct = googleTotal ? Math.round((fullyAvailable / googleTotal) * 100) : 0;
       document.getElementById("avail-line").textContent = pct + "% of local stations have full fuel availability";
-      document.getElementById("avail-line-detail").textContent =
-        stationsWithOutage + " partial outage" + (stationsWithOutage !== 1 ? "s" : "") +
-        " · " + noDataCount + " unverified";
+      var detailParts = [
+        stationsWithOutage + " partial outage" + (stationsWithOutage !== 1 ? "s" : ""),
+        unknownCount + " unknown"
+      ];
+      if (criticalCount > 0) {
+        detailParts.unshift(criticalCount + " fully out");
+      }
+      if (manualCount > 0) {
+        detailParts.push(manualCount + " manual");
+      }
+      document.getElementById("avail-line-detail").textContent = detailParts.join(" · ");
 
       updateTableBadges();
       renderTable();
@@ -1976,16 +2153,31 @@
         if (seen.has(key)) return;
         seen.add(key);
         var priceMap = {};
+        var manualSet = {};
         var prices = d.prices || (fc && fc.prices) || [];
         prices.forEach(function(p) { priceMap[p.fuel_type] = p.price; });
+        var manualEntry = d.manualEntry;
+        if (manualEntry && manualEntry.manual_fuels) {
+          Object.keys(manualEntry.manual_fuels).forEach(function(ft) {
+            var e = manualEntry.manual_fuels[ft];
+            if (!e || e.available === false) return;
+            if (priceMap[ft] == null) {
+              manualSet[ft] = true;
+              if (e.price != null) priceMap[ft] = e.price;
+            }
+          });
+        }
         var outageFuelTypes = Array.isArray(d.outageFuelTypes) ? d.outageFuelTypes.slice() : [];
         rows.push({
           name: name, address: address, priceMap: priceMap, marker: m, type: m._stationType,
           lat: m._lat, lng: m._lng,
           suburb: extractSuburb(address),
-          hasFuelAvailable: m._stationType !== "gap" && Object.keys(priceMap).length > 0,
+          hasFuelAvailable: (m._stationType !== "gap" && Object.keys(priceMap).length > 0) || Object.keys(manualSet).length > 0,
           outageFuelTypes: outageFuelTypes,
-          hasOutages: outageFuelTypes.length > 0
+          hasOutages: outageFuelTypes.length > 0,
+          manualSet: manualSet,
+          manualFoundDate: manualEntry ? manualEntry.found_date : "",
+          manualStatus: manualEntry ? manualEntry.status : ""
         });
       });
       return rows;
@@ -2111,13 +2303,21 @@
           var td = document.createElement("td");
           td.className = "price-cell";
           var price = r.priceMap[ft];
+          var isManual = r.manualSet && r.manualSet[ft];
           if (price != null) {
-            td.textContent = price.toFixed(1);
-            if (terciles[ft]) {
+            td.textContent = price.toFixed(1) + (isManual ? "*" : "");
+            if (isManual) {
+              td.title = "Manually found " + (r.manualFoundDate || "") + " — not in FuelCheck";
+              td.style.opacity = "0.78";
+            } else if (terciles[ft]) {
               if (price <= terciles[ft].q1) td.classList.add("price-cheap");
               else if (price <= terciles[ft].q2) td.classList.add("price-mid");
               else td.classList.add("price-dear");
             }
+          } else if (isManual) {
+            td.textContent = "✓*";
+            td.title = "Manually found " + (r.manualFoundDate || "") + " — available, price not captured";
+            td.style.opacity = "0.78";
           } else if (r.outageFuelTypes.indexOf(ft) >= 0) {
             td.textContent = "⚠️";
             td.classList.add("price-outage");
@@ -2147,8 +2347,25 @@
       try {
         const matchedRows = (typeof USE_EMBEDDED !== 'undefined' && USE_EMBEDDED) ? EMBEDDED_MATCHED : await fetchCsv("data/clean/matched_stations.csv").catch(() => []);
         const outageRows = (typeof USE_EMBEDDED !== 'undefined' && USE_EMBEDDED) ? EMBEDDED_OUTAGES : await fetchCsv("data/clean/fuelcheck_outages.csv").catch(() => []);
+        const statusRows = await fetchCsv("data/clean/fuelcheck_station_outage_status.csv").catch(() => []);
         const googleMeta = (typeof USE_EMBEDDED !== 'undefined' && USE_EMBEDDED) ? EMBEDDED_GOOGLE_META : await fetchJson("data/google_meta.json").catch(() => ({}));
         const fuelcheckMeta = (typeof USE_EMBEDDED !== 'undefined' && USE_EMBEDDED) ? EMBEDDED_FC_META : await fetchJson("data/fuelcheck_meta.json").catch(() => ({}));
+        const manualGapData = await fetchJson("data/manual_gap_fuel_info.json").catch(() => null);
+        if (manualGapData && Array.isArray(manualGapData.stations)) {
+          manualGapFoundDate = manualGapData.found_date || "";
+          manualGapData.stations.forEach(function(s) {
+            var entry = {
+              manual_fuels: s.manual_fuels || {},
+              notes: s.notes || "",
+              status: s.status || "operational",
+              found_date: s.found_date || manualGapFoundDate
+            };
+            var k = manualGapKey(s.google_lat, s.google_lng);
+            if (k) manualGapLookup[k] = entry;
+            var nm = (s.google_name || "").toLowerCase().trim();
+            if (nm) manualGapLookup["n:" + nm] = entry;
+          });
+        }
 
         document.getElementById("last-updated").textContent = formatUpdatedDate(
           googleMeta.last_updated,
@@ -2156,6 +2373,7 @@
         );
 
         outageLookup = buildOutageLookup(outageRows);
+        stationStatusLookup = buildStationStatusLookup(statusRows);
         renderAiSummary(outageRows);
 
         (googleMeta.zones_scraped || []).forEach((z) => {
