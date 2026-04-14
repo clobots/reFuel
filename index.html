@@ -1276,13 +1276,15 @@
         if (!id) return;
         const ratio = parseFloat(r.unavailable_ratio_pct);
         const completelyOut = r.completely_out_of_all_usual === "true";
+        const unavailCount = parseInt(r.unavailable_count) || 0;
         let severity = "ok";
         if (completelyOut) severity = "critical";
-        else if (!isNaN(ratio) && ratio >= 75) severity = "partial";
+        else if (unavailCount > 0) severity = "partial";
         lookup.set(id, {
           severity: severity,
           ratio: isNaN(ratio) ? 0 : ratio,
           completelyOut: completelyOut,
+          unavailCount: unavailCount,
           usual: r.usual_fuel_types || "",
           unavailable: r.unavailable_now || ""
         });
