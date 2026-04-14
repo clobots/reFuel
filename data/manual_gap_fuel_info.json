@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-04-14T00:00:00",
+  "generated_at": "2026-04-14T16:07:12",
   "found_date": "13-04",
-  "note": "Manually curated from Google Search aggregator results (Petrol Spy, FuelRadar, Fuel Snoop, FuelCheck). Fuels represent types offered at the station; prices are indicative only — the site's live prices come from FuelCheck for matched stations.",
+  "note": "Manually curated from Google Search aggregator results (Petrol Spy, FuelRadar, Fuel Snoop, FuelCheck). Fuels represent types offered at the station; prices are indicative only \u2014 the site's live prices come from FuelCheck for matched stations.",
   "stations": [
     {
       "google_name": "Metro",
@@ -21,11 +21,26 @@
       "google_lng": "151.043511",
       "status": "operational",
       "manual_fuels": {
-        "U91": {"available": true, "price": 209.5},
-        "P95": {"available": true, "price": 227.5},
-        "P98": {"available": true, "price": 229.7},
-        "DL":  {"available": true, "price": 304.7},
-        "PDL": {"available": true, "price": 305.4}
+        "U91": {
+          "available": true,
+          "price": 209.5
+        },
+        "P95": {
+          "available": true,
+          "price": 227.5
+        },
+        "P98": {
+          "available": true,
+          "price": 229.7
+        },
+        "DL": {
+          "available": true,
+          "price": 304.7
+        },
+        "PDL": {
+          "available": true,
+          "price": 305.4
+        }
       },
       "notes": "Open 24 hours. Independent. No E10 or LPG.",
       "source": "google-search",
@@ -38,13 +53,34 @@
       "google_lng": "151.032503",
       "status": "operational",
       "manual_fuels": {
-        "U91": {"available": true, "price": 214.5},
-        "E10": {"available": true, "price": 212.5},
-        "P95": {"available": true, "price": 233.9},
-        "P98": {"available": true, "price": 242.9},
-        "DL":  {"available": true, "price": 319.9},
-        "LPG": {"available": true, "price": 125.9},
-        "E85": {"available": true, "price": 219.9}
+        "U91": {
+          "available": true,
+          "price": 214.5
+        },
+        "E10": {
+          "available": true,
+          "price": 212.5
+        },
+        "P95": {
+          "available": true,
+          "price": 233.9
+        },
+        "P98": {
+          "available": true,
+          "price": 242.9
+        },
+        "DL": {
+          "available": true,
+          "price": 319.9
+        },
+        "LPG": {
+          "available": true,
+          "price": 125.9
+        },
+        "E85": {
+          "available": true,
+          "price": 219.9
+        }
       },
       "notes": "Full lineup incl. LPG and E85.",
       "source": "google-search",
@@ -57,12 +93,28 @@
       "google_lng": "151.055555",
       "status": "operational",
       "manual_fuels": {
-        "U91": {"available": true, "price": 219.9},
-        "E10": {"available": true},
-        "P95": {"available": true, "price": 235.9},
-        "P98": {"available": true, "price": 244.9},
-        "DL":  {"available": true},
-        "PDL": {"available": true, "price": 323.9}
+        "U91": {
+          "available": true,
+          "price": 219.9
+        },
+        "E10": {
+          "available": true
+        },
+        "P95": {
+          "available": true,
+          "price": 235.9
+        },
+        "P98": {
+          "available": true,
+          "price": 244.9
+        },
+        "DL": {
+          "available": true
+        },
+        "PDL": {
+          "available": true,
+          "price": 323.9
+        }
       },
       "source": "google-search",
       "found_date": "13-04"
@@ -74,12 +126,30 @@
       "google_lng": "151.076394",
       "status": "operational",
       "manual_fuels": {
-        "U91": {"available": true, "price": 212.8},
-        "E10": {"available": true, "price": 209.8},
-        "P95": {"available": true, "price": 234.8},
-        "P98": {"available": true, "price": 235.8},
-        "DL":  {"available": true, "price": 315.8},
-        "LPG": {"available": true, "price": 125.8}
+        "U91": {
+          "available": true,
+          "price": 212.8
+        },
+        "E10": {
+          "available": true,
+          "price": 209.8
+        },
+        "P95": {
+          "available": true,
+          "price": 234.8
+        },
+        "P98": {
+          "available": true,
+          "price": 235.8
+        },
+        "DL": {
+          "available": true,
+          "price": 315.8
+        },
+        "LPG": {
+          "available": true,
+          "price": 125.8
+        }
       },
       "source": "google-search",
       "found_date": "13-04"
@@ -91,11 +161,26 @@
       "google_lng": "151.161783",
       "status": "operational",
       "manual_fuels": {
-        "U91": {"available": true, "price": 218.5},
-        "E10": {"available": true, "price": 216.5},
-        "P95": {"available": true, "price": 236.4},
-        "P98": {"available": true, "price": 244.5},
-        "PDL": {"available": true, "price": 318.4}
+        "U91": {
+          "available": true,
+          "price": 218.5
+        },
+        "E10": {
+          "available": true,
+          "price": 216.5
+        },
+        "P95": {
+          "available": true,
+          "price": 236.4
+        },
+        "P98": {
+          "available": true,
+          "price": 244.5
+        },
+        "PDL": {
+          "available": true,
+          "price": 318.4
+        }
       },
       "notes": "Listed on FuelCheck as Ampol Foodary Lane Cove West.",
       "source": "google-search",
@@ -108,30 +193,24 @@
       "google_lng": "151.021996",
       "status": "operational",
       "manual_fuels": {
-        "U91": {"available": true, "price": 219.0},
-        "E10": {"available": true},
-        "P95": {"available": true},
-        "P98": {"available": true},
-        "DL":  {"available": true}
+        "U91": {
+          "available": true,
+          "price": 219.0
+        },
+        "E10": {
+          "available": true
+        },
+        "P95": {
+          "available": true
+        },
+        "P98": {
+          "available": true
+        },
+        "DL": {
+          "available": true
+        }
       },
       "notes": "Specific per-fuel prices not indexed; assumed standard Ampol Foodary lineup.",
-      "source": "google-search",
-      "found_date": "13-04"
-    },
-    {
-      "google_name": "Shell Reddy Express Parramatta",
-      "google_address": "88 Victoria Rd (Corner, Buller St)",
-      "google_lat": "-33.808676",
-      "google_lng": "151.012832",
-      "status": "operational",
-      "manual_fuels": {
-        "U91": {"available": true},
-        "E10": {"available": true, "price": 216.9},
-        "P95": {"available": true, "price": 234.4},
-        "P98": {"available": true, "price": 243.9},
-        "DL":  {"available": true}
-      },
-      "notes": "Shell V-Power 98. Standard Reddy Express lineup.",
       "source": "google-search",
       "found_date": "13-04"
     },
@@ -142,11 +221,26 @@
       "google_lng": "151.081580",
       "status": "operational",
       "manual_fuels": {
-        "U91": {"available": true, "price": 213.9},
-        "E10": {"available": true, "price": 211.9},
-        "P95": {"available": true, "price": 237.9},
-        "P98": {"available": true, "price": 237.9},
-        "PDL": {"available": true, "price": 315.9}
+        "U91": {
+          "available": true,
+          "price": 213.9
+        },
+        "E10": {
+          "available": true,
+          "price": 211.9
+        },
+        "P95": {
+          "available": true,
+          "price": 237.9
+        },
+        "P98": {
+          "available": true,
+          "price": 237.9
+        },
+        "PDL": {
+          "available": true,
+          "price": 315.9
+        }
       },
       "notes": "AdBlue available on-site.",
       "source": "google-search",
@@ -159,26 +253,28 @@
       "google_lng": "151.081620",
       "status": "operational",
       "manual_fuels": {
-        "U91": {"available": true, "price": 218.9},
-        "E10": {"available": true, "price": 216.9},
-        "P95": {"available": true, "price": 244.9},
-        "P98": {"available": true, "price": 244.9},
-        "PDL": {"available": true, "price": 329.9}
+        "U91": {
+          "available": true,
+          "price": 218.9
+        },
+        "E10": {
+          "available": true,
+          "price": 216.9
+        },
+        "P95": {
+          "available": true,
+          "price": 244.9
+        },
+        "P98": {
+          "available": true,
+          "price": 244.9
+        },
+        "PDL": {
+          "available": true,
+          "price": 329.9
+        }
       },
       "notes": "7-Eleven Epping.",
-      "source": "google-search",
-      "found_date": "13-04"
-    },
-    {
-      "google_name": "Shell",
-      "google_address": "1 Durham St, Rosehill NSW 2142",
-      "google_lat": "-33.824544",
-      "google_lng": "151.037681",
-      "status": "operational",
-      "manual_fuels": {
-        "DL": {"available": true, "price": 317.5}
-      },
-      "notes": "Shell Parramatta CVRO (self-serve). Diesel-only per Petrol Spy; AI overview suggests V-Power and unleaded may also be offered but unconfirmed.",
       "source": "google-search",
       "found_date": "13-04"
     },
@@ -189,11 +285,26 @@
       "google_lng": "151.094341",
       "status": "operational",
       "manual_fuels": {
-        "U91": {"available": true, "price": 218.9},
-        "E10": {"available": true, "price": 216.9},
-        "P95": {"available": true, "price": 233.9},
-        "P98": {"available": true, "price": 242.9},
-        "PDL": {"available": true, "price": 329.9}
+        "U91": {
+          "available": true,
+          "price": 218.9
+        },
+        "E10": {
+          "available": true,
+          "price": 216.9
+        },
+        "P95": {
+          "available": true,
+          "price": 233.9
+        },
+        "P98": {
+          "available": true,
+          "price": 242.9
+        },
+        "PDL": {
+          "available": true,
+          "price": 329.9
+        }
       },
       "notes": "7-Eleven Strathfield South.",
       "source": "google-search",
@@ -206,11 +317,26 @@
       "google_lng": "151.081686",
       "status": "operational",
       "manual_fuels": {
-        "U91": {"available": true, "price": 218.9},
-        "E10": {"available": true, "price": 216.9},
-        "P95": {"available": true, "price": 236.4},
-        "P98": {"available": true, "price": 245.9},
-        "DL":  {"available": true, "price": 316.9}
+        "U91": {
+          "available": true,
+          "price": 218.9
+        },
+        "E10": {
+          "available": true,
+          "price": 216.9
+        },
+        "P95": {
+          "available": true,
+          "price": 236.4
+        },
+        "P98": {
+          "available": true,
+          "price": 245.9
+        },
+        "DL": {
+          "available": true,
+          "price": 316.9
+        }
       },
       "notes": "Open 24 hours. Shell V-Power 98.",
       "source": "google-search",
@@ -223,30 +349,28 @@
       "google_lng": "151.125581",
       "status": "operational",
       "manual_fuels": {
-        "E10": {"available": true, "price": 215.9},
-        "P95": {"available": true, "price": 241.9},
-        "P98": {"available": true, "price": 241.9},
-        "PDL": {"available": true, "price": 325.9},
-        "LPG": {"available": true, "price": 104.9}
+        "E10": {
+          "available": true,
+          "price": 215.9
+        },
+        "P95": {
+          "available": true,
+          "price": 241.9
+        },
+        "P98": {
+          "available": true,
+          "price": 241.9
+        },
+        "PDL": {
+          "available": true,
+          "price": 325.9
+        },
+        "LPG": {
+          "available": true,
+          "price": 104.9
+        }
       },
       "notes": "7-Eleven Ashfield. Aggregators list E10/P95/P98/PDL/LPG; U91 not listed.",
-      "source": "google-search",
-      "found_date": "13-04"
-    },
-    {
-      "google_name": "BP Potts Hill T/S",
-      "google_address": "155-157 Rockwood Road, Yagoona NSW 2199",
-      "google_lat": "-33.893297",
-      "google_lng": "151.039079",
-      "status": "operational",
-      "manual_fuels": {
-        "E10": {"available": true, "price": 216.9},
-        "P95": {"available": true, "price": 234.9},
-        "P98": {"available": true, "price": 243.9},
-        "DL":  {"available": true, "price": 316.9},
-        "PDL": {"available": true, "price": 319.9}
-      },
-      "notes": "BP Potts Hill Truckstop. B-double access, diesel-focused.",
       "source": "google-search",
       "found_date": "13-04"
     },
@@ -257,31 +381,346 @@
       "google_lng": "150.949885",
       "status": "operational",
       "manual_fuels": {
-        "U91": {"available": true, "price": 212.5},
-        "E10": {"available": true, "price": 210.5},
-        "P98": {"available": true, "price": 235.5},
-        "PDL": {"available": true, "price": 309.5}
+        "U91": {
+          "available": true,
+          "price": 212.5
+        },
+        "E10": {
+          "available": true,
+          "price": 210.5
+        },
+        "P98": {
+          "available": true,
+          "price": 235.5
+        },
+        "PDL": {
+          "available": true,
+          "price": 309.5
+        }
       },
       "notes": "Metro Petroleum brand; this specific site not actively tracked by some aggregators. Lineup inferred from sibling Metro Fairfield station.",
       "source": "google-search",
       "found_date": "13-04"
     },
     {
-      "google_name": "U-Go Baulkham Hills",
-      "google_address": "117 Seven Hills Rd, Baulkham Hills NSW 2153",
-      "google_lat": "-33.761400",
-      "google_lng": "150.975100",
+      "google_name": "BP Putney",
+      "google_address": "238 Morrison Rd, Putney NSW",
+      "google_lat": "-33.823778",
+      "google_lng": "151.108437",
       "status": "operational",
       "manual_fuels": {
-        "U91": {"available": true, "price": 216.9},
-        "E10": {"available": true, "price": 214.9},
-        "P95": {"available": true, "price": 232.4},
-        "P98": {"available": true, "price": 241.9},
-        "PDL": {"available": true, "price": 309.9}
+        "U91": {
+          "available": true,
+          "price": 215.9
+        },
+        "P95": {
+          "available": true,
+          "price": 241.9
+        },
+        "P98": {
+          "available": true,
+          "price": 251.9
+        },
+        "DL": {
+          "available": true,
+          "price": 319.9
+        }
       },
-      "notes": "Unmanned station.",
+      "notes": "BP-branded; standard BP lineup per Petrol Spy / Fuel Snoop. No E10 listed.",
       "source": "google-search",
-      "found_date": "13-04"
+      "found_date": "14-04"
+    },
+    {
+      "google_name": "Shell Reddy Express Parramatta North",
+      "google_address": "88 Victoria Rd (Cnr Buller St), Parramatta NSW 2150",
+      "google_lat": "-33.781706",
+      "google_lng": "151.009754",
+      "status": "operational",
+      "manual_fuels": {
+        "E10": {
+          "available": true,
+          "price": 216.9
+        },
+        "P95": {
+          "available": true,
+          "price": 234.4
+        },
+        "P98": {
+          "available": true,
+          "price": 243.9
+        },
+        "PDL": {
+          "available": true,
+          "price": 279.9
+        }
+      },
+      "notes": "FuelRadar + Fuel Snoop + OzDataHub. U91 not explicitly listed for this site though Shell Reddy brand offers it.",
+      "source": "google-search",
+      "found_date": "14-04"
+    },
+    {
+      "google_name": "United",
+      "google_address": "117 Seven Hills Rd, Baulkham Hills NSW 2153",
+      "google_lat": "-33.763900",
+      "google_lng": "151.001700",
+      "status": "operational",
+      "manual_fuels": {
+        "U91": {
+          "available": true,
+          "price": 216.5
+        },
+        "E10": {
+          "available": true,
+          "price": 214.5
+        },
+        "P95": {
+          "available": true,
+          "price": 232.4
+        },
+        "P98": {
+          "available": true,
+          "price": 241.5
+        },
+        "PDL": {
+          "available": true,
+          "price": 309.9
+        }
+      },
+      "notes": "Operated as U-Go Baulkham Hills (Unmanned). Full lineup per Petrol Spy / FuelRadar.",
+      "source": "google-search",
+      "found_date": "14-04"
+    },
+    {
+      "google_name": "Shell",
+      "google_address": "1 Durham St, Rosehill NSW 2142",
+      "google_lat": "-33.821058",
+      "google_lng": "151.039782",
+      "status": "operational",
+      "manual_fuels": {
+        "DL": {
+          "available": true,
+          "price": 317.5
+        }
+      },
+      "notes": "Shell Parramatta CVRO \u2014 unmanned self-serve 24/7, diesel only per Petrol Spy / FuelRadar / Google AI overview.",
+      "source": "google-search",
+      "found_date": "14-04"
+    },
+    {
+      "google_name": "BP Truckstop",
+      "google_address": "155-157 Rockwood Rd, Yagoona NSW 2199",
+      "google_lat": "-33.898937",
+      "google_lng": "151.055807",
+      "status": "operational",
+      "manual_fuels": {
+        "E10": {
+          "available": true,
+          "price": 216.9
+        },
+        "P95": {
+          "available": true,
+          "price": 234.9
+        },
+        "P98": {
+          "available": true,
+          "price": 243.9
+        },
+        "DL": {
+          "available": true,
+          "price": 316.9
+        },
+        "PDL": {
+          "available": true,
+          "price": 319.9
+        }
+      },
+      "notes": "BP Potts Hill Truckstop per Petrol Spy. Full lineup incl. regular + premium diesel.",
+      "source": "google-search",
+      "found_date": "14-04"
+    },
+    {
+      "google_name": "Metro Petroleum Fairfield",
+      "google_address": "113 Sackville St, Fairfield NSW 2165",
+      "google_lat": "-33.872579",
+      "google_lng": "150.945931",
+      "status": "operational",
+      "manual_fuels": {
+        "U91": {
+          "available": true,
+          "price": 200.5
+        },
+        "E10": {
+          "available": true,
+          "price": 198.5
+        },
+        "P95": {
+          "available": true,
+          "price": 221.5
+        },
+        "P98": {
+          "available": true,
+          "price": 235.5
+        },
+        "PDL": {
+          "available": true,
+          "price": 308.9
+        }
+      },
+      "notes": "Metro Petroleum brand. Lineup from Petrol Spy + Fuel Snoop.",
+      "source": "google-search",
+      "found_date": "14-04"
+    },
+    {
+      "google_name": "7-Eleven Baulkham Hills",
+      "google_address": "224 Windsor Rd, Baulkham Hills NSW 2153",
+      "google_lat": "-33.755500",
+      "google_lng": "150.963500",
+      "status": "operational",
+      "manual_fuels": {
+        "U91": {
+          "available": true,
+          "price": 218.9
+        },
+        "E10": {
+          "available": true,
+          "price": 216.9
+        },
+        "P95": {
+          "available": true,
+          "price": 235.9
+        },
+        "P98": {
+          "available": true,
+          "price": 245.9
+        },
+        "PDL": {
+          "available": true,
+          "price": 329.9
+        }
+      },
+      "notes": "Aggregator listings reference a nearby 217-219 Seven Hills Rd site under the same 7-Eleven Baulkham Hills name; lineup per FuelRadar.",
+      "source": "google-search",
+      "found_date": "14-04"
+    },
+    {
+      "google_name": "BP Edgecliff",
+      "google_address": "203 New South Head Rd, Edgecliff NSW 2027",
+      "google_lat": "-33.876974",
+      "google_lng": "151.231099",
+      "status": "operational",
+      "manual_fuels": {
+        "U91": {
+          "available": true,
+          "price": 225.9
+        },
+        "E10": {
+          "available": true,
+          "price": 222.9
+        },
+        "P98": {
+          "available": true,
+          "price": 256.9
+        },
+        "PDL": {
+          "available": true,
+          "price": 331.9
+        }
+      },
+      "notes": "BP Edgecliff per Petrol Spy / FuelRadar (they list address as 67 NSH Rd). No P95 listed separately.",
+      "source": "google-search",
+      "found_date": "14-04"
+    },
+    {
+      "google_name": "Otr Woolloomooloo",
+      "google_address": "1 Bourke St, Woolloomooloo NSW 2011",
+      "google_lat": "-33.869601",
+      "google_lng": "151.221314",
+      "status": "operational",
+      "manual_fuels": {
+        "U91": {
+          "available": true,
+          "price": 218.9
+        },
+        "E10": {
+          "available": true,
+          "price": 216.9
+        },
+        "P95": {
+          "available": true,
+          "price": 236.4
+        },
+        "P98": {
+          "available": true,
+          "price": 245.9
+        },
+        "PDL": {
+          "available": true,
+          "price": 316.9
+        }
+      },
+      "notes": "Shell OTR Woolloomooloo per Petrol Spy / FuelPrice (aggregator lists 61 Cowper Wharf Roadway). Full Shell lineup.",
+      "source": "google-search",
+      "found_date": "14-04"
+    },
+    {
+      "google_name": "BP Woollahra",
+      "google_address": "187 Oxford St, Woollahra NSW 2025",
+      "google_lat": "-33.889907",
+      "google_lng": "151.247435",
+      "status": "operational",
+      "manual_fuels": {
+        "E10": {
+          "available": true,
+          "price": 216.9
+        },
+        "P95": {
+          "available": true,
+          "price": 235.9
+        },
+        "P98": {
+          "available": true,
+          "price": 244.9
+        },
+        "PDL": {
+          "available": true,
+          "price": 319.9
+        }
+      },
+      "notes": "BP Connect Woollahra per Petrol Spy (aggregator address 39 Vernon St). No U91 explicitly listed.",
+      "source": "google-search",
+      "found_date": "14-04"
+    },
+    {
+      "google_name": "Shell Reddy Express Bondi Junction",
+      "google_address": "194 Oxford St, Bondi Junction NSW 2022",
+      "google_lat": "-33.895583",
+      "google_lng": "151.248617",
+      "status": "operational",
+      "manual_fuels": {
+        "U91": {
+          "available": true,
+          "price": 218.9
+        },
+        "E10": {
+          "available": true,
+          "price": 216.9
+        },
+        "P95": {
+          "available": true,
+          "price": 236.4
+        },
+        "P98": {
+          "available": true,
+          "price": 245.9
+        },
+        "DL": {
+          "available": true,
+          "price": 316.9
+        }
+      },
+      "notes": "Reddy Express Bondi Junction per Petrol Spy / FuelRadar / Fuel Snoop (aggregator address Birrell St). Full Shell lineup.",
+      "source": "google-search",
+      "found_date": "14-04"
     }
   ]
 }
