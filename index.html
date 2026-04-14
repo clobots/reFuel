@@ -271,7 +271,7 @@
     .fuel-pill-bar {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 8px;
       padding: 8px 24px;
       border-bottom: 1px solid var(--panel-border);
       background: rgba(11, 24, 32, 0.5);
@@ -279,6 +279,11 @@
       position: sticky;
       top: 0;
       z-index: 5;
+    }
+
+    .fuel-chip-all {
+      flex-shrink: 0;
+      letter-spacing: 0.08em;
     }
 
     .fuel-pills {
@@ -290,9 +295,9 @@
       -webkit-overflow-scrolling: touch;
       flex: 1;
       min-width: 0;
-      padding: 2px;
-      mask-image: linear-gradient(to right, transparent 0, #000 8px, #000 calc(100% - 24px), transparent 100%);
-      -webkit-mask-image: linear-gradient(to right, transparent 0, #000 8px, #000 calc(100% - 24px), transparent 100%);
+      padding: 2px 0;
+      mask-image: linear-gradient(to right, #000 0, #000 calc(100% - 28px), transparent 100%);
+      -webkit-mask-image: linear-gradient(to right, #000 0, #000 calc(100% - 28px), transparent 100%);
     }
     .fuel-pills::-webkit-scrollbar { display: none; }
     .fuel-pills > * {
@@ -300,50 +305,23 @@
       flex-shrink: 0;
     }
 
-    .fuel-pill-count {
-      font-size: 0.72rem;
-      color: var(--muted);
-      white-space: nowrap;
-    }
-
-    .fuel-pill-reset {
-      background: none;
-      border: 1px solid var(--panel-border);
-      color: var(--muted);
-      font-size: 0.72rem;
-      padding: 4px 10px;
-      border-radius: 99px;
-      cursor: pointer;
-      white-space: nowrap;
-      font-family: inherit;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.15s ease;
-    }
-    .fuel-pill-bar.filtered .fuel-pill-reset {
-      opacity: 1;
-      pointer-events: auto;
-    }
-    .fuel-pill-reset:hover {
-      color: var(--accent);
-      border-color: var(--accent);
-    }
-
-    .fuel-pill-outage {
+    .tab-outage-toggle {
       display: flex;
       align-items: center;
       gap: 6px;
-      font-size: 0.78rem;
+      font-size: 0.82rem;
       color: var(--muted);
       cursor: pointer;
       white-space: nowrap;
       user-select: none;
+      margin-left: auto;
+      padding: 0 4px;
     }
-    .fuel-pill-outage input {
+    .tab-outage-toggle input {
       accent-color: var(--accent);
       cursor: pointer;
     }
-    .fuel-pill-outage:hover { color: var(--text); }
+    .tab-outage-toggle:hover { color: var(--text); }
 
     .fuel-chip {
       padding: 4px 10px;
@@ -527,11 +505,9 @@
       }
       .fuel-pill-bar {
         padding: 6px 12px;
-        gap: 8px;
+        gap: 6px;
       }
-      .fuel-pill-outage { font-size: 0.74rem; }
-      .fuel-pill-reset { font-size: 0.7rem; padding: 4px 8px; }
-      .fuel-pill-count { font-size: 0.68rem; }
+      .tab-outage-toggle { font-size: 0.74rem; }
       .legend-item {
         font-size: 0.78rem;
         margin: 2px 0;
@@ -1173,19 +1149,18 @@
       <nav class="tab-nav" id="tab-nav">
         <button class="tab-btn-main active" data-tab="live">Local Fuel</button>
         <button class="tab-btn-main" data-tab="trends">Trends</button>
+        <label class="tab-outage-toggle" title="Only show stations with one or more fuel currently unavailable">
+          <input type="checkbox" id="outage-only-toggle">
+          <span>Outages only</span>
+        </label>
       </nav>
     </header>
 
     <!-- Tab: Live (existing map + table) -->
     <div class="tab-content active" id="tab-live">
     <div class="fuel-pill-bar" id="fuel-pill-bar">
+      <button class="fuel-chip fuel-chip-all active" id="fuel-chip-all" type="button" aria-pressed="true" title="Show all fuel types">ALL</button>
       <div class="fuel-pills" id="fuel-pills" role="group" aria-label="Filter by fuel type"></div>
-      <span class="fuel-pill-count" id="fuel-pill-count" aria-live="polite"></span>
-      <button class="fuel-pill-reset" id="fuel-pill-reset" type="button" title="Select all fuel types">Reset</button>
-      <label class="fuel-pill-outage">
-        <input type="checkbox" id="outage-only-toggle">
-        <span>Outages only</span>
-      </label>
     </div>
     <div class="content-area">
       <main class="map-wrap">
@@ -1402,8 +1377,9 @@
       closed: L.layerGroup().addTo(map)
     };
 
-    // Fuel types to show in the filter (EV excluded)
-    const ALL_FUEL_TYPES = ["U91", "E10", "E85", "P95", "P98", "DL", "PDL", "LPG"];
+    // Fuel types to show in the filter (EV excluded).
+    // Order: premium unleaded → standard → ethanol blends → diesel → LPG
+    const ALL_FUEL_TYPES = ["P98", "P95", "U91", "E10", "E85", "DL", "PDL", "LPG"];
     let selectedFuelTypes = new Set(ALL_FUEL_TYPES);
     let showOnlyOutages = false;
     let outageLookup = new Map();
@@ -1435,56 +1411,62 @@
     // ── Fuel pill bar (above map, always-visible) ──
     (function initFuelPillBar() {
       const pillsEl = document.getElementById("fuel-pills");
-      const countEl = document.getElementById("fuel-pill-count");
-      const resetEl = document.getElementById("fuel-pill-reset");
-      const barEl = document.getElementById("fuel-pill-bar");
+      const allPill = document.getElementById("fuel-chip-all");
       const outageEl = document.getElementById("outage-only-toggle");
-      if (!pillsEl) return;
+      if (!pillsEl || !allPill) return;
 
       const FUEL_LABELS = { U91: "U91", E10: "E10", E85: "E85", P95: "P95", P98: "P98", DL: "DL", PDL: "PDL", LPG: "LPG" };
       const FUEL_FULL = { U91: "Unleaded 91", E10: "Ethanol 10", E85: "Ethanol 85", P95: "Premium 95", P98: "Premium 98", DL: "Diesel", PDL: "Premium Diesel", LPG: "LPG" };
 
-      function updateCount() {
-        const total = ALL_FUEL_TYPES.length;
-        const selected = selectedFuelTypes.size;
-        countEl.textContent = (selected === total) ? "" : selected + "/" + total;
-        barEl.classList.toggle("filtered", selected !== total);
+      function isAllSelected() {
+        return selectedFuelTypes.size === ALL_FUEL_TYPES.length;
+      }
+
+      function updateChipStates() {
+        const allOn = isAllSelected();
+        allPill.classList.toggle("active", allOn);
+        allPill.setAttribute("aria-pressed", allOn ? "true" : "false");
+        Object.entries(chips).forEach(([ft, chip]) => {
+          // Individual chips highlighted only when user is actively filtering
+          const isSel = !allOn && selectedFuelTypes.has(ft);
+          chip.classList.toggle("active", isSel);
+          chip.setAttribute("aria-pressed", isSel ? "true" : "false");
+        });
       }
 
       const chips = {};
       ALL_FUEL_TYPES.forEach((ft) => {
         const chip = document.createElement("button");
-        chip.className = "fuel-chip active";
+        chip.className = "fuel-chip";
         chip.type = "button";
         chip.textContent = FUEL_LABELS[ft] || ft;
         chip.title = FUEL_FULL[ft] || ft;
         chip.dataset.fuel = ft;
-        chip.setAttribute("aria-pressed", "true");
+        chip.setAttribute("aria-pressed", "false");
         chip.setAttribute("aria-label", FUEL_FULL[ft] || ft);
         chip.addEventListener("click", function () {
-          if (selectedFuelTypes.has(ft)) {
+          if (isAllSelected()) {
+            // From ALL state — first tap isolates just this fuel
+            selectedFuelTypes = new Set([ft]);
+          } else if (selectedFuelTypes.has(ft)) {
             selectedFuelTypes.delete(ft);
-            chip.classList.remove("active");
-            chip.setAttribute("aria-pressed", "false");
+            // Empty set snaps back to ALL (prevents empty-map confusion)
+            if (selectedFuelTypes.size === 0) {
+              selectedFuelTypes = new Set(ALL_FUEL_TYPES);
+            }
           } else {
             selectedFuelTypes.add(ft);
-            chip.classList.add("active");
-            chip.setAttribute("aria-pressed", "true");
           }
-          updateCount();
+          updateChipStates();
           rerender();
         });
         pillsEl.appendChild(chip);
         chips[ft] = chip;
       });
 
-      resetEl.addEventListener("click", () => {
+      allPill.addEventListener("click", function () {
         selectedFuelTypes = new Set(ALL_FUEL_TYPES);
-        Object.values(chips).forEach((c) => {
-          c.classList.add("active");
-          c.setAttribute("aria-pressed", "true");
-        });
-        updateCount();
+        updateChipStates();
         rerender();
       });
 
@@ -1493,7 +1475,7 @@
         rerender();
       });
 
-      updateCount();
+      updateChipStates();
     })();
 
     const controlPanel = L.control({ position: "bottomright" });
