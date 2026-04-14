@@ -34,6 +34,7 @@
       --partial: #f0c76e;
       --critical: #ff5f5f;
       --unknown: #d659c9;
+      --closed: #888888;
       --manual-stripe: rgba(130, 130, 130, 0.38);
       --shadow: 0 18px 44px rgba(0, 0, 0, 0.28);
     }
@@ -165,7 +166,7 @@
 
     .summary {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(5, 1fr);
       gap: 10px;
       margin: 0 0 8px;
     }
@@ -325,6 +326,7 @@
     .legend-swatch-partial { background: var(--partial); }
     .legend-swatch-critical { background: var(--critical); }
     .legend-swatch-unknown { background: var(--unknown); }
+    .legend-swatch-closed { background: var(--closed); opacity: 0.65; }
     .legend-swatch-manual {
       background-color: var(--manual);
       background-image: repeating-linear-gradient(
@@ -456,6 +458,10 @@
     }
     .station-marker.unknown::before {
       content: "?";
+    }
+    .station-marker.closed {
+      background: var(--closed);
+      opacity: 0.65;
     }
     .station-marker.manual {
       background-color: var(--manual);
@@ -1021,6 +1027,10 @@
             <dd id="critical-count">-</dd>
             <dt style="color:var(--critical)">All out</dt>
           </div>
+          <div class="summary-card" title="Temporarily closed (manually verified)">
+            <dd id="closed-count">-</dd>
+            <dt style="color:var(--closed)">Closed</dt>
+          </div>
           <div class="summary-card" title="Google-only station — no fuel data available">
             <dd id="unknown-count">-</dd>
             <dt style="color:var(--unknown)">Unknown</dt>
@@ -1249,7 +1259,8 @@
       manual: L.layerGroup().addTo(map),
       partial: L.layerGroup().addTo(map),
       critical: L.layerGroup().addTo(map),
-      unknown: L.layerGroup().addTo(map)
+      unknown: L.layerGroup().addTo(map),
+      closed: L.layerGroup().addTo(map)
     };
 
     // Fuel types to show in the filter (EV excluded)
@@ -1354,6 +1365,7 @@
         { cls: "matched", label: "Available", title: "Live FuelCheck data, all usual fuels available" },
         { cls: "partial", label: "Partial out", title: "75% or more of usual (ever-had) fuels unavailable" },
         { cls: "critical", label: "All out", title: "Every usual fuel currently unavailable" },
+        { cls: "closed", label: "Closed", title: "Temporarily closed (manually verified)" },
         { cls: "unknown", label: "Unknown", title: "Google-only station — no fuel data available" },
         { cls: "manual", label: "Manual", title: "Manually collected data at -24hr delay" }
       ];
@@ -1402,6 +1414,8 @@
 
       var critEl = document.getElementById("critical-count");
       if (critEl) critEl.textContent = stats.critical != null ? stats.critical : 0;
+      var closEl = document.getElementById("closed-count");
+      if (closEl) closEl.textContent = stats.closed != null ? stats.closed : 0;
       var unkEl = document.getElementById("unknown-count");
       if (unkEl) unkEl.textContent = stats.unknown != null ? stats.unknown : 0;
     }
@@ -1991,6 +2005,7 @@
       let partialCount = 0;
       let criticalCount = 0;
       let unknownCount = 0;
+      let closedCount = 0;
 
       rawMatchedRows.forEach((row) => {
         const googleStation = row.google;
@@ -2058,8 +2073,11 @@
         if (row.matchStatus === "gap_google_only" && googleStation) {
           var manualEntry = lookupManualFuels(googleStation);
           var hasManualFuels = manualEntry && manualEntry.manual_fuels && Object.keys(manualEntry.manual_fuels).length > 0;
-          var markerType = hasManualFuels ? "manual" : "unknown";
-          if (hasManualFuels) { manualCount += 1; } else { unknownCount += 1; }
+          var isClosed = manualEntry && manualEntry.status === "temporarily_closed";
+          var markerType = "unknown";
+          if (hasManualFuels) { markerType = "manual"; manualCount += 1; }
+          else if (isClosed) { markerType = "closed"; closedCount += 1; }
+          else { unknownCount += 1; }
           addMarker({
             google: googleStation,
             fuelcheck: null,
@@ -2115,6 +2133,7 @@
         manual: manualCount,
         partial: partialCount,
         critical: criticalCount,
+        closed: closedCount,
         unknown: unknownCount
       });
 
