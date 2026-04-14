@@ -276,9 +276,11 @@
 
     .fuel-filter-body {
       display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
+      flex-direction: column;
+      gap: 4px;
       width: 100%;
+      max-height: calc(100vh - 200px);
+      overflow-y: auto;
     }
 
     .fuel-filter label {
@@ -423,6 +425,10 @@
       }
       .fuel-filter-body.open {
         display: block;
+      }
+      .fuel-filter-body {
+        max-height: none;
+        overflow-y: visible;
       }
       .fuel-filter label {
         font-size: 0.8rem;
