@@ -710,13 +710,13 @@
     .station-list-bar {
       display: flex;
       flex-wrap: wrap;
-      gap: 10px;
+      gap: 10px 12px;
       align-items: center;
       padding: 12px 0;
     }
 
     .station-list-bar input {
-      flex: 1;
+      flex: 1 1 100%;
       min-width: 195px;
       padding: 8px 12px;
       border: 1px solid var(--panel-border);
@@ -743,11 +743,16 @@
       font-size: 0.82rem;
       user-select: none;
       cursor: pointer;
-      line-height: 1.25;
-      max-width: 160px;
+      white-space: nowrap;
+      flex: 0 0 auto;
     }
-    .station-list-toggle span {
-      white-space: normal;
+    .station-list-toggle input {
+      flex-shrink: 0;
+    }
+
+    #station-list-count {
+      margin-left: auto;
+      flex: 0 0 auto;
     }
 
     .station-list-toggle input {
@@ -1177,9 +1182,9 @@
       <section class="station-list-section" id="station-list-section">
       <div class="station-list-bar">
         <input type="text" id="station-search" placeholder="Filter by name or address..." />
-        <label class="station-list-toggle" for="toggle-notlisted">
+        <label class="station-list-toggle" for="toggle-notlisted" title="Only show stations that currently have fuel available">
           <input type="checkbox" id="toggle-notlisted" />
-          <span>Only stations w/ fuel available</span>
+          <span>w/ fuel only</span>
         </label>
         <span id="station-list-count" style="color:var(--muted);font-size:0.8rem;"></span>
       </div>
