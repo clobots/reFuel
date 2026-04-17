@@ -493,22 +493,6 @@
     {
       "google_name": "Shell",
       "google_address": "1 Durham St, Rosehill NSW 2142",
-      "google_lat": "-33.824544",
-      "google_lng": "151.037681",
-      "status": "operational",
-      "manual_fuels": {
-        "DL": {
-          "available": true,
-          "price": 317.5
-        }
-      },
-      "notes": "Shell Parramatta CVRO \u2014 unmanned self-serve 24/7, diesel only per Petrol Spy / FuelRadar / Google AI overview.",
-      "source": "google-search",
-      "found_date": "14-04"
-    },
-    {
-      "google_name": "Shell",
-      "google_address": "1 Durham St, Rosehill NSW 2142",
       "google_lat": "-33.821058",
       "google_lng": "151.039782",
       "status": "operational",

@@ -1,13 +1,12 @@
 station_id,station_name,brand,address,lat,lng,status,status_label,usual_fuel_types,usual_petrol_types,available_now,unavailable_now,usual_fuel_count,basis_fuel_count,unavailable_count,unavailable_ratio_pct,max_current_streak_days,completely_out_of_all_usual
-1089,Metro Lane Cove North,Metro Fuel,"533 MOWBRAY RD WEST, LANE COVE NORTH NSW 2066",-33.80597063,151.16627392,yellow,Partial outage,"DL,E10,P98,PDL,U91","DL,E10,P98,PDL,U91","E10,P98,U91","DL,PDL",5,5,2,40.0,1,false
+17975,BP FOX HILLS,BP,"152 Toongabbie Rd, GIRRAWEEN NSW 2145",-33.7956395,150.9390745,yellow,Partial outage,"P98,PDL,U91","P98,PDL,U91","P98,U91",PDL,3,3,1,33.3,1,false
 17329,Ampol Foodary Seven Hills,Ampol Foodary,"38 Abbott Rd, SEVEN HILLS NSW 2147",-33.7669285,150.9548252,yellow,Partial outage,"E10,P95,P98,PDL","E10,P95,P98,PDL","P95,P98,PDL",E10,4,4,1,25.0,3,false
 260,7-Eleven North Ryde,7-Eleven,"400 Lane Cove Road, North Ryde NSW 2113",-33.784477,151.128964,yellow,Partial outage,"E10,P98,PDL,U91","E10,P98,PDL,U91","P98,PDL,U91",E10,4,4,1,25.0,2,false
 20242,METRO PETROLEUM (HABERFIELD),Metro Fuel,"163-165 PARRAMATTA RD, HABERFIELD NSW 2045",-33.88364863,151.13453452,yellow,Partial outage,"E10,P98,PDL,U91","E10,P98,PDL,U91","E10,P98,PDL",U91,4,4,1,25.0,1,false
-20131,Speedway Park Road,Speedway,"360 PARK RD, REGENTS PARK NSW 2143",-33.87940324,151.02490548,yellow,Partial outage,"DL,E10,P98,U91","DL,E10,P98,U91","DL,E10,P98",U91,4,4,1,25.0,1,false
-65,Shell Reddy Express Bass Hill,Reddy Express,"884-888 Hume Hwy (Cnr Strickland St), Bass Hill NSW 2197",-33.89964,150.997487,yellow,Partial outage,"DL,E10,P95,P98,U91","DL,E10,P95,P98,U91","E10,P95,P98,U91",DL,5,5,1,20.0,10,false
 262,7-Eleven Ryde,7-Eleven,"326-328 Blaxland Road, Ryde NSW 2112",-33.802513,151.100336,yellow,Partial outage,"E10,LPG,P98,PDL,U91","E10,LPG,P98,PDL,U91","E10,P98,PDL,U91",LPG,5,5,1,20.0,3,false
 17143,7-Eleven Yagoona,7-Eleven,"519 Hume Hwy, YAGOONA NSW 2199",-33.9076093,151.0207726,yellow,Partial outage,"E10,LPG,P98,PDL,U91","E10,LPG,P98,PDL,U91","LPG,P98,PDL,U91",E10,5,5,1,20.0,3,false
 1795,BP Lane Cove,BP,"62-70 Epping Rd, Lane Cove NSW 2066",-33.811106,151.164217,yellow,Partial outage,"E10,LPG,P98,PDL,U91","E10,LPG,P98,PDL,U91","E10,P98,PDL,U91",LPG,5,5,1,20.0,3,false
+782,Ampol Foodary Northmead,Ampol Foodary,"98-100 Windsor Rd Cnr Lombard Rd, Northmead NSW 2152",-33.788196,150.994927,yellow,Partial outage,"E10,P95,P98,PDL,U91","E10,P95,P98,PDL,U91","E10,P95,P98,U91",PDL,5,5,1,20.0,2,false
 18468,Speedway Court Road,Speedway,"32 COURT RD, FAIRFIELD NSW 2165",-33.8701219,150.9581328,yellow,Partial outage,"DL,E10,E85,P98,PDL,U91","DL,E10,E85,P98,PDL,U91","DL,E10,P98,PDL,U91",E85,6,6,1,16.7,10,false
 17139,7-Eleven Baulkham Hills,7-Eleven,"217-219 Seven Hills Rd, BAULKHAM HILLS NSW 2153",-33.7555124,150.963514,yellow,Partial outage,"E10,LPG,P95,P98,PDL,U91","E10,LPG,P95,P98,PDL,U91","E10,P95,P98,PDL,U91",LPG,6,6,1,16.7,7,false
 74,7-Eleven Artarmon,7-Eleven,"477 Pacific Highway, Artarmon NSW 2064",-33.810521,151.177429,green,All usual fuels available,"E10,LPG,P95,P98,PDL,U91","E10,LPG,P95,P98,PDL,U91","E10,LPG,P95,P98,PDL,U91",,6,6,0,0.0,0,false
@@ -73,7 +72,6 @@ station_id,station_name,brand,address,lat,lng,status,status_label,usual_fuel_typ
 16908,Ampol Foodary Merrylands,Ampol Foodary,"150 Woodville Rd, MERRYLANDS NSW 2160",-33.838025,150.99969,green,All usual fuels available,"E10,P95,P98,PDL,U91","E10,P95,P98,PDL,U91","E10,P95,P98,PDL,U91",,5,5,0,0.0,0,false
 787,Ampol Foodary Neutral Bay,Ampol Foodary,"16-38 Military Rd, Neutral Bay NSW 2089",-33.8290796,151.2162998,green,All usual fuels available,"E10,P95,P98,PDL,U91","E10,P95,P98,PDL,U91","E10,P95,P98,PDL,U91",,5,5,0,0.0,0,false
 834,Ampol Foodary North Ryde,Ampol Foodary,"41-43 Epping Rd Cnr Wicks Rd, North Ryde NSW 2113",-33.79145,151.131185,green,All usual fuels available,"E10,P95,P98,PDL,U91","E10,P95,P98,PDL,U91","E10,P95,P98,PDL,U91",,5,5,0,0.0,0,false
-782,Ampol Foodary Northmead,Ampol Foodary,"98-100 Windsor Rd Cnr Lombard Rd, Northmead NSW 2152",-33.788196,150.994927,green,All usual fuels available,"E10,P95,P98,PDL,U91","E10,P95,P98,PDL,U91","E10,P95,P98,PDL,U91",,5,5,0,0.0,0,false
 833,Ampol Foodary Pendle Hill,Ampol Foodary,"602-606 Great Western Hwy, Pendle Hill NSW 2145",-33.808324,150.942036,green,All usual fuels available,"P95,P98,PDL,U91","P95,P98,PDL,U91","P95,P98,PDL,U91",,4,4,0,0.0,0,false
 17165,Ampol Foodary Rydalmere,Ampol Foodary,"309 Victoria Rd, RYDALMERE NSW 2116",-33.8119597,151.0371167,green,All usual fuels available,"E10,P95,P98,PDL,U91","E10,P95,P98,PDL,U91","E10,P95,P98,PDL,U91",,5,5,0,0.0,0,false
 710,Ampol Foodary Seven Hills,Ampol Foodary,"105 Station Rd Cnr Powers St, Seven Hills NSW 2147",-33.773892,150.944345,green,All usual fuels available,"DL,E10,P95,P98,PDL,U91","DL,E10,P95,P98,PDL,U91","DL,E10,P95,P98,PDL,U91",,6,6,0,0.0,0,false
@@ -98,7 +96,6 @@ station_id,station_name,brand,address,lat,lng,status,status_label,usual_fuel_typ
 1793,BP Dundas,BP,"256 Kissing Point Rd, DUNDAS NSW 2117",-33.798888,151.054368,green,All usual fuels available,"E10,P95,P98,PDL","E10,P95,P98,PDL","E10,P95,P98,PDL",,4,4,0,0.0,0,false
 1706,BP Edgecliff,BP,"67 New South Head Rd, EDGECLIFF NSW 2027",-33.876974,151.231099,green,All usual fuels available,"E10,P98,PDL,U91","E10,P98,PDL,U91","E10,P98,PDL,U91",,4,4,0,0.0,0,false
 1206,BP Enfield,BP,"184 Liverpool Road, Enfield NSW 2136",-33.887232,151.097782,green,All usual fuels available,"E10,P98,PDL","E10,P98,PDL","E10,P98,PDL",,3,3,0,0.0,0,false
-17975,BP FOX HILLS,BP,"152 Toongabbie Rd, GIRRAWEEN NSW 2145",-33.7956395,150.9390745,green,All usual fuels available,"P98,PDL,U91","P98,PDL,U91","P98,PDL,U91",,3,3,0,0.0,0,false
 17345,BP Fairfield,BP,"183 The Horsley Drive, FAIRFIELD EAST NSW 2165",-33.87784,150.966162,green,All usual fuels available,"DL,P95,P98,PDL,U91","DL,P95,P98,PDL,U91","DL,P95,P98,PDL,U91",,5,5,0,0.0,0,false
 1393,BP Greystanes,BP,"2-4 Kippax St, Greystanes NSW 2145",-33.827913,150.937925,green,All usual fuels available,"E10,P98,PDL,U91","E10,P98,PDL,U91","E10,P98,PDL,U91",,4,4,0,0.0,0,false
 2221,BP Guildford,BP,"257 Guildford Rd, GUILDFORD NSW 2161",-33.85437,150.988836,green,All usual fuels available,"DL,E10,P98,PDL,U91","DL,E10,P98,PDL,U91","DL,E10,P98,PDL,U91",,5,5,0,0.0,0,false
@@ -202,6 +199,7 @@ station_id,station_name,brand,address,lat,lng,status,status_label,usual_fuel_typ
 18706,Metro Greenacre,Metro Fuel,"1 DAVID ST, GREENACRE NSW 2190",-33.8964035,151.0592723,green,All usual fuels available,"DL,P95,P98,PDL,U91","DL,P95,P98,PDL,U91","DL,P95,P98,PDL,U91",,5,5,0,0.0,0,false
 18172,Metro Guildford,Metro Fuel,"2 Rawson Road, GUILDFORD NSW 2161",-33.8636594,151.0088717,green,All usual fuels available,"DL,E10,P98,U91","DL,E10,P98,U91","DL,E10,P98,U91",,4,4,0,0.0,0,false
 20261,Metro Hurlstone Park,Metro Fuel,"13 CANTERBURY RD, CANTERBURY NSW 2193",-33.90781274,151.1252332,green,All usual fuels available,"E10,P98,PDL,U91","E10,P98,PDL,U91","E10,P98,PDL,U91",,4,4,0,0.0,0,false
+1089,Metro Lane Cove North,Metro Fuel,"533 MOWBRAY RD WEST, LANE COVE NORTH NSW 2066",-33.80597063,151.16627392,green,All usual fuels available,"DL,E10,P98,PDL,U91","DL,E10,P98,PDL,U91","DL,E10,P98,PDL,U91",,5,5,0,0.0,0,false
 20847,Metro Lansdowne,Metro Fuel,"987 HUME HWY, LANSDOWNE NSW 2163",-33.88930372,150.97102323,green,All usual fuels available,"DL,E10,P95,P98,PDL,U91","DL,E10,P95,P98,PDL,U91","DL,E10,P95,P98,PDL,U91",,6,6,0,0.0,0,false
 2085,Metro Pendle Hill,Metro Fuel,"229 Wentworth Avenue, Pendle Hill NSW 2145",-33.800251,150.955916,green,All usual fuels available,"E10,PDL,U91","E10,PDL,U91","E10,PDL,U91",,3,3,0,0.0,0,false
 19784,Metro Petroleum Birrong,Metro Fuel,"158 Auburn Rd, Birrong NSW 2143",-33.89747,151.02122,green,All usual fuels available,"E10,P95,P98,PDL,U91","E10,P95,P98,PDL,U91","E10,P95,P98,PDL,U91",,5,5,0,0.0,0,false
@@ -230,6 +228,7 @@ station_id,station_name,brand,address,lat,lng,status,status_label,usual_fuel_typ
 20108,PRIME PETERSHAM,Prime,"8 CRYSTAL ST, PETERSHAM NSW 2049",-33.88868361,151.15857265,green,All usual fuels available,"DL,E10,P98,U91","DL,E10,P98,U91","DL,E10,P98,U91",,4,4,0,0.0,0,false
 2141,Powerfuel,Powerfuel,"101 Blaxcell St, GRANVILLE NSW 2142",-33.842551,151.010602,green,All usual fuels available,"DL,E10,P95,U91","DL,E10,P95,U91","DL,E10,P95,U91",,4,4,0,0.0,0,false
 20649,SHELL NORTH ROCKS,Shell,"264 NORTH ROCKS RD, NORTH ROCKS NSW 2151",-33.77511,151.022676,green,All usual fuels available,"DL,E10,P98,PDL,U91","DL,E10,P98,PDL,U91","DL,E10,P98,PDL,U91",,5,5,0,0.0,0,false
+18342,SHELL Parramatta CVRO (Self-serve),Shell,"1 DURHAM ST, ROSEHILL NSW 2142",-33.82410264,151.03733463,green,All usual fuels available,DL,DL,DL,,1,1,0,0.0,0,false
 20089,SPEEDWAY PARRAMATTA,Speedway,"127A ALFRED ST, PARRAMATTA NSW 2150",-33.81786392,151.01754396,green,All usual fuels available,"DL,P98,U91","DL,P98,U91","DL,P98,U91",,3,3,0,0.0,0,false
 18232,SPEEDWAY SACKVILLE STREET FAIRFIELD,Speedway,"115 Sackville Street, FAIRFIELD NSW 2165",-33.8727231,150.9452203,green,All usual fuels available,"DL,E10,P98,U91","DL,E10,P98,U91","DL,E10,P98,U91",,4,4,0,0.0,0,false
 18584,Shell Croydon,Shell,"418-424 LIVERPOOL RD, CROYDON NSW 2132",-33.888152,151.1150622,green,All usual fuels available,"E10,P98,PDL,U91","E10,P98,PDL,U91","E10,P98,PDL,U91",,4,4,0,0.0,0,false
@@ -243,6 +242,7 @@ station_id,station_name,brand,address,lat,lng,status,status_label,usual_fuel_typ
 513,Shell Reddy  Express Pymble,Reddy Express,"21 Ryde Rd, Pymble NSW 2073",-33.751974,151.143905,green,All usual fuels available,"DL,E10,P95,P98,U91","DL,E10,P95,P98,U91","DL,E10,P95,P98,U91",,5,5,0,0.0,0,false
 613,Shell Reddy  Express St Ives,Reddy Express,"179-181 Mona Vale Rd, St Ives NSW 2075",-33.731206,151.157571,green,All usual fuels available,"DL,E10,P95,P98,PDL,U91","DL,E10,P95,P98,PDL,U91","DL,E10,P95,P98,PDL,U91",,6,6,0,0.0,0,false
 802,Shell Reddy Express Annandale,Reddy Express,"124-126 Johnston Street, Annandale NSW 2038",-33.880918,151.170629,green,All usual fuels available,"DL,E10,P95,P98","DL,E10,P95,P98","DL,E10,P95,P98",,4,4,0,0.0,0,false
+65,Shell Reddy Express Bass Hill,Reddy Express,"884-888 Hume Hwy (Cnr Strickland St), Bass Hill NSW 2197",-33.89964,150.997487,green,All usual fuels available,"DL,E10,P95,P98,U91","DL,E10,P95,P98,U91","DL,E10,P95,P98,U91",,5,5,0,0.0,0,false
 435,Shell Reddy Express Bondi Junction,Reddy Express,"120-138 Birrell Street, Bondi Junction NSW 2022",-33.895583,151.248617,green,All usual fuels available,"DL,E10,P95,P98,U91","DL,E10,P95,P98,U91","DL,E10,P95,P98,U91",,5,5,0,0.0,0,false
 657,Shell Reddy Express Cammeray,Reddy Express,"477-483 Miller St & Palmer St, Cammeray NSW 2062",-33.821107,151.210613,green,All usual fuels available,"DL,E10,P95,P98","DL,E10,P95,P98","DL,E10,P95,P98",,4,4,0,0.0,0,false
 34,Shell Reddy Express Chatswood,Reddy Express,"877-879 Pacific Hwy, Chatswood NSW 2067",-33.791717,151.180472,green,All usual fuels available,"DL,E10,P95,P98,U91","DL,E10,P95,P98,U91","DL,E10,P95,P98,U91",,5,5,0,0.0,0,false
@@ -275,6 +275,7 @@ station_id,station_name,brand,address,lat,lng,status,status_label,usual_fuel_typ
 2026,Speedway Haberfield,Speedway,"273 Parramatta Rd, Haberfield NSW 2045",-33.875166,151.128637,green,All usual fuels available,"DL,E10,LPG,P98,PDL,U91","DL,E10,LPG,P98,PDL,U91","DL,E10,LPG,P98,PDL,U91",,6,6,0,0.0,0,false
 1231,Speedway Horsley Drive,Speedway,"769 The Horsley Dr, SMITHFIELD NSW 2164",-33.8520884,150.9322197,green,All usual fuels available,"DL,E10,P98,U91","DL,E10,P98,U91","DL,E10,P98,U91",,4,4,0,0.0,0,false
 17270,Speedway Kent Road,Speedway,"38 Kent Rd, NORTH RYDE NSW 2113",-33.7916867,151.1159807,green,All usual fuels available,"DL,E10,P98,U91","DL,E10,P98,U91","DL,E10,P98,U91",,4,4,0,0.0,0,false
+20131,Speedway Park Road,Speedway,"360 PARK RD, REGENTS PARK NSW 2143",-33.87940324,151.02490548,green,All usual fuels available,"DL,E10,P98,U91","DL,E10,P98,U91","DL,E10,P98,U91",,4,4,0,0.0,0,false
 1334,Speedway Regents Park,Speedway,"27-29 Amy Steet, Regents Park NSW 2143",-33.883705,151.026875,green,All usual fuels available,"DL,E10,P98,U91","DL,E10,P98,U91","DL,E10,P98,U91",,4,4,0,0.0,0,false
 18422,Speedway Roseville,Speedway,"20-22 BABBAGE RD, ROSEVILLE NSW 2069",-33.7780213,151.1945551,green,All usual fuels available,"E10,P98,PDL,U91","E10,P98,PDL,U91","E10,P98,PDL,U91",,4,4,0,0.0,0,false
 1242,Speedway Smithfield,Speedway,"26-28 Smithfield Road, SMITHFIELD NSW 2164",-33.8514799,150.9429309,green,All usual fuels available,"DL,E10,P98,PDL,U91","DL,E10,P98,PDL,U91","DL,E10,P98,PDL,U91",,5,5,0,0.0,0,false
