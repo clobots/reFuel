@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-14T16:07:12",
+  "generated_at": "2026-04-17T11:26:00",
   "found_date": "13-04",
   "note": "Manually curated from Google Search aggregator results (Petrol Spy, FuelRadar, Fuel Snoop, FuelCheck). Fuels represent types offered at the station; prices are indicative only \u2014 the site's live prices come from FuelCheck for matched stations.",
   "stations": [
@@ -493,8 +493,8 @@
     {
       "google_name": "Shell",
       "google_address": "1 Durham St, Rosehill NSW 2142",
-      "google_lat": "-33.821058",
-      "google_lng": "151.039782",
+      "google_lat": "-33.824544",
+      "google_lng": "151.037681",
       "status": "operational",
       "manual_fuels": {
         "DL": {
@@ -505,6 +505,22 @@
       "notes": "Shell Parramatta CVRO \u2014 unmanned self-serve 24/7, diesel only per Petrol Spy / FuelRadar / Google AI overview.",
       "source": "google-search",
       "found_date": "14-04"
+    },
+    {
+      "google_name": "Shell",
+      "google_address": "1 Durham St, Rosehill NSW 2142",
+      "google_lat": "-33.821058",
+      "google_lng": "151.039782",
+      "status": "operational",
+      "manual_fuels": {
+        "DL": {
+          "available": true,
+          "price": 317.5
+        }
+      },
+      "notes": "Duplicate Google entry for Shell Parramatta CVRO (different coords, same station). Unmanned self-serve 24/7, diesel only.",
+      "source": "google-search",
+      "found_date": "17-04"
     },
     {
       "google_name": "BP Truckstop",
