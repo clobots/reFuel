@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-19T11:55:00",
+  "generated_at": "2026-04-20T10:25:00",
   "found_date": "13-04",
   "note": "Manually curated from Google Search aggregator results (Petrol Spy, FuelRadar, Fuel Snoop, FuelCheck). Fuels represent types offered at the station; prices are indicative only — the site's live prices come from FuelCheck for matched stations.",
   "stations": [
@@ -721,37 +721,6 @@
       "notes": "Reddy Express Bondi Junction per Petrol Spy / FuelRadar / Fuel Snoop (aggregator address Birrell St). Full Shell lineup.",
       "source": "google-search",
       "found_date": "14-04"
-    },
-    {
-      "google_name": "BP",
-      "google_address": "169 Willoughby Road, Naremburn NSW 2065",
-      "google_lat": "-33.819985",
-      "google_lng": "151.201087",
-      "status": "operational",
-      "manual_fuels": {
-        "U91": {
-          "available": true,
-          "price": 203.9
-        },
-        "E10": {
-          "available": true
-        },
-        "P95": {
-          "available": true,
-          "price": 219.9
-        },
-        "P98": {
-          "available": true,
-          "price": 228.9
-        },
-        "PDL": {
-          "available": true,
-          "price": 299.9
-        }
-      },
-      "notes": "BP Connect Naremburn. Prices per Petrol Spy; E10 per FuelRadar Naremburn listing. Google Highlights: Air pump, NFC payments, Diesel fuel.",
-      "source": "google-search",
-      "found_date": "19-04"
     }
   ]
 }
