@@ -1,11 +1,10 @@
 station_id,station_name,brand,address,lat,lng,status,status_label,usual_fuel_types,usual_petrol_types,available_now,unavailable_now,usual_fuel_count,basis_fuel_count,unavailable_count,unavailable_ratio_pct,max_current_streak_days,completely_out_of_all_usual
-17329,Ampol Foodary Seven Hills,Ampol Foodary,"38 Abbott Rd, SEVEN HILLS NSW 2147",-33.7669285,150.9548252,yellow,Partial outage,"E10,P95,P98,PDL","E10,P95,P98,PDL","P95,P98,PDL",E10,4,4,1,25.0,6,false
+17329,Ampol Foodary Seven Hills,Ampol Foodary,"38 Abbott Rd, SEVEN HILLS NSW 2147",-33.7669285,150.9548252,red,Critical outage,"E10,P95,P98,PDL","E10,P95,P98,PDL",P98,"E10,P95,PDL",4,4,3,75.0,6,false
 260,7-Eleven North Ryde,7-Eleven,"400 Lane Cove Road, North Ryde NSW 2113",-33.784477,151.128964,yellow,Partial outage,"E10,P98,PDL,U91","E10,P98,PDL,U91","P98,PDL,U91",E10,4,4,1,25.0,5,false
-20242,METRO PETROLEUM (HABERFIELD),Metro Fuel,"163-165 PARRAMATTA RD, HABERFIELD NSW 2045",-33.88364863,151.13453452,yellow,Partial outage,"E10,P98,PDL,U91","E10,P98,PDL,U91","E10,P98,PDL",U91,4,4,1,25.0,4,false
 327,BP Hornsby,BP,"Cnr George St and Burdett St, Hornsby NSW 2077",-33.702337,151.099325,yellow,Partial outage,"P95,P98,PDL,U91","P95,P98,PDL,U91","P98,PDL,U91",P95,4,4,1,25.0,1,false
-18628,Enhance Eastwood,Enhance,"2 LOVELL RD, EASTWOOD NSW 2122",-33.7916291,151.0895436,yellow,Partial outage,"E10,P98,PDL,U91","E10,P98,PDL,U91","E10,P98,U91",PDL,4,4,1,25.0,1,false
-2325,Westside Petroleum Lidcombe,Westside,"32 Joseph St, LIDCOMBE NSW 2141",-33.864896,151.043259,yellow,Partial outage,"DL,E10,P98,U91","DL,E10,P98,U91","DL,P98,U91",E10,4,4,1,25.0,1,false
+301,BP Naremburn,BP,"169 Willoughby Road, Naremburn NSW 2065",-33.820024,151.201159,yellow,Partial outage,"P95,P98,PDL,U91","P95,P98,PDL,U91","P95,PDL,U91",P98,4,4,1,25.0,1,false
 262,7-Eleven Ryde,7-Eleven,"326-328 Blaxland Road, Ryde NSW 2112",-33.802513,151.100336,yellow,Partial outage,"E10,LPG,P98,PDL,U91","E10,LPG,P98,PDL,U91","E10,P98,PDL,U91",LPG,5,5,1,20.0,6,false
+17143,7-Eleven Yagoona,7-Eleven,"519 Hume Hwy, YAGOONA NSW 2199",-33.9076093,151.0207726,yellow,Partial outage,"E10,LPG,P98,PDL,U91","E10,LPG,P98,PDL,U91","LPG,P98,PDL,U91",E10,5,5,1,20.0,6,false
 1795,BP Lane Cove,BP,"62-70 Epping Rd, Lane Cove NSW 2066",-33.811106,151.164217,yellow,Partial outage,"E10,LPG,P98,PDL,U91","E10,LPG,P98,PDL,U91","E10,P98,PDL,U91",LPG,5,5,1,20.0,6,false
 18468,Speedway Court Road,Speedway,"32 COURT RD, FAIRFIELD NSW 2165",-33.8701219,150.9581328,yellow,Partial outage,"DL,E10,E85,P98,PDL,U91","DL,E10,E85,P98,PDL,U91","DL,E10,P98,PDL,U91",E85,6,6,1,16.7,13,false
 17139,7-Eleven Baulkham Hills,7-Eleven,"217-219 Seven Hills Rd, BAULKHAM HILLS NSW 2153",-33.7555124,150.963514,yellow,Partial outage,"E10,LPG,P95,P98,PDL,U91","E10,LPG,P95,P98,PDL,U91","E10,P95,P98,PDL,U91",LPG,6,6,1,16.7,10,false
@@ -50,7 +49,6 @@ station_id,station_name,brand,address,lat,lng,status,status_label,usual_fuel_typ
 296,7-Eleven Wahroonga,7-Eleven,"1579 Pacific Highway (Corner Redleaf Avenue), Wahroonga NSW 2076",-33.719857,151.116805,green,All usual fuels available,"E10,P95,P98,PDL,U91","E10,P95,P98,PDL,U91","E10,P95,P98,PDL,U91",,5,5,0,0.0,0,false
 211,7-Eleven West Pennant Hills,7-Eleven,"552 Pennant Hills Road, West Pennant Hills NSW 2125",-33.74687,151.050803,green,All usual fuels available,"E10,LPG,P98,PDL,U91","E10,LPG,P98,PDL,U91","E10,LPG,P98,PDL,U91",,5,5,0,0.0,0,false
 284,7-Eleven West Ryde,7-Eleven,"919 Victoria Road (Corner Hermitage Road), West Ryde NSW 2114",-33.80925,151.09346,green,All usual fuels available,"E10,P95,P98,PDL,U91","E10,P95,P98,PDL,U91","E10,P95,P98,PDL,U91",,5,5,0,0.0,0,false
-17143,7-Eleven Yagoona,7-Eleven,"519 Hume Hwy, YAGOONA NSW 2199",-33.9076093,151.0207726,green,All usual fuels available,"E10,LPG,P98,PDL,U91","E10,LPG,P98,PDL,U91","E10,LPG,P98,PDL,U91",,5,5,0,0.0,0,false
 1086,APEX PETROLEUM (WEST RYDE),Independent,"898-902 Victoria Rd, West Ryde NSW 2114",-33.81186,151.094724,green,All usual fuels available,"E10,P95,P98,PDL,U91","E10,P95,P98,PDL,U91","E10,P95,P98,PDL,U91",,5,5,0,0.0,0,false
 975,APEX PETROLEUM VILLAWOOD,Independent,"896A Woodville Rd, Villawood NSW 2163",-33.883891,150.976027,green,All usual fuels available,"E10,P95,P98,PDL,U91","E10,P95,P98,PDL,U91","E10,P95,P98,PDL,U91",,5,5,0,0.0,0,false
 1582,APW,APW,"449 Great Western Highway, WENTWORTHVILLE NSW 2145",-33.813328,150.95825,green,All usual fuels available,"P95,P98,PDL,U91","P95,P98,PDL,U91","P95,P98,PDL,U91",,4,4,0,0.0,0,false
@@ -107,7 +105,6 @@ station_id,station_name,brand,address,lat,lng,status,status_label,usual_fuel_typ
 1590,BP Merrylands West,BP,"65 Kenyons Road, Merrylands West NSW 2160",-33.836829,150.968399,green,All usual fuels available,"E10,P95,P98,PDL","E10,P95,P98,PDL","E10,P95,P98,PDL",,4,4,0,0.0,0,false
 300,BP Mosman (0926),BP,"Cnr Avenue & Cowles Roads, Mosman NSW 2088",-33.832039,151.237292,green,All usual fuels available,"E10,P95,P98,PDL","E10,P95,P98,PDL","E10,P95,P98,PDL",,4,4,0,0.0,0,false
 373,BP Mosman (9542),BP,"175 Ourimbah Road, Mosman NSW 2088",-33.821068,151.233292,green,All usual fuels available,"E10,P98,PDL,U91","E10,P98,PDL,U91","E10,P98,PDL,U91",,4,4,0,0.0,0,false
-301,BP Naremburn,BP,"169 Willoughby Road, Naremburn NSW 2065",-33.820024,151.201159,green,All usual fuels available,"P95,P98,PDL,U91","P95,P98,PDL,U91","P95,P98,PDL,U91",,4,4,0,0.0,0,false
 1465,BP Normanhurst,BP,"155 Pennant Hills Rd, Normanhurst NSW 2076",-33.724599,151.089992,green,All usual fuels available,"P95,P98,PDL,U91","P95,P98,PDL,U91","P95,P98,PDL,U91",,4,4,0,0.0,0,false
 1496,BP North Rocks,BP,"369 North Rocks Rd, North Rocks NSW 2151",-33.769346,151.031858,green,All usual fuels available,"E10,P95,P98,PDL","E10,P95,P98,PDL","E10,P95,P98,PDL",,4,4,0,0.0,0,false
 1152,BP North Willoughby,BP,"157 Penshurst street, Willoughby NSW 2068",-33.797944,151.198197,green,All usual fuels available,"E10,P95,P98,PDL","E10,P95,P98,PDL","E10,P95,P98,PDL",,4,4,0,0.0,0,false
@@ -178,12 +175,14 @@ station_id,station_name,brand,address,lat,lng,status,status_label,usual_fuel_typ
 2129,EG Ampol West Ryde,EG Ampol,"924 Victoria Rd, WEST RYDE NSW 2114",-33.810887,151.093485,green,All usual fuels available,"E10,P95,P98,PDL,U91","E10,P95,P98,PDL,U91","E10,P95,P98,PDL,U91",,5,5,0,0.0,0,false
 20544,Enhance Bass Hill,Enhance,"924 HUME HWY, BASS HILL NSW 2197",-33.89780824,150.99482385,green,All usual fuels available,"E10,E85,P98,PDL,U91","E10,E85,P98,PDL,U91","E10,E85,P98,PDL,U91",,5,5,0,0.0,0,false
 18652,Enhance Camellia,Enhance,"17 GRAND AV, CAMELLIA NSW 2142",-33.820505,151.0356357,green,All usual fuels available,DL,DL,DL,,1,1,0,0.0,0,false
+18628,Enhance Eastwood,Enhance,"2 LOVELL RD, EASTWOOD NSW 2122",-33.7916291,151.0895436,green,All usual fuels available,"E10,P98,PDL,U91","E10,P98,PDL,U91","E10,P98,PDL,U91",,4,4,0,0.0,0,false
 20100,Enhance Merrylands,Enhance,"506 MERRYLANDS RD, MERRYLANDS WEST NSW 2160",-33.83268678,150.96969038,green,All usual fuels available,"E10,P98,PDL,U91","E10,P98,PDL,U91","E10,P98,PDL,U91",,4,4,0,0.0,0,false
 18141,Gas to connect,Independent,"54c Fairfield Road, GUILDFORD WEST NSW 2161",-33.8472109,150.9623342,green,All usual fuels available,"DL,E10,P98,U91","DL,E10,P98,U91","DL,E10,P98,U91",,4,4,0,0.0,0,false
 2001,Independent Turramurra,Independent,"105 Eastern Rd, Turramurra NSW 2074",-33.720245,151.131246,green,All usual fuels available,"DL,P98,U91","DL,P98,U91","DL,P98,U91",,3,3,0,0.0,0,false
 20150,JACK & CO NORTHWOOD,BP,"7 NORTHWOOD RD, LONGUEVILLE NSW 2066",-33.82455262,151.17257358,green,All usual fuels available,"E10,P95,P98,PDL","E10,P95,P98,PDL","E10,P95,P98,PDL",,4,4,0,0.0,0,false
 18609,Jack & Co Lane Cove,Independent,"203 BURNS BAY RD, LANE COVE NSW 2066",-33.814598,151.1543531,green,All usual fuels available,"E10,P98,PDL,U91","E10,P98,PDL,U91","E10,P98,PDL,U91",,4,4,0,0.0,0,false
 1836,Liberty Girraween,Liberty,"38A Gilba Rd, Girraween NSW 2145",-33.801823,150.95119,green,All usual fuels available,"DL,E10,P95,P98,PDL,U91","DL,E10,P95,P98,PDL,U91","DL,E10,P95,P98,PDL,U91",,6,6,0,0.0,0,false
+20242,METRO PETROLEUM (HABERFIELD),Metro Fuel,"163-165 PARRAMATTA RD, HABERFIELD NSW 2045",-33.88364863,151.13453452,green,All usual fuels available,"E10,P98,PDL,U91","E10,P98,PDL,U91","E10,P98,PDL,U91",,4,4,0,0.0,0,false
 18492,METRO ROZELLE,Metro Fuel,"127 VICTORIA RD, ROZELLE NSW 2039",-33.8620438,151.1676701,green,All usual fuels available,"E10,P98,PDL,U91","E10,P98,PDL,U91","E10,P98,PDL,U91",,4,4,0,0.0,0,false
 20218,Metro Barista Bar Croydon Park,Metro Fuel,"236-240 GEORGES RIVER RD, CROYDON PARK NSW 2133",-33.89641155,151.1052879,green,All usual fuels available,"E10,P98,PDL,U91","E10,P98,PDL,U91","E10,P98,PDL,U91",,4,4,0,0.0,0,false
 18533,Metro Canley Heights,Metro Fuel,"190 CANLEY VALE RD, CANLEY HEIGHTS NSW 2166",-33.8845269,150.928557,green,All usual fuels available,"E10,P98,PDL,U91","E10,P98,PDL,U91","E10,P98,PDL,U91",,4,4,0,0.0,0,false
